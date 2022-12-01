@@ -1,0 +1,19 @@
+body{
+    font-family: 'Raleway', sans-serif;
+    background-color: #F5F5F5 !important;
+}
+
+.hamburgernav{
+    justify-content: flex-end !important;
+}
+
+.navbar{
+    background-color:#00727A !important
+}
+
+.titleplus{
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 16px;
+    color: white;
+}

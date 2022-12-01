@@ -1,0 +1,90 @@
+.feedbacktitle{
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 21px;
+    color: #1F1F1F;
+}
+
+.btn-outline-info {
+    color: #00727A !important;
+    border-color:#00727A !important;
+    border: 1px solid #00727A;
+border-radius: 8px;
+}
+
+.btn-outline-info:hover{
+
+    background-color: #00727A !important;
+    border-color: #00727A !important;
+    color: white !important;
+}
+
+.btn-outline-info:active {
+    background-color: #00727A !important;
+    border-color: #00727A !important;
+    color: white !important;
+}
+
+
+.btn-outline-info:not(:disabled):not(.disabled).active, .btn-outline-info:not(:disabled):not(.disabled):active{
+    background-color: #00727A !important;
+    border-color: #00727A !important;
+    color: white !important;
+}
+.btn {
+    border: none;
+    outline: none;
+    padding: 10px 16px;
+    background-color: #f1f1f1;
+    cursor: pointer;
+  }
+
+  .feedbackbtn{
+    border: 1px solid #00727A !important;
+    border-radius: 8px !important;
+    font-weight: 700 !important;
+    font-size: 12px !important;
+    line-height: 14px !important;
+    color: #FFFFFF;
+    padding: 12px !important;
+  }
+
+.btnsprachen{
+    border: 1px solid #00727A !important;
+    border-radius: 8px !important;
+    font-weight: 700 !important;
+    font-size: 12px !important;
+    line-height: 14px !important;
+    padding: 15px !important;
+    width: 5%;
+}
+
+.btn-outline-danger{
+    background: #E66042 !important;
+    border-radius: 8px !important;
+    color: white !important;
+    font-weight: 600 !important;
+    font-size: 14px !important;
+    line-height: 16px !important;
+    display: flex !important;
+    align-items: center !important;
+    color: #FFFFFF !important;
+    padding: 11px !important;
+}
+
+.btn-outline-danger:focus{
+    box-shadow: none !important;
+}
+
+.btn-outline-success{
+    background: #00727A !important;
+    border-radius: 8px !important;
+    color: white !important;
+    font-weight: 600 !important;
+    font-size: 14px !important;
+    line-height: 16px !important;
+    display: flex !important;
+    align-items: center !important;
+    color: #FFFFFF !important;
+    padding: 11px !important;
+}
