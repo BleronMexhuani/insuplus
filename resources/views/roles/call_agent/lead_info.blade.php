@@ -265,34 +265,34 @@
                         <div class="row g-1 tab mt-4 ms-0 ms-md-5 px-3 px-md-5 d-flex justify-content-center">
                             <!-- <div class=""> -->
                             <div class="col-auto">
-                                <button class="tablinks" type="button" onclick="openCity(event, 'Falsche Nummer')">Falsche Nummer</button>
+                                <input class="tablinks" type="button" name="feedback_status" value="Falsche Nummer" onclick="openCity(event, 'Falsche Nummer')"></button>
                             </div>
                             <div class="col-auto">
-                                <button class="tablinks" type="button"   onclick="openCity(event, 'Hat schon gewechselt')">Hat schon gewechselt</button>
+                                <button class="tablinks" type="button" name="feedback_status"   onclick="openCity(event, 'Hat schon gewechselt')">Hat schon gewechselt</button>
                             </div>
                             <div class="col-auto">
-                                <button class="tablinks" type="button"  onclick="openCity(event, 'Kein Interesse')">Kein Interesse</button>
+                                <button class="tablinks" type="button" name="feedback_status"  onclick="openCity(event, 'Kein Interesse')">Kein Interesse</button>
                             </div>
                             <div class="col-auto">
-                                <button class="tablinks" type="button"  onclick="openCity(event, 'Krank')">Krank</button>
+                                <button class="tablinks" type="button" name="feedback_status"  onclick="openCity(event, 'Krank')">Krank</button>
                             </div>
                             <div class="col-auto">
-                                <button class="tablinks" type="button"  onclick="openCity(event, 'Kunde bereits terminiert')">Kunde bereits terminiert</button>
+                                <button class="tablinks" type="button"  name="feedback_status" onclick="openCity(event, 'Kunde bereits terminiert')">Kunde bereits terminiert</button>
                             </div>
                             <div class="col-auto">
-                                <button class="tablinks" type="button"  onclick="openCity(event, 'Nicht Brauchbar')">Nicht Brauchbar</button>
+                                <button class="tablinks" type="button" name="feedback_status"  onclick="openCity(event, 'Nicht Brauchbar')">Nicht Brauchbar</button>
                             </div>
                             <div class="col-auto">
-                                <button class="tablinks" type="button"  onclick="openCity(event, 'Nicht Erreicht')">Nicht Erreicht</button>
+                                <button class="tablinks" type="button"  name="feedback_status" onclick="openCity(event, 'Nicht Erreicht')">Nicht Erreicht</button>
                             </div>
                             <div class="col-auto">
-                                <button class="tablinks" type="button"  onclick="openCity(event, 'Online-Offerte')">Online-Offerte</button>
+                                <button class="tablinks" type="button" name="feedback_status"  onclick="openCity(event, 'Online-Offerte')">Online-Offerte</button>
                             </div>
                             <div class="col-auto">
-                                <button class="tablinks" type="button"  onclick="openCity(event, 'Später Anrufrn')">Später Anrufrn</button>
+                                <button class="tablinks" type="button"  name="feedback_status" onclick="openCity(event, 'Später Anrufrn')">Später Anrufrn</button>
                             </div>
                             <div class="col-auto">
-                                <button class="tablinks" type="button"  onclick="openCity(event, 'Terminiert')">Terminiert</button>
+                                <button class="tablinks" type="button" name="feedback_status" onclick="openCity(event, 'Terminiert')">Terminiert</button>
                             </div>
     
     
