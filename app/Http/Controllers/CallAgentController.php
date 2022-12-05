@@ -13,9 +13,7 @@ class CallAgentController extends Controller
     public function getLeads()
     {
 
-        $leads =  Lead::where('assign_to_id_call', Auth::user()->id)
-            ->where('completed', 0)
-            ->get();
+        $leads =  Lead::where('assign_to_id_call', Auth::user()->id)->get();
 
         return view('roles.call_agent.leads', compact('leads'));
     }
@@ -23,7 +21,7 @@ class CallAgentController extends Controller
     {
         $lead =  Lead::find($id);
 
-        if ($lead->assign_to_id_call == Auth::user()->id && $lead->completed == 0) {
+        if ($lead->assign_to_id_call == Auth::user()->id) {
             $feedbacks = CallAgentController::getAllFeedBacks($id);
             return view('roles.call_agent.lead_info', compact('lead', 'feedbacks'));
         } else {
@@ -37,6 +35,24 @@ class CallAgentController extends Controller
     public function storeFeedBack(Request $req, $lead_id)
     {
         $req['user_id'] = Auth::user()->id;
+        if ($req['sprachen']) {
+            $req['sprachen'] = implode(",", $req['sprachen']);
+        }
+        Lead::find($lead_id)->update($req->except(
+            "feedback",
+            "user_id",
+            "lead_id",
+            "termin_datum",
+            "terminzeit",
+            "mitbewhoner",
+            "person_krank",
+            "vertragdatum",
+            "bestatigungsstatus",
+            "anrufdatum",
+            "zeit_anrufe",
+            "koment_der_geburtsdatum",
+            "koment_der_Können"
+        ));
 
         FeedBack::create([
             'feedback' => $req->feedback_status,
