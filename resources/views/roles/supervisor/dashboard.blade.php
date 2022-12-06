@@ -1,4 +1,4 @@
-<form action="{{ route('assignLead') }}" class="w-50" method="POST">
+<form action="{{ route('assignLead') }}" class="w-50 my-4" method="POST">
     @csrf
     <div>
         <label for="">Select the lead to assign for</label>
@@ -21,5 +21,4 @@
         <button type="submit" style="background-color:blue;color:white"
             class="btn btn-primary mt-2 w-100 ">Submit</button>
     </div>
-
 </form>

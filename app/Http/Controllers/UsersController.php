@@ -17,7 +17,7 @@ class UsersController extends Controller
 
         $leadSuperVisor = $this->leadsOfSupervisor();
 
-        return view('dashboard', compact('callagent','leadSuperVisor'));
+        return view('dashboard', compact('callagent', 'leadSuperVisor'));
     }
 
     public function leadsOfSupervisor()
