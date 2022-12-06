@@ -80,63 +80,70 @@
     </div>
 </div> -->
 
-
-
-
-<div class="table-responsive">
-    <table class="table">
-        <thead>
-            <tr>
-                <td>
-                    <div class="custom-control custom-checkbox">
-                        <input type="checkbox" class="custom-control-input" id="customCheck">
-                        <label class="custom-control-label" for="customCheck2"></label>
-                    </div>
-                </td>
-                <th>Vorname</th>
-                <th>Nachname</th>
-                <th>Jahr</th>
-                <th>Kanton</th>
-                <th>Region</th>
-                <th>Sprache</th>
-                <th>Status</th>
-                <th>Created Time</th>
-                <th>Created From</th>
-                <th>Feedback</th>
-                <th>Feedback datum</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
-                <td>
-                    <div class="custom-control custom-checkbox">
-                        <input type="checkbox" class="custom-control-input" id="customCheck3">
-                        <label class="custom-control-label" for="customCheck3"></label>
-                    </div>
-                </td>
-                <td>Enis</td>
-                <td>Demolli</td>
-                <td>35</td>
-                <td>New York</td>
-                <td>USA</td>
-            </tr>
-        </tbody>
-        <tbody>
-            <tr>
-                <td>
-                    <div class="custom-control custom-checkbox">
-                        <input type="checkbox" class="custom-control-input" id="customCheck3">
-                        <label class="custom-control-label" for="customCheck3"></label>
-                    </div>
-                </td>
-                <td>Anna</td>
-                <td>Pitt</td>
-                <td>35</td>
-                <td>New York</td>
-                <td>USA</td>
-            </tr>
-        </tbody>
-    </table>
+<div class="col ms-0 ms-md-2 px-0 px-md-5">
+    <div class="mt-4 py-3 px-2">
+        <div class="table-responsive">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <td>
+                            <div class="custom-control custom-checkbox">
+                                <input type="checkbox" class="custom-control-input" id="customCheck">
+                                <label class="custom-control-label" for="customCheck"></label>
+                            </div>
+                        </td>
+                        <th>Vorname</th>
+                        <th>Nachname</th>
+                        <th>Jahr</th>
+                        <th>Kanton</th>
+                        <th>Region</th>
+                        <th>Sprache</th>
+                        <th>Status</th>
+                        <th>Created Time</th>
+                        <th>Created From</th>
+                        <th>Feedback</th>
+                        <th>Feedback datum</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>
+                            <div class="custom-control custom-checkbox">
+                                <input type="checkbox" class="custom-control-input" id="customCheck1">
+                                <label class="custom-control-label" for="customCheck1"></label>
+                            </div>
+                        </td>
+                        <td>Enis</td>
+                        <td>Demolli</td>
+                        <td>2000</td>
+                        <td>Prishtina</td>
+                        <td>Kosovo</td>
+                        <td>Shqip</td>
+                        <td>Not Assigned</td>
+                        <td>23.11.2000 12:07AM</td>
+                        <td>Denis Demolli</td>
+                        <td style="color: green;">Termin</td>
+                        <td>Denis Demolli</td>
+                    </tr>
+                </tbody>
+                <tbody>
+                    <tr>
+                        <td>
+                            <div class="custom-control custom-checkbox">
+                                <input type="checkbox" class="custom-control-input" id="customCheck2">
+                                <label class="custom-control-label" for="customCheck2"></label>
+                            </div>
+                        </td>
+                        <td>Anna</td>
+                        <td>Pitt</td>
+                        <td>35</td>
+                        <td>New York</td>
+                        <td>USA</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
 </div>
 </div>
 @endsection
