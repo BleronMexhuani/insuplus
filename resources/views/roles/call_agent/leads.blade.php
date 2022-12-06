@@ -1,5 +1,6 @@
 @extends('layouts.app')
 @section('content')
+
 <table class="table table-bordered mt-5">
     <thead>
         <tr>
@@ -150,10 +151,12 @@
 
 
 
+
 <style>
     .container {
         padding: 2rem 0rem;
     }
+
 
 </style>
 
@@ -164,3 +167,4 @@
 </script>
 
 @endsection
+

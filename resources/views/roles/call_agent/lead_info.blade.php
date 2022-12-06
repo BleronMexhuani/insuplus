@@ -1,6 +1,7 @@
 @extends('layouts.app')
 @section('content')
 
+
 <form method="POST" action="{{ route('storeFeedBack', ['lead_id' => $lead->id]) }}" class="">
     @csrf
     <div class="col ms-0 ms-md-2 px-0 px-md-5">
@@ -121,6 +122,7 @@
                             <input class="inputform" value="{{ $lead->email }}" type="email" id="email" name="email" placeholder="janedoe@gmail.com">
                         </div>
                     </div>
+
                 </div>
                 <hr>
                 <div class="text-center mt-4">
@@ -191,14 +193,17 @@
                         </div>
                         <div class="mt-2">
                             <input class="inputform" type="text" name="hausrat" placeholder="Jane">
+
                         </div>
                     </div>
                     <div class="col-4">
                         <div class="mt-4">
                             <span class="subtitleform">Krankenkasse </span>
                         </div>
+
                         <div class="mt-2">
                             <input class="inputform" type="text" name="krankenkasse" placeholder="German">
+
                         </div>
                         <div class="mt-4">
                             <span class="subtitleform">Sparen </span>
@@ -662,7 +667,10 @@
                                     <span class="subtitleform">Termindatum</span>
                                 </div>
                                 <div class="mt-2">
-                                    <input class="inputform" type="date" name="termindatum" placeholder="" />
+
+                                    <input class="inputformm" type="text" name="mitbewohner"
+                                        placeholder="" />
+
                                 </div>
                             </div>
                             <div class="col mb-3">
@@ -670,6 +678,7 @@
                                     <span class="subtitleform">Terminzeit</span>
                                 </div>
                                 <div class="mt-2">
+
                                     <input class="inputform" type="text" name="terminzeit" placeholder="Ja" />
                                 </div>
                             </div>
@@ -698,6 +707,7 @@
                                 <div class="col mb-3">
                                     <div class="mt-4">
                                         <span class="subtitleform">Bestätigungsstatus</span>
+
                                     </div>
                                     <div class="mt-2">
                                         <input class="inputform" type="text" name="bestatigungs_status" placeholder="Intern" />

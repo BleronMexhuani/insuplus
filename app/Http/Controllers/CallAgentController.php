@@ -10,13 +10,14 @@ use Illuminate\Support\Facades\Auth;
 class CallAgentController extends Controller
 {
     //
-    public function getLeads()
+    public function getLeads(Request $req)
     {
 
-        $leads =  Lead::where('assign_to_id_call', Auth::user()->id)->get();
+        $leads =  Lead::where('assign_to_id_call', Auth::user()->id)->where('vorname', 'LIKE', '%' . $req->search . '%')->get();
 
         return view('roles.call_agent.leads', compact('leads'));
     }
+    
     public function getLeadById($id)
     {
         $lead =  Lead::find($id);
@@ -42,7 +43,7 @@ class CallAgentController extends Controller
             "feedback",
             "user_id",
             "lead_id",
-            "termin_datum",
+            "termindatum",
             "terminzeit",
             "mitbewhoner",
             "person_krank",
@@ -58,14 +59,15 @@ class CallAgentController extends Controller
             'feedback' => $req->feedback_status,
             'user_id' => Auth::user()->id,
             'lead_id' => $lead_id,
-            'termin_datum' => $req->termin_datum,
+            'termin_datum' => $req->termindatum,
             'terminzeit' => $req->terminzeit,
             "mitbewhoner" => $req->mitbewhoner,
             "person_krank" => $req->person_krank,
             "vertragdatum" => $req->vertragdatum,
             "bestatigungsstatus" => $req->bestatigungsstatus,
             "anrufdatum" => $req->anrufdatum,
-            "zeit_anrufe" => $req->zeit_anrufe
+            "zeit_anrufe" => $req->zeit_anrufe,
+            "bemerkung" => $req->bemerkung
         ]);
         if ($req->feedback_status == 'termin' || $req->feedback_status == 'online_offerte') {
             Lead::where('id', $lead_id)->update(['completed' => 1, 'feedback_status' => $req->feedback_status]);
