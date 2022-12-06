@@ -48,13 +48,13 @@ border-radius: 8px;
   border-color: #00727A !important;
   color: white !important;
 }
-.btn {
+/* .btn {
   border: none;
   outline: none;
   padding: 10px 16px;
   background-color: #f1f1f1;
   cursor: pointer;
-}
+} */
 
 .feedbackbtn{
   border: 1px solid #00727A !important;
@@ -171,4 +171,42 @@ border-radius: 8px;
   padding: 25px;
   width: 100%;
 }
+.btn{
+    border: none;
+    outline: none;
+    padding: 10px 16px;
+    /* background-color: #f1f1f1; */
+    cursor: pointer;
+    color: #00727A;
+}
+.sprachengr{
+  border: 1px solid #00727A !important;
+  border-radius: 8px !important;
+  font-weight: 700 !important;
+  font-size: 12px !important;
+  line-height: 14px !important;
+  padding: 15px !important;
+}
 
+.sprachengr:active{
+  background: #00727A;
+border: 1px solid #00727A;
+border-radius: 8px;
+}
+
+.btn:focus-visible {
+  color: white !important;
+  background-color: #00727A !important;
+}
+
+.btn-outline-primary {
+  --mdb-btn-bg: transparent;
+  --mdb-btn-color: #00727A;
+  --mdb-btn-hover-bg: transparent;
+  --mdb-btn-hover-color: #00727A;
+  --mdb-btn-focus-bg: transparent;
+  --mdb-btn-focus-color: #386bc0;
+  --mdb-btn-active-bg: #00727A !important;
+  --mdb-btn-active-color: white;
+  border-color: #3b71ca;
+}

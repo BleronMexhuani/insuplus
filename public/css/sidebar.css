@@ -76,5 +76,5 @@ div.content {
   -ms-flex-wrap: wrap;
   flex-wrap: wrap;
   margin-right: 0px !important;
-  margin-left: 0px !important;
+  /* margin-left: 0px !important; */
 }

@@ -1,0 +1,118 @@
+
+.custom-control-label::after{
+    background-color: white;
+}
+
+.table thead th {
+    vertical-align: bottom;
+    border-bottom: #e9ecef !important;
+}
+
+.table>:not(:last-child)>:last-child>* {
+    border-bottom-color: #ebebeb !important;
+}
+
+
+label {
+    display: inline-block;
+    margin-bottom: 0rem !important;
+}
+.table td, .table th {
+    padding: 0.75rem;
+    vertical-align: top;
+    border-top: none !important;
+}
+
+tr{
+    font-size: 14px;
+}
+
+tr:hover {background-color: #ebebeb;}
+
+.formsearch{
+    background-color: white !important;
+    border: 1px solid #EAECEE;
+    border-radius: 8px;
+    padding: 28px !important;
+    width: 100%;
+}
+
+.form-select:focus {
+    border-color: #EAECEE !important;
+    outline: 0;
+    box-shadow: none !important;
+}
+
+.form-select:focus {
+    border-color: #EAECEE !important;
+    outline: 0;
+    box-shadow: none !important;
+}
+
+.btnedit{
+    border: none; 
+    color: #17a2b8 !important;
+    background-color: transparent;
+    border-color: #17a2b8 !important;
+    outline: none;
+    padding: 3px 10px;
+    border: 1px solid;
+    
+}
+
+.btnedit:hover{
+    background-color:#00727A ;
+    color: white !important;
+}
+
+.btn:focus-visible {
+    color: #00727A  !important;
+    background-color: #00727A !important ;
+}
+
+.btndelete{
+    border: none; 
+    color: red !important;
+    background-color: transparent;
+    border-color: red !important;
+    outline: none;
+    padding: 3px 10px;
+    border: 1px solid;
+}
+
+.btndelete:hover{
+    background-color:red ;
+    color: white !important;
+}
+
+.topPlaceholder {
+    background-color: #f5f5f5;
+    padding: 0rem 0.25rem;
+    margin-bottom: -13px;
+    width: min-content;
+}
+
+.topPlaceholder span{
+    font-size: 14px;
+}
+
+.select-form{
+    border-top: 0px solid !important;
+}
+
+.filtersubmit {
+    position: absolute;
+    z-index: 1;
+    left: 12px;
+    top: 15px;
+    color: #7B7B7B;
+    cursor: pointer;
+    width: 0
+}
+
+.inputleads{
+    border: 1px solid #EAECEE;
+    border-radius: 8px;
+    padding: 10px;
+    width: 100%;
+}
