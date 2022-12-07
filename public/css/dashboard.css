@@ -1,0 +1,123 @@
+.titledash {
+    font-weight: 700;
+    font-size: 22px;
+    line-height: 33px;
+    color: #1f1f1f;
+}
+
+.dashborder {
+    background: #ffffff;
+    border: 1px solid #eaecee;
+    border-radius: 12px;
+    flex: none;
+    order: 0;
+    flex-grow: 0.5;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 24px;
+    gap: 16px;
+}
+
+.subtitledash {
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 24px;
+    color: #434a5e;
+    font-family: "Raleway", sans-serif;
+}
+
+.apexchart {
+    background: #ffffff;
+    border: 1px solid #eaecee;
+    border-radius: 12px;
+    /* width: 62%; */
+    padding: 10px;
+}
+
+.apexcharts-legend {
+    position: absolute !important;
+    left: auto !important;
+    top: 110px !important;
+    right: 5px !important;
+}
+
+.apexcharts-legend-marker {
+    background-color: none !important;
+}
+
+.apexcharts-legend-text {
+    font-family: "Rubik" !important;
+    font-style: normal !important;
+    font-weight: 400 !important;
+    font-size: 12px !important;
+    line-height: 20px !important;
+    letter-spacing: 0.416667px !important;
+    text-transform: uppercase !important;
+    color: #9ea7ac !important;
+    font-family: "Rubik", sans-serif !important;
+}
+
+
+
+.apexcharts-legend-series {
+    margin: 8px 5px !important;
+}
+
+.apexcharts-legend-text {
+    padding-left: 25px !important;
+    margin-left: -14px !important;
+}
+
+.dateinput {
+    border: none;
+    color: #08477a;
+    justify-content: center;
+    margin-left: -25px !important;
+    background-color: transparent;
+}
+
+.btnleads {
+    border: 1px solid #0d99ff;
+    border-radius: 5px;
+    color: #0d99ff;
+    padding: 7px 16px !important;
+    font-family: "Rubik" !important;
+    font-style: normal !important;
+    font-weight: 400 !important;
+    font-size: 14px !important;
+    line-height: 20px !important;
+    text-align: center !important;
+    letter-spacing: 0.416667px !important;
+    text-transform: capitalize !important;
+    color: #0d99ff;
+}
+
+.btn:hover {
+    color: #0d99ff;
+    border: 1px solid;
+}
+
+.titledate {
+    font-family: 'Poppins', sans-serif !important;
+    font-style: normal !important;
+    font-weight: 400 !important;
+    font-size: 14px !important;
+    line-height: 21px !important;
+    letter-spacing: -1px !important;
+    color: #748aa1 !important;
+}
+input[type="date"]::-webkit-calendar-picker-indicator {
+    position: relative;
+    right: 2px;
+}
+
+input::-webkit-datetime-edit {
+    position: relative;
+    left: 15px;
+}
+
+input::-webkit-datetime-edit-fields-wrapper {
+    position: relative;
+    left: 15px;
+}

@@ -4,6 +4,9 @@
   line-height: 21px;
   color: #1F1F1F;
 }
+
+
+
 /* .btn {
   display: inline-block;
   font-weight: 400;
@@ -91,6 +94,9 @@ border-radius: 8px;
 .btn-outline-danger:focus{
   box-shadow: none !important;
 }
+
+
+
 
 .btn-outline-success{
   background: #00727A !important;
@@ -210,3 +216,4 @@ border-radius: 8px;
   --mdb-btn-active-color: white;
   border-color: #3b71ca;
 }
+

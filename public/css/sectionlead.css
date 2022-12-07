@@ -106,15 +106,15 @@ input:focus-visible {
     background-color: #fff !important;
     border: 1px solid #EAECEE !important;
     border-radius: 8px !important;
-    padding: 15px !important;
+    padding: 28px !important;
     width: 100% !important;
-}
-
-.inputnumber {
+  }
+  
+  .inputnumber {
     border: 1px solid #EAECEE;
     border-radius: 8px !important;
-    padding: 15px !important;
-}
+    padding: 28px !important;
+  }
 
 .form-control:focus {
     border: 1px solid #EAECEE;

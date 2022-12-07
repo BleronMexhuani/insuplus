@@ -2,6 +2,8 @@
 @section('content')
     @if (Auth::user()->hasRole(['manager']))
         @include('roles.manager.dashboard')
+    @elseif(Auth::user()->hasRole(['call_agent']))
+        @include('roles.call_agent.dashboard')
     @elseif(Auth::user()->hasRole(['supervisor']))
         @include('roles.supervisor.dashboard')
     @elseif(Auth::user()->hasRole(['hr']))
