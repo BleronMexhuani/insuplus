@@ -125,44 +125,40 @@
 
                 </div>
                 <hr>
-                @php
-                    $sprachen = explode(',',$lead->sprachen);
-                 
-                @endphp
                 <div class="text-center mt-4">
                     <span class="feedbacktitle">Sprachen</span><br>
                     <div class=" mt-4 mb-4" role="group" aria-label="Basic checkbox toggle button group">
-                        <input type="checkbox" class="btn-check" {{in_array('AL',$sprachen) ? "checked" : ""}} id="btncheck1" hidden name="sprachen[]" value="AL" autocomplete="off">
+                        <input type="checkbox" class="btn-check" id="btncheck1" hidden name="sprachen[]" value="AL" autocomplete="off">
                         <label class="btn btn-outline-primary sprachengr" for="btncheck1"> AL</label>
                       
-                        <input type="checkbox" class="btn-check" id="btncheck2"  {{in_array('DE',$sprachen) ? "checked" : ""}} hidden name="sprachen[]" value="DE" autocomplete="off">
+                        <input type="checkbox" class="btn-check" id="btncheck2" hidden name="sprachen[]" value="DE" autocomplete="off">
                         <label class="btn btn-outline-primary sprachengr" for="btncheck2">DE</label>
                       
-                        <input type="checkbox" class="btn-check" id="btncheck3"  {{in_array('EN',$sprachen) ? "checked" : ""}} hidden name="sprachen[]" value="EN" autocomplete="off">
+                        <input type="checkbox" class="btn-check" id="btncheck3" hidden name="sprachen[]" value="EN" autocomplete="off">
                         <label class="btn btn-outline-primary sprachengr" for="btncheck3">EN</label>
 
-                        <input type="checkbox" class="btn-check" id="btncheck4"  {{in_array('FR',$sprachen) ? "checked" : ""}} hidden name="sprachen[]" value="FR" autocomplete="off">
+                        <input type="checkbox" class="btn-check" id="btncheck4" hidden name="sprachen[]" value="FR" autocomplete="off">
                         <label class="btn btn-outline-primary sprachengr" for="btncheck4">FR</label>
 
-                        <input type="checkbox" class="btn-check" id="btncheck5"  {{in_array('IT',$sprachen) ? "checked" : ""}} hidden name="sprachen[]" value="IT"autocomplete="off">
+                        <input type="checkbox" class="btn-check" id="btncheck5" hidden name="sprachen[]" value="IT"autocomplete="off">
                         <label class="btn btn-outline-primary sprachengr" for="btncheck5">IT</label>
 
-                        <input type="checkbox" class="btn-check" id="btncheck6"  {{in_array('HR',$sprachen) ? "checked" : ""}} hidden name="sprachen[]" value="HR" autocomplete="off">
+                        <input type="checkbox" class="btn-check" id="btncheck6" hidden name="sprachen[]" value="HR" autocomplete="off">
                         <label class="btn btn-outline-primary sprachengr" for="btncheck6">HR</label>
 
-                        <input type="checkbox" class="btn-check" id="btncheck7"  {{in_array('PL',$sprachen) ? "checked" : ""}} hidden name="sprachen[]" value="PL" autocomplete="off">
+                        <input type="checkbox" class="btn-check" id="btncheck7" hidden name="sprachen[]" value="PL" autocomplete="off">
                         <label class="btn btn-outline-primary sprachengr" for="btncheck7">PL</label>
 
-                        <input type="checkbox" class="btn-check" id="btncheck8"  {{in_array('PT',$sprachen) ? "checked" : ""}} hidden name="sprachen[]" value="PT" autocomplete="off">
+                        <input type="checkbox" class="btn-check" id="btncheck8" hidden name="sprachen[]" value="PT" autocomplete="off">
                         <label class="btn btn-outline-primary sprachengr" for="btncheck8">PT</label>
 
-                        <input type="checkbox" class="btn-check" id="btncheck9"  {{in_array('SR',$sprachen) ? "checked" : ""}} hidden name="sprachen[]" value="SR" autocomplete="off">
+                        <input type="checkbox" class="btn-check" id="btncheck9" hidden name="sprachen[]" value="SR" autocomplete="off">
                         <label class="btn btn-outline-primary sprachengr" for="btncheck9">SR</label>
 
-                        <input type="checkbox" class="btn-check" id="btncheck10"  {{in_array('ES',$sprachen) ? "checked" : ""}} hidden name="sprachen[]" value="ES" autocomplete="off">
+                        <input type="checkbox" class="btn-check" id="btncheck10" hidden name="sprachen[]" value="ES" autocomplete="off">
                         <label class="btn btn-outline-primary sprachengr" for="btncheck10">ES</label>
 
-                        <input type="checkbox" class="btn-check" id="btncheck11"  {{in_array('TR',$sprachen) ? "checked" : ""}}  hidden name="sprachen[]" value="TR" autocomplete="off">
+                        <input type="checkbox" class="btn-check" id="btncheck11"  hidden name="sprachen[]" value="TR" autocomplete="off">
                         <label class="btn btn-outline-primary sprachengr" for="btncheck11">TR</label>
                       </div>
                 </div>
@@ -172,31 +168,31 @@
                             <span class="subtitleform">Rechtsschutz </span>
                         </div>
                         <div class="mt-2">
-                            <input class="inputform" type="text" id="" value="{{ $lead->rechtsschutz }}" name="rechtsschutz" placeholder="Doe">
+                            <input class="inputform" type="text" id=" name=" rechtsschutz" placeholder="Doe">
                         </div>
                         <div class="mt-4">
                             <span class="subtitleform">Ansprechspartner </span>
                         </div>
                         <div class="mt-2">
-                            <input class="inputform" type="text" value="{{ $lead->ansprechspartner }}"  name="ansprechspartner" placeholder="03.02.1999">
+                            <input class="inputform" type="text" name="ansprechspartner" placeholder="03.02.1999">
                         </div>
                         <div class="mt-4">
                             <span class="subtitleform">Zufriedenheit</span>
                         </div>
                         <div class="mt-2">
-                            <input class="inputform" type="text"  value="{{ $lead->zufriedenheit }}" name="zufriedenheit" placeholder="03.02.1999">
+                            <input class="inputform" type="text" name="zufriedenheit" placeholder="03.02.1999">
                         </div>
                         <div class="mt-4">
                             <span class="subtitleform">Erreichbarkeit </span>
                         </div>
                         <div class="mt-2">
-                            <input class="inputform" type="text"  value="{{ $lead->erreichbarkeit }}" name="erreichbarkeit" placeholder="Herr">
+                            <input class="inputform" type="text" name="erreichbarkeit" placeholder="Herr">
                         </div>
                         <div class="mt-4">
                             <span class="subtitleform">Hausrat </span>
                         </div>
                         <div class="mt-2">
-                            <input class="inputform" type="text"  value="{{ $lead->hausrat }}" name="hausrat" placeholder="Jane">
+                            <input class="inputform" type="text" name="hausrat" placeholder="Jane">
 
                         </div>
                     </div>
@@ -206,32 +202,32 @@
                         </div>
 
                         <div class="mt-2">
-                            <input class="inputform" type="text" value="{{ $lead->krankenkasse }}" name="krankenkasse" placeholder="German">
+                            <input class="inputform" type="text" name="krankenkasse" placeholder="German">
 
                         </div>
                         <div class="mt-4">
                             <span class="subtitleform">Sparen </span>
                         </div>
                         <div class="mt-2">
-                            <input class="inputform" type="text" value="{{ $lead->sparen }}" name="sparen" placeholder="03.02.1999">
+                            <input class="inputform" type="text" name="sparen" placeholder="03.02.1999">
                         </div>
                         <div class="mt-4">
                             <span class="subtitleform">Anzahl personen </span>
                         </div>
                         <div class="mt-2">
-                            <input class="inputform" type="text" value="{{ $lead->anzahl_personen }}" name="anzahl_personen" placeholder="German">
+                            <input class="inputform" type="text" name="anzahl_personen" placeholder="German">
                         </div>
                         <div class="mt-4 ">
                             <span class="subtitleform">Gewünschte Beratung </span>
                         </div>
                         <div class="mt-2">
-                            <input class="inputform" type="text"  value="{{ $lead->gewunschte_beratung }}" name="gewunschte_beratung" placeholder="03.02.1999">
+                            <input class="inputform" type="text" name="gewunschte_beratung" placeholder="03.02.1999">
                         </div>
                         <div class="mt-4">
                             <span class="subtitleform">3.Säule </span>
                         </div>
                         <div class="mt-2 mb-5">
-                            <input class="inputform" type="text"  value="{{ $lead->saule }}"  name="saule" placeholder="janedoe@gmail.com">
+                            <input class="inputform" type="text" name="saule" placeholder="janedoe@gmail.com">
                         </div>
                     </div>
                     <div class="col-4">
@@ -239,25 +235,25 @@
                             <span class="subtitleform">Gesundheitzustand </span>
                         </div>
                         <div class="mt-2">
-                            <input class="inputform" type="text" value="{{ $lead->gesundheitzustand }}"  name="gesundheitzustand" placeholder="Herr">
+                            <input class="inputform" type="text" name="gesundheitzustand" placeholder="Herr">
                         </div>
                         <div class="mt-4">
                             <span class="subtitleform">Änderung bei KK </span>
                         </div>
                         <div class="mt-2">
-                            <input class="inputform" type="text"  value="{{ $lead->anderung }}" name="anderung" placeholder="Herr">
+                            <input class="inputform" type="text" name="anderung" placeholder="Herr">
                         </div>
                         <div class="mt-4">
                             <span class="subtitleform">Arberistätig </span>
                         </div>
                         <div class="mt-2">
-                            <input class="inputform" type="text"  value="{{ $lead->arberistatig }}"  name="arberistatig" placeholder="03.02.1999">
+                            <input class="inputform" type="text" name="arberistatig" placeholder="03.02.1999">
                         </div>
                         <div class="mt-4">
                             <span class="subtitleform">Autoversicherung</span>
                         </div>
                         <div class="mt-2 ">
-                            <input type="text" value="{{ $lead->autoversicherung }}" name="autoversicherung"  class="form-control inputnumber" placeholder="+41" aria-label="">
+                            <input type="text" class="form-control inputnumber" placeholder="+41" aria-label="">
                         </div>
                     </div>
                 </div>
@@ -270,7 +266,7 @@
                             <span class="subtitleform">Kontaktieren erwúnscht </span>
                         </div>
                         <div class="mt-2">
-                            <input class="inputform" type="text" id="email"  value="{{ $lead->kontaktieren_erwunscht }}" name="kontaktieren_erwunscht" placeholder="German">
+                            <input class="inputform" type="email" id="email" name="kontaktieren_erwunscht" placeholder="German">
                         </div>
                     </div>
                     <div class="col-12 col-md-4 mt-0 mt-md-2 mb-0 mb-md-5">
@@ -343,7 +339,7 @@
                         <!-- <button class="tablinks" type="button" onclick="openCity(event, 'Terminiert')">Terminiert</button> -->
                     </div>
 
-                    <div id="Falsche Nummer" class="tabcontent">
+                    <div id="Falsche Nummer" class="">
                         <div class="mt-5">
                             <hr>
                             <div class="row">

@@ -11,6 +11,7 @@ Route::middleware(['role:supervisor'])->group(function () {
     
     Route::get('user_info/{id}', [SupervisorController::class, 'getUserById'])->name('getuserbyid');
 
+    Route::get('leads',[SupervisorController::class,'leads'])->name('supervisorleads');
     //Updating user
     Route::put('update_user/{id}',[SupervisorController::class,'updateUser'])->name('updateUser');
     //Delete User by ID
@@ -19,4 +20,6 @@ Route::middleware(['role:supervisor'])->group(function () {
     Route::view('/createUser', 'roles.supervisor.create_user')->name('createUser');
 
     Route::post('/createUser/add',[SupervisorController::class,'addUser'])->name('createUser.add');
+
+    Route::get('getLeadById/{id}',[SupervisorController::class,'getLeadById'])->name('getLeadById');
 });
