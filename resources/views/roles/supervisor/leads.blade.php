@@ -45,10 +45,42 @@
                 </div>
             </div>
             <div class="table-responsive">
+                <form action="{{ route('assignLead') }}" method="POST">
+                 @csrf
+                    <div class="d-flex row">
+               
+                        <div class="col-6">
+             
+                            <select name="assign_to_id_call" id=""
+                                class="form-select inputleads select-form  mb-3">
+                                <option value=""></option>
+                                @foreach ($callagents as $item)
+                                    <option value="{{ $item->id }}">{{ $item->name }}</option>
+                                @endforeach
+
+                            </select>
+                        </div>
+
+                        <div class="col-6">
+                            <button class="btn btn-primary" style="color:white;">Submit</button>
+                        </div>
+
+                    </div>
+                    @if(Illuminate\Support\Facades\Session::has('message'))
+                    <span class="fs-5 mb-2 fw-500">
+                        {{Illuminate\Support\Facades\Session::get('message')}}
+                    </span>
+                @endif
                     <table class="table">
                         <thead style="background-color: #ebebeb;">
                             <tr class="text-center">
-                               
+                                <td>
+                                    <div class="checkbox">
+                                        <label>
+                                            <input type="checkbox" class="check" id="checkAll">
+                                        </label>
+                                    </div>
+                                </td>
                                 <th>Vorname</th>
                                 <th>Nachname</th>
                                 <th>Geburtsdatum</th>
@@ -73,7 +105,12 @@
                             @endphp
                             <tbody>
                                 <tr class="text-center">
-                                 
+                                    <td>
+                                        <label>
+                                            <input type="checkbox" name="lead_id[]" value="{{ $item->id }}"
+                                                class="check">
+                                        </label>
+                                    </td>
                                     <td>{{ $item->vorname }}</td>
                                     <td>{{ $item->nachname }}</td>
                                     <td>{{ $item->geburtsdatum }}</td>
@@ -88,7 +125,7 @@
                                         {{ $item->feedback_status }}</td>
                                     <td>{{ App\Models\Feedback::where('lead_id', $item->id)->orderBy('created_at', 'desc')->pluck('created_at')->first() }}
                                     </td>
-                                    <td><a class="btn btnedit" href="{{ route('lead_info.call', ['id' => $item->id]) }}"><i
+                                    <td><a class="btn btnedit" href="{{ route('getLeadById', ['id' => $item->id]) }}"><i
                                                 class="fa-regular fa-pen-to-square"></i></a></td>
                                     <td><a class="btn btndelete"><i class="fa-solid fa-trash-can"></i></a></td>
                                 </tr>
@@ -97,7 +134,7 @@
 
 
                     </table>
-           
+                </form>
             </div>
         </div>
     </div>
