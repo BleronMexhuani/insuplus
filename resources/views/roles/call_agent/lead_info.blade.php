@@ -343,7 +343,7 @@
                         <!-- <button class="tablinks" type="button" onclick="openCity(event, 'Terminiert')">Terminiert</button> -->
                     </div>
 
-                    <div id="Falsche Nummer" class="">
+                    <div id="Falsche Nummer" class="tabcontent">
                         <div class="mt-5">
                             <hr>
                             <div class="row">

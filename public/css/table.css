@@ -116,3 +116,10 @@ tr:hover {background-color: #ebebeb;}
     padding: 10px;
     width: 100%;
 }
+
+.subtitleleadtable{
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 21px;
+    color: #1F1F1F;
+}
