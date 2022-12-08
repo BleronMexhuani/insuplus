@@ -1,5 +1,29 @@
 @extends('layouts.app')
 @section('content')
+    <form action="{{route('searchLeads')}}" method="GET">
+        @csrf
+        <div class="row">
+            <div class="col-3">
+                <label for="">Creation Date</label>
+                <div class="row">
+                    <div class="col-6">
+                        <input type="date" class="form-control" name="created_at[]">
+                    </div>
+
+                    <div class="col-6">
+                        <input type="date" class="form-control" name="created_at[]">
+                    </div>
+                </div>
+
+
+            </div>
+            <div class="col-3 my-auto">
+                <button class="btn btn-primary" style="color:white">Search</button>
+            </div>
+        
+        </div>
+
+    </form>
     <div class="col ms-0 ms-md-2 px-0 px-md-5">
         <div class="mt-4 py-3 px-2">
             <span class="ms-1 subtitlelead ">All</span>

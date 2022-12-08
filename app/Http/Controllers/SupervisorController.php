@@ -5,33 +5,62 @@ namespace App\Http\Controllers;
 use App\Models\FeedBack;
 use App\Models\Lead;
 use App\Models\User;
+use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 
+use function PHPUnit\Framework\isEmpty;
+
 class SupervisorController extends Controller
 {
 
-    public function leads()
+    public function leads(Request $req)
     {
         $callagents = User::role(['call_agent'])->get();
 
-        $leads = $this->leadsOfSupervisor();
+        $leads = $this->leadsOfSupervisor($req);
 
         return view('roles.supervisor.leads', compact('callagents', 'leads'));
     }
 
-    public function leadsOfSupervisor()
+    public function leadsOfSupervisor(Request $req)
     {
-        // $lead  = Lead::where('completed', 0)->where('assign_to_id_call', null)->where('assign_to_id_team_leader', null)->get();
-        $lead = Lead::all();
-        return $lead;
+
+        $lead = Lead::query();
+
+        foreach ($req->except('_token') as $key => $value) {
+
+            if ($key == 'created_at') {
+                if ($value[0] !== null && $value[1] !== null) {
+                    $lead->whereBetween($key, $value);
+                }
+            } else if ($key == 'verteil_datum') {
+                if ($value[0] !== null && $value[1] !== null) {
+                    $lead->whereBetween($key, $value);
+                }
+            } else if ($key == 'jahrgang') {
+                if ($value[0] !== null && $value[1] !== null) {
+                    $lead->whereBetween($key, $value);
+                }
+            } else if ($key == 'anrufen') {
+                if ($value[0] !== null && $value[1] !== null) {
+                    $lead->whereBetween($key, $value);
+                }
+            } else {
+                $lead->where($key, $value);
+            }
+        
+        }
+        return $lead->get();
     }
+
     //
     public function assignLead(Request $req)
     {
 
         if (isset($req->lead_id)) {
+            $req['verteilen_datum'] = Carbon::parse()->timezone('Europe/Stockholm')->format('Y-m-d h:i:s');
             Lead::whereIn('id', $req->lead_id)->update($req->except('_token', 'lead_id'));
             $message = 'Succesfully leads are assigned';
         } else {

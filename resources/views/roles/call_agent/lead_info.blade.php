@@ -729,7 +729,7 @@
                                         <span class="subtitleform">Termindatum</span>
                                     </div>
                                     <div class="mt-2">
-                                        <input class="inputform" type="text" name="mitbewohner" placeholder="" />
+                                        <input class="inputform" type="text" name="termindatum" placeholder="" />
                                     </div>
                                 </div>
                                 <div class="col mb-3">
@@ -748,7 +748,9 @@
                                         Namen und Geburtsdaten Ihrer Familienangehörigen (Mitbewohner)?</span>
                                 </div>
                                 <div class="mt-2">
+
                                     <input class="inputformm" type="text" name="koment_der_geburtsdatum"
+
                                         placeholder="" />
                                 </div>
                             </div>

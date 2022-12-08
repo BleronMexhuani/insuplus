@@ -69,11 +69,11 @@ class CallAgentController extends Controller
             "zeit_anrufe" => $req->zeit_anrufe,
             "bemerkung" => $req->bemerkung
         ]);
-        if ($req->feedback_status == 'termin' || $req->feedback_status == 'online_offerte') {
+        if ($req->feedback_status == 'Terminiert' || $req->feedback_status == 'online_offerte') {
             Lead::where('id', $lead_id)->update(['completed' => 1, 'feedback_status' => $req->feedback_status]);
         } else {
             Lead::where('id', $lead_id)->update(['completed' => -1, 'feedback_status' => $req->feedback_status]);
         }
-        return redirect('call_agent/leads');
+        return redirect('/leads');
     }
 }

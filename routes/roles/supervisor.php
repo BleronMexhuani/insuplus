@@ -12,6 +12,9 @@ Route::middleware(['role:supervisor'])->group(function () {
     Route::get('user_info/{id}', [SupervisorController::class, 'getUserById'])->name('getuserbyid');
 
     Route::get('supervisor/leads',[SupervisorController::class,'leads'])->name('supervisorleads');
+
+    Route::post('supervisor/leads',[SupervisorController::class,'leads'])->name('searchLeads');
+
     //Updating user
     Route::put('update_user/{id}',[SupervisorController::class,'updateUser'])->name('updateUser');
     //Delete User by ID
