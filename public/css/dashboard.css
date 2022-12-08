@@ -27,14 +27,13 @@
     font-family: "Raleway", sans-serif;
 }
 
-.apexchart {
+ .apexchart {
     background: #ffffff;
     border: 1px solid #eaecee;
     border-radius: 12px;
-    /* width: 62%; */
     padding: 10px;
-}
-
+ }
+/*
 .apexcharts-legend {
     position: absolute !important;
     left: auto !important;
@@ -67,7 +66,7 @@
 .apexcharts-legend-text {
     padding-left: 25px !important;
     margin-left: -14px !important;
-}
+} */
 
 .dateinput {
     border: none;
@@ -121,3 +120,16 @@ input::-webkit-datetime-edit-fields-wrapper {
     position: relative;
     left: 15px;
 }
+
+
+.highcharts-title{
+    display: none !important;
+}
+.highcharts-credits{
+    display: none !important;
+}
+
+.highcharts-button-symbol{
+    display: none !important;
+}
+

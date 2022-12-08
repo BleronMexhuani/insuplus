@@ -15,7 +15,7 @@
                     </div>
 
                 </div>
-           
+
                 <div class="col">
                     <div style="margin-top: 4px; width:25vh">
                         <div class="topPlaceholder px-4">
@@ -45,59 +45,55 @@
                 </div>
             </div>
             <div class="table-responsive">
-                    <table class="table">
-                        <thead style="background-color: #ebebeb;">
+                <table class="table">
+                    <thead style="background-color: #ebebeb;">
+                        <tr class="text-center">
+
+                            <th>Vorname</th>
+                            <th>Nachname</th>
+                            <th>Geburtsdatum</th>
+                            <th>Email</th>
+                            <th>Region</th>
+                            <th>Sprache</th>
+                            <th>Verteilen At</th>
+                            <th>Created Time</th>
+                            <th>Created From</th>
+                            <th>Feedback</th>
+                            <th>Feedback datum</th>
+                            <th>Aktion </th>
+                            <th> </th>
+                        </tr>
+                    </thead>
+                    @foreach ($leads as $item)
+                        @php
+                            $feedback_datum = App\Models\Feedback::where('lead_id', $item->id)
+                                ->orderBy('created_at', 'desc')
+                                ->first();
+                        @endphp
+                        <tbody>
                             <tr class="text-center">
-                               
-                                <th>Vorname</th>
-                                <th>Nachname</th>
-                                <th>Geburtsdatum</th>
-                                <th>Email</th>
-                                <th>Region</th>
-                                <th>Sprache</th>
-                                <th>Verteilen At</th>
-                                <th>Created Time</th>
-                                <th>Created From</th>
-                                <th>Feedback</th>
-                                <th>Feedback datum</th>
-                                <th>Aktion </th>
-                                <th> </th>
+
+                                <td>{{ $item->vorname }}</td>
+                                <td>{{ $item->nachname }}</td>
+                                <td>{{ $item->geburtsdatum }}</td>
+                                <td>{{ $item->email }}</td>
+                                <td>{{ $item->region }}</td>
+                                <td>{{ $item->sprachen }}</td>
+                                <td>{{ $item->assign_to_id_call ? App\Models\User::find($item->assign_to_id_call)->name : ($item->assign_to_id_team_leader ? App\Models\User::find($item->assign_to_id_team_leader)->name : 'Not Assigned') }}
+                                </td>
+                                <td>{{ $item->created_at }}</td>
+                                <td>{{ $item->assigned_from }}</td>
+                                <td style="color:{{ $item->feedback_status == 'Terminiert' ? 'green' : 'red' }};">
+                                    {{ $item->feedback_status }}</td>
+                                <td>{{ App\Models\Feedback::where('lead_id', $item->id)->orderBy('created_at', 'desc')->pluck('created_at')->first() }}
+                                </td>
+                                <td><a class="btn btnedit mb-2" href="{{ route('lead_info.call', ['id' => $item->id]) }}"><i
+                                            class="fa-regular fa-pen-to-square"></i></a><span>Edit</span></td>
+                                <td><a class="btn btndelete mb-2"><i class="fa-solid fa-trash-can"></i></a><span>Delete</span></td>
                             </tr>
-                        </thead>
-                        @foreach ($leads as $item)
-                            @php
-                                $feedback_datum = App\Models\Feedback::where('lead_id', $item->id)
-                                    ->orderBy('created_at', 'desc')
-                                    ->first();
-                                
-                            @endphp
-                            <tbody>
-                                <tr class="text-center">
-                                 
-                                    <td>{{ $item->vorname }}</td>
-                                    <td>{{ $item->nachname }}</td>
-                                    <td>{{ $item->geburtsdatum }}</td>
-                                    <td>{{ $item->email }}</td>
-                                    <td>{{ $item->region }}</td>
-                                    <td>{{ $item->sprachen }}</td>
-                                    <td>{{ $item->assign_to_id_call ? App\Models\User::find($item->assign_to_id_call)->name : ($item->assign_to_id_team_leader ? App\Models\User::find($item->assign_to_id_team_leader)->name : 'Not Assigned') }}
-                                    </td>
-                                    <td>{{ $item->created_at }}</td>
-                                    <td>{{ $item->assigned_from }}</td>
-                                    <td style="color:{{ $item->feedback_status == 'Terminiert' ? 'green' : 'red' }};">
-                                        {{ $item->feedback_status }}</td>
-                                    <td>{{ App\Models\Feedback::where('lead_id', $item->id)->orderBy('created_at', 'desc')->pluck('created_at')->first() }}
-                                    </td>
-                                    <td><a class="btn btnedit" href="{{ route('lead_info.call', ['id' => $item->id]) }}"><i
-                                                class="fa-regular fa-pen-to-square"></i></a></td>
-                                    <td><a class="btn btndelete"><i class="fa-solid fa-trash-can"></i></a></td>
-                                </tr>
-                            </tbody>
-                        @endforeach
-
-
-                    </table>
-           
+                        </tbody>
+                    @endforeach
+                </table>
             </div>
         </div>
     </div>

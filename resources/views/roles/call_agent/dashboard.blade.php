@@ -94,8 +94,8 @@
                                             style="font-family: 'Raleway'; font-weight: 700; font-size: 18px;color: #1F1F1F;">Leads</span>
                                     </div>
                                 </div>
-                                <div class="col-8 d-flex  ">
-                                    <div class="mt-4 ps-5 md-5 ">
+                                <div class="col-8 d-flex justify-content-end">
+                                    <div class="mt-4  ">
                                         <span class="titledate">from</span>
                                         <input type="date" class="dateinput px-0 mx-0 "
                                             value="{{ Carbon\Carbon::now()->format('Y-m-d') }}" placeholder="Start Date"
@@ -113,51 +113,141 @@
                                         <button type="submit" class="btn btnleads">Filter</button>
                                     </div>
                                 </div>
-                               
+
                             </div>
-                            <div class="ms-5">
-                                <div id="chart" class="mt-5 mb-5">
+                            <div class="ms-5 mt-5 py-5">
+                                <div class="row">
+                                    <div class="col-auto">
+                                        <figure class="highcharts-figure">
+                                            <div id="container"></div>
+                                        </figure>
+                                    </div>
+                                    <div class="col">
+                                        <div class="text-center mt-5 pt-4">
+                                            <div class="mb-4">
+                                                <svg width="12" height="13" viewBox="0 0 12 13" fill="none"
+                                                    xmlns="http://www.w3.org/2000/svg">
+                                                    <path fill-rule="evenodd" clip-rule="evenodd"
+                                                        d="M6 12.5C9.31371 12.5 12 9.81371 12 6.5C12 3.18629 9.31371 0.5 6 0.5C2.68629 0.5 0 3.18629 0 6.5C0 9.81371 2.68629 12.5 6 12.5Z"
+                                                        fill="#29E7CD" />
+                                                    <path fill-rule="evenodd" clip-rule="evenodd"
+                                                        d="M6 9.5C7.65685 9.5 9 8.15685 9 6.5C9 4.84315 7.65685 3.5 6 3.5C4.34315 3.5 3 4.84315 3 6.5C3 8.15685 4.34315 9.5 6 9.5Z"
+                                                        fill="white" />
+                                                </svg>
+                                                <span class="ms-2">Lorem</span>
+                                            </div>
+                                            <div class="mb-4">
+                                                <svg width="12" height="13" viewBox="0 0 12 13" fill="none"
+                                                    xmlns="http://www.w3.org/2000/svg">
+                                                    <path fill-rule="evenodd" clip-rule="evenodd"
+                                                        d="M6 12.5C9.31371 12.5 12 9.81371 12 6.5C12 3.18629 9.31371 0.5 6 0.5C2.68629 0.5 0 3.18629 0 6.5C0 9.81371 2.68629 12.5 6 12.5Z"
+                                                        fill="#FF715B" />
+                                                    <path fill-rule="evenodd" clip-rule="evenodd"
+                                                        d="M6 9.5C7.65685 9.5 9 8.15685 9 6.5C9 4.84315 7.65685 3.5 6 3.5C4.34315 3.5 3 4.84315 3 6.5C3 8.15685 4.34315 9.5 6 9.5Z"
+                                                        fill="white" />
+                                                </svg>
+                                                <span class="ms-2">Lorem</span>
+                                            </div>
+                                            <div class="mb-4">
+                                                <svg width="12" height="13" viewBox="0 0 12 13" fill="none"
+                                                    xmlns="http://www.w3.org/2000/svg">
+                                                    <path fill-rule="evenodd" clip-rule="evenodd"
+                                                        d="M6 12.5C9.31371 12.5 12 9.81371 12 6.5C12 3.18629 9.31371 0.5 6 0.5C2.68629 0.5 0 3.18629 0 6.5C0 9.81371 2.68629 12.5 6 12.5Z"
+                                                        fill="#FDCA40" />
+                                                    <path fill-rule="evenodd" clip-rule="evenodd"
+                                                        d="M6 9.5C7.65685 9.5 9 8.15685 9 6.5C9 4.84315 7.65685 3.5 6 3.5C4.34315 3.5 3 4.84315 3 6.5C3 8.15685 4.34315 9.5 6 9.5Z"
+                                                        fill="white" />
+                                                </svg>
+
+                                                <span class="ms-2">Lorem</span>
+                                            </div>
+                                            <div class="mb-4">
+                                                <svg width="12" height="13" viewBox="0 0 12 13" fill="none"
+                                                    xmlns="http://www.w3.org/2000/svg">
+                                                    <path fill-rule="evenodd" clip-rule="evenodd"
+                                                        d="M6 12.5C9.31371 12.5 12 9.81371 12 6.5C12 3.18629 9.31371 0.5 6 0.5C2.68629 0.5 0 3.18629 0 6.5C0 9.81371 2.68629 12.5 6 12.5Z"
+                                                        fill="#FDCA40" />
+                                                    <path fill-rule="evenodd" clip-rule="evenodd"
+                                                        d="M6 9.5C7.65685 9.5 9 8.15685 9 6.5C9 4.84315 7.65685 3.5 6 3.5C4.34315 3.5 3 4.84315 3 6.5C3 8.15685 4.34315 9.5 6 9.5Z"
+                                                        fill="white" />
+                                                </svg>
+
+                                                <span class="ms-2">Lorem</span>
+                                            </div>
+                                            <div class="mb-4">
+                                                <svg width="12" height="13" viewBox="0 0 12 13" fill="none"
+                                                    xmlns="http://www.w3.org/2000/svg">
+                                                    <path fill-rule="evenodd" clip-rule="evenodd"
+                                                        d="M6 12.5C9.31371 12.5 12 9.81371 12 6.5C12 3.18629 9.31371 0.5 6 0.5C2.68629 0.5 0 3.18629 0 6.5C0 9.81371 2.68629 12.5 6 12.5Z"
+                                                        fill="#FDCA40" />
+                                                    <path fill-rule="evenodd" clip-rule="evenodd"
+                                                        d="M6 9.5C7.65685 9.5 9 8.15685 9 6.5C9 4.84315 7.65685 3.5 6 3.5C4.34315 3.5 3 4.84315 3 6.5C3 8.15685 4.34315 9.5 6 9.5Z"
+                                                        fill="white" />
+                                                </svg>
+
+                                                <span class="ms-2">Lorem</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div>
+                                    </div>
                                 </div>
                             </div>
+                            <div class="col-4">
+                            </div>
                         </div>
-                        <div class="col-4">
 
-                        </div>
                     </div>
-
                 </div>
             </div>
         </div>
-    </div>
-    <script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
-    <script>
-        var options = {
-            series: [33, 33, 33],
-            chart: {
-                width: 550,
-                type: 'pie',
-            },
+        <script src="https://code.highcharts.com/highcharts.js"></script>
+        <script src="https://code.highcharts.com/modules/variable-pie.js"></script>
+        <script src="https://code.highcharts.com/modules/exporting.js"></script>
+        <script src="https://code.highcharts.com/modules/export-data.js"></script>
+        <script src="https://code.highcharts.com/modules/accessibility.js"></script>
 
-            colors: ['#29E7CD', '#F97035', '#F9CE35', '#F9CE35', '#F9CE35'],
-
-            labels: ['Lorem', 'Lorem', 'Lorem', 'Lorem', 'Lorem'],
-            responsive: [{
-                breakpoint: 480,
-                options: {
-                    chart: {
-                        width: 00
-                    },
-                    legend: {
-                        position: ''
-                    }
-                }
-            }],
-            fill: {
+        <script>
+            Highcharts.setOptions({
                 colors: ['#29E7CD', '#F97035', '#F9CE35']
-            },
-        };
+            });
+            Highcharts.chart('container', {
+                chart: {
+                    width: '400',
+                    type: 'variablepie'
+                },
 
-        var chart = new ApexCharts(document.querySelector("#chart"), options);
-        chart.render();
-    </script>
-@endsection
+                plotOptions: {
+                    pie: {
+                        allowPointSelect: true,
+                        cursor: 'pointer',
+                        dataLabels: {
+                            enabled: false
+                        },
+                        showInLegend: true
+                    }
+                },
+                tooltip: {
+                    enabled: false
+                },
+
+                series: [{
+                    minPointSize: 10,
+                    innerSize: '10%',
+                    zMin: 0,
+
+
+                    data: [{
+                        y: 55,
+                        z: 119
+                    }, {
+                        y: 100,
+                        z: 119
+                    }, {
+                        y: 123,
+                        z: 119
+                    }]
+                }]
+            });
+        </script>
+    @endsection
