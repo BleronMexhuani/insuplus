@@ -68,7 +68,7 @@
                     </div>
                 </div>
             </div>
-            <div class="table-responsive">
+            <div class="table-responsive-md">
                 <form action="{{ route('assignLead') }}" method="POST">
                     @csrf
                     <div class="d-flex row">
@@ -155,25 +155,12 @@
                                 </tr>
                             </tbody>
                         @endforeach
-
-
                     </table>
                 </form>
             </div>
         </div>
     </div>
     </div>
-
-
-
-
-
-    <style>
-        .container {
-            padding: 2rem 0rem;
-        }
-    </style>
-
     <script>
         $("#checkAll").click(function() {
             $(".check").prop('checked', $(this).prop('checked'));
