@@ -15,7 +15,7 @@
                     </div>
 
                 </div>
-           
+
                 <div class="col">
                     <div style="margin-top: 4px; width:25vh">
                         <div class="topPlaceholder px-4">
@@ -44,13 +44,13 @@
                     </div>
                 </div>
             </div>
-            <div class="table-responsive">
+            <div class="table-responsive-md">
                 <form action="{{ route('assignLead') }}" method="POST">
-                 @csrf
+                    @csrf
                     <div class="d-flex row">
-               
+
                         <div class="col-6">
-             
+
                             <select name="assign_to_id_call" id=""
                                 class="form-select inputleads select-form  mb-3">
                                 <option value=""></option>
@@ -66,11 +66,11 @@
                         </div>
 
                     </div>
-                    @if(Illuminate\Support\Facades\Session::has('message'))
-                    <span class="fs-5 mb-2 fw-500">
-                        {{Illuminate\Support\Facades\Session::get('message')}}
-                    </span>
-                @endif
+                    @if (Illuminate\Support\Facades\Session::has('message'))
+                        <span class="fs-5 mb-2 fw-500">
+                            {{ Illuminate\Support\Facades\Session::get('message') }}
+                        </span>
+                    @endif
                     <table class="table">
                         <thead style="background-color: #ebebeb;">
                             <tr class="text-center">
@@ -131,25 +131,12 @@
                                 </tr>
                             </tbody>
                         @endforeach
-
-
                     </table>
                 </form>
             </div>
         </div>
     </div>
     </div>
-
-
-
-
-
-    <style>
-        .container {
-            padding: 2rem 0rem;
-        }
-    </style>
-
     <script>
         $("#checkAll").click(function() {
             $(".check").prop('checked', $(this).prop('checked'));
