@@ -1,5 +1,29 @@
 @extends('layouts.app')
 @section('content')
+    <form action="{{route('searchLeads')}}" method="GET">
+        @csrf
+        <div class="row">
+            <div class="col-3">
+                <label for="">Creation Date</label>
+                <div class="row">
+                    <div class="col-6">
+                        <input type="date" class="form-control" name="created_at[]">
+                    </div>
+
+                    <div class="col-6">
+                        <input type="date" class="form-control" name="created_at[]">
+                    </div>
+                </div>
+
+
+            </div>
+            <div class="col-3 my-auto">
+                <button class="btn btn-primary" style="color:white">Search</button>
+            </div>
+        
+        </div>
+
+    </form>
     <div class="col ms-0 ms-md-2 px-0 px-md-5">
         <div class="mt-4 py-3 px-2">
             <span class="ms-1 subtitlelead ">All</span>
@@ -15,7 +39,7 @@
                     </div>
 
                 </div>
-           
+
                 <div class="col">
                     <div style="margin-top: 4px; width:25vh">
                         <div class="topPlaceholder px-4">
@@ -46,11 +70,11 @@
             </div>
             <div class="table-responsive">
                 <form action="{{ route('assignLead') }}" method="POST">
-                 @csrf
+                    @csrf
                     <div class="d-flex row">
-               
+
                         <div class="col-6">
-             
+
                             <select name="assign_to_id_call" id=""
                                 class="form-select inputleads select-form  mb-3">
                                 <option value=""></option>
@@ -66,11 +90,11 @@
                         </div>
 
                     </div>
-                    @if(Illuminate\Support\Facades\Session::has('message'))
-                    <span class="fs-5 mb-2 fw-500">
-                        {{Illuminate\Support\Facades\Session::get('message')}}
-                    </span>
-                @endif
+                    @if (Illuminate\Support\Facades\Session::has('message'))
+                        <span class="fs-5 mb-2 fw-500">
+                            {{ Illuminate\Support\Facades\Session::get('message') }}
+                        </span>
+                    @endif
                     <table class="table">
                         <thead style="background-color: #ebebeb;">
                             <tr class="text-center">

@@ -23,6 +23,7 @@
                     <select name="role" class="form-control" id="roles">
                         <option value="quality_agent">Quality Agent</option>
                         <option value="umfrage_agent">Umfrage Agent</option>
+                        <option value="team_leader">Team Leader</option>
                         <option value="call_agent">Call Agent</option>
                         <option value="supervisor">Supervisor</option>
                     </select>

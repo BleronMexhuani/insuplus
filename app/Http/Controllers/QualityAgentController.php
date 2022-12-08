@@ -14,7 +14,7 @@ class QualityAgentController extends Controller
     public function getLeads()
     {
 
-        $leads =  Lead::whereIn('feedback_status', ['termin','online_offerte'])->where('completed',1)->get();
+        $leads =  Lead::whereIn('feedback_status', ['Terminiert','online_offerte'])->where('completed',1)->get();
 
         return view('roles.quality_agent.leads', compact('leads'));
     }
