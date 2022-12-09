@@ -280,19 +280,22 @@
                     <!-- <div class=""> -->
                     <div class="col-auto">
                         <label class="tablinks" onclick="openCity(event, 'Falsche Nummer')">
-                            <input type="radio" name="feedback_status" value="Falsche Nummer" style="display: none;"> Falsche Nummer
+                            <input type="radio" name="feedback_status" value="Falsche Nummer"
+                                style="display: none;"> Falsche Nummer
                         </label>
                         <!-- <button class="tablinks" type="button" onclick="openCity(event, 'Falsche Nummer')">Falsche Nummer</button> -->
                     </div>
                     <div class="col-auto">
                         <label class="tablinks" onclick="openCity(event, 'Hat schon gewechselt')">
-                            <input type="radio" name="feedback_status" value="Hat schon gewechselt" style="display: none;"> Hat schon gewechselt
+                            <input type="radio" name="feedback_status" value="Hat schon gewechselt"
+                                style="display: none;"> Hat schon gewechselt
                         </label>
                         <!-- <button class="tablinks" type="button" onclick="openCity(event, 'Hat schon gewechselt')">Hat schon gewechselt</button> -->
                     </div>
                     <div class="col-auto">
                         <label class="tablinks" onclick="openCity(event, 'Kein Interesse')">
-                            <input type="radio" name="feedback_status" value="Kein Interesse" style="display: none;"> Kein Interesse
+                            <input type="radio" name="feedback_status" value="Kein Interesse"
+                                style="display: none;"> Kein Interesse
                         </label>
                         <!-- <button class="tablinks" type="button" onclick="openCity(event, 'Kein Interesse')">Kein Interesse</button> -->
                     </div>
@@ -304,70 +307,76 @@
                     </div>
                     <div class="col-auto">
                         <label class="tablinks" onclick="openCity(event, 'Kunde bereits terminiert')">
-                            <input type="radio" name="feedback_status" value="Kunde bereits terminiert" style="display: none;">Kunde bereits terminiert
+                            <input type="radio" name="feedback_status" value="Kunde bereits terminiert"
+                                style="display: none;">Kunde bereits terminiert
                         </label>
                         <!-- <button class="tablinks" type="button" onclick="openCity(event, 'Kunde bereits terminiert')">Kunde bereits terminiert</button> -->
                     </div>
                     <div class="col-auto">
                         <label class="tablinks" onclick="openCity(event, 'Nicht Brauchbar')">
-                            <input type="radio" name="feedback_status" value="Nicht Brauchbar" style="display: none;">Nicht Brauchbar
+                            <input type="radio" name="feedback_status" value="Nicht Brauchbar"
+                                style="display: none;">Nicht Brauchbar
                         </label>
                         <!-- <button class="tablinks" type="button" onclick="openCity(event, 'Nicht Brauchbar')">Nicht Brauchbar</button> -->
                     </div>
                     <div class="col-auto">
                         <label class="tablinks" onclick="openCity(event, 'Nicht Erreicht')">
-                            <input type="radio" name="feedback" value="Nicht Erreicht" style="display: none;">Nicht Erreicht
+                            <input type="radio" name="feedback" value="Nicht Erreicht"
+                                style="display: none;">Nicht Erreicht
                         </label>
                         <!-- <button class="tablinks" type="button" onclick="openCity(event, 'Nicht Erreicht')">Nicht Erreicht</button> -->
                     </div>
                     <div class="col-auto">
                         <label class="tablinks" onclick="openCity(event, 'Online-Offerte')">
-                            <input type="radio" name="feedback_status" value="Online-Offerte" style="display: none;">Online-Offerte
+                            <input type="radio" name="feedback_status" value="Online-Offerte"
+                                style="display: none;">Online-Offerte
                         </label>
                         <!-- <button class="tablinks" type="button" onclick="openCity(event, 'Online-Offerte')">Online-Offerte</button> -->
                     </div>
                     <div class="col-auto">
                         <label class="tablinks" onclick="openCity(event, 'Später Anrufrn')">
-                            <input type="radio" name="feedback_status" value="Später Anrufrn" style="display: none;">Später Anrufrn
+                            <input type="radio" name="feedback_status" value="Später Anrufrn"
+                                style="display: none;">Später Anrufrn
                         </label>
                         <!-- <button class="tablinks" type="button" onclick="openCity(event, 'Später Anrufrn')">Später Anrufrn</button> -->
                     </div>
                     <div class="col-auto">
                         <label class="tablinks" onclick="openCity(event, 'Terminiert')">
-                            <input type="radio" name="feedback_status" value="Terminiert" style="display: none;">Terminiert
+                            <input type="radio" name="feedback_status" value="Terminiert"
+                                style="display: none;">Terminiert
                         </label>
                         <!-- <button class="tablinks" type="button" onclick="openCity(event, 'Terminiert')">Terminiert</button> -->
                     </div>
 
-                    <div id="Falsche Nummer" class="">
+                    <div id="Falsche Nummer" class="tabcontent">
                         <div class="mt-5">
                             <hr>
-                            <div class="row">
-                                <div class="col mb-3">
-                                    <div class="mt-4">
-                                        <span class="subtitleform">Bestätigungsstatus</span>
-                                    </div>
-                                    <div class="mt-2">
-                                        <input class="inputform" type="text" name="bestatigungs_status" placeholder="Intern" />
-                                    </div>
+                            {{-- <div class="row">
+                            <div class="col mb-3">
+                                <div class="mt-4">
+                                    <span class="subtitleform">Bestätigungsstatus</span>
                                 </div>
-                                <div class="col mb-3">
-                                    <div class="mt-4">
-                                        <span class="subtitleform">Kontaktieren erwúnscht </span>
-                                        <div class="mt-2">
-                                            <input class="inputform" type="text" id="text" name="kontaktieren_erwunscht_2" placeholder="Ja">
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="mt-4">
-                                <span class="subtitleform">
-                                    Bemerkung
-                                </span>
                                 <div class="mt-2">
-                                    <input class="inputform" type="text" id="text" name="bemerkung" placeholder="">
+                                    <input class="inputform" type="text" name="bestatigungs_status" placeholder="Intern" />
                                 </div>
                             </div>
+                            <div class="col mb-3">
+                                <div class="mt-4">
+                                    <span class="subtitleform">Kontaktieren erwúnscht </span>
+                                    <div class="mt-2">
+                                        <input class="inputform" type="text" id="text" name="kontaktieren_erwunscht_2" placeholder="Ja">
+                                    </div>
+                                </div>
+                            </div>
+                        </div> --}}
+                            {{-- <div class="mt-4">
+                            <span class="subtitleform">
+                                Bemerkung
+                            </span>
+                            <div class="mt-2">
+                                <input class="inputform" type="text" id="text" name="bemerkung" placeholder="">
+                            </div>
+                        </div> --}}
                         </div>
                     </div>
 
@@ -375,72 +384,72 @@
                 <div id="Hat schon gewechselt" class="tabcontent">
                     <div class="mt-5">
                         <hr>
-                        <div class="row">
-                            <div class="col mb-3">
-                                <div class="mt-4">
-                                    <span class="subtitleform">Vertragdatum</span>
-                                </div>
-                                <div class="mt-2">
-                                    <input class="inputform" type="date" name="vertragdatum" placeholder="" />
-                                </div>
+                        {{-- <div class="row">
+                        <div class="col mb-3">
+                            <div class="mt-4">
+                                <span class="subtitleform">Vertragdatum</span>
                             </div>
-                            <div class="col mb-3">
-                                <div class="mt-4">
-                                    <span class="subtitleform">Bestätigungsstatus</span>
-                                </div>
-                                <div class="mt-2">
-                                    <input class="inputform" type="text" name="bestatigungs_status" placeholder="Intern" />
-                                </div>
-                            </div>
-                            <div class="col mb-3">
-                                <div class="mt-4">
-                                    <span class="subtitleform">Kontaktieren erwúnscht </span>
-                                    <div class="mt-2">
-                                        <input class="inputform" type="text" id="text" name="kontaktieren_erwunscht_2" placeholder="Ja">
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="mt-4">
-                            <span class="subtitleform">
-                                Bemerkung
-                            </span>
                             <div class="mt-2">
-                                <input class="inputform" type="text" id="text" name="bemerkung" placeholder="">
+                                <input class="inputform" type="date" name="vertragdatum" placeholder="" />
                             </div>
                         </div>
+                        <div class="col mb-3">
+                            <div class="mt-4">
+                                <span class="subtitleform">Bestätigungsstatus</span>
+                            </div>
+                            <div class="mt-2">
+                                <input class="inputform" type="text" name="bestatigungs_status" placeholder="Intern" />
+                            </div>
+                        </div>
+                        <div class="col mb-3">
+                            <div class="mt-4">
+                                <span class="subtitleform">Kontaktieren erwúnscht </span>
+                                <div class="mt-2">
+                                    <input class="inputform" type="text" id="text" name="kontaktieren_erwunscht_2" placeholder="Ja">
+                                </div>
+                            </div>
+                        </div>
+                    </div> --}}
+                        {{-- <div class="mt-4">
+                        <span class="subtitleform">
+                            Bemerkung
+                        </span>
+                        <div class="mt-2">
+                            <input class="inputform" type="text" id="text" name="bemerkung" placeholder="">
+                        </div> 
+                    </div> --}}
                     </div>
                 </div>
 
                 <div id="Kein Interesse" class="tabcontent">
                     <div class="mt-5">
                         <hr>
-                        <div class="row">
-                            <div class="col mb-3">
-                                <div class="mt-4">
-                                    <span class="subtitleform">Bestätigungsstatus</span>
-                                </div>
-                                <div class="mt-2">
-                                    <input class="inputform" type="text" name="bestatigungs_status" placeholder="Intern" />
-                                </div>
+                        {{-- <div class="row">
+                        <div class="col mb-3">
+                            <div class="mt-4">
+                                <span class="subtitleform">Bestätigungsstatus</span>
                             </div>
-                            <div class="col mb-3">
-                                <div class="mt-4">
-                                    <span class="subtitleform">Kontaktieren erwúnscht </span>
-                                    <div class="mt-2">
-                                        <input class="inputform" type="text" id="text" name="kontaktieren_erwunscht_2" placeholder="Ja">
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="mt-4">
-                            <span class="subtitleform">
-                                Bemerkung
-                            </span>
                             <div class="mt-2">
-                                <input class="inputform" type="text" id="text" name="bemerkung" placeholder="">
+                                <input class="inputform" type="text" name="bestatigungs_status" placeholder="Intern" />
                             </div>
                         </div>
+                        <div class="col mb-3">
+                            <div class="mt-4">
+                                <span class="subtitleform">Kontaktieren erwúnscht </span>
+                                <div class="mt-2">
+                                    <input class="inputform" type="text" id="text" name="kontaktieren_erwunscht_2" placeholder="Ja">
+                                </div>
+                            </div>
+                        </div>
+                    </div> --}}
+                        {{-- <div class="mt-4">
+                        <span class="subtitleform">
+                            Bemerkung
+                        </span>
+                         <div class="mt-2">
+                            <input class="inputform" type="text" id="text" name="bemerkung" placeholder="">
+                        </div> 
+                    </div> --}}
                     </div>
                 </div>
 
@@ -448,160 +457,160 @@
                     <div class="mt-5">
 
                         <hr>
-                        <div class="row">
-                            <div class="col mb-3">
-                                <div class="mt-4">
-                                    <span class="subtitleform">Bestätigungsstatus</span>
-                                </div>
-                                <div class="mt-2">
-                                    <input class="inputform" type="text" name="bestatigungs_status" placeholder="Intern" />
-                                </div>
+                        {{-- <div class="row">
+                        <div class="col mb-3">
+                            <div class="mt-4">
+                                <span class="subtitleform">Bestätigungsstatus</span>
                             </div>
-                            <div class="col mb-3">
-                                <div class="mt-4">
-                                    <span class="subtitleform">Kontaktieren erwúnscht </span>
-                                    <div class="mt-2">
-                                        <input class="inputform" type="text" id="text" name="kontaktieren_erwunscht_2" placeholder="Ja">
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="mt-4">
-                            <span class="subtitleform">
-                                Bemerkung
-                            </span>
                             <div class="mt-2">
-                                <input class="inputform" type="text" id="text" name="bemerkung" placeholder="">
+                                <input class="inputform" type="text" name="bestatigungs_status" placeholder="Intern" />
                             </div>
                         </div>
+                        <div class="col mb-3">
+                            <div class="mt-4">
+                                <span class="subtitleform">Kontaktieren erwúnscht </span>
+                                <div class="mt-2">
+                                    <input class="inputform" type="text" id="text" name="kontaktieren_erwunscht_2" placeholder="Ja">
+                                </div>
+                            </div>
+                        </div>
+                    </div> --}}
+                        {{-- <div class="mt-4">
+                        <span class="subtitleform">
+                            Bemerkung
+                        </span>
+                         <div class="mt-2">
+                            <input class="inputform" type="text" id="text" name="bemerkung" placeholder="">
+                        </div> 
+                    </div> --}}
                     </div>
                 </div>
 
                 <div id="Kunde bereits terminiert" class="tabcontent">
                     <div class="mt-5">
                         <hr>
-                        <div class="row">
-                            <div class="col mb-3">
-                                <div class="mt-4">
-                                    <span class="subtitleform">Bestätigungsstatus</span>
-                                </div>
-                                <div class="mt-2">
-                                    <input class="inputform" type="text" name="bestatigungs_status" placeholder="Intern" />
-                                </div>
+                        {{-- <div class="row">
+                        <div class="col mb-3">
+                            <div class="mt-4">
+                                <span class="subtitleform">Bestätigungsstatus</span>
                             </div>
-                            <div class="col mb-3">
-                                <div class="mt-4">
-                                    <span class="subtitleform">Kontaktieren erwúnscht </span>
-                                    <div class="mt-2">
-                                        <input class="inputform" type="text" id="text" name="kontaktieren_erwunscht_2" placeholder="Ja">
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="mt-4">
-                            <span class="subtitleform">
-                                Bemerkung
-                            </span>
                             <div class="mt-2">
-                                <input class="inputform" type="text" id="text" name="bemerkung" placeholder="">
+                                <input class="inputform" type="text" name="bestatigungs_status" placeholder="Intern" />
                             </div>
                         </div>
+                        <div class="col mb-3">
+                            <div class="mt-4">
+                                <span class="subtitleform">Kontaktieren erwúnscht </span>
+                                <div class="mt-2">
+                                    <input class="inputform" type="text" id="text" name="kontaktieren_erwunscht_2" placeholder="Ja">
+                                </div>
+                            </div>
+                        </div>
+                    </div> --}}
+                        {{-- <div class="mt-4">
+                        <span class="subtitleform">
+                            Bemerkung
+                        </span>
+                         <div class="mt-2">
+                            <input class="inputform" type="text" id="text" name="bemerkung" placeholder="">
+                        </div> 
+                    </div> --}}
                     </div>
                 </div>
 
                 <div id="Nicht Brauchbar" class="tabcontent">
                     <div class="mt-5">
                         <hr>
-                        <div class="row">
-                            <div class="col mb-3">
-                                <div class="mt-4">
-                                    <span class="subtitleform">Bestätigungsstatus</span>
-                                </div>
-                                <div class="mt-2">
-                                    <input class="inputform" type="text" name="bestatigungs_status" placeholder="Intern" />
-                                </div>
+                        {{-- <div class="row">
+                        <div class="col mb-3">
+                            <div class="mt-4">
+                                <span class="subtitleform">Bestätigungsstatus</span>
                             </div>
-                            <div class="col mb-3">
-                                <div class="mt-4">
-                                    <span class="subtitleform">Kontaktieren erwúnscht </span>
-                                    <div class="mt-2">
-                                        <input class="inputform" type="text" id="text" name="kontaktieren_erwunscht_2" placeholder="Ja">
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="mt-4">
-                            <span class="subtitleform">
-                                Bemerkung
-                            </span>
                             <div class="mt-2">
-                                <input class="inputform" type="text" id="text" name="bemerkung" placeholder="">
+                                <input class="inputform" type="text" name="bestatigungs_status" placeholder="Intern" />
                             </div>
                         </div>
+                        <div class="col mb-3">
+                            <div class="mt-4">
+                                <span class="subtitleform">Kontaktieren erwúnscht </span>
+                                <div class="mt-2">
+                                    <input class="inputform" type="text" id="text" name="kontaktieren_erwunscht_2" placeholder="Ja">
+                                </div>
+                            </div>
+                        </div>
+                    </div> --}}
+                        {{-- <div class="mt-4">
+                        <span class="subtitleform">
+                            Bemerkung
+                        </span>
+                         <div class="mt-2">
+                            <input class="inputform" type="text" id="text" name="bemerkung" placeholder="">
+                        </div> 
+                    </div> --}}
                     </div>
                 </div>
 
                 <div id="Nicht Erreicht" class="tabcontent">
                     <div class="mt-5">
                         <hr>
-                        <div class="row">
-                            <div class="col mb-3">
-                                <div class="mt-4">
-                                    <span class="subtitleform">Bestätigungsstatus</span>
-                                </div>
-                                <div class="mt-2">
-                                    <input class="inputform" type="text" name="bestatigungs_status" placeholder="Intern" />
-                                </div>
+                        {{-- <div class="row">
+                        <div class="col mb-3">
+                            <div class="mt-4">
+                                <span class="subtitleform">Bestätigungsstatus</span>
                             </div>
-                            <div class="col mb-3">
-                                <div class="mt-4">
-                                    <span class="subtitleform">Kontaktieren erwúnscht </span>
-                                    <div class="mt-2">
-                                        <input class="inputform" type="text" id="text" name="kontaktieren_erwunscht_2" placeholder="Ja">
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="mt-4">
-                            <span class="subtitleform">
-                                Bemerkung
-                            </span>
                             <div class="mt-2">
-                                <input class="inputform" type="text" id="text" name="bemerkung" placeholder="">
+                                <input class="inputform" type="text" name="bestatigungs_status" placeholder="Intern" />
                             </div>
                         </div>
+                        <div class="col mb-3">
+                            <div class="mt-4">
+                                <span class="subtitleform">Kontaktieren erwúnscht </span>
+                                <div class="mt-2">
+                                    <input class="inputform" type="text" id="text" name="kontaktieren_erwunscht_2" placeholder="Ja">
+                                </div>
+                            </div>
+                        </div>
+                    </div> --}}
+                        {{-- <div class="mt-4">
+                        <span class="subtitleform">
+                            Bemerkung
+                        </span>
+                         <div class="mt-2">
+                            <input class="inputform" type="text" id="text" name="bemerkung" placeholder="">
+                        </div> 
+                    </div> --}}
                     </div>
                 </div>
 
                 <div id="Online-Offerte" class="tabcontent">
                     <div class="mt-5">
                         <hr>
-                        <div class="row">
-                            <div class="col mb-3">
-                                <div class="mt-4">
-                                    <span class="subtitleform">Bestätigungsstatus</span>
-                                </div>
-                                <div class="mt-2">
-                                    <input class="inputform" type="text" name="bestatigungs_status" placeholder="Intern" />
-                                </div>
+                        {{-- <div class="row">
+                        <div class="col mb-3">
+                            <div class="mt-4">
+                                <span class="subtitleform">Bestätigungsstatus</span>
                             </div>
-                            <div class="col mb-3">
-                                <div class="mt-4">
-                                    <span class="subtitleform">Kontaktieren erwúnscht </span>
-                                    <div class="mt-2">
-                                        <input class="inputform" type="text" id="text" name="kontaktieren_erwunscht_2" placeholder="Ja">
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="mt-4">
-                            <span class="subtitleform">
-                                Bemerkung
-                            </span>
                             <div class="mt-2">
-                                <input class="inputform" type="text" id="text" name="bemerkung" placeholder="">
+                                <input class="inputform" type="text" name="bestatigungs_status" placeholder="Intern" />
                             </div>
                         </div>
+                        <div class="col mb-3">
+                            <div class="mt-4">
+                                <span class="subtitleform">Kontaktieren erwúnscht </span>
+                                <div class="mt-2">
+                                    <input class="inputform" type="text" id="text" name="kontaktieren_erwunscht_2" placeholder="Ja">
+                                </div>
+                            </div>
+                        </div>
+                    </div> --}}
+                        {{-- <div class="mt-4">
+                        <span class="subtitleform">
+                            Bemerkung
+                        </span>
+                         <div class="mt-2">
+                            <input class="inputform" type="text" id="text" name="bemerkung" placeholder="">
+                        </div> 
+                    </div> --}}
                     </div>
                 </div>
 
@@ -622,39 +631,40 @@
                                     <span class="subtitleform">Zeit für Annrufe</span>
                                 </div>
                                 <div class="mt-2">
-                                    <input class="inputform" type="number" name="zeitfuranrufen" placeholder="09:00" />
+                                    <input class="inputform" type="number" name="zeitfuranrufen"
+                                        placeholder="09:00" />
                                 </div>
                             </div>
                         </div>
                     </div>
                     <div class="mt-5">
                         <hr>
-                        <div class="row">
-                            <div class="col mb-3">
-                                <div class="mt-4">
-                                    <span class="subtitleform">Bestätigungsstatus</span>
-                                </div>
-                                <div class="mt-2">
-                                    <input class="inputform" type="text" name="bestatigungs_status" placeholder="Intern" />
-                                </div>
+                        {{-- <div class="row">
+                        <div class="col mb-3">
+                            <div class="mt-4">
+                                <span class="subtitleform">Bestätigungsstatus</span>
                             </div>
-                            <div class="col mb-3">
-                                <div class="mt-4">
-                                    <span class="subtitleform">Kontaktieren erwúnscht </span>
-                                    <div class="mt-2">
-                                        <input class="inputform" type="text" id="text" name="kontaktieren_erwunscht_2" placeholder="Ja">
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="mt-4">
-                            <span class="subtitleform">
-                                Bemerkung
-                            </span>
                             <div class="mt-2">
-                                <input class="inputform" type="text" id="text" name="bemerkung" placeholder="">
+                                <input class="inputform" type="text" name="bestatigungs_status" placeholder="Intern" />
                             </div>
                         </div>
+                        <div class="col mb-3">
+                            <div class="mt-4">
+                                <span class="subtitleform">Kontaktieren erwúnscht </span>
+                                <div class="mt-2">
+                                    <input class="inputform" type="text" id="text" name="kontaktieren_erwunscht_2" placeholder="Ja">
+                                </div>
+                            </div>
+                        </div>
+                    </div> --}}
+                        {{-- <div class="mt-4">
+                        <span class="subtitleform">
+                            Bemerkung
+                        </span>
+                         <div class="mt-2">
+                            <input class="inputform" type="text" id="text" name="bemerkung" placeholder="">
+                        </div> 
+                    </div> --}}
                     </div>
                 </div>
 
@@ -667,10 +677,7 @@
                                     <span class="subtitleform">Termindatum</span>
                                 </div>
                                 <div class="mt-2">
-
-                                    <input class="inputformm" type="text" name="mitbewohner"
-                                        placeholder="" />
-
+                                    <input class="inputform" type="text" name="termindatum" placeholder="" />
                                 </div>
                             </div>
                             <div class="col mb-3">
@@ -689,7 +696,10 @@
                                     Namen und Geburtsdaten Ihrer Familienangehörigen (Mitbewohner)?</span>
                             </div>
                             <div class="mt-2">
-                                <input class="inputformm" type="text" name="koment_der_geburtsdatum" placeholder="" />
+
+                                <input class="inputformm" type="text" name="koment_der_geburtsdatum"
+
+                                    placeholder="" />
                             </div>
                         </div>
                         <div>
@@ -703,36 +713,57 @@
                         </div>
                         <div class="mt-5">
                             <hr>
-                            <div class="row">
-                                <div class="col mb-3">
-                                    <div class="mt-4">
-                                        <span class="subtitleform">Bestätigungsstatus</span>
-
-                                    </div>
-                                    <div class="mt-2">
-                                        <input class="inputform" type="text" name="bestatigungs_status" placeholder="Intern" />
-                                    </div>
+                            {{-- <div class="row">
+                            <div class="col mb-3">
+                                <div class="mt-4">
+                                    <span class="subtitleform">Bestätigungsstatus</span>
                                 </div>
-                                <div class="col mb-3">
-                                    <div class="mt-4">
-                                        <span class="subtitleform">Kontaktieren erwúnscht </span>
-                                        <div class="mt-2">
-                                            <input class="inputform" type="text" id="text" name="kontaktieren_erwunscht_2" placeholder="Ja">
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="mt-4">
-                                <span class="subtitleform">
-                                    Bemerkung
-                                </span>
                                 <div class="mt-2">
-                                    <input class="inputform" type="text" id="text" name="bemerkung" placeholder="">
+                                    <input class="inputform" type="text" name="bestatigungs_status" placeholder="Intern" />
                                 </div>
                             </div>
+                            <div class="col mb-3">
+                                <div class="mt-4">
+                                    <span class="subtitleform">Kontaktieren erwúnscht </span>
+                                    <div class="mt-2">
+                                        <input class="inputform" type="text" id="text" name="kontaktieren_erwunscht_2" placeholder="Ja">
+                                    </div>
+                                </div>
+                            </div>
+                        </div> --}}
                         </div>
                     </div>
                 </div>
+
+                <div class="row">
+                    <div class="col mb-3">
+                        <div class="mt-2 ms-2" id="bestatigungs_status" style="display: none">
+                            <div class="mt-4">
+                                <span class="subtitleform">Bestätigungsstatus</span>
+                            </div>
+                            <input class="inputform mt-2" type="text" name="bestatigungs_status"
+                                placeholder="Intern" />
+                        </div>
+                    </div>
+                    <div class="col mb-3">
+                        <div class="mt-2 me-2" id="kontaktieren_erwunscht_2" style="display: none">
+                            <div class="mt-4">
+                                <span class="subtitleform">Kontaktieren erwúnscht </span>
+                            </div>
+                            <input class="inputform mt-2" type="text" id="text"
+                                name="kontaktieren_erwunscht_2" placeholder="Ja">
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class=" ms-2 me-3 py-2" id="bemerkungDiv" style="display: none">
+                    <div class="mt-4">
+                        <span class="subtitleform">Bemerkung </span>
+                    </div>
+                    <input class="inputform mt-2" type="text" id="text" name="bemerkung" placeholder="">
+                </div>
+
                 <div class="pull-right d-flex justify-content-end mt-5 mt-md-5">
                     <button class="btn btn-outline-danger  me-3">Abbrechen</button>
                     <button class="btn btn-outline-success" type="submit">Speichern</button>
@@ -752,6 +783,10 @@
                 }
                 document.getElementById(cityName).style.display = "block";
                 evt.currentTarget.className += " active";
+                document.getElementById('bemerkungDiv').style.display = "block"
+                document.getElementById('bestatigungs_status').style.display = "block"
+                document.getElementById('kontaktieren_erwunscht_2').style.display = "block"
+
             }
         </script>
 

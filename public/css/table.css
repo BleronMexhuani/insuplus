@@ -1,5 +1,4 @@
-
-.custom-control-label::after{
+.custom-control-label::after {
     background-color: white;
 }
 
@@ -8,70 +7,71 @@
     border-bottom: #e9ecef !important;
 }
 
-.table>:not(:last-child)>:last-child>* {
+.table > :not(:last-child) > :last-child > * {
     border-bottom-color: #ebebeb !important;
 }
-
 
 label {
     display: inline-block;
     margin-bottom: 0rem !important;
 }
-.table td, .table th {
+.table td,
+.table th {
     padding: 0.75rem;
     vertical-align: top;
     border-top: none !important;
 }
 
-tr{
+tr {
     font-size: 14px;
 }
 
-tr:hover {background-color: #ebebeb;}
+tr:hover {
+    background-color: #ebebeb;
+}
 
-.formsearch{
+.formsearch {
     background-color: white !important;
-    border: 1px solid #EAECEE;
+    border: 1px solid #eaecee;
     border-radius: 8px;
     padding: 28px !important;
     width: 100%;
 }
 
 .form-select:focus {
-    border-color: #EAECEE !important;
+    border-color: #eaecee !important;
     outline: 0;
     box-shadow: none !important;
 }
 
 .form-select:focus {
-    border-color: #EAECEE !important;
+    border-color: #eaecee !important;
     outline: 0;
     box-shadow: none !important;
 }
 
-.btnedit{
-    border: none; 
+.btnedit {
+    border: none;
     color: #17a2b8 !important;
     background-color: transparent;
     border-color: #17a2b8 !important;
     outline: none;
     padding: 3px 10px;
     border: 1px solid;
-    
 }
 
-.btnedit:hover{
-    background-color:#00727A ;
+.btnedit:hover {
+    background-color: #00727a;
     color: white !important;
 }
 
 .btn:focus-visible {
-    color: #00727A  !important;
-    background-color: #00727A !important ;
+    color: #00727a !important;
+    background-color: #00727a !important ;
 }
 
-.btndelete{
-    border: none; 
+.btndelete {
+    border: none;
     color: red !important;
     background-color: transparent;
     border-color: red !important;
@@ -80,8 +80,8 @@ tr:hover {background-color: #ebebeb;}
     border: 1px solid;
 }
 
-.btndelete:hover{
-    background-color:red ;
+.btndelete:hover {
+    background-color: red;
     color: white !important;
 }
 
@@ -92,11 +92,11 @@ tr:hover {background-color: #ebebeb;}
     width: min-content;
 }
 
-.topPlaceholder span{
+.topPlaceholder span {
     font-size: 14px;
 }
 
-.select-form{
+.select-form {
     border-top: 0px solid !important;
 }
 
@@ -105,21 +105,136 @@ tr:hover {background-color: #ebebeb;}
     z-index: 1;
     left: 12px;
     top: 15px;
-    color: #7B7B7B;
+    color: #7b7b7b;
     cursor: pointer;
-    width: 0
+    width: 0;
 }
 
-.inputleads{
-    border: 1px solid #EAECEE;
+.inputleads {
+    border: 1px solid #eaecee;
     border-radius: 8px;
     padding: 10px;
     width: 100%;
 }
 
-.subtitleleadtable{
+.subtitleleadtable {
     font-weight: 600;
     font-size: 18px;
     line-height: 21px;
-    color: #1F1F1F;
+    color: #1f1f1f;
+}
+
+/* Filter/supervisor */
+
+.accordionbg {
+    background-color: #ebebeb;
+}
+
+.acordion{
+    background-color: transparent;
+    padding: 18px;
+    border: none;
+    outline: none;
+    font-size: 15px;
+    transition: 0.4s;
+    cursor: pointer;
+
+}
+.accordion {
+    background-color: transparent;
+    color: #444;
+    cursor: pointer;
+    padding: 18px;
+    /* width: 100%; */
+    border: none;
+    text-align: left;
+    outline: none;
+    font-size: 15px;
+    transition: 0.4s;
+}
+
+
+/* .active, .accordion:hover {
+    background-color: #ccc; 
+  } */
+
+.panel {
+    padding: 0 18px;
+    display: none;
+    background-color: white;
+    /* overflow: hidden; */
+  
+}
+
+.form-controol {
+    display: block;
+    width: 100%;
+    padding: 0.3rem 0.75rem;
+    font-size: 1rem;
+    line-height: 1.5;
+    color: #495057;
+    background-color: #fff;
+    background-clip: padding-box;
+    border: 1px solid #ced4da;
+    border-radius: 0.25rem;
+    transition: border-color 0.15s ease-in-out;
+    box-shadow: 0.15s ease-in-out;
+}
+
+.bs-select-all{
+    border: none !important;
+    font-size: 12px !important;
+    color: #3F4852 !important;
+}
+
+.bs-deselect-all{
+    border: none !important;
+    font-size: 12px !important;
+    color: #3F4852 !important;
+}
+
+.filter-option-inner-inner{
+   color: #3F4852 !important
+   ;
+}
+.btn:active{
+        color: #fffcfc !important; 
+    background-color: #fffcfc !important; 
+   border-color: #fffcfc !important; 
+ box-shadow: var(--mdb-btn-active-shadow); 
+}
+
+.btn-light:hover{
+    box-shadow: none !important;
+    background-color: none !important;
+}
+
+/* .btn:hover {
+    color: var(--mdb-btn-hover-color);
+    background-color: #fff !important;
+    border-color: var(--mdb-btn-hover-border-color);
+} */
+
+.bootstrap-select
+.dropdown-toggle:focus{
+    outline: thin dotted rgb(255, 252, 252)!important;
+    outline: none!important;
+    outline-offset: -2px;
+}
+
+.bootstrap-select:not([class*=col-]):not([class*=form-control]):not(.input-group-btn){
+    width: 341px !important;
+}
+
+.btn:hover {
+    /* color: none !important; 
+    border: none !important; */
+}
+
+.dropdown-toggle{
+    border: none !important ;
+}
+
+.pull-right{
+    float: right;
 }
