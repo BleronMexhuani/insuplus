@@ -32,6 +32,7 @@ Route::middleware('auth')->group(function () {
     require __DIR__ . '/roles/callagent.php';
     require __DIR__ . '/roles/qualityagent.php';
     require __DIR__ . '/roles/confirmation_agent.php';
+    require __DIR__ .'/roles/team_leader.php';
 });
 
 require __DIR__ . '/auth.php';

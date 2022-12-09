@@ -25,4 +25,8 @@ Route::middleware(['role:supervisor'])->group(function () {
     Route::post('/createUser/add',[SupervisorController::class,'addUser'])->name('createUser.add');
 
     Route::get('getLeadById/{id}',[SupervisorController::class,'getLeadById'])->name('getLeadById');
+
+    Route::get('/createGroup', [SupervisorController::class,'getGroupInfo'])->name('createGroup');
+
+    Route::post('handleSubmitCreateGroup',[SupervisorController::class,'createGroup'])->name('handleSubmitCreateGroup');
 });

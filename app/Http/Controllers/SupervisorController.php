@@ -4,13 +4,14 @@ namespace App\Http\Controllers;
 
 use App\Models\FeedBack;
 use App\Models\Lead;
+use App\Models\Team;
 use App\Models\User;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 
-use function PHPUnit\Framework\isEmpty;
+
 
 class SupervisorController extends Controller
 {
@@ -50,7 +51,6 @@ class SupervisorController extends Controller
             } else {
                 $lead->where($key, $value);
             }
-        
         }
         return $lead->get();
     }
@@ -158,5 +158,25 @@ class SupervisorController extends Controller
             Lead::where('id', $lead_id)->update(['completed' => -1, 'feedback_status' => $req->feedback_status]);
         }
         return redirect('supervisor/leads');
+    }
+    public function getGroupInfo()
+    {
+
+        $umfrage = User::role(['umfrage_agent'])->get();
+        $callagents = User::role(['call_agent'])->get();
+        $team_leaders = User::role(['team_leader'])->get();
+        return view('roles.supervisor.create_group', compact('umfrage', 'callagents', 'team_leaders'));
+    }
+
+    public function createGroup(Request $req)
+    {
+      
+        $req['umfrage_agents'] =  implode(",", $req['umfrage_agents']);
+        $req['call_agents']  =  implode(",", $req['call_agents']);
+        $req['team_leaders'] =  implode(",", $req['team_leaders']);
+
+        Team::create($req->except('_token'));
+
+        return redirect()->back();
     }
 }
