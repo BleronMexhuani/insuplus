@@ -23,8 +23,9 @@
         </div> --}}
 
     </form>
-    <div class="col ms-0 ms-md-2 px-0 px-md-5">
-
+    <div class="container">
+    <div class="col col px-4 px-md-5">
+        <div class="containter">
         <div class="mt-4 py-3 px-2">
             <div class="accordionbg mb-4">
                 <button class="acordion pull-right">Erweiter</button>
@@ -35,26 +36,30 @@
                             <div class="mt-4">
                                 <span class="subtitleform">Erstellungsdatum</span>
                             </div>
-                            <div class="input-group mt-2">
-                                <input type="text" class="form-controol input-sm" placeholder="von"
+                            <div class="mt-2 ">
+                                <div class="input-group mt-2 ">
+                                    <input type="text" class="form-controol input-sm mb-4" placeholder="von"
                                     onfocus="(this.type='date')" onblur="(this.type='text')" max="2022-12-09" name=""
                                     onchange="change()">
-                                <input type="text" class="form-controol input-sm" placeholder="bis"
+                                <input type="text" class="form-controol input-sm mb-4" placeholder="bis"
                                     onfocus="(this.type='date')" onblur="(this.type='text')" max="2022-12-09"
                                     name="">
+                                </div>
                             </div>
                         </div>
                         <div class="col-md-3 mb-3">
                             <div class="mt-4">
                                 <span class="subtitleform">Verteildatum</span>
                             </div>
-                            <div class="input-group mt-2">
-                                <input type="text" class="form-control input-sm" placeholder="von"
+                            <div class="mt-2 ">
+                                <div class="input-group mt-2 ">
+                                    <input type="text" class="form-controol input-sm mb-4" placeholder="von"
                                     onfocus="(this.type='date')" onblur="(this.type='text')" max="2022-12-09" name=""
                                     onchange="change()">
-                                <input type="text" class="form-control input-sm" placeholder="bis"
+                                <input type="text" class="form-controol input-sm mb-4" placeholder="bis"
                                     onfocus="(this.type='date')" onblur="(this.type='text')" max="2022-12-09"
                                     name="">
+                                </div>
                             </div>
                         </div>
                         <div class="col-md-3 mb-3">
@@ -394,6 +399,7 @@
                             {{ Illuminate\Support\Facades\Session::get('message') }}
                         </span>
                     @endif
+                    <div style="overflow-x:auto;">
                     <table class="table">
                         <thead style="background-color: #ebebeb;">
                             <tr class="text-center">
@@ -455,10 +461,13 @@
                             </tbody>
                         @endforeach
                     </table>
+                </div>
                 </form>
             </div>
         </div>
     </div>
+    </div>
+</div>
     </div>
     <script>
         $("#checkAll").click(function() {

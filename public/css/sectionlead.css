@@ -36,6 +36,11 @@
     color: #00727A !important;
     border-color: #00727A !important;
 }
+
+
+.navbar-toggler-icon{
+    background-image: url(../assets/img/hamburgermenu.svg) !important;
+}
 .inputform{
     border: 1px solid #EAECEE;
     border-radius: 8px;

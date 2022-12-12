@@ -169,7 +169,7 @@ tr:hover {
 .form-controol {
     display: block;
     width: 100%;
-    padding: 0.3rem 0.75rem;
+    padding: 3px 7px !important;
     font-size: 1rem;
     line-height: 1.5;
     color: #495057;
@@ -179,6 +179,7 @@ tr:hover {
     border-radius: 0.25rem;
     transition: border-color 0.15s ease-in-out;
     box-shadow: 0.15s ease-in-out;
+    border-radius: 8px;
 }
 
 .bs-select-all{
@@ -223,7 +224,7 @@ tr:hover {
 }
 
 .bootstrap-select:not([class*=col-]):not([class*=form-control]):not(.input-group-btn){
-    width: 341px !important;
+    width: 100% !important;
 }
 
 .btn:hover {
@@ -238,3 +239,4 @@ tr:hover {
 .pull-right{
     float: right;
 }
+
