@@ -19,6 +19,7 @@
                                 <div class="mt-4">
                                     <span class="subtitleform">Erstellungsdatum</span>
                                 </div>
+
                                 <div class="input-group mt-2">
                                     <input type="text" class="form-controol input-sm" placeholder="von"
                                         onfocus="(this.type='date')" onblur="(this.type='text')" 
@@ -385,6 +386,7 @@
                             {{ Illuminate\Support\Facades\Session::get('message') }}
                         </span>
                     @endif
+                    <div style="overflow-x:auto;">
                     <table class="table">
                         <thead style="background-color: #ebebeb;">
                             <tr class="text-center">
@@ -447,10 +449,13 @@
                             </tbody>
                         @endforeach
                     </table>
+                </div>
                 </form>
             </div>
         </div>
     </div>
+    </div>
+</div>
     </div>
     <script>
         $("#checkAll").click(function() {
