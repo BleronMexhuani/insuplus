@@ -5,7 +5,7 @@ use Illuminate\Support\Facades\Route;
 
 Route::middleware(['role:supervisor'])->group(function () {
 
-    Route::post("assignLead", [SupervisorController::class, 'assignLead'])->name('assignLead');
+    Route::post("supervisor/assignLead", [SupervisorController::class, 'assignLead'])->name('assignLead');
     
     Route::get("users", [SupervisorController::class, 'getUsers'])->name('getusers');
     
@@ -14,7 +14,7 @@ Route::middleware(['role:supervisor'])->group(function () {
     Route::get('supervisor/leads',[SupervisorController::class,'leads'])->name('supervisorleads');
 
     Route::post('supervisor/leads',[SupervisorController::class,'leads'])->name('searchLeads');
-
+    
     //Updating user
     Route::put('update_user/{id}',[SupervisorController::class,'updateUser'])->name('updateUser');
     //Delete User by ID
@@ -29,4 +29,6 @@ Route::middleware(['role:supervisor'])->group(function () {
     Route::get('/createGroup', [SupervisorController::class,'getGroupInfo'])->name('createGroup');
 
     Route::post('handleSubmitCreateGroup',[SupervisorController::class,'createGroup'])->name('handleSubmitCreateGroup');
+
+    Route::post('supervisor/storeFeedBack/{lead_id}', [SupervisorController::class, 'storeFeedBack'])->name('supervisor.storeFeedBack');
 });

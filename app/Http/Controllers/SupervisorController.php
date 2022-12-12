@@ -19,10 +19,11 @@ class SupervisorController extends Controller
     public function leads(Request $req)
     {
         $callagents = User::role(['call_agent'])->get();
-
+        $umfrage_agents = User::role(['umfrage_agent'])->get();
+        $teams = Team::all();
         $leads = $this->leadsOfSupervisor($req);
 
-        return view('roles.supervisor.leads', compact('callagents', 'leads'));
+        return view('roles.supervisor.leads', compact('callagents', 'leads', 'umfrage_agents', 'teams'));
     }
 
     public function leadsOfSupervisor(Request $req)
@@ -31,28 +32,35 @@ class SupervisorController extends Controller
         $lead = Lead::query();
 
         foreach ($req->except('_token') as $key => $value) {
+            if (is_array($req->$key) && $key!=='teams') {
+                if ($value[0] !== null && $value[1] !== null) {
+                    $lead->whereBetween($key, $value);
+                }
+            } else if ($key == 'teams') {
+                $team = Team::whereIn('id', $value)->get();
+                $call_agents = '';
+                $umfrage_agents = '';
 
-            if ($key == 'created_at') {
-                if ($value[0] !== null && $value[1] !== null) {
-                    $lead->whereBetween($key, $value);
+                for ($i = 0; $i < count($team); $i++) {
+                    $call_agents .= $team[$i]->call_agents . ($i + 1 != count($team) ? ',' : '');
+                    $umfrage_agents .= $team[$i]->umfrage_agents . ($i + 1 != count($team) ? ',' : '');
                 }
-            } else if ($key == 'verteil_datum') {
-                if ($value[0] !== null && $value[1] !== null) {
-                    $lead->whereBetween($key, $value);
-                }
-            } else if ($key == 'jahrgang') {
-                if ($value[0] !== null && $value[1] !== null) {
-                    $lead->whereBetween($key, $value);
-                }
-            } else if ($key == 'anrufen') {
-                if ($value[0] !== null && $value[1] !== null) {
-                    $lead->whereBetween($key, $value);
-                }
+               
+                $call_agents = explode(',', $call_agents);
+                $umfrage_agents = explode(',', $umfrage_agents);
+                //make array unique
+                $call_agents = array_unique($call_agents);
+                $umfrage_agents = array_unique($umfrage_agents);
+
+                //This is only for the moment , we can also add umfrage agents maybe later
+                $lead->whereIn('assign_to_id_call', $call_agents);
+
             } else {
                 $lead->where($key, $value);
             }
         }
-        return $lead->get();
+
+        return $lead->orderBy('created_at', 'desc')->get();
     }
 
     //
@@ -170,7 +178,7 @@ class SupervisorController extends Controller
 
     public function createGroup(Request $req)
     {
-      
+
         $req['umfrage_agents'] =  implode(",", $req['umfrage_agents']);
         $req['call_agents']  =  implode(",", $req['call_agents']);
         $req['team_leaders'] =  implode(",", $req['team_leaders']);
