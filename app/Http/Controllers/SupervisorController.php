@@ -32,7 +32,7 @@ class SupervisorController extends Controller
         $lead = Lead::query();
 
         foreach ($req->except('_token') as $key => $value) {
-            if (is_array($req->$key) && $key!=='teams') {
+            if ($key == 'created_at' || $key == 'verteilen_datum' || $key == 'geburtsdatum' || $key == 'anrufdatum') {
                 if ($value[0] !== null && $value[1] !== null) {
                     $lead->whereBetween($key, $value);
                 }
@@ -45,7 +45,7 @@ class SupervisorController extends Controller
                     $call_agents .= $team[$i]->call_agents . ($i + 1 != count($team) ? ',' : '');
                     $umfrage_agents .= $team[$i]->umfrage_agents . ($i + 1 != count($team) ? ',' : '');
                 }
-               
+
                 $call_agents = explode(',', $call_agents);
                 $umfrage_agents = explode(',', $umfrage_agents);
                 //make array unique
@@ -54,11 +54,23 @@ class SupervisorController extends Controller
 
                 //This is only for the moment , we can also add umfrage agents maybe later
                 $lead->whereIn('assign_to_id_call', $call_agents);
-
             } else {
-                $lead->where($key, $value);
+                $value_on_array  = $value;
+                $value = implode(',', $value);
+
+                if ($key == 'sprachen') {
+
+                    $lead->where(function ($q) use ($key, $value_on_array) {
+                        for ($i = 0; $i < count($value_on_array); $i++) {
+                            $q->orWhereRaw('FIND_IN_SET(?, ' . $key . ')', [$value_on_array[$i]]);
+                        }
+                    });
+                } else {
+                    $lead->whereIn($key, $value_on_array);
+                }
             }
         }
+
 
         return $lead->orderBy('created_at', 'desc')->get();
     }
