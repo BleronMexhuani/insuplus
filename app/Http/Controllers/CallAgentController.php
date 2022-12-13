@@ -4,20 +4,66 @@ namespace App\Http\Controllers;
 
 use App\Models\FeedBack;
 use App\Models\Lead;
+use App\Models\Team;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\DB;
 
 class CallAgentController extends Controller
 {
     //
     public function getLeads(Request $req)
     {
-
-        $leads =  Lead::where('assign_to_id_call', Auth::user()->id)->where('vorname', 'LIKE', '%' . $req->search . '%')->get();
+        $leads = $this->leadsOfCallAgent($req);
 
         return view('roles.call_agent.leads', compact('leads'));
     }
-    
+
+    public function leadsOfCallAgent(Request $req)
+    {
+
+        $lead = Lead::query();
+        $lead->where('assign_to_id_call', Auth::user()->id);
+
+        foreach ($req->except('_token') as $key => $value) {
+            if ($key == 'created_at' || $key == 'verteilen_datum' || $key == 'geburtsdatum' || $key == 'anrufdatum') {
+                if ($value[0] !== null && $value[1] !== null) {
+                    $lead->whereBetween($key, $value);
+                }
+            } else if ($key == 'teams') {
+                $team = Team::whereIn('id', $value)->get();
+                $call_agents = '';
+                $umfrage_agents = '';
+
+                for ($i = 0; $i < count($team); $i++) {
+                    $call_agents .= $team[$i]->call_agents . ($i + 1 != count($team) ? ',' : '');
+                    $umfrage_agents .= $team[$i]->umfrage_agents . ($i + 1 != count($team) ? ',' : '');
+                }
+
+                $call_agents = explode(',', $call_agents);
+                $umfrage_agents = explode(',', $umfrage_agents);
+                //make array unique
+                $call_agents = array_unique($call_agents);
+                $umfrage_agents = array_unique($umfrage_agents);
+
+                //This is only for the moment , we can also add umfrage agents maybe later
+                $lead->whereIn('assign_to_id_call', $call_agents);
+            } else {
+                $value_on_array  = $value;
+                $value = implode(',', $value);
+
+                if ($key == 'sprachen') {
+                    for ($i = 0; $i < count($value_on_array); $i++) {
+                        $lead->whereRaw('FIND_IN_SET(?, ' . $key . ')', [$value_on_array[$i]]);
+                    }
+                } else {
+                    $lead->whereIn($key, $value_on_array);
+                }
+            }
+        }
+        
+        return $lead->orderBy('created_at', 'desc')->get();
+    }
     public function getLeadById($id)
     {
         $lead =  Lead::find($id);
