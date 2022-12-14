@@ -1,14 +1,9 @@
 @extends('layouts.app')
 @section('content')
-    <div class="col ms-0 ms-md-2 px-0 px-md-5">
-
+    <div class="">
         <div class="mt-4 py-3 px-2">
             <form action="{{ route('searchLeads') }}" method="GET">
                 @csrf
-
-
-
-
                 <div class="accordionbg mb-4">
                     <button type="button" class="acordion pull-right">Erweiter</button>
                     <button type="button" class="accordion">Filter</button>

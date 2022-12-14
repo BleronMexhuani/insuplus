@@ -1,7 +1,6 @@
 @extends('layouts.app')
 @section('content')
     <div class="col ms-0 ms-md-2 px-0 px-md-5">
-
         <div class="mt-4 py-3 px-2">
             <form  method="GET">
                 @csrf
