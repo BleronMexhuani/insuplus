@@ -48,20 +48,23 @@ class CallAgentController extends Controller
 
                 //This is only for the moment , we can also add umfrage agents maybe later
                 $lead->whereIn('assign_to_id_call', $call_agents);
-            } else {
+            } else {    
                 $value_on_array  = $value;
-                $value = implode(',', $value);
 
                 if ($key == 'sprachen') {
-                    for ($i = 0; $i < count($value_on_array); $i++) {
-                        $lead->whereRaw('FIND_IN_SET(?, ' . $key . ')', [$value_on_array[$i]]);
-                    }
+                    $lead->where(function ($q) use ($key, $value_on_array) {
+                        for ($i = 0; $i < count($value_on_array); $i++) {
+                            $q->orWhereRaw('FIND_IN_SET(?, ' . $key . ')', [$value_on_array[$i]]);
+                        }
+                    });
+                } else if ($key == 'vorname') {
+                    $lead->where('vorname', 'LIKE', '%' . $value_on_array . '%');
                 } else {
                     $lead->whereIn($key, $value_on_array);
                 }
             }
         }
-        
+
         return $lead->orderBy('created_at', 'desc')->get();
     }
     public function getLeadById($id)

@@ -456,6 +456,9 @@
                         @endforeach
                     </table>
                 </form>
+                <div class="d-flex justify-content-center">
+                    {{$leads->onEachSide(1)->links()}}
+                </div>
             </div>
         </div>
     </div>

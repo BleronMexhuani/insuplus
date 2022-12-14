@@ -5,14 +5,9 @@
         <div class="mt-4 py-3 px-2">
             <form action="{{ route('searchLeads') }}" method="GET">
                 @csrf
-
-
-
-
                 <div class="accordionbg mb-4">
                     <button type="button" class="acordion pull-right">Erweiter</button>
                     <button type="button" class="accordion">Filter</button>
-
                     <div class="panel">
                         <div class="row">
                             <div class="col-md-3 mb-3">
@@ -46,13 +41,13 @@
                                 </div>
                                 <div class="input-group mt-2 ">
                                     <select class="selectpicker" data-live-search="true" multiple data-actions-box="true"
-                                        name="assgined_from">
+                                        name="assigned_from[]">
                                         @foreach ($umfrage_agents as $item)
                                             <option value="{{ $item->id }}">{{ $item->name }}</option>
                                         @endforeach
                                     </select>
                                     <select class="selectpicker" data-live-search="true" multiple data-actions-box="true"
-                                        name="assign_to_id_call">
+                                        name="assign_to_id_call[]">
                                         @foreach ($callagents as $item)
                                             <option value="{{ $item->id }}">{{ $item->name }}</option>
                                         @endforeach
@@ -305,8 +300,8 @@
                                     <span class="subtitleform">Feedback</span>
                                 </div>
                                 <div class="mt-2">
-                                    <select class="selectpicker" data-live-search="true" name="feedback_status[]" multiple
-                                        data-actions-box="true">
+                                    <select class="selectpicker" data-live-search="true" name="feedback_status[]"
+                                        multiple data-actions-box="true">
                                         <option value="null">Leer</option>
                                         <option value="Falsche Nummer">Falsche Nummer</option>
                                         <option value="Hat schon gewechselt">Hat schon gewechselt</option>
@@ -349,11 +344,11 @@
                                 </div>
                                 <div class="mt-2 ">
                                     <div class="input-group mt-2 ">
-                                        <input type="text" class="form-controol input-sm mb-4" name="anrufdatum[]" placeholder="von"
-                                            onfocus="(this.type='date')" onblur="(this.type='text')" 
+                                        <input type="text" class="form-controol input-sm mb-4" name="anrufdatum[]"
+                                            placeholder="von" onfocus="(this.type='date')" onblur="(this.type='text')"
                                             name="" onchange="change()">
-                                        <input type="text" class="form-controol input-sm mb-4" name="anrufdatum[]" placeholder="bis"
-                                            onfocus="(this.type='date')" onblur="(this.type='text')" 
+                                        <input type="text" class="form-controol input-sm mb-4" name="anrufdatum[]"
+                                            placeholder="bis" onfocus="(this.type='date')" onblur="(this.type='text')"
                                             name="">
                                     </div>
                                 </div>
@@ -370,14 +365,17 @@
             <hr>
             <div class="row">
                 <div class="col-8 mb-4 mt-3">
-                    <div class="input-group">
-                        <div class="form-outline">
-                            <input class="inputleads ps-5" type="text" placeholder="Search" />
-                            <i class="fa fa-search filtersubmit ps-1 "></i>
+                    <form action="" method="GET">
+
+
+                        <div class="input-group">
+                            <div class="form-outline">
+                                <input class="inputleads ps-5" name="vorname" type="text" placeholder="Search" />
+                                <i class="fa fa-search filtersubmit ps-1 "></i>
+                            </div>
+
                         </div>
-
-                    </div>
-
+                    </form>
                 </div>
 
                 <div class="col">
@@ -412,16 +410,22 @@
                 <form action="{{ route('assignLead') }}" method="POST">
                     @csrf
                     <div class="d-flex row">
-
-                        <div class="col-6">
-
-                            <select name="assign_to_id_call" id=""
+                        <div class="col-3">
+                            <select name="assign_to_id_call" placeholder="Call agents" id=""
                                 class="form-select inputleads select-form  mb-3">
-                                <option value=""></option>
+                                <option value="">Choose Call Agents</option>
                                 @foreach ($callagents as $item)
                                     <option value="{{ $item->id }}">{{ $item->name }}</option>
                                 @endforeach
-
+                            </select>
+                        </div>
+                        <div class="col-3">
+                            <select name="assign_to_id_team_leader" id=""
+                                class="form-select inputleads select-form  mb-3">
+                                <option value="">Choose Team Leader</option>
+                                @foreach ($team_leaders as $item)
+                                    <option value="{{ $item->id }}">{{ $item->name }}</option>
+                                @endforeach
                             </select>
                         </div>
 
@@ -464,7 +468,7 @@
                             </thead>
                             @foreach ($leads as $item)
                                 @php
-                                    $feedback_datum = App\Models\Feedback::where('lead_id', $item->id)
+                                    $feedback_datum = App\Models\FeedBack::where('lead_id', $item->id)
                                         ->orderBy('created_at', 'desc')
                                         ->first();
                                     
@@ -489,7 +493,7 @@
                                         <td>{{ $item->assigned_from }}</td>
                                         <td style="color:{{ $item->feedback_status == 'Terminiert' ? 'green' : 'red' }};">
                                             {{ $item->feedback_status }}</td>
-                                        <td>{{ App\Models\Feedback::where('lead_id', $item->id)->orderBy('created_at', 'desc')->pluck('created_at')->first() }}
+                                        <td>{{ App\Models\FeedBack::where('lead_id', $item->id)->orderBy('created_at', 'desc')->pluck('created_at')->first() }}
                                         </td>
                                         <td><a class="btn btnedit"
                                                 href="{{ route('getLeadById', ['id' => $item->id]) }}"><i
@@ -499,6 +503,9 @@
                                 </tbody>
                             @endforeach
                         </table>
+                        <div class="d-flex justify-content-center">
+                        {{$leads->onEachSide(1)->links()}}
+                    </div>
                     </div>
                 </form>
             </div>
