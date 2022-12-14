@@ -27,7 +27,7 @@ class TeamLeaderController extends Controller
         return FeedBack::where('lead_id', $id)->get();
     }
 
-    public function leads()
+    public function leads(Request $req)
     {
         $team = Team::where('team_leaders', Auth::id())->get();
         $call_agents = '';
@@ -46,10 +46,11 @@ class TeamLeaderController extends Controller
         $umfrage_agents = array_unique($umfrage_agents);
 
     
-        $leads = Lead::whereIn('assign_to_id_call', $call_agents)->get();
+        $leads = Lead::where('assign_to_id_team_leader',Auth::id())->orWhereIn('assign_to_id_call', $call_agents)->orderBy('verteilen_datum','desc')->paginate(10);
 
         $callagents = User::whereIn('id',$call_agents)->get();
 
+        $leads->appends($req->all());
 
         return view('roles.team_leader.leads', compact('leads','callagents'));
     }

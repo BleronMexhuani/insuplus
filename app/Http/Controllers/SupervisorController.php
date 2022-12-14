@@ -7,9 +7,13 @@ use App\Models\Lead;
 use App\Models\Team;
 use App\Models\User;
 use Carbon\Carbon;
+use Illuminate\Contracts\Pagination\Paginator;
 use Illuminate\Http\Request;
+use Illuminate\Pagination\PaginationServiceProvider;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
+
+
 
 
 
@@ -20,18 +24,21 @@ class SupervisorController extends Controller
     {
         $callagents = User::role(['call_agent'])->get();
         $umfrage_agents = User::role(['umfrage_agent'])->get();
+        $team_leaders = User::role(['team_leader'])->get();
+
         $teams = Team::all();
         $leads = $this->leadsOfSupervisor($req);
+        $leads->appends($req->all());
 
-        return view('roles.supervisor.leads', compact('callagents', 'leads', 'umfrage_agents', 'teams'));
+        return view('roles.supervisor.leads', compact('callagents', 'leads', 'umfrage_agents', 'teams', 'team_leaders'));
     }
 
     public function leadsOfSupervisor(Request $req)
     {
-
+  
         $lead = Lead::query();
 
-        foreach ($req->except('_token') as $key => $value) {
+        foreach ($req->except('_token','page') as $key => $value) {
             if ($key == 'created_at' || $key == 'verteilen_datum' || $key == 'geburtsdatum' || $key == 'anrufdatum') {
                 if ($value[0] !== null && $value[1] !== null) {
                     $lead->whereBetween($key, $value);
@@ -56,15 +63,15 @@ class SupervisorController extends Controller
                 $lead->whereIn('assign_to_id_call', $call_agents);
             } else {
                 $value_on_array  = $value;
-                $value = implode(',', $value);
-
+            
                 if ($key == 'sprachen') {
-
                     $lead->where(function ($q) use ($key, $value_on_array) {
                         for ($i = 0; $i < count($value_on_array); $i++) {
                             $q->orWhereRaw('FIND_IN_SET(?, ' . $key . ')', [$value_on_array[$i]]);
                         }
                     });
+                } else if ($key == 'vorname') {
+                    $lead->where('vorname', 'LIKE', '%' . $value_on_array . '%');
                 } else {
                     $lead->whereIn($key, $value_on_array);
                 }
@@ -72,7 +79,8 @@ class SupervisorController extends Controller
         }
 
 
-        return $lead->orderBy('created_at', 'desc')->get();
+
+        return $lead->orderBy('created_at','desc')->paginate(10);
     }
 
     //

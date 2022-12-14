@@ -404,7 +404,7 @@
                             </thead>
                             @foreach ($leads as $item)
                                 @php
-                                    $feedback_datum = App\Models\Feedback::where('lead_id', $item->id)
+                                    $feedback_datum = App\Models\FeedBack::where('lead_id', $item->id)
                                         ->orderBy('created_at', 'desc')
                                         ->first();
                                     
