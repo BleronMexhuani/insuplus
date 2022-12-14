@@ -21,14 +21,14 @@
                             </div>
                             <div class="mt-2">
                                 <input class="inputform" value="{{ $lead->vorname }}" type="text" name="vorname"
-                                    placeholder="Jane" />
+                                    placeholder="Vorname" />
                             </div>
                             <div class="mt-4">
                                 <span class="subtitleform">Anrede</span>
                             </div>
                             <div class="mt-2">
                                 <input class="inputform" type="number" value="{{ $lead->anrede }}" id="tentacles"
-                                    name="anrede" placeholder="Herr" min="1" max="9" />
+                                    name="anrede" placeholder="Anrede" min="1" max="9" />
                             </div>
                         </div>
                         <div class="col-12 col-md-4">
@@ -37,7 +37,7 @@
                             </div>
                             <div class="mt-2">
                                 <input class="inputform" value="{{ $lead->nachname }}" type="text" name="nachname"
-                                    placeholder="Jane" />
+                                    placeholder="Nachname" />
                             </div>
                             <div class="mt-4">
                                 <span class="subtitleform">Geburtsdatum </span>
@@ -65,7 +65,7 @@
                             <div class="mt-2 ">
                                 <div class="d-flex mb-3 ">
                                     <input type="text" value="{{ $lead->adresse }}" name="adresse" class="inputgroupleft"
-                                        placeholder="James Scar" aria-label="Username">
+                                        placeholder="Adresse" aria-label="Username">
                                     <input type="text" value="{{ $lead->hause_nummer }}" name="hause_nummer"
                                         class="inputgroupright" placeholder="Haus Nummer" aria-label="Haus Nummer">
                                 </div>
@@ -75,7 +75,7 @@
                             </div>
                             <div class="mt-2">
                                 <input class="inputform" value="{{ $lead->kanton }}" type="text" name="kanton"
-                                    placeholder="Kanton" />
+                                    placeholder="VD" />
                             </div>
                         </div>
                         <div class="col-12 col-md-4 mt-2">
@@ -95,7 +95,7 @@
                             </div>
                             <div class="mt-2 mb-4">
                                 <input class="inputform" type="text" value="{{ $lead->region }}" name="region"
-                                    placeholder="Lorem" />
+                                    placeholder="Tessin (Italy) " />
                             </div>
                         </div>
                     </div>
@@ -130,7 +130,7 @@
                             </div>
                             <div class="mt-2">
                                 <input class="inputform" value="{{ $lead->email }}" type="email" id="email"
-                                    name="email" placeholder="janedoe@gmail.com">
+                                    name="email" placeholder="Email">
                             </div>
                         </div>
 
@@ -205,35 +205,35 @@
                             </div>
                             <div class="mt-2">
                                 <input class="inputform" type="text" id=""
-                                    value="{{ $lead->rechtsschutz }}" name="rechtsschutz" placeholder="Doe">
+                                    value="{{ $lead->rechtsschutz }}" name="rechtsschutz" placeholder="Allianz">
                             </div>
                             <div class="mt-4">
                                 <span class="subtitleform">Ansprechspartner </span>
                             </div>
                             <div class="mt-2">
                                 <input class="inputform" type="text" value="{{ $lead->ansprechspartner }}"
-                                    name="ansprechspartner" placeholder="03.02.1999">
+                                    name="ansprechspartner" placeholder="Berater">
                             </div>
                             <div class="mt-4">
                                 <span class="subtitleform">Zufriedenheit</span>
                             </div>
                             <div class="mt-2">
                                 <input class="inputform" type="text" value="{{ $lead->zufriedenheit }}"
-                                    name="zufriedenheit" placeholder="03.02.1999">
+                                    name="zufriedenheit" placeholder="Zufrieden">
                             </div>
                             <div class="mt-4">
                                 <span class="subtitleform">Erreichbarkeit </span>
                             </div>
                             <div class="mt-2">
-                                <input class="inputform" type="text" value="{{ $lead->erreichbarkeit }}"
-                                    name="erreichbarkeit" placeholder="Herr">
+                                <input class="inputform" type="number" value="{{ $lead->erreichbarkeit }}"
+                                    name="erreichbarkeit" placeholder="10:00 : 11:00">
                             </div>
                             <div class="mt-4">
                                 <span class="subtitleform">Hausrat </span>
                             </div>
                             <div class="mt-2">
                                 <input class="inputform" type="text" value="{{ $lead->hausrat }}" name="hausrat"
-                                    placeholder="Jane">
+                                    placeholder="TCS">
 
                             </div>
                         </div>
@@ -244,7 +244,7 @@
 
                             <div class="mt-2">
                                 <input class="inputform" type="text" value="{{ $lead->krankenkasse }}"
-                                    name="krankenkasse" placeholder="German">
+                                    name="krankenkasse" placeholder="Aquilana">
 
                             </div>
                             <div class="mt-4">
@@ -252,28 +252,28 @@
                             </div>
                             <div class="mt-2">
                                 <input class="inputform" type="text" value="{{ $lead->sparen }}" name="sparen"
-                                    placeholder="03.02.1999">
+                                    placeholder="Nein">
                             </div>
                             <div class="mt-4">
                                 <span class="subtitleform">Anzahl personen </span>
                             </div>
                             <div class="mt-2">
-                                <input class="inputform" type="text" name="anzahl_personen"
-                                    value="{{ $lead->anzahl_personen }}" placeholder="German">
+                                <input class="inputform" type="number" name="anzahl_personen"
+                                    value="{{ $lead->anzahl_personen }}" placeholder="10">
                             </div>
                             <div class="mt-4 ">
                                 <span class="subtitleform">Gewünschte Beratung </span>
                             </div>
                             <div class="mt-2">
                                 <input class="inputform" type="text" value="{{ $lead->gewunschte_beratung }}"
-                                    name="gewunschte_beratung" placeholder="03.02.1999">
+                                    name="gewunschte_beratung" placeholder="Berater (Persönlicher Termin) ">
                             </div>
                             <div class="mt-4">
                                 <span class="subtitleform">3.Säule </span>
                             </div>
                             <div class="mt-2 mb-5">
                                 <input class="inputform" type="text" value="{{ $lead->saule }}" name="saule"
-                                    placeholder="janedoe@gmail.com">
+                                    placeholder="Allianz">
                             </div>
                         </div>
                         <div class="col-4">
@@ -282,28 +282,28 @@
                             </div>
                             <div class="mt-2">
                                 <input class="inputform" type="text" value="{{ $lead->gesundheitzustand }}"
-                                    name="gesundheitzustand" placeholder="Herr">
+                                    name="gesundheitzustand" placeholder="Nicht Gesund">
                             </div>
                             <div class="mt-4">
                                 <span class="subtitleform">Änderung bei KK </span>
                             </div>
                             <div class="mt-2">
                                 <input class="inputform" type="text" value="{{ $lead->anderung }}" name="anderung"
-                                    placeholder="Herr">
+                                    placeholder="1 Jahr">
                             </div>
                             <div class="mt-4">
                                 <span class="subtitleform">Arberistätig </span>
                             </div>
                             <div class="mt-2">
                                 <input class="inputform" type="text" value="{{ $lead->arberistatig }}"
-                                    name="arberistatig" placeholder="03.02.1999">
+                                    name="arberistatig" placeholder="Ja">
                             </div>
                             <div class="mt-4">
                                 <span class="subtitleform">Autoversicherung</span>
                             </div>
                             <div class="mt-2 ">
                                 <input type="text" class="form-control inputnumber"
-                                    value="{{ $lead->autoversicherung }}" name="autoversicherung" placeholder="+41"
+                                    value="{{ $lead->autoversicherung }}" name="autoversicherung" placeholder="Zürich"
                                     aria-label="">
                             </div>
                         </div>
@@ -318,7 +318,7 @@
                             </div>
                             <div class="mt-2">
                                 <input class="inputform" type="email" value="{{ $lead->kontaktieren_erwunscht }}"  id="email" name="kontaktieren_erwunscht"
-                                    placeholder="German">
+                                    placeholder="Ja">
                             </div>
                         </div>
                         <div class="col-12 col-md-4 mt-0 mt-md-2 mb-0 mb-md-5">

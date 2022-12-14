@@ -63,12 +63,14 @@
     <div class="">
         @include('layouts.navigation')
         <div class="row g-0">
-            <div class="col-1 d-none d-md-block">
+            <div class="col-auto d-none d-md-block">
                 @include('layouts.sidebar')
             </div>
             <!-- Page Content -->
-            <div class="col ms-0 ms-md-5 px-0 px-md-5" style="margin-top:70px !important">
+            <div class="col px-4 px-lg-5" style="margin-top:70px !important;margin-left: 250px">
+                <div class="">
                 @yield('content')
+            </div>
             </div>
         </div>
     </div>

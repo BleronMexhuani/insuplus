@@ -136,11 +136,10 @@ input::-webkit-datetime-edit-fields-wrapper {
 }
 
 .open-button {
-    background-color: #555;
-    color: white;
-    border: none;
-    cursor: pointer;
-    opacity: 0.8;
+    background: #FFFFFF;
+    border: 1px solid #EAECEE;
+    border-radius: 12px;
+    color:#434A5E;
   }
   
   /* The popup form - hidden by default */
@@ -183,4 +182,23 @@ input::-webkit-datetime-edit-fields-wrapper {
     color: #adb5bd!important;
     font-family: var(--bs-font-sans-serif)!important;
     font-size: 13px!important;
+}
+
+.highcharts-button-box{
+    display: none;
+}
+
+.anzeigenbtn{
+    background: #00727A;
+    border-radius: 8px;
+    color: white;
+    font-family: 'Raleway';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 16px;
+    padding: 12px 20px;
+    align-items: center;
+    border: none;
+    color: #FFFFFF;
 }
