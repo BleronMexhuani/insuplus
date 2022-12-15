@@ -6,7 +6,7 @@
             <span class="titledash">Willkommen Enis Demolli!</span>
             <div class="bgform mt-4 p-4 p-md-5">
                 <div class="row">
-                    <div class="col-4 ">
+                    <div class="col-xl-4 mb-2 ">
                         <div class="dashborder">
                             <div>
                                 <svg width="52" height="53" viewBox="0 0 52 53" fill="none"
@@ -31,7 +31,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col-4 ">
+                    <div class="col-xl-4 mb-2">
                         <div class="dashborder">
                             <div>
                                 <svg width="52" height="53" viewBox="0 0 52 53" fill="none"
@@ -57,7 +57,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col-4 ">
+                    <div class="col-xl-4 ">
                         <div class="dashborder">
                             <div>
                                 <svg width="52" height="53" viewBox="0 0 52 53" fill="none"
@@ -85,16 +85,16 @@
                     </div>
                 </div>
                 <div class="row">
-                    <div class="col-8">
+                    <div class="col-xxl-8">
                         <div class="mt-5 apexchart">
                             <div class="row">
-                                <div class="col-4">
+                                <div class="col-12 col-xl-4">
                                     <div class="mt-4">
                                         <span class="ms-4"
                                             style="font-family: 'Raleway'; font-weight: 700; font-size: 18px;color: #1F1F1F;">Leads</span>
                                     </div>
                                 </div>
-                                <div class="col-8 d-flex justify-content-end">
+                                <div class="col-12 col-xl-8 d-flex justify-content-end">
                                     <div class="mt-4  ">
                                         <span class="titledate">from</span>
                                         <input type="date" class="dateinput px-0 mx-0 "
@@ -123,7 +123,7 @@
                                         </figure>
                                     </div>
                                     <div class="col">
-                                        <div class="text-center mt-5 pt-4">
+                                        <div class="textboard text-center mt-5 pt-4">
                                             <div class="mb-4">
                                                 <svg width="12" height="13" viewBox="0 0 12 13" fill="none"
                                                     xmlns="http://www.w3.org/2000/svg">
@@ -193,7 +193,7 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="col-4">
+                            <div class="col-xxl-4 col-12">
                             </div>
                         </div>
 

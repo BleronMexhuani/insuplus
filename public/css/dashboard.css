@@ -202,3 +202,11 @@ input::-webkit-datetime-edit-fields-wrapper {
     border: none;
     color: #FFFFFF;
 }
+
+@media (max-width: 1429.98px) { 
+    .textboard{
+        display: flex;
+        justify-content: space-between;
+    }
+ } 
+    

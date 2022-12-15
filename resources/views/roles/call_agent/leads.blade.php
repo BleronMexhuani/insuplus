@@ -1,13 +1,18 @@
 @extends('layouts.app')
 @section('content')
-    <div class="col ms-0 ms-md-2 px-0 px-md-5">
-        <div class="mt-4 py-3 px-2">
+    <div class="">
+        <div class="mt-4 py-3 px-4">
             <form  method="GET">
                 @csrf
-                <div class="accordionbg mb-4">
-                    <button type="button" class="acordion pull-right">Erweiter</button>
-                    <button type="button" class="accordion">Filter</button>
+                
+                <div class="accordionbg mb-4 ">
+                    <button type="button" class="acordion pull-right ">Erweiter</button>
 
+                    <button type="button" class="accordion">
+                         <svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M17.25 19C17.6642 19 18 19.3358 18 19.75C18 20.1642 17.6642 20.5 17.25 20.5H10.75C10.3358 20.5 10 20.1642 10 19.75C10 19.3358 10.3358 19 10.75 19H17.25ZM21.25 13C21.6642 13 22 13.3358 22 13.75C22 14.1642 21.6642 14.5 21.25 14.5H6.75C6.33579 14.5 6 14.1642 6 13.75C6 13.3358 6.33579 13 6.75 13H21.25ZM24.25 7C24.6642 7 25 7.33579 25 7.75C25 8.16421 24.6642 8.5 24.25 8.5H3.75C3.33579 8.5 3 8.16421 3 7.75C3 7.33579 3.33579 7 3.75 7H24.25Z" fill="#00727A"/>
+                            </svg>
+                    </button>
                     <div class="panel">
                         <div class="row">
                             <div class="col-md-3 mb-3">
@@ -35,8 +40,6 @@
                                         onfocus="(this.type='date')" onblur="(this.type='text')" name="verteilen_datum[]">
                                 </div>
                             </div>
-                        </div>
-                        <div class="row">
                             <div class="col-md-3 mb-3">
                                 <div class="mt-4">
                                     <span class="subtitleform">Jahrgang</span>
@@ -50,7 +53,7 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="col-md-3 mb-3">
+                             <div class="col-md-3 mb-3">
                                 <div class="mt-4">
                                     <span class="subtitleform">Kanton</span>
                                 </div>
@@ -87,6 +90,8 @@
                                     </select>
                                 </div>
                             </div>
+                        </div>
+                        <div class="row">
                             <div class="col-md-3 mb-3">
                                 <div class="mt-4">
                                     <span class="subtitleform">Region</span>
@@ -123,8 +128,6 @@
                                     </select>
                                 </div>
                             </div>
-                        </div>
-                        <div class="row">
                             <div class="col-md-3 mb-3">
                                 <div class="mt-4">
                                     <span class="subtitleform">Sparpotenzial</span>
@@ -200,6 +203,8 @@
                                     </select>
                                 </div>
                             </div>
+                        </div>
+                        <div class="row">
                             <div class="col-md-3 mb-3">
                                 <div class="mt-4">
                                     <span class="subtitleform">3. Säule</span>
@@ -244,9 +249,6 @@
                                     </select>
                                 </div>
                             </div>
-                        </div>
-                        <div class="row">
-
                             <div class="col-md-3 mb-3">
                                 <div class="mt-4">
                                     <span class="subtitleform">Bestätigungsstatus</span>
@@ -284,28 +286,8 @@
                                     </select>
                                 </div>
                             </div>
-                            {{-- <div class="col-md-3 mb-3">
-                                <div class="mt-4">
-                                    <span class="subtitleform">Duplicate</span>
-                                </div>
-                                <div class="mt-2">
-                                    <select class="selectpicker" data-live-search="true" multiple
-                                        data-actions-box="true">
-                                        <option value="1">One</option>
-                                        <option value="2">Two</option>
-                                        <option value="3">Three</option>
-                                        <option value="4">Four</option>
-                                        <option value="5">Five</option>
-                                        <option value="6">Six</option>
-                                        <option value="7">Seven</option>
-                                        <option value="8">Eight</option>
-                                    </select>
-                                </div>
-                            </div> --}}
                         </div>
                         <div class="row">
-
-
                             <div class="col-3 col-md-3 mb-3">
                                 <div class="mt-4">
                                     <span class="subtitleform">Später Anrufen</span>
@@ -321,30 +303,33 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="col-md-3 my-auto">
-                                <button class="btn btn-primary w-50" style="color:white;">Search</button>
+                            <div class="col-9 col-md-9 my-auto">
+                                 <button class="buttonsearch" ><i class="fa fa-search ps-1 " style="color:#00727A"></i></button>
                             </div>
                         </div>
                     </div>
                 </div>
+  
 
             </form>
-            <span class="ms-1 mb-4 subtitlelead ">All</span>
-            <hr>
+
+            <div class="tableform">
+                <div style="padding: 25px">
+            <span class="ms-1 mb-4 titleoftable ">All</span>
+        </div>
+            <hr style="margin: 0px 33px 7px 22px;">
             <div class="row">
-                <div class="col-8 mb-4 mt-3">
-                    <div class="input-group">
+                <div class="col-6 mb-4 mt-3">
+                    <div class="input-group searchgrup">
                         <div class="form-outline">
-                            <input class="inputleads ps-5" type="text" placeholder="Search" />
+                            <input class="inputleads ps-5" type="text" placeholder="Search Leads" />
                             <i class="fa fa-search filtersubmit ps-1 "></i>
                         </div>
-
                     </div>
-
                 </div>
 
-                <div class="col">
-                    <div style="margin-top: 4px; width:25vh">
+                <div class="col-3">
+                    <div style="margin-top: 4px; ">
                         <div class="topPlaceholder px-4">
                             <span>Filter</span>
                         </div>
@@ -357,8 +342,8 @@
                     </div>
 
                 </div>
-                <div class="col">
-                    <div style="margin-top: 4px">
+                <div class="col-3">
+                    <div style="margin-top: 4px; padding-right: 25px;">
                         <div class="topPlaceholder px-4">
                             <span>Sort</span>
                         </div>
@@ -381,8 +366,8 @@
                         </span>
                     @endif
                     <div style="overflow-x:auto;">
-                        <table class="table">
-                            <thead style="background-color: #ebebeb;">
+                        <table>
+                            <thead style="background-color: #F7F7F7;">
                                 <tr class="text-center">
                                  
                                     <th>Vorname</th>
@@ -421,7 +406,7 @@
                                         </td>
                                         <td>{{ $item->created_at }}</td>
                                         <td>{{ $item->assigned_from }}</td>
-                                        <td style="color:{{ $item->feedback_status == 'Terminiert' ? 'green' : 'red' }};">
+                                        <td style="color:{{ $item->feedback_status == 'Terminiert' ? '#14AE5C' : 'red' }};">
                                             {{ $item->feedback_status }}</td>
                                         <td>{{ App\Models\Feedback::where('lead_id', $item->id)->orderBy('created_at', 'desc')->pluck('created_at')->first() }}
                                         </td>
@@ -436,6 +421,7 @@
                     </div>
                 </form>
             </div>
+        </div>
         </div>
     </div>
     </div>
