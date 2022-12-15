@@ -129,7 +129,7 @@
                         </div>
                         <div class="row">
                             <div class="col-md-6">
-                                <div class="mb-3">
+                                <div class="mb-2">
                                     <span class="subtitleform">Benutzer </span>
                                 </div>
                                 <select class="selectpicker" data-live-search="true" >
