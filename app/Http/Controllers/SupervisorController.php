@@ -19,6 +19,38 @@ use Illuminate\Support\Facades\Hash;
 
 class SupervisorController extends Controller
 {
+    public function dashboard(Request $req)
+    {
+        $umfrage_agents = User::role(['umfrage_agent'])->get();
+        $callagents = User::role(['call_agent'])->get();
+        return view('dashboard', compact('umfrage_agents', 'callagents'));
+    }
+
+    public function umfrage_first_chart(Request $req)
+    {
+        $php_data_array = array();
+
+        for ($i = 0; $i < sizeof($req->umfrage_agents); $i++) {
+            $leads = Lead::query()->selectRaw('users.name,leads.created_at,COUNT(*) as asd')->join('users', 'users.id', 'assigned_from')->whereBetween('leads.created_at', [$req->umfrage_grafik_von, $req->umfrage_grafik_bis])->where('assigned_from', $req->umfrage_agents[$i])->groupBy('leads.created_at');
+
+            $php_data_array[] = $leads->get();
+        }
+
+        return json_encode($php_data_array);
+    }
+
+    public function umfrage_second_chart(Request $req)
+    {
+        $php_data_array = array();
+
+     
+
+            $leads = Lead::query()->selectRaw('bestatigungs_status,COUNT(*) as asd')->whereIn('bestatigungs_status', $req->bestatigungstatus)->whereIn('assigned_from', $req->umfrage_agents)->groupBy('bestatigungs_status');
+            $php_data_array[] = $leads->get();
+      
+
+        return json_encode($php_data_array);
+    }
 
     public function leads(Request $req)
     {
@@ -35,10 +67,10 @@ class SupervisorController extends Controller
 
     public function leadsOfSupervisor(Request $req)
     {
-  
+
         $lead = Lead::query();
 
-        foreach ($req->except('_token','page') as $key => $value) {
+        foreach ($req->except('_token', 'page') as $key => $value) {
             if ($key == 'created_at' || $key == 'verteilen_datum' || $key == 'geburtsdatum' || $key == 'anrufdatum') {
                 if ($value[0] !== null && $value[1] !== null) {
                     $lead->whereBetween($key, $value);
@@ -63,7 +95,7 @@ class SupervisorController extends Controller
                 $lead->whereIn('assign_to_id_call', $call_agents);
             } else {
                 $value_on_array  = $value;
-            
+
                 if ($key == 'sprachen') {
                     $lead->where(function ($q) use ($key, $value_on_array) {
                         for ($i = 0; $i < count($value_on_array); $i++) {
@@ -80,7 +112,7 @@ class SupervisorController extends Controller
 
 
 
-        return $lead->orderBy('created_at','desc')->paginate(10);
+        return $lead->orderBy('created_at', 'desc')->paginate(10);
     }
 
     //

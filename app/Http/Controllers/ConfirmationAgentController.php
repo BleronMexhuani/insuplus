@@ -15,7 +15,7 @@ class ConfirmationAgentController extends Controller
     //
     public function getLeads()
     {
-        $leads =  Lead::whereIn('feedback_status', ['termin', 'online_offerte'])->where('completed', 2)->get();
+        $leads =  Lead::whereIn('feedback_status', ['Terminiert', 'online_offerte'])->where('completed', 2)->get();
         return view('roles.confirmation_agent.leads', compact('leads'));
     }
 
