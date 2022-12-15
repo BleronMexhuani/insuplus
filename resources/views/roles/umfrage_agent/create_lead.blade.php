@@ -123,6 +123,64 @@
                 </div>
             </div>
             <hr>
+            <div class="text-center mt-4">
+                <span class="feedbacktitle">Sprachen</span><br>
+                <div class=" mt-4 mb-4" role="group" aria-label="Basic checkbox toggle button group">
+                    <input type="checkbox" class="btn-check" 
+                        id="btncheck1" hidden name="sprachen[]" value="AL" autocomplete="off">
+                    <label class="btn btn-outline-primary sprachengr" for="btncheck1"> AL</label>
+
+                    <input type="checkbox" class="btn-check" id="btncheck2"
+                        hidden name="sprachen[]" value="DE"
+                        autocomplete="off">
+                    <label class="btn btn-outline-primary sprachengr" for="btncheck2">DE</label>
+
+                    <input type="checkbox" class="btn-check" id="btncheck3"
+                       hidden name="sprachen[]" value="EN"
+                        autocomplete="off">
+                    <label class="btn btn-outline-primary sprachengr" for="btncheck3">EN</label>
+
+                    <input type="checkbox" class="btn-check" id="btncheck4"
+                      hidden name="sprachen[]" value="FR"
+                        autocomplete="off">
+                    <label class="btn btn-outline-primary sprachengr" for="btncheck4">FR</label>
+
+                    <input type="checkbox" class="btn-check" id="btncheck5"
+                        hidden name="sprachen[]"
+                        value="IT"autocomplete="off">
+                    <label class="btn btn-outline-primary sprachengr" for="btncheck5">IT</label>
+
+                    <input type="checkbox" class="btn-check" id="btncheck6"
+                        hidden name="sprachen[]" value="HR"
+                        autocomplete="off">
+                    <label class="btn btn-outline-primary sprachengr" for="btncheck6">HR</label>
+
+                    <input type="checkbox" class="btn-check" id="btncheck7"
+                       hidden name="sprachen[]" value="PL"
+                        autocomplete="off">
+                    <label class="btn btn-outline-primary sprachengr" for="btncheck7">PL</label>
+
+                    <input type="checkbox" class="btn-check" id="btncheck8"
+                      hidden name="sprachen[]" value="PT"
+                        autocomplete="off">
+                    <label class="btn btn-outline-primary sprachengr" for="btncheck8">PT</label>
+
+                    <input type="checkbox" class="btn-check" id="btncheck9"
+                        hidden name="sprachen[]" value="SR"
+                        autocomplete="off">
+                    <label class="btn btn-outline-primary sprachengr" for="btncheck9">SR</label>
+
+                    <input type="checkbox" class="btn-check" id="btncheck10"
+                        hidden name="sprachen[]" value="ES"
+                        autocomplete="off">
+                    <label class="btn btn-outline-primary sprachengr" for="btncheck10">ES</label>
+
+                    <input type="checkbox" class="btn-check" id="btncheck11"
+                        hidden name="sprachen[]" value="TR"
+                        autocomplete="off">
+                    <label class="btn btn-outline-primary sprachengr" for="btncheck11">TR</label>
+                </div>
+            </div>
             <div class="row">
                 <div class="col-4 mt-2 mb-5">
                     <div class="">

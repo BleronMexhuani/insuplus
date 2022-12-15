@@ -5,6 +5,8 @@ use Illuminate\Support\Facades\Route;
 
 Route::middleware(['role:supervisor'])->group(function () {
 
+    Route::get('/dashboard', [SupervisorController::class, 'dashboard'])->name('dashboard');
+
     Route::post("supervisor/assignLead", [SupervisorController::class, 'assignLead'])->name('assignLead');
     
     Route::get("users", [SupervisorController::class, 'getUsers'])->name('getusers');
@@ -12,6 +14,7 @@ Route::middleware(['role:supervisor'])->group(function () {
     Route::get('user_info/{id}', [SupervisorController::class, 'getUserById'])->name('getuserbyid');
 
     Route::get('supervisor/leads',[SupervisorController::class,'leads'])->name('supervisorleads');
+
 
     Route::post('supervisor/leads',[SupervisorController::class,'leads'])->name('searchLeads');
     
@@ -31,4 +34,10 @@ Route::middleware(['role:supervisor'])->group(function () {
     Route::post('handleSubmitCreateGroup',[SupervisorController::class,'createGroup'])->name('handleSubmitCreateGroup');
 
     Route::post('supervisor/storeFeedBack/{lead_id}', [SupervisorController::class, 'storeFeedBack'])->name('supervisor.storeFeedBack');
+
+    //Supervisor Charts 
+
+    Route::get('umfrage_first_chart',[SupervisorController::class,'umfrage_first_chart'])->name('umfrage_first_chart');
+    Route::get('umfrage_second_chart',[SupervisorController::class,'umfrage_second_chart'])->name('umfrage_second_chart');
+    
 });
