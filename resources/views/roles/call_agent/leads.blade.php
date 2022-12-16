@@ -357,7 +357,7 @@
                 </div>
             </div>
             <div class="table-responsive-md">
-                <form action="{{ route('assignLead') }}" method="POST">
+                <form method="POST">
                     @csrf
                 
                     @if (Illuminate\Support\Facades\Session::has('message'))

@@ -5,7 +5,7 @@ use Illuminate\Support\Facades\Route;
 
 Route::middleware(['role:supervisor'])->group(function () {
 
-    Route::get('/dashboard', [SupervisorController::class, 'dashboard'])->name('dashboard');
+    // Route::get('/dashboard', [SupervisorController::class, 'dashboard'])->name('dashboard');
 
     Route::post("supervisor/assignLead", [SupervisorController::class, 'assignLead'])->name('assignLead');
     
@@ -39,5 +39,5 @@ Route::middleware(['role:supervisor'])->group(function () {
 
     Route::get('umfrage_first_chart',[SupervisorController::class,'umfrage_first_chart'])->name('umfrage_first_chart');
     Route::get('umfrage_second_chart',[SupervisorController::class,'umfrage_second_chart'])->name('umfrage_second_chart');
-    
+    Route::get('call_agent_first_chart',[SupervisorController::class,'call_agent_first_chart'])->name('call_agent_first_chart');
 });

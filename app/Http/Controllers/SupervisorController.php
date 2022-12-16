@@ -31,7 +31,7 @@ class SupervisorController extends Controller
         $php_data_array = array();
 
         for ($i = 0; $i < sizeof($req->umfrage_agents); $i++) {
-            $leads = Lead::query()->selectRaw('users.name,leads.created_at,COUNT(*) as asd')->join('users', 'users.id', 'assigned_from')->whereBetween('leads.created_at', [$req->umfrage_grafik_von, $req->umfrage_grafik_bis])->where('assigned_from', $req->umfrage_agents[$i])->groupBy('leads.created_at');
+            $leads = Lead::query()->selectRaw('users.name,DATE_FORMAT(leads.created_at, "%d-%b-%Y") as date,COUNT(*) as asd')->join('users', 'users.id', 'assigned_from')->whereBetween('leads.created_at', [$req->umfrage_grafik_von, $req->umfrage_grafik_bis])->where('assigned_from', $req->umfrage_agents[$i])->groupBy('leads.created_at');
 
             $php_data_array[] = $leads->get();
         }
@@ -43,15 +43,19 @@ class SupervisorController extends Controller
     {
         $php_data_array = array();
 
-     
+        $leads = Lead::query()->selectRaw('bestatigungs_status,COUNT(*) as asd')->whereIn('bestatigungs_status', $req->bestatigungstatus)->whereIn('assigned_from', $req->umfrage_agents)->groupBy('bestatigungs_status');
+        $php_data_array[] = $leads->get();
 
-            $leads = Lead::query()->selectRaw('bestatigungs_status,COUNT(*) as asd')->whereIn('bestatigungs_status', $req->bestatigungstatus)->whereIn('assigned_from', $req->umfrage_agents)->groupBy('bestatigungs_status');
-            $php_data_array[] = $leads->get();
-      
 
         return json_encode($php_data_array);
     }
+    public function call_agent_first_chart(Request $req)
+    {
 
+        $leads = Lead::query()->selectRaw('feedback_status,DATE_FORMAT(created_at, "%d-%b-%Y") as date,COUNT(*) as count')->where('assign_to_id_call', $req->callagent_benutzer)->where('feedback_status', 'Terminiert')->groupBy('created_at');
+
+        return json_encode($leads->get());
+    }
     public function leads(Request $req)
     {
         $callagents = User::role(['call_agent'])->get();

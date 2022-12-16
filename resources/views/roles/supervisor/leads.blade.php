@@ -1,18 +1,12 @@
 @extends('layouts.app')
 @section('content')
     <div class="">
-        <div class="mt-4 py-3 px-4">
+        <div class="mt-4 py-3 px-2">
             <form action="{{ route('searchLeads') }}" method="GET">
                 @csrf
                 <div class="accordionbg mb-4">
                     <button type="button" class="acordion pull-right">Erweiter</button>
-                    <button type="button" class="accordion ">
-                        <svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M17.25 19C17.6642 19 18 19.3358 18 19.75C18 20.1642 17.6642 20.5 17.25 20.5H10.75C10.3358 20.5 10 20.1642 10 19.75C10 19.3358 10.3358 19 10.75 19H17.25ZM21.25 13C21.6642 13 22 13.3358 22 13.75C22 14.1642 21.6642 14.5 21.25 14.5H6.75C6.33579 14.5 6 14.1642 6 13.75C6 13.3358 6.33579 13 6.75 13H21.25ZM24.25 7C24.6642 7 25 7.33579 25 7.75C25 8.16421 24.6642 8.5 24.25 8.5H3.75C3.33579 8.5 3 8.16421 3 7.75C3 7.33579 3.33579 7 3.75 7H24.25Z" fill="#00727A"/>
-                            </svg>
-                            
-                    </button>
-
+                    <button type="button" class="accordion">Filter</button>
                     <div class="panel">
                         <div class="row">
                             <div class="col-md-3 mb-3">
@@ -42,6 +36,40 @@
                             </div>
                             <div class="col-md-3 mb-3">
                                 <div class="mt-4">
+                                    <span class="subtitleform">Benutzer</span>
+                                </div>
+                                <div class="input-group mt-2 ">
+                                    <select class="selectpicker" data-live-search="true" multiple data-actions-box="true"
+                                        name="assigned_from[]">
+                                        @foreach ($umfrage_agents as $item)
+                                            <option value="{{ $item->id }}">{{ $item->name }}</option>
+                                        @endforeach
+                                    </select>
+                                    <select class="selectpicker" data-live-search="true" multiple data-actions-box="true"
+                                        name="assign_to_id_call[]">
+                                        @foreach ($callagents as $item)
+                                            <option value="{{ $item->id }}">{{ $item->name }}</option>
+                                        @endforeach
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="col-md-3 mb-3">
+                                <div class="mt-4">
+                                    <span class="subtitleform">Mannschaft</span>
+                                </div>
+                                <div class="mt-2">
+                                    <select class="selectpicker" data-live-search="true" multiple data-actions-box="true"
+                                        name="teams[]">
+                                        @foreach ($teams as $item)
+                                            <option value="{{ $item->id }}">{{ $item->group_name }}</option>
+                                        @endforeach
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-3 mb-3">
+                                <div class="mt-4">
                                     <span class="subtitleform">Jahrgang</span>
                                 </div>
                                 <div>
@@ -53,7 +81,7 @@
                                     </div>
                                 </div>
                             </div>
-                             <div class="col-md-3 mb-3">
+                            <div class="col-md-3 mb-3">
                                 <div class="mt-4">
                                     <span class="subtitleform">Kanton</span>
                                 </div>
@@ -90,8 +118,6 @@
                                     </select>
                                 </div>
                             </div>
-                        </div>
-                        <div class="row">
                             <div class="col-md-3 mb-3">
                                 <div class="mt-4">
                                     <span class="subtitleform">Region</span>
@@ -128,6 +154,8 @@
                                     </select>
                                 </div>
                             </div>
+                        </div>
+                        <div class="row">
                             <div class="col-md-3 mb-3">
                                 <div class="mt-4">
                                     <span class="subtitleform">Sparpotenzial</span>
@@ -203,8 +231,6 @@
                                     </select>
                                 </div>
                             </div>
-                        </div>
-                        <div class="row">
                             <div class="col-md-3 mb-3">
                                 <div class="mt-4">
                                     <span class="subtitleform">3. Säule</span>
@@ -249,6 +275,9 @@
                                     </select>
                                 </div>
                             </div>
+                        </div>
+                        <div class="row">
+
                             <div class="col-md-3 mb-3">
                                 <div class="mt-4">
                                     <span class="subtitleform">Bestätigungsstatus</span>
@@ -270,8 +299,8 @@
                                     <span class="subtitleform">Feedback</span>
                                 </div>
                                 <div class="mt-2">
-                                    <select class="selectpicker" data-live-search="true" name="feedback_status[]" multiple
-                                        data-actions-box="true">
+                                    <select class="selectpicker" data-live-search="true" name="feedback_status[]"
+                                        multiple data-actions-box="true">
                                         <option value="null">Leer</option>
                                         <option value="Falsche Nummer">Falsche Nummer</option>
                                         <option value="Hat schon gewechselt">Hat schon gewechselt</option>
@@ -286,48 +315,70 @@
                                     </select>
                                 </div>
                             </div>
+                            {{-- <div class="col-md-3 mb-3">
+                                <div class="mt-4">
+                                    <span class="subtitleform">Duplicate</span>
+                                </div>
+                                <div class="mt-2">
+                                    <select class="selectpicker" data-live-search="true" multiple
+                                        data-actions-box="true">
+                                        <option value="1">One</option>
+                                        <option value="2">Two</option>
+                                        <option value="3">Three</option>
+                                        <option value="4">Four</option>
+                                        <option value="5">Five</option>
+                                        <option value="6">Six</option>
+                                        <option value="7">Seven</option>
+                                        <option value="8">Eight</option>
+                                    </select>
+                                </div>
+                            </div> --}}
                         </div>
                         <div class="row">
+
+
                             <div class="col-3 col-md-3 mb-3">
                                 <div class="mt-4">
                                     <span class="subtitleform">Später Anrufen</span>
                                 </div>
                                 <div class="mt-2 ">
                                     <div class="input-group mt-2 ">
-                                        <input type="text" class="form-controol input-sm mb-4" name="anrufdatum[]" placeholder="von"
-                                            onfocus="(this.type='date')" onblur="(this.type='text')" 
+                                        <input type="text" class="form-controol input-sm mb-4" name="anrufdatum[]"
+                                            placeholder="von" onfocus="(this.type='date')" onblur="(this.type='text')"
                                             name="" onchange="change()">
-                                        <input type="text" class="form-controol input-sm mb-4" name="anrufdatum[]" placeholder="bis"
-                                            onfocus="(this.type='date')" onblur="(this.type='text')" 
+                                        <input type="text" class="form-controol input-sm mb-4" name="anrufdatum[]"
+                                            placeholder="bis" onfocus="(this.type='date')" onblur="(this.type='text')"
                                             name="">
                                     </div>
                                 </div>
                             </div>
-                            <div class="col-9 col-md-9">
-                                <button class="buttonsearch " ><i class="fa fa-search ps-1 " style="color:#00727A"></i></button>
+                            <div class="col-md-3 my-auto">
+                                <button class="btn btn-primary w-50" style="color:white;">Search</button>
                             </div>
                         </div>
                     </div>
                 </div>
-            </form>
 
-            <div class="tableform">
-                <div style="padding: 25px">
-            <span class="ms-1 mb-4 titleoftable ">All</span>
-        </div>
-        <hr style="margin: 0px 33px 7px 22px;">
+            </form>
+            <span class="ms-1 mb-4 subtitlelead ">All</span>
+            <hr>
             <div class="row">
-                <div class="col-6 mb-4 mt-3">
-                        <div class="input-group searchgrup">
+                <div class="col-8 mb-4 mt-3">
+                    <form action="" method="GET">
+
+
+                        <div class="input-group">
                             <div class="form-outline">
-                                <input class="inputleads ps-5" type="text" placeholder="Search Leads" />
+                                <input class="inputleads ps-5" name="vorname" type="text" placeholder="Search" />
                                 <i class="fa fa-search filtersubmit ps-1 "></i>
                             </div>
+
                         </div>
+                    </form>
                 </div>
 
-                <div class="col-3">
-                    <div style="margin-top: 4px;">
+                <div class="col">
+                    <div style="margin-top: 4px; width:25vh">
                         <div class="topPlaceholder px-4">
                             <span>Filter</span>
                         </div>
@@ -340,8 +391,8 @@
                     </div>
 
                 </div>
-                <div class="col-3">
-                    <div style="margin-top: 4px; padding-right: 25px;"">
+                <div class="col">
+                    <div style="margin-top: 4px">
                         <div class="topPlaceholder px-4">
                             <span>Sort</span>
                         </div>
@@ -388,8 +439,8 @@
                         </span>
                     @endif
                     <div style="overflow-x:auto;">
-                        <table>
-                            <thead style="background-color: #F7F7F7;">
+                        <table class="table">
+                            <thead style="background-color: #ebebeb;">
                                 <tr class="text-center">
                                     <td>
                                         <div class="checkbox">
@@ -470,7 +521,6 @@
     <script>
         var acc = document.getElementsByClassName("accordion");
         var i;
-
         for (i = 0; i < acc.length; i++) {
             acc[i].addEventListener("click", function() {
                 this.classList.toggle("active");
