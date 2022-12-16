@@ -13,11 +13,11 @@ class UsersController extends Controller
 
     public function dashboard()
     {
-        $callagent = User::role(['call_agent'])->get();
-
-        $leadSuperVisor = $this->leadsOfSupervisor();
-
-        return view('dashboard', compact('callagent', 'leadSuperVisor'));
+        
+        $umfrage_agents = User::role(['umfrage_agent'])->get();
+        $callagents = User::role(['call_agent'])->get();
+        
+        return view('dashboard', compact('umfrage_agents', 'callagents'));
     }
 
     public function leadsOfSupervisor()

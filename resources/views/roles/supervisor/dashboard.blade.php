@@ -153,7 +153,7 @@
                                 <div class="mb-2">
                                     <span class="subtitleform">Benutzer </span>
                                 </div>
-                                <select class="selectpicker" data-live-search="true">
+                                <select class="selectpicker" id="callagent_benutzer" data-live-search="true">
                                     @foreach ($callagents as $item)
                                         <option value="{{ $item->id }}">{{ $item->name }}</option>
                                     @endforeach
@@ -166,7 +166,8 @@
                                     <div class="mb-2 ">
                                         <span class="subtitleform">Action</span>
                                     </div>
-                                    <button class="anzeigenbtn">Anzeigen</button>
+                                    <button class="anzeigenbtn" type="button"
+                                        onclick="firstCallAgentChart()">Anzeigen</button>
                                 </div>
                             </div>
                         </div>
@@ -185,7 +186,7 @@
                                 <div class="mb-3">
                                     <span class="subtitleform">Benutzer </span>
                                 </div>
-                                <select class="selectpicker" data-live-search="true">
+                                <select class="selectpicker" id="benutzer_call_agent_2" data-live-search="true">
                                     @foreach ($callagents as $item)
                                         <option value="{{ $item->id }}">{{ $item->name }}</option>
                                     @endforeach
@@ -195,11 +196,19 @@
                                 <div class="mb-3">
                                     <span class="subtitleform">Feedback: </span>
                                 </div>
-                                <select class="selectpicker" data-live-search="true" multiple data-actions-box="true">
-                                    <option value="1">Test</option>
-                                    <option value="2">Test1</option>
-                                    <option value="3">Test2</option>
-                                    <option value="4">Test3</option>
+                                <select class="selectpicker" data-live-search="true" id="feedback_status_call_agent"
+                                    multiple data-actions-box="true">
+                                    <option value="null">Leer</option>
+                                    <option value="Falsche Nummer">Falsche Nummer</option>
+                                    <option value="Hat schon gewechselt">Hat schon gewechselt</option>
+                                    <option value="Kein Interesse">Kein Interesse</option>
+                                    <option value="Krank">Krank</option>
+                                    <option value="Kunde bereits terminiert">Kunde bereits terminiert</option>
+                                    <option value="Nicht Brauchbar">Nicht Brauchbar</option>
+                                    <option value="Nicht erreicht">Nicht erreicht</option>
+                                    <option value="Online-Offerte">Online-Offerte</option>
+                                    <option value="Später Anrufen">Später Anrufen</option>
+                                    <option value="Terminiert">Terminiert</option>
                                 </select>
                             </div>
                             <div class="col-4">
@@ -207,18 +216,19 @@
                                     <span class="subtitleform">Verteildatum: </span>
                                 </div>
                                 <div class="input-group mt-2 ">
-                                    <input type="text" class="form-controol input-sm mb-4" placeholder="von"
-                                        onfocus="(this.type='date')" onblur="(this.type='text')" name=""
-                                        onchange="change()">
-                                    <input type="text" class="form-controol input-sm mb-4" placeholder="bis"
-                                        onfocus="(this.type='date')" onblur="(this.type='text')" name="">
+                                    <input type="text" class="form-controol input-sm mb-4" id="von_call_agent2"
+                                        placeholder="von" onfocus="(this.type='date')" onblur="(this.type='text')"
+                                        name="" onchange="change()">
+                                    <input type="text" class="form-controol input-sm mb-4" id="bis_call_agent2"
+                                        placeholder="bis" onfocus="(this.type='date')" onblur="(this.type='text')"
+                                        name="">
                                 </div>
                             </div>
                             <div class="col-2 ">
                                 <div class="mb-2">
                                     <span class="subtitleform">Action</span>
                                 </div>
-                                <button class="anzeigenbtn">Anzeigen</button>
+                                <button class="anzeigenbtn" type="button" onclick="callAgentChart2()">Anzeigen</button>
                             </div>
                             <div class="mt-1 apexchart d-flex justify-content-center" id="myForm">
                                 <canvas id="myChart1" style="width:100%;max-width:800px"></canvas>
@@ -257,29 +267,46 @@
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script>
     <script>
-        var xValues = ["Lorem", "Lorem", "Lorem"];
-        var yValues = [55, 24, 15];
-        var barColors = [
-            "#a95g47",
-            "#05aba9",
-            "#1e7145"
-        ];
+        async function callAgentChart2() {
+            let bis = document.getElementById('bis_call_agent2').value;
+            let von = document.getElementById("von_call_agent2").value;
+            let benutzer = document.getElementById("benutzer_call_agent_2").value;
+            let feedback_status = document.getElementById("feedback_status_call_agent").value;
 
-        new Chart("myChart1", {
-            type: "pie",
-            data: {
-                labels: xValues,
-                datasets: [{
-                    backgroundColor: barColors,
-                    data: yValues
-                }]
-            },
-            options: {
-                title: {
-                    display: true,
+            // await $.ajax({
+            //     url:'',
+            //     method:"GET",
+            //     data:{
+
+            //     },
+            //     success:function(response){
+
+            //     }
+            // })
+            var xValues = ["Lorem", "Lorem", "Lorem"];
+            var yValues = [55, 24, 15];
+            var barColors = [
+                "#a95g47",
+                "#05aba9",
+                "#1e7145"
+            ];
+
+            new Chart("myChart1", {
+                type: "pie",
+                data: {
+                    labels: xValues,
+                    datasets: [{
+                        backgroundColor: barColors,
+                        data: yValues
+                    }]
+                },
+                options: {
+                    title: {
+                        display: true,
+                    }
                 }
-            }
-        });
+            });
+        }
     </script>
 
     <script>
@@ -371,8 +398,8 @@
                         dataLead = [];
                         for (let j = 0; j <= result[i].length - 1; j++) {
                             dataLead.push(parseInt(result[i][j].asd));
-                            if (!date.includes([result[i][j].created_at])) {
-                                date.push(result[i][j].created_at);
+                            if (!date.includes([result[i][j].date])) {
+                                date.push(result[i][j].date);
                             }
                         }
 
@@ -476,96 +503,123 @@
 
     <script>
         //  line chart datalabel2
+        async function firstCallAgentChart() {
+            let callagent_benutzer = $("#callagent_benutzer").val();
 
+            await $.ajax({
+                url: '{{ route('call_agent_first_chart') }}',
+                method: "GET",
+                data: {
+                    callagent_benutzer: callagent_benutzer
+                },
+                success: function(response) {
 
-        var options = {
-            chart: {
-                height: 380,
-                type: 'line',
-                zoom: {
-                    enabled: false
-                },
-                toolbar: {
-                    show: false
-                }
-            },
-            dataLabels: {
-                enabled: false,
-            },
-            stroke: {
-                width: [3, 3],
-                curve: 'straight'
-            },
-            series: [{
-                    name: "High - 2018",
-                    data: [26, 24, 32, 36, 33, 31, 33]
-                },
-                {
-                    name: "Low - 2018",
-                    data: [14, 11, 16, 12, 17, 13, 12]
-                }, {
-                    name: "Low - 2018",
-                    data: [17, 15, 6, 21, 12, 25, 33]
-                }
-            ],
-            title: {
-                text: 'Average High & Low Temperature',
-                align: 'left',
-                style: {
-                    fontWeight: '500',
-                },
-            },
-            grid: {
-                row: {
-                    colors: ['transparent', 'transparent'], // takes an array which will be repeated on columns
-                    opacity: 0.2
-                },
-                borderColor: '#f1f1f1'
-            },
-            markers: {
-                style: 'inverted',
-                size: 0
-            },
-            xaxis: {
-                categories: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul'],
-                title: {
-                    text: 'Month'
-                }
-            },
-            yaxis: {
-                title: {
-                    text: 'Temperature'
-                },
-                min: 5,
-                max: 40
-            },
-            legend: {
-                position: 'top',
-                horizontalAlign: 'right',
-                floating: true,
-                offsetY: -25,
-                offsetX: -5
-            },
-            responsive: [{
-                breakpoint: 600,
-                options: {
-                    chart: {
-                        toolbar: {
-                            show: false
+                    var result = JSON.parse(response);
+                    var result_length = result.length;
+
+                    var series_data = [];
+                    var date = [];
+                    var dataLead = [];
+
+                    for (let i = 0; i < result_length; i++) {
+                        dataLead.push(parseInt(result[i].count));
+                        if (!date.includes([result[i].date])) {
+                            date.push(result[i].date);
                         }
-                    },
-                    legend: {
-                        show: false
-                    },
+                    }
+                    console.log(date);
+                    console.log(dataLead);
+                    const data = {
+                        name: 'Terminiert',
+                        data: dataLead
+                    }
+                    series_data.push(
+                        data
+                    )
+
+                    var options = {
+                        chart: {
+                            height: 380,
+                            type: 'line',
+                            width: '100%',
+                            zoom: {
+                                enabled: false
+                            },
+                            toolbar: {
+                                show: false
+                            }
+                        },
+                        dataLabels: {
+                            enabled: false,
+                        },
+                        stroke: {
+                            width: [3, 3],
+                            curve: 'straight'
+                        },
+                        series: [],
+                        title: {
+                            text: 'Average High & Low Temperature',
+                            align: 'left',
+                            style: {
+                                fontWeight: '500',
+                            },
+                        },
+                        grid: {
+                            row: {
+                                colors: ['transparent',
+                                    'transparent'
+                                ], // takes an array which will be repeated on columns
+                                opacity: 0.2
+                            },
+                            borderColor: '#f1f1f1'
+                        },
+                        markers: {
+                            style: 'inverted',
+                            size: 0
+                        },
+                        xaxis: {
+                            categories: date,
+                            title: {
+                                text: 'Date'
+                            }
+                        },
+                        yaxis: {
+                            title: {
+                                text: 'Terminiert'
+                            },
+
+                        },
+                        legend: {
+                            position: 'top',
+                            horizontalAlign: 'right',
+                            floating: true,
+                            offsetY: -25,
+                            offsetX: -5
+                        },
+                        responsive: [{
+                            breakpoint: 600,
+                            options: {
+                                chart: {
+                                    toolbar: {
+                                        show: false
+                                    }
+                                },
+                                legend: {
+                                    show: false
+                                },
+                            }
+                        }]
+                    }
+
+                    var chart = new ApexCharts(
+                        document.querySelector("#line_chart_datalabeel"),
+                        options
+                    );
+
+                    chart.render();
+                    chart.updateSeries(series_data);
                 }
-            }]
+            })
         }
-
-        var chart = new ApexCharts(
-            document.querySelector("#line_chart_datalabeel"),
-            options
-        );
-
-        chart.render();
     </script>
 @endsection

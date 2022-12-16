@@ -360,9 +360,31 @@
                         </div>
                     </div>
                 </div>
-                <div class="table-responsive-md">
-                    <form method="POST">
-                        @csrf
+
+            </div>
+            <div class="table-responsive-md">
+                <form method="POST">
+                    @csrf
+                
+                    @if (Illuminate\Support\Facades\Session::has('message'))
+                        <span class="fs-5 mb-2 fw-500">
+                            {{ Illuminate\Support\Facades\Session::get('message') }}
+                        </span>
+                    @endif
+                    <div style="overflow-x:auto;">
+                        <table>
+                            <thead style="background-color: #F7F7F7;">
+                                <tr class="text-center">
+                                 
+                                    <th>Vorname</th>
+                                    <th>Nachname</th>
+                                    <th>Geburtsdatum</th>
+                                    <th>Email</th>
+                                    <th>Region</th>
+                                    <th>Sprache</th>
+                                    <th>Verteilen At</th>
+                                    <th>Created Time</th>
+
 
                         @if (Illuminate\Support\Facades\Session::has('message'))
                             <span class="fs-5 mb-2 fw-500">
