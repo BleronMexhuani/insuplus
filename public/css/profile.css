@@ -1,0 +1,62 @@
+.profileform{
+    border-bottom-left-radius: 0px;
+    border-bottom-right-radius: 0px;
+}
+
+.updateform{
+    border-top-left-radius: 0px;
+    border-top-right-radius: 0px;
+}
+
+.titleprofile{
+    font-family: 'Raleway';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 23px;
+    color: #1F1F1F;
+}
+
+.subtitleprofile{
+    font-family: 'Raleway';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 19px;
+    color: #3F4852;
+}
+
+.inputprofile{
+    border: 1px solid #EAECEE;
+    border-radius: 8px; 
+    padding: 15px;
+}
+
+.btnprofile{
+    background: #00727A;
+    border-radius: 8px;
+    color: white;
+    font-family: 'Raleway';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 16px;
+    align-items: center;
+    padding: 15px;
+    color: #FFFFFF;
+    border: none;
+    }
+
+.titleinput{
+    font-family: 'Raleway';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 16px;
+    color: #3F4852;
+}
+
+.hrinfo{
+    margin-top: 25px; 
+    margin-right: 48px;
+}

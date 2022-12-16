@@ -388,7 +388,7 @@
                         </span>
                     @endif
                     <div style="overflow-x:auto;">
-                        <table>
+                        <table >
                             <thead style="background-color: #F7F7F7;">
                                 <tr class="text-center">
                                     <td>

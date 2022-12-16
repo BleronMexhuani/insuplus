@@ -46,8 +46,8 @@
 
         <div class=" navbar-collapse hamburgernav me-5 ms-3 ms-lg-0" id="navbarScroll">
             @if (Auth::user()->hasRole(['umfrage_agent']))
-                <div class=" me-5">
-                    <div class="me-5">
+                <div class="addleads">
+                    <div class="">
                         <a href="{{route('createLeadView')}}">
                             <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
                                 xmlns="http://www.w3.org/2000/svg">
@@ -65,7 +65,7 @@
                     </div>
                 </div>
             @endif
-            <div class="me-3">
+            <div class="bells">
                 <svg width="22" height="22" viewBox="0 0 22 22" fill="none"
                     xmlns="http://www.w3.org/2000/svg">
                     <path
@@ -78,7 +78,43 @@
                 </svg>
 
             </div>
-            <div class="">
+            <div class="action">
+                <div class="profile" onclick="menuToggle();">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+                    xmlns="http://www.w3.org/2000/svg">
+                    <g clip-path="url(#clip0_191_855)">
+                        <path
+                            d="M12 2C6.48 2 2 6.48 2 12C2 17.52 6.48 22 12 22C17.52 22 22 17.52 22 12C22 6.48 17.52 2 12 2ZM12 5C13.66 5 15 6.34 15 8C15 9.66 13.66 11 12 11C10.34 11 9 9.66 9 8C9 6.34 10.34 5 12 5ZM12 19.2C9.5 19.2 7.29 17.92 6 15.98C6.03 13.99 10 12.9 12 12.9C13.99 12.9 17.97 13.99 18 15.98C16.71 17.92 14.5 19.2 12 19.2Z"
+                            fill="white" />
+                    </g>
+                    <defs>
+                        <clipPath id="clip0_191_855">
+                            <rect width="24" height="24" fill="white" />
+                        </clipPath>
+                    </defs>
+                </svg>
+                </div>
+                <div class="menu">
+                  <ul>    
+                    <li>
+                        <svg width="14" height="14" viewBox="0 0 13 13" fill="none" style="margin-right: 8px" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M10.241 5.58553L4.26946 11.5585C3.94907 11.8789 3.54762 12.1062 3.10803 12.2161L0.817035 12.7888C0.450845 12.8804 0.119149 12.5487 0.210696 12.1825L0.783446 9.89149C0.893341 9.45191 1.12064 9.05046 1.44104 8.73006L7.41257 2.75711L10.241 5.58553ZM11.6559 1.3436C12.437 2.12465 12.437 3.39098 11.6559 4.17203L10.9481 4.87843L8.11968 2.05L8.8275 1.3436C9.60854 0.56255 10.8749 0.56255 11.6559 1.3436Z" fill="#94A2AB"/>
+                            </svg>
+                            <a href="{{route('profile.edit')}}">Edit profile</a>
+                    </li>
+                    <li>
+                            <form action="{{ route('logout') }}" method="POST">
+                                @csrf
+                                <svg width="14" height="14" viewBox="0 0 13 12" style="margin-right: 8px" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M6.80039 0.799905C6.80039 0.683265 6.74951 0.572442 6.66095 0.49645C6.57247 0.420458 6.45527 0.386873 6.33991 0.404497L0.739951 1.2605C0.544647 1.29035 0.400391 1.45833 0.400391 1.65591V10.3439C0.400391 10.5414 0.544615 10.7094 0.739895 10.7393L6.33991 11.5961C6.45519 11.6137 6.57247 11.5802 6.66095 11.5042C6.74943 11.4282 6.80039 11.3173 6.80039 11.2007V5.99991H10.9382L10.1406 6.69887C9.97471 6.84439 9.95783 7.09703 10.1031 7.26335C10.2483 7.42959 10.5006 7.44639 10.6666 7.30095L12.264 5.90095C12.3507 5.82499 12.4004 5.71526 12.4004 5.59991C12.4004 5.48457 12.3507 5.37483 12.264 5.29888L10.6666 3.89888C10.5006 3.75341 10.2483 3.77026 10.1031 3.93651C9.95783 4.10276 9.97471 4.35547 10.1406 4.50095L10.9382 5.19991H6.80039V0.799905ZM4.80039 6.99991C4.46902 6.99991 4.20039 6.73127 4.20039 6.39991C4.20039 6.06855 4.46902 5.79991 4.80039 5.79991C5.13176 5.79991 5.40039 6.06855 5.40039 6.39991C5.40039 6.73127 5.13176 6.99991 4.80039 6.99991ZM8.00039 10.7999H7.60039V6.79991H8.40039V10.3999C8.40039 10.6208 8.22127 10.7999 8.00039 10.7999ZM7.60039 4.39991V1.19991H8.00039C8.22127 1.19991 8.40039 1.37899 8.40039 1.59991V4.39991H7.60039Z" fill="#94A2AB"/>
+                                    </svg>
+                                <button class="actionbutton">Logout</button>
+                            </form>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            {{-- <div class="">
                 <a href="{{route('profile.edit')}}">
                 <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
                     xmlns="http://www.w3.org/2000/svg">
@@ -94,12 +130,20 @@
                     </defs>
                 </svg>
             </a>
-            </div>
+            </div> --}}
         </div>
-        <form action="{{ route('logout') }}" method="POST">
+        {{-- <form action="{{ route('logout') }}" method="POST">
             @csrf
             <button class="btn btn-danger" style="background-color:#b21f2d ">Logout</button>
-        </form>
+        </form> --}}
 
     </div>
 </nav>
+
+
+<script>
+    function menuToggle() {
+      const toggleMenu = document.querySelector(".menu");
+      toggleMenu.classList.toggle("active");
+    }
+  </script>
