@@ -439,8 +439,10 @@
                         </span>
                     @endif
                     <div style="overflow-x:auto;">
-                        <table class="table">
-                            <thead style="background-color: #ebebeb;">
+
+                        <table >
+                            <thead style="background-color: #F7F7F7;">
+
                                 <tr class="text-center">
                                     <td>
                                         <div class="checkbox">

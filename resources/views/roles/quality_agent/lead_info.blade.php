@@ -815,7 +815,7 @@
                         <input class="inputform mt-2" type="text" id="text" name="bemerkung" placeholder="">
                     </div>
 
-                    <div class="pull-right d-flex justify-content-end mt-5 mt-md-5">
+                    <div class=" d-flex justify-content-end mt-5 mt-md-5">
                         <button class="btn btn-outline-danger  me-3">Abbrechen</button>
                         <button class="btn btn-outline-success" type="submit">Speichern</button>
                     </div>
