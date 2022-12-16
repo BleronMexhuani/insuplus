@@ -1,3 +1,10 @@
+.bgtable {
+    background: #FFFFFF;
+    border-radius: 12px;
+    margin-left: 20px;
+}
+
+
 .custom-control-label::after {
     background-color: white;
 }
@@ -16,7 +23,7 @@ label {
     margin-bottom: 0rem !important;
 }
 .table td,
-.table th {
+/* .table th {
     padding: 0.75rem;
     vertical-align: top;
     border-top: none !important;
@@ -28,7 +35,7 @@ tr {
 
 tr:hover {
     background-color: #F7F7F7;
-}
+} */
 
 .formsearch {
     background-color: white !important;
@@ -156,7 +163,7 @@ tr:hover {
 }
 
 .acordion{
-    background-color: transparent;
+    background: rgba(0, 114, 122, 0.12);
     padding: 14px;
     border: 1px solid #00727A;
     border-radius: 8px;
@@ -178,7 +185,7 @@ tr:hover {
     border-radius: 8px;
     cursor: pointer;
     padding: 8px;
-    background-color: transparent;
+    background: rgba(0, 114, 122, 0.12)
 }
 
 
