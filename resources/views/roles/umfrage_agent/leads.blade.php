@@ -3,8 +3,69 @@
 $i = 1;
 ?>
 @section('content')
-<div class="bgtable">
-<div style="overflow-x:auto;">
+<div class="mt-4 py-3 px-2">
+<div class="form-outline">
+    <input class="inputleads ps-5" type="text" placeholder="Search Leads" />
+    <i class="fa fa-search filtersubmit ps-1 "></i>
+</div>
+<div class="tableform">
+    <div style="overflow-x:auto;">
+        <table>
+            <thead style="background-color: #F7F7F7;">
+                <tr class="text-center">
+                    <td>
+                        
+                    </td>
+                    <th>Vorname</th>
+                    <th>Nachname</th>
+                    <th>Geburtsdatum</th>
+                    <th>Email</th>
+                    <th>Region</th>
+                    <th>Sprache</th>
+                    <th>Verteilen At</th>
+                    <th>Created Time</th>
+                    <th>Created From</th>
+                    <th>Feedback</th>
+                    <th>Feedback datum</th>
+                 
+                    <th> </th>
+                </tr>
+            </thead>
+            @foreach ($leads as $item)
+                @php
+                    $feedback_datum = App\Models\FeedBack::where('lead_id', $item->id)
+                        ->orderBy('created_at', 'desc')
+                        ->first();
+                    
+                @endphp
+                <tbody>
+                    <tr class="text-center">
+                        <td>
+                          
+                        </td>
+                        <td>{{ $item->vorname }}</td>
+                        <td>{{ $item->nachname }}</td>
+                        <td>{{ $item->geburtsdatum }}</td>
+                        <td>{{ $item->email }}</td>
+                        <td>{{ $item->region }}</td>
+                        <td>{{ $item->sprachen }}</td>
+                        <td>{{ $item->assign_to_id_call ? App\Models\User::find($item->assign_to_id_call)->name : ($item->assign_to_id_team_leader ? App\Models\User::find($item->assign_to_id_team_leader)->name : 'Not Assigned') }}
+                        </td>
+                        <td>{{ $item->created_at }}</td>
+                        <td>{{ $item->assigned_from }}</td>
+                        <td style="color:{{ $item->feedback_status == 'Terminiert' ? 'green' : 'red' }};">
+                            {{ $item->feedback_status }}</td>
+                        <td>{{ App\Models\FeedBack::where('lead_id', $item->id)->orderBy('created_at', 'desc')->pluck('created_at')->first() }}
+                        </td>
+                    </tr>
+                </tbody>
+            @endforeach
+        </table>
+        <div class="d-flex justify-content-center">
+        
+    </div>
+    </div>
+{{-- <div style="overflow-x:auto;">
     <table>
       <tr>
         <th>Vorname</th>
@@ -57,10 +118,13 @@ $i = 1;
         <td>67</td>
         <td>67</td>
         <td>67</td>
+        <td><a class="btn btnedit"><i
+                class="fa-regular fa-pen-to-square"></i></a></td>
+    <td><a class="btn btndelete"><i class="fa-solid fa-trash-can"></i></a></td>
       </tr>
     </table>
   </div>
-</div>
+</div> --}}
     {{-- <div class="mt-4">
         <h3>Leads</h3>
         <table class="table table-bordered mt-3">
@@ -89,4 +153,5 @@ $i = 1;
             </tbody>
         </table>
     </div> --}}
+</div>
 @endsection

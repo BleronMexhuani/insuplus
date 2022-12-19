@@ -69,7 +69,7 @@
                 @include('layouts.sidebar')
             </div>
             <!-- Page Content -->
-            <div class="col px-4 px-lg-5" style="margin-top:70px !important;margin-left: 230px">
+            <div class="col px-4 px-lg-5 insubg">
                 <div class="">
                 @yield('content')
             </div>
@@ -91,5 +91,6 @@
         crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
 </body>
+
 </html>
 

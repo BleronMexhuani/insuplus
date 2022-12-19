@@ -361,7 +361,7 @@
                     </div>
                 </div>
 
-            </div>
+            
             <div class="table-responsive-md">
                 <form method="POST">
                     @csrf
@@ -375,15 +375,6 @@
                         <table>
                             <thead style="background-color: #F7F7F7;">
                                 <tr class="text-center">
-                                 
-                                    <th>Vorname</th>
-                                    <th>Nachname</th>
-                                    <th>Geburtsdatum</th>
-                                    <th>Email</th>
-                                    <th>Region</th>
-                                    <th>Sprache</th>
-                                    <th>Verteilen At</th>
-                                    <th>Created Time</th>
 
 
                         @if (Illuminate\Support\Facades\Session::has('message'))
@@ -395,7 +386,6 @@
                             <table>
                                 <thead style="background-color: #F7F7F7;">
                                     <tr class="text-center">
-
                                         <th>Vorname</th>
                                         <th>Nachname</th>
                                         <th>Geburtsdatum</th>
@@ -404,7 +394,6 @@
                                         <th>Sprache</th>
                                         <th>Verteilen At</th>
                                         <th>Created Time</th>
-
                                         <th>Created From</th>
                                         <th>Feedback</th>
                                         <th>Feedback datum</th>
@@ -421,7 +410,6 @@
                                     @endphp
                                     <tbody>
                                         <tr class="text-center">
-
                                             <td>{{ $item->vorname }}</td>
                                             <td>{{ $item->nachname }}</td>
                                             <td>{{ $item->geburtsdatum }}</td>
@@ -454,6 +442,7 @@
     </div>
     </div>
     </div>
+</div>
     <script>
         $("#checkAll").click(function() {
             $(".check").prop('checked', $(this).prop('checked'));

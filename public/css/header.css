@@ -149,3 +149,15 @@ body{
         top: 20px;
         right: 250px;
   }
+
+  .insubg{
+    margin-top:70px !important;
+    margin-left: 230px;
+  }
+
+  @media (max-width: 790px) { 
+    .insubg{
+      margin-top:70px !important;
+      margin-left: 0px;
+    }
+  }
