@@ -27,7 +27,7 @@ Route::middleware('auth')->group(function () {
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
     require __DIR__ . '/roles/manager.php';
-    // require __DIR__ . '/roles/supervisor.php';
+    require __DIR__ . '/roles/supervisor.php';
     require __DIR__ . '/roles/umfrage.php';
     require __DIR__ . '/roles/callagent.php';
     require __DIR__ . '/roles/qualityagent.php';
