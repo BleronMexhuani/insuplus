@@ -440,7 +440,7 @@
                     @endif
                     <div style="overflow-x:auto;">
 
-                        <table >
+                        <table>
                             <thead style="background-color: #F7F7F7;">
 
                                 <tr class="text-center">
@@ -503,10 +503,15 @@
                                     </tr>
                                 </tbody>
                             @endforeach
+                            <div class="d-flex my-3">
+                                <span>Total of Leads : </span>
+                                {{ $leads->total() }}
+                            </div>
                         </table>
+
                         <div class="d-flex justify-content-center">
-                        {{$leads->onEachSide(1)->links()}}
-                    </div>
+                            {{ $leads->onEachSide(1)->links() }}
+                        </div>
                     </div>
                 </form>
             </div>

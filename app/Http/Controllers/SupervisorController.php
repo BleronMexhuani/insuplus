@@ -46,16 +46,23 @@ class SupervisorController extends Controller
         $leads = Lead::query()->selectRaw('bestatigungs_status,COUNT(*) as asd')->whereIn('bestatigungs_status', $req->bestatigungstatus)->whereIn('assigned_from', $req->umfrage_agents)->groupBy('bestatigungs_status');
         $php_data_array[] = $leads->get();
 
-
         return json_encode($php_data_array);
     }
     public function call_agent_first_chart(Request $req)
     {
-
         $leads = Lead::query()->selectRaw('feedback_status,DATE_FORMAT(created_at, "%d-%b-%Y") as date,COUNT(*) as count')->where('assign_to_id_call', $req->callagent_benutzer)->where('feedback_status', 'Terminiert')->groupBy('created_at');
 
         return json_encode($leads->get());
     }
+
+    public function call_agent_second_chart(Request $req)
+    {
+
+
+        $leads = Lead::query()->selectRaw('feedback_status,DATE_FORMAT(created_at, "%d-%b-%Y") as date,COUNT(*) as count')->where('assign_to_id_call', $req->benutzer)->whereIn('feedback_status', $req->feedback_status)->whereBetween('created_at', [$req->von, $req->bis])->groupBy('feedback_status');
+        return json_encode($leads->get());
+    }
+
     public function leads(Request $req)
     {
         $callagents = User::role(['call_agent'])->get();
@@ -116,7 +123,7 @@ class SupervisorController extends Controller
 
 
 
-        return $lead->orderBy('created_at', 'desc')->paginate(10);
+        return $lead->orderBy('created_at', 'desc')->paginate(25);
     }
 
     //
@@ -240,6 +247,34 @@ class SupervisorController extends Controller
         $req['team_leaders'] =  implode(",", $req['team_leaders']);
 
         Team::create($req->except('_token'));
+
+        return redirect()->back();
+    }
+
+    public function getGroups()
+    {
+        $teams = Team::all();
+
+        return view('roles.supervisor.teams', compact('teams'));
+    }
+    public function getGroupById(Request $req)
+    {
+        $team = Team::find($req->id);
+        $call_agents =  User::role(['call_agent'])->get();
+
+        $umfrage_agents =  User::role(['umfrage_agent'])->get();
+        // $call_agents = User::whereIn('id',explode(',',$team->call_agents))->get();
+
+        return view('roles.supervisor.team', compact('team', 'call_agents', 'umfrage_agents'));
+    }
+    public function editTeam(Request $req)
+    {
+
+        Team::find($req->id)->update([
+            'group_name' => $req->group_name,
+            'call_agents' => implode(',', $req->call_agents),
+            'umfrage_agents' => implode(',', $req->umfrage_agents)
+        ]);
 
         return redirect()->back();
     }
