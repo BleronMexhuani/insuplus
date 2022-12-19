@@ -60,7 +60,7 @@
                                     <div class="input-group mt-2 ">
                                         <input type="text" class="form-controol input-sm mb-4" id="umfrage_grafik_von"
                                             name="" placeholder="von" onfocus="(this.type='date')"
-                                            onblur="(this.type='text')" onchange="change()">
+                                            onblur="(this.type='text')">
                                         <input type="text" class="form-controol input-sm mb-4" placeholder="bis"
                                             onfocus="(this.type='date')" onblur="(this.type='text')" id="umfrage_grafik_bis"
                                             name="">
@@ -124,7 +124,7 @@
                                 <div class="input-group mt-2 ">
                                     <input type="text" class="form-controol input-sm mb-4" id="von_second_chart"
                                         placeholder="von" onfocus="(this.type='date')" onblur="(this.type='text')"
-                                        name="" onchange="change()">
+                                        name="" >
                                     <input type="text" class="form-controol input-sm mb-4" id="bis_second_chart"
                                         placeholder="bis" onfocus="(this.type='date')" onblur="(this.type='text')"
                                         name="">
@@ -218,7 +218,7 @@
                                 <div class="input-group mt-2 ">
                                     <input type="text" class="form-controol input-sm mb-4" id="von_call_agent2"
                                         placeholder="von" onfocus="(this.type='date')" onblur="(this.type='text')"
-                                        name="" onchange="change()">
+                                        name="" >
                                     <input type="text" class="form-controol input-sm mb-4" id="bis_call_agent2"
                                         placeholder="bis" onfocus="(this.type='date')" onblur="(this.type='text')"
                                         name="">
@@ -271,41 +271,58 @@
             let bis = document.getElementById('bis_call_agent2').value;
             let von = document.getElementById("von_call_agent2").value;
             let benutzer = document.getElementById("benutzer_call_agent_2").value;
-            let feedback_status = document.getElementById("feedback_status_call_agent").value;
+            let feedback_status = $("#feedback_status_call_agent").val();
 
-            // await $.ajax({
-            //     url:'',
-            //     method:"GET",
-            //     data:{
-
-            //     },
-            //     success:function(response){
-
-            //     }
-            // })
-            var xValues = ["Lorem", "Lorem", "Lorem"];
-            var yValues = [55, 24, 15];
-            var barColors = [
-                "#a95g47",
-                "#05aba9",
-                "#1e7145"
-            ];
-
-            new Chart("myChart1", {
-                type: "pie",
+            await $.ajax({
+                url: '{{ route('call_agent_second_chart') }}',
+                method: "GET",
                 data: {
-                    labels: xValues,
-                    datasets: [{
-                        backgroundColor: barColors,
-                        data: yValues
-                    }]
+                    bis: bis,
+                    von: von,
+                    benutzer: benutzer,
+                    feedback_status
+
                 },
-                options: {
-                    title: {
-                        display: true,
+                success: function(response) {
+
+                    let status = [];
+                    let values = [];
+                    let result = JSON.parse(response);
+                    console.log(result);
+                    for (let i = 0; i < result.length ; i++) {
+                        status.push(result[i].feedback_status);
+                        values.push(result[i].count)
+
                     }
+
+                    var barColors = [
+                        "#a95g47",
+                        "#05aba9",
+                        "#0e7v45",
+                   
+                    ];
+
+                    var xValues = status;
+                    var yValues = values;
+
+                    new Chart("myChart1", {
+                        type: "pie",
+                        data: {
+                            labels: xValues,
+                            datasets: [{
+                                backgroundColor: barColors,
+                                data: yValues
+                            }]
+                        },
+                        options: {
+                            title: {
+                                display: true,
+                            }
+                        }
+                    });
                 }
-            });
+            })
+
         }
     </script>
 
@@ -318,7 +335,7 @@
             let bestatigungstatus = $("#bestatigungstatus").val();
 
             await $.ajax({
-                url: '{{ route('umfrage_second_chart') }}',
+                url: "{{ route('umfrage_second_chart') }}",
                 method: "GET",
                 data: {
                     umfrage_agents: umfrage_agents,

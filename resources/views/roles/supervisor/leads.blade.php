@@ -429,6 +429,7 @@
                             </select>
                         </div>
                     </div>
+
                 </div>
                 <div class="table-responsive-md">
                     <form action="{{ route('assignLead') }}" method="POST">
@@ -456,6 +457,34 @@
                                     </select>
                                 </div>
                             </div>
+
+                    @if (Illuminate\Support\Facades\Session::has('message'))
+                        <span class="fs-5 mb-2 fw-500">
+                            {{ Illuminate\Support\Facades\Session::get('message') }}
+                        </span>
+                    @endif
+                    <div style="overflow-x:auto;">
+
+                        <table>
+                            <thead style="background-color: #F7F7F7;">
+
+                                <tr class="text-center">
+                                    <td>
+                                        <div class="checkbox">
+                                            <label>
+                                                <input type="checkbox" class="check" id="checkAll">
+                                            </label>
+                                        </div>
+                                    </td>
+                                    <th>Vorname</th>
+                                    <th>Nachname</th>
+                                    <th>Geburtsdatum</th>
+                                    <th>Email</th>
+                                    <th>Region</th>
+                                    <th>Sprache</th>
+                                    <th>Verteilen At</th>
+                                    <th>Created Time</th>
+
 
                             <div class="col-2">
                                 <div class="text-center mt-1">
@@ -493,6 +522,7 @@
                                         <th>Aktion </th>
                                         <th> </th>
                                     </tr>
+
                                 </thead>
                                 @foreach ($leads as $item)
                                     @php
@@ -537,6 +567,21 @@
                         </div>
                     </form>
                 </div>
+
+                                </tbody>
+                            @endforeach
+                            <div class="d-flex my-3">
+                                <span>Total of Leads : </span>
+                                {{ $leads->total() }}
+                            </div>
+                        </table>
+
+                        <div class="d-flex justify-content-center">
+                            {{ $leads->onEachSide(1)->links() }}
+                        </div>
+                    </div>
+                </form>
+
             </div>
         </div>
     </div>
