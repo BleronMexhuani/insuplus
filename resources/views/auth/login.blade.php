@@ -128,7 +128,7 @@
 
             <div class="mt-5 py-5 mb-5" style="display: flex; justify-content: center; ">
                 <button class="w-50 btnform flex items-center justify-center">
-                    {{ __('LOG IN') }}
+                    {{ __('ANMELDEN') }}
                 </button>
             </div>
 
