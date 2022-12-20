@@ -15,6 +15,7 @@ class CallAgentController extends Controller
     public function getLeads(Request $req)
     {
         $leads = $this->leadsOfCallAgent($req);
+        $leads->appends($req->all());
 
         return view('roles.call_agent.leads', compact('leads'));
     }
@@ -25,7 +26,7 @@ class CallAgentController extends Controller
         $lead = Lead::query();
         $lead->where('assign_to_id_call', Auth::user()->id);
 
-        foreach ($req->except('_token') as $key => $value) {
+        foreach ($req->except('_token', 'page') as $key => $value) {
             if ($key == 'created_at' || $key == 'verteilen_datum' || $key == 'geburtsdatum' || $key == 'anrufdatum') {
                 if ($value[0] !== null && $value[1] !== null) {
                     $lead->whereBetween($key, $value);
@@ -65,7 +66,7 @@ class CallAgentController extends Controller
             }
         }
 
-        return $lead->orderBy('created_at', 'desc')->get();
+        return $lead->orderBy('created_at', 'desc')->paginate(25);
     }
     public function getLeadById($id)
     {

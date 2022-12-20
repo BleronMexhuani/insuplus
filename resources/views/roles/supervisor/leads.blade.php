@@ -539,12 +539,16 @@
                             @endforeach
                            
                         </table>
-                        <div class="d-flex my-3">
-                            <span>Total of Leads : </span>
-                            {{ $leads->total() }}
-                        </div>
-                        <div class="d-flex justify-content-center">
-                            {{ $leads->onEachSide(1)->links() }}
+                        <div class=" pt-4">
+                            <div class="text-center text-sm-start my-3 ps-0 ps-sm-4">
+                                <span>Shows {{ $leads->firstItem() }} - {{ $leads->lastItem() }}  of Total  {{$leads->total()}} Leads </span>
+                               
+                                
+                            </div>
+                            <div class="d-flex justify-content-center navPagination">
+                                {{ $leads->onEachSide(1)->links() }}
+                            </div>
+        
                         </div>
                     </div>
                 </form>

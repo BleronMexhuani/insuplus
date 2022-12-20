@@ -337,8 +337,17 @@ tr {
     padding-right: 32px;
 
 }
+.navPagination {
+    margin-top: -50px;
+}
 @media (min-width: 576px) { 
     .inputLeads{
         padding: 0px 20px;
+    }
+    
+ }
+ @media (max-width: 576.99px) {
+    .navPagination {
+        margin-top: 25px;
     }
  }
