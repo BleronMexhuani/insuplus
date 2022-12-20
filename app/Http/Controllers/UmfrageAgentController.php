@@ -23,31 +23,32 @@ class UmfrageAgentController extends Controller
 
         return redirect()->back()->with('success', 'Successfuly inserted');
     }
-    public function getLeads()
+    public function getLeads(Request $req)
     {
-        $leads = Lead::where('assigned_from', Auth::user()->id)->get();
-
+        $leads = Lead::where('assigned_from', Auth::user()->id)->where('vorname', 'LIKE', '%' . $req->vorname . '%')->paginate(25);
+        $leads->appends($req->all());
         return view('roles.umfrage_agent.leads', compact('leads'));
     }
-    public function chartumfrage(Request $req){
-        if($req->from === null && $req->from === null){
+    public function chartumfrage(Request $req)
+    {
+        if ($req->from === null && $req->from === null) {
             $leads = Lead::Select('bestatigungs_status')
-            ->selectRaw('bestatigungs_status,COUNT(*) as number')
-           
-            ->where('assigned_from', Auth::user()->id)
-            ->groupBy('bestatigungs_status')
-            ->get();
-        }else{
+                ->selectRaw('bestatigungs_status,COUNT(*) as number')
+
+                ->where('assigned_from', Auth::user()->id)
+                ->groupBy('bestatigungs_status')
+                ->get();
+        } else {
             $leads = Lead::Select('bestatigungs_status')
-            ->selectRaw('bestatigungs_status,COUNT(*) as number')
-        
-            ->whereBetween('created_at',[$req->from , $req->to])
-            ->where('assigned_from', Auth::user()->id)
-            ->groupBy('bestatigungs_status')
-            ->get();
+                ->selectRaw('bestatigungs_status,COUNT(*) as number')
+
+                ->whereBetween('created_at', [$req->from, $req->to])
+                ->where('assigned_from', Auth::user()->id)
+                ->groupBy('bestatigungs_status')
+                ->get();
         }
-        $array=[];
-        foreach($leads as $lead) {
+        $array = [];
+        foreach ($leads as $lead) {
             array_push($array, [$lead->bestatigungs_status, $lead->number]);
         }
         return $array;

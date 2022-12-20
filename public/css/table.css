@@ -336,8 +336,14 @@ tr {
 .searchLeads{
     padding-right: 28px;
 }
+
+.navPagination {
+    margin-top: -50px;
+}
+
 @media (max-width: 769px) { 
     .searchgrup{
+
         padding: 0px 20px;
         padding-right: 27px;
     }
@@ -355,5 +361,11 @@ tr {
     .searchLeads{
         padding-left: 21px;
         
+    }
+    
+ }
+ @media (max-width: 576.99px) {
+    .navPagination {
+        margin-top: 25px;
     }
  }
