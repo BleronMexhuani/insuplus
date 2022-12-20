@@ -124,7 +124,7 @@
                                 <div class="input-group mt-2 ">
                                     <input type="text" class="form-controol input-sm mb-4" id="von_second_chart"
                                         placeholder="von" onfocus="(this.type='date')" onblur="(this.type='text')"
-                                        name="" >
+                                        name="">
                                     <input type="text" class="form-controol input-sm mb-4" id="bis_second_chart"
                                         placeholder="bis" onfocus="(this.type='date')" onblur="(this.type='text')"
                                         name="">
@@ -218,7 +218,7 @@
                                 <div class="input-group mt-2 ">
                                     <input type="text" class="form-controol input-sm mb-4" id="von_call_agent2"
                                         placeholder="von" onfocus="(this.type='date')" onblur="(this.type='text')"
-                                        name="" >
+                                        name="">
                                     <input type="text" class="form-controol input-sm mb-4" id="bis_call_agent2"
                                         placeholder="bis" onfocus="(this.type='date')" onblur="(this.type='text')"
                                         name="">
@@ -289,7 +289,7 @@
                     let values = [];
                     let result = JSON.parse(response);
                     console.log(result);
-                    for (let i = 0; i < result.length ; i++) {
+                    for (let i = 0; i < result.length; i++) {
                         status.push(result[i].feedback_status);
                         values.push(result[i].count)
 
@@ -299,7 +299,7 @@
                         "#a95g47",
                         "#05aba9",
                         "#0e7v45",
-                   
+
                     ];
 
                     var xValues = status;
@@ -327,7 +327,28 @@
     </script>
 
     <script>
+        var barColors = [
+            "#a95g47",
+            "#05aba9",
+            "#1e7145"
+        ];
+        let chart = new Chart("myChart", {
+            type: "pie",
+            data: {
+                labels: [],
+                datasets: [{
+                    backgroundColor: barColors,
+                    data: []
+                }]
+            },
+            options: {
+                title: {
+                    display: true,
+                }
+            }
+        });
         async function grafikFurStatus() {
+
 
             let umfrage_agents = $("#benutzer_second_chart").val()
             let umfrage_grafik_von = $("#von_second_chart").val();
@@ -344,41 +365,25 @@
                     bestatigungstatus: bestatigungstatus
                 },
                 success: function(response) {
+
                     let status = [];
                     let values = [];
                     let result = JSON.parse(response);
 
-                    var barColors = [
-                        "#a95g47",
-                        "#05aba9",
-                        "#1e7145"
-                    ];
 
 
-                    for (let i = 0; i < result.length + 1; i++) {
+
+                    for (let i = 0; i < result[0].length; i++) {
                         status.push(result[0][i].bestatigungs_status);
                         values.push(result[0][i].asd)
 
                     }
-
+                    
                     var xValues = status;
                     var yValues = values;
-
-                    new Chart("myChart", {
-                        type: "pie",
-                        data: {
-                            labels: xValues,
-                            datasets: [{
-                                backgroundColor: barColors,
-                                data: yValues
-                            }]
-                        },
-                        options: {
-                            title: {
-                                display: true,
-                            }
-                        }
-                    });
+                    chart.data.labels = xValues;
+                    chart.data.datasets[0].data = yValues;
+                    chart.update();
                 }
             })
 

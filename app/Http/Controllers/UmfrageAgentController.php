@@ -29,4 +29,27 @@ class UmfrageAgentController extends Controller
 
         return view('roles.umfrage_agent.leads', compact('leads'));
     }
+    public function chartumfrage(Request $req){
+        if($req->from === null && $req->from === null){
+            $leads = Lead::Select('bestatigungs_status')
+            ->selectRaw('bestatigungs_status,COUNT(*) as number')
+           
+            ->where('assigned_from', Auth::user()->id)
+            ->groupBy('bestatigungs_status')
+            ->get();
+        }else{
+            $leads = Lead::Select('bestatigungs_status')
+            ->selectRaw('bestatigungs_status,COUNT(*) as number')
+        
+            ->whereBetween('created_at',[$req->from , $req->to])
+            ->where('assigned_from', Auth::user()->id)
+            ->groupBy('bestatigungs_status')
+            ->get();
+        }
+        $array=[];
+        foreach($leads as $lead) {
+            array_push($array, [$lead->bestatigungs_status, $lead->number]);
+        }
+        return $array;
+    }
 }
