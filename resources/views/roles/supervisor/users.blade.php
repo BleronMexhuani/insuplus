@@ -1,10 +1,10 @@
 @extends('layouts.app')
 
 @section('content')
-    <div class="my-3">
-        <a href="{{ route('createUser') }}" class="fw-bold fs-3">Add User</a>
+    <div class="my-3 mt-5">
+        <a href="{{ route('createUser') }}" class="titleoftable  fs-3">Add User</a>
     </div>
-    <div class="tableform">
+    <div class="tableform mt-5">
     <div style="overflow-x:auto;">
         <table>
             <thead>
@@ -12,7 +12,7 @@
             <th>Firstname</th>
             <th>Role</th>
             <th>Email</th>
-            <th class="text-center">Actions</th>
+            <th class="text-center">Aktion</th>
           </tr>
         </thead>
         <tbody>
@@ -25,13 +25,10 @@
                         href="{{ route('getuserbyid', ['id' => $item->id]) }}"><i
                             class="fa-regular fa-pen-to-square"></i></a>
 
-                <a onclick="if(confirm('Are you sure ?'))location.href='{{ route('deleteUser', ['id' => $item->id]) }}" class="btn btndelete"><i class="fa-solid fa-trash-can"></i></a></td>
                 </tr>
             @endforeach
         </tbody>
-        
         </table>
-        
     </div>
     {{-- <table class="my-4">
 

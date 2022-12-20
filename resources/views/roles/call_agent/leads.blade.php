@@ -319,7 +319,12 @@
 
             <div class="tableform">
                 <div style="padding: 25px">
-                    <span class="ms-1 mb-4 titleoftable ">All</span>
+                    <span class="ms-1 mb-4 titleoftable ">All
+                        <hr style="   border: 2px solid #00727A;
+                        width: 25px;
+                        margin-top: 0px;
+                        margin-left: 3px;">
+                    </span>
                 </div>
                 <hr style="margin: 0px 33px 7px 22px;">
                 <div class="row">

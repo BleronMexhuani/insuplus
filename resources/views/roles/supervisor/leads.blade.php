@@ -6,7 +6,14 @@
                 @csrf
                 <div class="accordionbg mb-4">
                     <button type="button" class="acordion pull-right">Erweiter</button>
-                    <button type="button" class="accordion">Filter</button>
+                    <button type="button" class="accordion">
+                        <svg width="28" height="28" viewBox="0 0 28 28" fill="none"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                d="M17.25 19C17.6642 19 18 19.3358 18 19.75C18 20.1642 17.6642 20.5 17.25 20.5H10.75C10.3358 20.5 10 20.1642 10 19.75C10 19.3358 10.3358 19 10.75 19H17.25ZM21.25 13C21.6642 13 22 13.3358 22 13.75C22 14.1642 21.6642 14.5 21.25 14.5H6.75C6.33579 14.5 6 14.1642 6 13.75C6 13.3358 6.33579 13 6.75 13H21.25ZM24.25 7C24.6642 7 25 7.33579 25 7.75C25 8.16421 24.6642 8.5 24.25 8.5H3.75C3.33579 8.5 3 8.16421 3 7.75C3 7.33579 3.33579 7 3.75 7H24.25Z"
+                                fill="#00727A" />
+                        </svg>
+                    </button>
                     <div class="panel">
                         <div class="row">
                             <div class="col-md-3 mb-3">
@@ -332,7 +339,7 @@
                             </div>
                             <div class="col-md-3 my-auto">
                                 <div class="text-center mt-3">
-                                <button class=" w-50 btnprofile" style="color:white;">Search</button>
+                                    <button class="buttonsearch"><i class="fa fa-search ps-1 " style="color:#00727A"></i></button>
                                 </div>
                             </div>
                             {{-- <div class="col-md-3 mb-3">
@@ -376,24 +383,21 @@
                         </div> --}}
                     </div>
                 </div>
-
             </form>
             <div class="tableform">
                 <div style="padding: 25px">
-                    <span class="ms-1 mb-4 titleoftable ">All</span>
+                    <span class="ms-1 mb-4 titleoftable ">All
+                         <hr style=" border: 2px solid #00727A;
+                         width: 25px;
+                         margin-top: 0px;
+                         margin-left: 3px;">
+                        </span>
                 </div>
             <hr style="margin: 0px 33px 7px 22px;">
             <div class="row">
-                <div class="col-6 mb-4 mt-3">
-                    <div class="input-group searchgrup">
-                        <div class="form-outline">
-                            <input class="inputleads ps-5" type="text" placeholder="Search Leads" />
-                            <i class="fa fa-search filtersubmit ps-1 "></i>
-                        </div>
-                    </div>
-                </div>
+                
 
-                <div class="col-3">
+                {{-- <div class="col-sm-3">
                     <div style="margin-top: 4px; ">
                         <div class="topPlaceholder px-4">
                             <span>Filter</span>
@@ -405,9 +409,9 @@
                             <option value="3">Three</option>
                         </select>
                     </div>
-
-                </div>
-                <div class="col-3">
+                </div> --}}
+{{-- 
+                <div class="col-sm-3">
                     <div style="margin-top: 4px; padding-right: 25px;">
                         <div class="topPlaceholder px-4">
                             <span>Sort</span>
@@ -419,14 +423,14 @@
                             <option value="3">Three</option>
                         </select>
                     </div>
-                </div>
+                </div> --}}
             </div>
             <div class="table-responsive-md">
                 <form action="{{ route('assignLead') }}" method="POST">
                     @csrf
                     <div class="d-flex row">
-                        <div class="col-md-5">
-                            <div class="searchgrup">
+                        <div class="col-sm-3">
+                            <div class="searchgrup mt-4">
                             <select name="assign_to_id_call" placeholder="Call agents" id=""
                                 class="form-select inputleads  select-form  mb-3">
                                 <option value="">Choose Call Agents</option>
@@ -436,7 +440,8 @@
                             </select>
                         </div>
                         </div>
-                        <div class="col-md-5">
+                        <div class="col-sm-3">
+                            <div class="mt-4">
                             <select name="assign_to_id_team_leader" id=""
                                 class="form-select inputleads select-form  mb-3">
                                 <option value="">Choose Team Leader</option>
@@ -445,9 +450,19 @@
                                 @endforeach
                             </select>
                         </div>
-                        <div class="col-2">
-                            <div class="text-center">
-                            <button class="text-center btnprofile w-50 " style="color:white;">Submit</button>
+                        </div>
+                        <div class="col-sm-2 ">
+                            <div class=" mb-4 mt-4 text-center">
+                            <button class=" btnprofile w-75 " style="color:white;">Submit</button>
+                            </div>
+                        </div>
+
+                        <div class="col-sm-4 ">
+                            <div class="input-group  searchLeads mt-4">
+                                <div class="form-outline">
+                                    <input class="inputleads ps-5" type="text" placeholder="Search Leads" />
+                                    <i class="fa fa-search filtersubmit ps-1 "></i>
+                                </div>
                             </div>
                         </div>
 
@@ -464,9 +479,9 @@
 
                                 <tr class="text-center ">
                                     <td>
-                                        <div class="checkbox ms-3">
+                                        <div class="checkbox ms-3 squaredFour">
                                             <label>
-                                                <input type="checkbox" class="check" id="checkAll">
+                                                <input type="checkbox"  class="check" id="checkAll">
                                             </label>
                                         </div>
                                     </td>
@@ -493,7 +508,7 @@
                                         ->first();
                                     
                                 @endphp
-                                <tbody>
+                                <tbody >
                                     <tr class="text-center tablesfont">
                                         <td>
                                             <label>

@@ -69,7 +69,7 @@
                 @include('layouts.sidebar')
             </div>
             <!-- Page Content -->
-            <div class="col px-4 px-lg-5 insubg">
+            <div class="col px-4 px-md-5 insubg">
                 <div class="">
                 @yield('content')
             </div>

@@ -1,6 +1,7 @@
 body{
     font-family: 'Raleway', sans-serif;
-    background-color: #F5F5F5 !important;
+    /* background-color: #F5F5F5 !important; */
+    background-color: #f1f1f1 !important;
 }
 .navbar {
     position: fixed !important;

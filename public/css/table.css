@@ -293,7 +293,7 @@ tr:hover {
   
    th, td {
     text-align: center;
-    padding: 6px;
+    padding: 15px 5px;
   }  
 
 
@@ -318,3 +318,27 @@ tr:hover {
     line-height: 14px;
     color: #3F4852;
     }
+
+ tbody{
+        border-bottom:1px solid #EAECEE;
+    }
+
+.squaredFour {
+        width: 20px;
+        position: relative;
+        margin: 20px auto;
+    }
+
+tr {
+    border-bottom: 1px solid #EAECEE;
+}
+
+.searchLeads{
+    padding-right: 32px;
+
+}
+@media (min-width: 576px) { 
+    .inputLeads{
+        padding: 0px 20px;
+    }
+ }
