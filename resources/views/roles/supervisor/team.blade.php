@@ -3,10 +3,7 @@
     <form class="mt-5" action="{{ route('editTeam', ['id' => $team->id]) }}" method="POST">
         @csrf
         <div class="row">
-
-
             <div class="col-3">
-
                 <label for="Group Name">Group Name</label>
                 <input type="text" required name="group_name" class="form-control" value="{{ $team->group_name }}">
             </div>

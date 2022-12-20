@@ -61,9 +61,7 @@ $i = 1;
                 </tbody>
             @endforeach
         </table>
-        <div class="d-flex justify-content-center">
-        
-    </div>
+       
     </div>
 {{-- <div style="overflow-x:auto;">
     <table>
