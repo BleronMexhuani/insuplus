@@ -3,10 +3,10 @@
 @section('content')
     <div class="col ms-0 ms-md-2 px-0 px-md-5" style="margin-top:16px !important;">
         <div class="mt-4 py-3 px-2">
-            <span class="titledash">Willkommen Enis Demolli!</span>
+            <span class="titledash">Willkommen {{ Auth::user()->name }}!</span>
             <div class="bgform mt-4 p-4 p-md-5">
                 <div class="row">
-                    <div class="col-xl-4 mb-2 ">
+                    <div class="col-4 ">
                         <div class="dashborder">
                             <div>
                                 <svg width="52" height="53" viewBox="0 0 52 53" fill="none"
@@ -27,11 +27,11 @@
                             <div class="d-flex flex-column">
                                 <span class="subtitledash">Leads This Today</span>
                                 <span
-                                    style="font-weight: 700; color: #8B35F9; font-size: 32px;font-family: 'Poppins', sans-serif; ">50</span>
+                                    style="font-weight: 700; color: #8B35F9; font-size: 32px;font-family: 'Poppins', sans-serif; ">55</span>
                             </div>
                         </div>
                     </div>
-                    <div class="col-xl-4 mb-2">
+                    <div class="col-4 ">
                         <div class="dashborder">
                             <div>
                                 <svg width="52" height="53" viewBox="0 0 52 53" fill="none"
@@ -53,11 +53,11 @@
                             <div class="d-flex flex-column">
                                 <span class="subtitledash">Leads This Week</span>
                                 <span
-                                    style="font-weight: 700; color: #F97035; font-size: 32px; font-family: 'Poppins', sans-serif;">33</span>
+                                    style="font-weight: 700; color: #F97035; font-size: 32px; font-family: 'Poppins', sans-serif;">100</span>
                             </div>
                         </div>
                     </div>
-                    <div class="col-xl-4 ">
+                    <div class="col-4 ">
                         <div class="dashborder">
                             <div>
                                 <svg width="52" height="53" viewBox="0 0 52 53" fill="none"
@@ -79,38 +79,36 @@
                             <div class="d-flex flex-column">
                                 <span class="subtitledash">Leads this Month</span>
                                 <span
-                                    style="font-weight: 700; color: #F9CE35; font-size: 32px; font-family: 'Poppins', sans-serif;">12’00</span>
+                                    style="font-weight: 700; color: #F9CE35; font-size: 32px; font-family: 'Poppins', sans-serif;">500</span>
                             </div>
                         </div>
                     </div>
                 </div>
                 <div class="row">
-                    <div class="col-xxl-8">
+                    <div class="col-8">
                         <div class="mt-5 apexchart">
                             <div class="row">
-                                <div class="col-12 col-xl-4">
+                                <div class="col-4">
                                     <div class="mt-4">
                                         <span class="ms-4"
                                             style="font-family: 'Raleway'; font-weight: 700; font-size: 18px;color: #1F1F1F;">Leads</span>
                                     </div>
                                 </div>
-                                <div class="col-12 col-xl-8 d-flex justify-content-end">
+                                <div class="col-8 d-flex justify-content-end">
                                     <div class="mt-4  ">
                                         <span class="titledate">from</span>
-                                        <input type="date" class="dateinput px-0 mx-0 "
-                                            value="{{ Carbon\Carbon::now()->format('Y-m-d') }}" placeholder="Start Date"
-                                            required min="{{ Carbon\Carbon::now()->format('Y-m-d') }}">
-
-
+                                        <input id="from" type="date" class="dateinput px-0 mx-0 "
+                                             placeholder="Start Date"
+                                            required>
                                     </div>
                                     <div class="mt-4 ms-5">
                                         <span class="titledate">to</span>
-                                        <input type="date" class="dateinput px-0 mx-0 col"
-                                            value="{{ Carbon\Carbon::now()->format('Y-m-d') }}" placeholder="End Date"
-                                            required min="{{ Carbon\Carbon::now()->format('Y-m-d') }}">
+                                        <input id="to" type="date" class="dateinput px-0 mx-0 col"
+                                            placeholder="End Date"
+                                            required min="{{ Carbon\Carbon::today()->format('Y-m-d') }}">
                                     </div>
                                     <div class="mt-3 ms-4">
-                                        <button type="submit" class="btn btnleads">Filter</button>
+                                        <button onclick="chartlista()" type="submit" class="btn btnleads">Filter</button>
                                     </div>
                                 </div>
 
@@ -123,70 +121,12 @@
                                         </figure>
                                     </div>
                                     <div class="col">
-                                        <div class="textboard text-center mt-5 pt-4">
-                                            <div class="mb-4">
-                                                <svg width="12" height="13" viewBox="0 0 12 13" fill="none"
-                                                    xmlns="http://www.w3.org/2000/svg">
-                                                    <path fill-rule="evenodd" clip-rule="evenodd"
-                                                        d="M6 12.5C9.31371 12.5 12 9.81371 12 6.5C12 3.18629 9.31371 0.5 6 0.5C2.68629 0.5 0 3.18629 0 6.5C0 9.81371 2.68629 12.5 6 12.5Z"
-                                                        fill="#29E7CD" />
-                                                    <path fill-rule="evenodd" clip-rule="evenodd"
-                                                        d="M6 9.5C7.65685 9.5 9 8.15685 9 6.5C9 4.84315 7.65685 3.5 6 3.5C4.34315 3.5 3 4.84315 3 6.5C3 8.15685 4.34315 9.5 6 9.5Z"
-                                                        fill="white" />
-                                                </svg>
-                                                <span class="ms-2">Lorem</span>
-                                            </div>
-                                            <div class="mb-4">
-                                                <svg width="12" height="13" viewBox="0 0 12 13" fill="none"
-                                                    xmlns="http://www.w3.org/2000/svg">
-                                                    <path fill-rule="evenodd" clip-rule="evenodd"
-                                                        d="M6 12.5C9.31371 12.5 12 9.81371 12 6.5C12 3.18629 9.31371 0.5 6 0.5C2.68629 0.5 0 3.18629 0 6.5C0 9.81371 2.68629 12.5 6 12.5Z"
-                                                        fill="#FF715B" />
-                                                    <path fill-rule="evenodd" clip-rule="evenodd"
-                                                        d="M6 9.5C7.65685 9.5 9 8.15685 9 6.5C9 4.84315 7.65685 3.5 6 3.5C4.34315 3.5 3 4.84315 3 6.5C3 8.15685 4.34315 9.5 6 9.5Z"
-                                                        fill="white" />
-                                                </svg>
-                                                <span class="ms-2">Lorem</span>
-                                            </div>
-                                            <div class="mb-4">
-                                                <svg width="12" height="13" viewBox="0 0 12 13" fill="none"
-                                                    xmlns="http://www.w3.org/2000/svg">
-                                                    <path fill-rule="evenodd" clip-rule="evenodd"
-                                                        d="M6 12.5C9.31371 12.5 12 9.81371 12 6.5C12 3.18629 9.31371 0.5 6 0.5C2.68629 0.5 0 3.18629 0 6.5C0 9.81371 2.68629 12.5 6 12.5Z"
-                                                        fill="#FDCA40" />
-                                                    <path fill-rule="evenodd" clip-rule="evenodd"
-                                                        d="M6 9.5C7.65685 9.5 9 8.15685 9 6.5C9 4.84315 7.65685 3.5 6 3.5C4.34315 3.5 3 4.84315 3 6.5C3 8.15685 4.34315 9.5 6 9.5Z"
-                                                        fill="white" />
-                                                </svg>
+                                        <div class="textboard mt-5 pt-4 ">
 
-                                                <span class="ms-2">Lorem</span>
+                                            <div class="mb-4" id="elements">
+                                              
                                             </div>
-                                            <div class="mb-4">
-                                                <svg width="12" height="13" viewBox="0 0 12 13" fill="none"
-                                                    xmlns="http://www.w3.org/2000/svg">
-                                                    <path fill-rule="evenodd" clip-rule="evenodd"
-                                                        d="M6 12.5C9.31371 12.5 12 9.81371 12 6.5C12 3.18629 9.31371 0.5 6 0.5C2.68629 0.5 0 3.18629 0 6.5C0 9.81371 2.68629 12.5 6 12.5Z"
-                                                        fill="#FDCA40" />
-                                                    <path fill-rule="evenodd" clip-rule="evenodd"
-                                                        d="M6 9.5C7.65685 9.5 9 8.15685 9 6.5C9 4.84315 7.65685 3.5 6 3.5C4.34315 3.5 3 4.84315 3 6.5C3 8.15685 4.34315 9.5 6 9.5Z"
-                                                        fill="white" />
-                                                </svg>
 
-                                                <span class="ms-2">Lorem</span>
-                                            </div>
-                                            <div class="mb-4">
-                                                <svg width="12" height="13" viewBox="0 0 12 13" fill="none"
-                                                    xmlns="http://www.w3.org/2000/svg">
-                                                    <path fill-rule="evenodd" clip-rule="evenodd"
-                                                        d="M6 12.5C9.31371 12.5 12 9.81371 12 6.5C12 3.18629 9.31371 0.5 6 0.5C2.68629 0.5 0 3.18629 0 6.5C0 9.81371 2.68629 12.5 6 12.5Z"
-                                                        fill="#FDCA40" />
-                                                    <path fill-rule="evenodd" clip-rule="evenodd"
-                                                        d="M6 9.5C7.65685 9.5 9 8.15685 9 6.5C9 4.84315 7.65685 3.5 6 3.5C4.34315 3.5 3 4.84315 3 6.5C3 8.15685 4.34315 9.5 6 9.5Z"
-                                                        fill="white" />
-                                                </svg>
-
-                                                <span class="ms-2">Lorem</span>
-                                            </div>
                                         </div>
                                     </div>
                                     <div>
@@ -201,22 +141,26 @@
                 </div>
             </div>
         </div>
+
         <script src="https://code.highcharts.com/highcharts.js"></script>
         <script src="https://code.highcharts.com/modules/variable-pie.js"></script>
         <script src="https://code.highcharts.com/modules/exporting.js"></script>
         <script src="https://code.highcharts.com/modules/export-data.js"></script>
         <script src="https://code.highcharts.com/modules/accessibility.js"></script>
-
-        <script>
+        <script src="https://cdn.jsdelivr.net/npm/axios@1.1.2/dist/axios.min.js"></script>
+        <script async>
+           var chart;
             Highcharts.setOptions({
-                colors: ['#29E7CD', '#F97035', '#F9CE35']
+                colors:  ['#29E7CD', '#F97035', '#F9CE35', '#21618C', '#17202A','#7B7D7D','#C0392B','#196F3D','#8E44AD','#F1C40F ']
             });
-            Highcharts.chart('container', {
+            chart = new Highcharts.chart('container', {
                 chart: {
                     width: '400',
                     type: 'variablepie'
                 },
-
+                xAxis: {
+                    slicedOffset: 119
+                },
                 plotOptions: {
                     pie: {
                         allowPointSelect: true,
@@ -230,24 +174,56 @@
                 tooltip: {
                     enabled: false
                 },
-
                 series: [{
                     minPointSize: 10,
                     innerSize: '10%',
                     zMin: 0,
+                    data: []
 
+                }],
 
-                    data: [{
-                        y: 55,
-                        z: 119
-                    }, {
-                        y: 100,
-                        z: 119
-                    }, {
-                        y: 123,
-                        z: 119
-                    }]
-                }]
             });
+
+            async function chartlista() {
+                document.getElementById('elements').innerHTML = '';
+                let from = document.getElementById('from').value
+                let to = document.getElementById('to').value
+                let i = 0;
+                let colors = ['#29E7CD', '#F97035', '#F9CE35', '#21618C', '#17202A','#7B7D7D','#C0392B','#196F3D','#8E44AD','#F1C40F ']
+                const series_data = [];
+                const response = await axios.get('/chartumfrage?from=' + from + '&to=' + to);
+                const data = response.data;
+
+
+
+                for (let i = 0; i < data.length; i++) {
+                    series_data.push({
+                        name: data[i][0] ? data[i][0] : 'Null',
+                        y: data[i][1],
+                        z: 119
+                    });
+                    $('#elements').append(`<div class="mb-4">
+                        <svg width="12" height="13" viewBox="0 0 12 13" fill=""
+                        xmlns="http://www.w3.org/2000/svg">
+                        <path fill-rule="evenodd" clip-rule="evenodd"
+                        d="M6 12.5C9.31371 12.5 12 9.81371 12 6.5C12 3.18629 9.31371 0.5 6 0.5C2.68629 0.5 0 3.18629 0 6.5C0 9.81371 2.68629 12.5 6 12.5Z"
+                        fill="${colors[i]}" />
+                        <path fill-rule="evenodd" clip-rule="evenodd"
+                        d="M6 9.5C7.65685 9.5 9 8.15685 9 6.5C9 4.84315 7.65685 3.5 6 3.5C4.34315 3.5 3 4.84315 3 6.5C3 8.15685 4.34315 9.5 6 9.5Z"
+                        fill="white" />
+                        </svg>
+                        <span class="ms-2">${data[i][0]} : ${data[i][1]} </span>
+                        </div>`);
+                }
+
+                chart.series[0].update({
+                    data: series_data
+                })
+                chart.redraw();
+
+            }
+            $(window).on('load', function() {
+                chartlista();
+            })
         </script>
     @endsection
