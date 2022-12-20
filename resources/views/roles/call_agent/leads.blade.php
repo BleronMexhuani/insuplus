@@ -96,7 +96,7 @@
                         </div>
                         <div class="row">
                             <div class="col-md-3 mb-3">
-                                <div class="mt-4">
+                                <div class="mt-2">
                                     <span class="subtitleform">Region</span>
                                 </div>
                                 <div class="mt-2">
@@ -111,7 +111,7 @@
                                 </div>
                             </div>
                             <div class="col-md-3 mb-3">
-                                <div class="mt-4">
+                                <div class="mt-2">
                                     <span class="subtitleform">Sprache</span>
                                 </div>
                                 <div class="mt-2">
@@ -132,7 +132,7 @@
                                 </div>
                             </div>
                             <div class="col-md-3 mb-3">
-                                <div class="mt-4">
+                                <div class="mt-2">
                                     <span class="subtitleform">Sparpotenzial</span>
                                 </div>
                                 <div class="mt-2">
@@ -145,7 +145,7 @@
                                 </div>
                             </div>
                             <div class="col-md-3 mb-3">
-                                <div class="mt-4">
+                                <div class="mt-2">
                                     <span class="subtitleform">Krankenkasse</span>
                                 </div>
                                 <div class="mt-2">
@@ -209,7 +209,7 @@
                         </div>
                         <div class="row">
                             <div class="col-md-3 mb-3">
-                                <div class="mt-4">
+                                <div class="mt-2">
                                     <span class="subtitleform">3. Säule</span>
                                 </div>
                                 <div class="mt-2">
@@ -241,7 +241,7 @@
                                 </div>
                             </div>
                             <div class="col-md-3 mb-3">
-                                <div class="mt-4">
+                                <div class="mt-2">
                                     <span class="subtitleform">Kontaktieren</span>
                                 </div>
                                 <div class="mt-2">
@@ -253,7 +253,7 @@
                                 </div>
                             </div>
                             <div class="col-md-3 mb-3">
-                                <div class="mt-4">
+                                <div class="mt-2">
                                     <span class="subtitleform">Bestätigungsstatus</span>
                                 </div>
                                 <div class="mt-2">
@@ -269,7 +269,7 @@
                                 </div>
                             </div>
                             <div class="col-md-3 mb-3">
-                                <div class="mt-4">
+                                <div class="mt-2">
                                     <span class="subtitleform">Feedback</span>
                                 </div>
                                 <div class="mt-2">
@@ -292,7 +292,7 @@
                         </div>
                         <div class="row">
                             <div class="col-3 col-md-3 mb-3">
-                                <div class="mt-4">
+                                <div class="mt-2">
                                     <span class="subtitleform">Später Anrufen</span>
                                 </div>
                                 <div class="mt-2 ">
@@ -320,10 +320,10 @@
             <div class="tableform">
                 <div style="padding: 25px">
                     <span class="ms-1 mb-4 titleoftable ">All
-                        <hr style="   border: 2px solid #00727A;
-                        width: 25px;
-                        margin-top: 0px;
-                        margin-left: 3px;">
+                        <hr style=" border: 2px solid #00727A;
+                         width: 25px;
+                         margin-top: 0px;
+                         margin-left: 3px;">
                     </span>
                 </div>
                 <hr style="margin: 0px 33px 7px 22px;">
@@ -337,7 +337,7 @@
                         </div>
                     </div>
 
-                    <div class="col-3">
+                    {{-- <div class="col-3">
                         <div style="margin-top: 4px; ">
                             <div class="topPlaceholder px-4">
                                 <span>Filter</span>
@@ -350,8 +350,8 @@
                             </select>
                         </div>
 
-                    </div>
-                    <div class="col-3">
+                    </div> --}}
+                    {{-- <div class="col-3">
                         <div style="margin-top: 4px; padding-right: 25px;">
                             <div class="topPlaceholder px-4">
                                 <span>Sort</span>
@@ -363,7 +363,7 @@
                                 <option value="3">Three</option>
                             </select>
                         </div>
-                    </div>
+                    </div> --}}
                 </div>
 
             
