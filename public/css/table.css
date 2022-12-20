@@ -334,11 +334,26 @@ tr {
 }
 
 .searchLeads{
-    padding-right: 32px;
-
+    padding-right: 28px;
 }
-@media (min-width: 576px) { 
-    .inputLeads{
+@media (max-width: 769px) { 
+    .searchgrup{
         padding: 0px 20px;
+        padding-right: 27px;
+    }
+
+    .chooseteamgroup{
+        padding-left: 21px;
+        padding-right: 27px;
+    }
+
+    .btnsubmit{
+        padding-left: 21px;
+        padding-right: 27px;
+    }
+    
+    .searchLeads{
+        padding-left: 21px;
+        
     }
  }

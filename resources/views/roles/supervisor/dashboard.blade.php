@@ -5,7 +5,7 @@
             <span class="titledash">Willkommen Enis Demolli!</span>
             <div class="bgform mt-4 p-4 p-md-5">
                 <div class="row">
-                    <div class="col-6">
+                    <div class="col-sm-6">
                         <div class="mt-4">
                             <button class="w-100 open-button dashborder" onclick="openForm()"><span><svg width="52"
                                         height="53" viewBox="0 0 52 53" fill="none"
@@ -19,7 +19,7 @@
                                 </span> Umfrage Agent </button>
                         </div>
                     </div>
-                    <div class="col-6">
+                    <div class="col-sm-6">
                         <div class="mt-4">
                             <button class="w-100 open-button dashborder" onclick="openFormm()"><span>
                                     <svg width="53" height="53" viewBox="0 0 53 53" fill="none"
@@ -41,8 +41,8 @@
                                 <span class="titledash">Grafik für Benutzerstatistiken</span>
                             </div>
                             <div class="row">
-                                <div class="col-md-5">
-                                    <div class="mb-3">
+                                <div class="col-lg-5">
+                                    <div class="mb-2">
                                         <span class="subtitleform">Benutzer </span>
                                     </div>
                                     <select class="selectpicker" id="benutzer_grafik_calldatum" data-live-search="true"
@@ -53,8 +53,9 @@
 
                                     </select>
                                 </div>
-                                <div class="col-md-5">
-                                    <div class="mb-3">
+                                <div class="col-lg-5">
+                                    <div class="mt-4 mt-lg-0">
+                                    <div class="mb-2">
                                         <span class="subtitleform">Call Datum: </span>
                                     </div>
                                     <div class="input-group mt-2 ">
@@ -66,12 +67,15 @@
                                             name="">
                                     </div>
                                 </div>
-                                <div class="col-md-2 ">
-                                    <div class="mb-2 ">
-                                        <span class="subtitleform">Action</span>
+                                </div>
+                                <div class="col-lg-2 ">
+                                    <div class="grafikbutton mt-2 mt-lg-0">
+                                        <div class="mb-1">
+                                            <span class="subtitleform">Action</span>
+                                        </div>
+                                        <button class="anzeigenbtn mb-3 mb-lg-2" type="button"
+                                            onclick="umfrageAgentBenutzer()">Anzeigen</button>
                                     </div>
-                                    <button class="anzeigenbtn" type="button"
-                                        onclick="umfrageAgentBenutzer()">Anzeigen</button>
                                 </div>
                             </div>
                             <div class="mt-1 apexchart" id="myForm">
@@ -85,8 +89,8 @@
                                 <span class="titledash">Grafik für Benutzerstatistiken mit Status/Feedback</span>
                             </div>
                             <div class="row">
-                                <div class="col-3">
-                                    <div class="mb-3">
+                                <div class="col-6 col-lg-3">
+                                    <div class="mb-2">
                                         <span class="subtitleform">Benutzer </span>
                                     </div>
                                     <select class="selectpicker" id="benutzer_second_chart" data-live-search="true" multiple
@@ -96,14 +100,12 @@
                                         @endforeach
                                     </select>
                                 </div>
-                                <div class="col-3">
-                                    <div class="mb-3">
+                                <div class="col-6 col-lg-3">
+                                    <div class="mb-2">
                                         <span class="subtitleform">Bestatigungsstatus: </span>
                                     </div>
                                     <select class="selectpicker" id="bestatigungstatus" data-live-search="true" multiple
                                         data-actions-box="true">
-
-
                                         <option value="null">Null</option>
                                         <option value="Bestätigt">Bestätigt</option>
                                         <option value="intern">Intern</option>
@@ -111,30 +113,31 @@
                                         <option value="Autoversicherung">Autoversicherung</option>
                                         <option value="Bestätigung pendent">Bestätigung pendent</option>
                                         <option value="Nicht bestätigt">Nicht bestätigt</option>
-
-
-
                                 </div>
                                 </select>
                             </div>
-                            <div class="col-4 ">
-                                <div class="mb-3">
+                            <div class="col-6 col-lg-4 ">
+                                <div class="mt-2 mt-lg-0">
+                                <div class="mb-2">
                                     <span class="subtitleform">Erstellungsdatum: </span>
                                 </div>
                                 <div class="input-group mt-2 ">
                                     <input type="text" class="form-controol input-sm mb-4" id="von_second_chart"
                                         placeholder="von" onfocus="(this.type='date')" onblur="(this.type='text')"
-                                        name="" >
+                                        name="">
                                     <input type="text" class="form-controol input-sm mb-4" id="bis_second_chart"
                                         placeholder="bis" onfocus="(this.type='date')" onblur="(this.type='text')"
                                         name="">
                                 </div>
                             </div>
-                            <div class="col-2 ">
-                                <div class="mb-2">
+                            </div>
+                            <div class="col-6 col-lg-2">
+                                <div class="grafikbuttontwo mt-2 mt-lg-0">
+                                <div class="mb-1">
                                     <span class="subtitleform">Action</span>
                                 </div>
                                 <button class="anzeigenbtn" type="button" onclick="grafikFurStatus()">Anzeigen</button>
+                            </div>
                             </div>
                             <div class="mt-1 apexchart d-flex justify-content-center" id="myForm">
                                 <canvas id="myChart" style="width:100%;max-width:800px"></canvas>
@@ -218,7 +221,7 @@
                                 <div class="input-group mt-2 ">
                                     <input type="text" class="form-controol input-sm mb-4" id="von_call_agent2"
                                         placeholder="von" onfocus="(this.type='date')" onblur="(this.type='text')"
-                                        name="" >
+                                        name="">
                                     <input type="text" class="form-controol input-sm mb-4" id="bis_call_agent2"
                                         placeholder="bis" onfocus="(this.type='date')" onblur="(this.type='text')"
                                         name="">
@@ -289,7 +292,7 @@
                     let values = [];
                     let result = JSON.parse(response);
                     console.log(result);
-                    for (let i = 0; i < result.length ; i++) {
+                    for (let i = 0; i < result.length; i++) {
                         status.push(result[i].feedback_status);
                         values.push(result[i].count)
 
@@ -299,7 +302,7 @@
                         "#a95g47",
                         "#05aba9",
                         "#0e7v45",
-                   
+
                     ];
 
                     var xValues = status;

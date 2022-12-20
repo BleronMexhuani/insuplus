@@ -20,7 +20,6 @@
                                 <div class="mt-4">
                                     <span class="subtitleform">Erstellungsdatum</span>
                                 </div>
-
                                 <div class="input-group mt-2">
                                     <input type="text" class="form-controol input-sm" placeholder="von"
                                         onfocus="(this.type='date')" onblur="(this.type='text')" name="created_at[]"
@@ -76,7 +75,7 @@
                         </div>
                         <div class="row">
                             <div class="col-md-3 mb-3">
-                                <div class="mt-4">
+                                <div class="mt-2">
                                     <span class="subtitleform">Jahrgang</span>
                                 </div>
                                 <div>
@@ -89,7 +88,7 @@
                                 </div>
                             </div>
                             <div class="col-md-3 mb-3">
-                                <div class="mt-4">
+                                <div class="mt-2">
                                     <span class="subtitleform">Kanton</span>
                                 </div>
                                 <div class="mt-2">
@@ -126,7 +125,7 @@
                                 </div>
                             </div>
                             <div class="col-md-3 mb-3">
-                                <div class="mt-4">
+                                <div class="mt-2">
                                     <span class="subtitleform">Region</span>
                                 </div>
                                 <div class="mt-2">
@@ -141,7 +140,7 @@
                                 </div>
                             </div>
                             <div class="col-md-3 mb-3">
-                                <div class="mt-4">
+                                <div class="mt-2">
                                     <span class="subtitleform">Sprache</span>
                                 </div>
                                 <div class="mt-2">
@@ -164,7 +163,7 @@
                         </div>
                         <div class="row">
                             <div class="col-md-3 mb-3">
-                                <div class="mt-4">
+                                <div class="mt-2">
                                     <span class="subtitleform">Sparpotenzial</span>
                                 </div>
                                 <div class="mt-2">
@@ -177,7 +176,7 @@
                                 </div>
                             </div>
                             <div class="col-md-3 mb-3">
-                                <div class="mt-4">
+                                <div class="mt-2">
                                     <span class="subtitleform">Krankenkasse</span>
                                 </div>
                                 <div class="mt-2">
@@ -239,7 +238,7 @@
                                 </div>
                             </div>
                             <div class="col-md-3 mb-3">
-                                <div class="mt-4">
+                                <div class="mt-2">
                                     <span class="subtitleform">3. Säule</span>
                                 </div>
                                 <div class="mt-2">
@@ -271,7 +270,7 @@
                                 </div>
                             </div>
                             <div class="col-md-3 mb-3">
-                                <div class="mt-4">
+                                <div class="mt-2">
                                     <span class="subtitleform">Kontaktieren</span>
                                 </div>
                                 <div class="mt-2">
@@ -284,9 +283,8 @@
                             </div>
                         </div>
                         <div class="row">
-
                             <div class="col-md-3 mb-3">
-                                <div class="mt-4">
+                                <div class="mt-2">
                                     <span class="subtitleform">Bestätigungsstatus</span>
                                 </div>
                                 <div class="mt-2">
@@ -302,7 +300,7 @@
                                 </div>
                             </div>
                             <div class="col-md-3 mb-3">
-                                <div class="mt-4">
+                                <div class="mt-2">
                                     <span class="subtitleform">Feedback</span>
                                 </div>
                                 <div class="mt-2">
@@ -322,8 +320,8 @@
                                     </select>
                                 </div>
                             </div>
-                            <div class="col-3 col-md-3 mb-3">
-                                <div class="mt-4">
+                            <div class="col-md-3 mb-3 ">
+                                <div class="mt-2">
                                     <span class="subtitleform">Später Anrufen</span>
                                 </div>
                                 <div class="mt-2 ">
@@ -338,8 +336,8 @@
                                 </div>
                             </div>
                             <div class="col-md-3 my-auto">
-                                <div class="text-center mt-3">
-                                    <button class="buttonsearch"><i class="fa fa-search ps-1 " style="color:#00727A"></i></button>
+                                <div class="mt-2">
+                                    <button class="buttonsearch mb-4 mb-md-0"><i class="fa fa-search ps-1 " style="color:#00727A"></i></button>
                                 </div>
                             </div>
                             {{-- <div class="col-md-3 mb-3">
@@ -393,7 +391,7 @@
                          margin-left: 3px;">
                         </span>
                 </div>
-            <hr style="margin: 0px 33px 7px 22px;">
+            <hr style="margin: 0px 23px 7px 23px;">
             <div class="row">
                 
 
@@ -429,8 +427,8 @@
                 <form action="{{ route('assignLead') }}" method="POST">
                     @csrf
                     <div class="d-flex row">
-                        <div class="col-sm-3">
-                            <div class="searchgrup mt-4">
+                        <div class="col-md-3">
+                            <div class="searchgrup mt-md-4 mt-3">
                             <select name="assign_to_id_call" placeholder="Call agents" id=""
                                 class="form-select inputleads  select-form  mb-3">
                                 <option value="">Choose Call Agents</option>
@@ -440,8 +438,8 @@
                             </select>
                         </div>
                         </div>
-                        <div class="col-sm-3">
-                            <div class="mt-4">
+                        <div class="col-md-3">
+                            <div class="mt-md-4 mt-0 chooseteamgroup">
                             <select name="assign_to_id_team_leader" id=""
                                 class="form-select inputleads select-form  mb-3">
                                 <option value="">Choose Team Leader</option>
@@ -451,14 +449,14 @@
                             </select>
                         </div>
                         </div>
-                        <div class="col-sm-2 ">
-                            <div class=" mb-4 mt-4 text-center">
-                            <button class=" btnprofile w-75 " style="color:white;">Submit</button>
+                        <div class="col-md-2 ">
+                            <div class="btnsubmit mb-md-4 mb-0 mt-md-4 mt-0 text-center">
+                            <button class=" btnprofile w-100 " style="color:white;">Submit</button>
                             </div>
                         </div>
 
-                        <div class="col-sm-4 ">
-                            <div class="input-group  searchLeads mt-4">
+                        <div class="col-md-4 ">
+                            <div class="input-group  searchLeads mt-md-4 mt-3 mb-3 mb-md-0">
                                 <div class="form-outline">
                                     <input class="inputleads ps-5" type="text" placeholder="Search Leads" />
                                     <i class="fa fa-search filtersubmit ps-1 "></i>

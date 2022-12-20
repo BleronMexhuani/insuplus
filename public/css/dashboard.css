@@ -210,3 +210,18 @@ input::-webkit-datetime-edit-fields-wrapper {
     }
  } 
     
+@media (max-width:991px) {
+    .grafikbutton{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+    }
+
+    .grafikbuttontwo{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+    }
+}
