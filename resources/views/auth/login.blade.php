@@ -219,6 +219,16 @@
  </form>
  
 <style>
+    input:-webkit-autofill,
+input:-webkit-autofill:hover, 
+input:-webkit-autofill:focus, 
+input:-webkit-autofill:active{
+    -webkit-box-shadow: 0 0 0 30px #EAEEED inset !important;
+}
+    input {
+    background-image: none !important;
+    background-color: none !important;
+}
     .inputLoginemail{
         background: #EAEEED;
         border-radius: 15px;
@@ -229,6 +239,7 @@
         font-size: 17px;
         line-height: 20px;
         color: #9F9F9F;
+        height: 25px;
     }
     .inputLogin{
         display: flex; 

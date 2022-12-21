@@ -187,8 +187,7 @@
                         <span class="subtitleform">Rechtsschutz </span>
                     </div>
                     <div class="mt-2">
-              
-                        <select class="form-select" name="rechtsschutz" required>
+                        <select class="form-select selectinput" name="rechtsschutz" required>
                             <option value="" ></option>
                             <option value="Allianz"> Allianz</option>
                             <option value="Assista"> Assista</option>
@@ -211,7 +210,7 @@
                     </div>
                     <div class="mt-2">
                     
-                        <select class="form-select" name="gesundheitzustand" required>
+                        <select class="form-select selectinput" name="gesundheitzustand" required>
                             <option value="" ></option>
                             <option value="Gesund"> Gesund</option>
                             <option value="Nicht Gesund"> Nicht Gesund</option>
@@ -222,7 +221,7 @@
                     </div>
                     <div class="mt-2">
                     
-                        <select class="form-select" name="zufriedenheit" id="ZufriedenheitSelect" required>
+                        <select class="form-select selectinput" name="zufriedenheit" id="ZufriedenheitSelect" required>
                             <option value="" ></option>
                             <option value="Nicht zufrieden"> Nicht zufrieden</option>
                             <option value="Zufrieden"> Zufrieden</option>
@@ -233,7 +232,7 @@
                     </div>
                     <div class="mt-2">
                    
-                        <select class="form-select" name="erreichbarkeit" id="ErreichbarkeitSelect" required>
+                        <select class="form-select selectinput" name="erreichbarkeit" id="ErreichbarkeitSelect" required>
                             <option value="" ></option>
                             <option value="Abend"> Abend</option>
                             <option value="Immer"> Immer</option>
@@ -248,7 +247,7 @@
                     </div>
                     <div class="mt-2">
       
-                        <select class="form-select" name="saule" id="3SauleSelect" required>
+                        <select class="form-select selectinput" name="saule" id="3SauleSelect" required>
                             <option value="" ></option>
                             <option value="Allianz"> Allianz</option>
                             <option value="Axa"> Axa</option>
@@ -280,8 +279,7 @@
                         <span class="subtitleform">Krankenkasse </span>
                     </div>
                     <div class="mt-2">
-
-                        <select class="form-select" name="krankenkasse"  required>
+                        <select class="form-select selectinput" name="krankenkasse"  required>
                             <option value="" ></option>
                             <option value="Agrisano"> Agrisano</option>
                             <option value="AMB"> AMB</option>
@@ -340,8 +338,7 @@
                         <span class="subtitleform">Sparen </span>
                     </div>
                     <div class="mt-2">
-        
-                        <select class="form-select" name="sparen" id="SparenSelect" required>
+                        <select class="form-select selectinput" name="sparen" id="SparenSelect" required>
                             <option value="" ></option>
                             <option value="Ja"> Ja</option>
                             <option value="Manchmal"> Manchmal</option>
@@ -353,7 +350,7 @@
                     </div>
                     <div class="mt-2">
                      
-                        <select class="form-select" name="anzahl_personen" id="AnzahlPersonenSelect" required>
+                        <select class="form-select selectinput" name="anzahl_personen" id="AnzahlPersonenSelect" required>
                             <option value="" ></option>
                             <option value="1"> 1</option>
                             <option value="2"> 2</option>
@@ -372,7 +369,7 @@
                     </div>
                     <div class="mt-2">
 
-                        <select class="form-select" name="hausrat" id="HausratSelect" required>
+                        <select class="form-select selectinput" name="hausrat" id="HausratSelect" required>
                             <option value="" ></option>
                             <option value="Allianz"> Allianz</option>
                             <option value="Appenzeller Versicherung"> Appenzeller Versicherung</option>
@@ -419,7 +416,7 @@
                     </div>
                     <div class="mt-2 ">
  
-                        <select class="form-select" name="autoversicherung" id="AutoversicherungSelect" required>
+                        <select class="form-select selectinput" name="autoversicherung" id="AutoversicherungSelect" required>
                             <option value=""></option>
                             <option value="Allianz"> Allianz</option>
                             <option value="Appenzeller Versicherung"> Appenzeller Versicherung</option>
@@ -464,7 +461,7 @@
                     </div>
                     <div class="mt-2">
           
-                        <select class="form-select" name="ansprechspartner"  required>
+                        <select class="form-select selectinput" name="ansprechspartner"  required>
                             <option value="" ></option>
                             <option value="Berater"> Berater</option>
                             <option value="Familienkreis"> Familienkreis</option>
@@ -477,7 +474,7 @@
                     </div>
                     <div class="mt-2">
                       
-                        <select class="form-select" name="anderung"  required>
+                        <select class="form-select selectinput" name="anderung"  required>
                             <option value="" ></option>
                             <option value="1 jahr"> 1 jahr</option>
                             <option value="2 jahre"> 2 jahre</option>
@@ -492,7 +489,7 @@
                     </div>
                     <div class="mt-2">
    
-                        <select class="form-select" name="arberistatig" id="ArbeitstatigSelect" required>
+                        <select class="form-select selectinput" name="arberistatig" id="ArbeitstatigSelect" required>
                             <option value="" ></option>
                             <option value="Ja"> Ja</option>
                             <option value="Nein"> Nein</option>
@@ -503,8 +500,7 @@
                         <span class="subtitleform">Gewünschte Beratung </span>
                     </div>
                     <div class="mt-2">
-               
-                        <select class="form-select" name="gewunschte_beratung">
+                        <select class="form-select selectinput" name="gewunschte_beratung">
                             <option value="" selected></option>
                             <option value="Berater (Persönlicher Termin)"> Berater (Persönlicher Termin)</option>
                             <option value="Online (Digital via Mail & online Abschluss)"> 
@@ -524,7 +520,7 @@
                     </div>
                     <div class="mt-2">
                
-                        <select class="form-select" name="kontaktieren_erwunscht" required>
+                        <select class="form-select selectinput" name="kontaktieren_erwunscht" required>
                             <option value="" ></option>
                             <option value="Ja"> Ja</option>
                             <option value="Nein"> Nein</option>
