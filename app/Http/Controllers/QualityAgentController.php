@@ -19,6 +19,7 @@ class QualityAgentController extends Controller
         $umfrage_agents = User::role(['umfrage_agent'])->get();
         $teams = Team::all();
         $leads = $this->leadsOfQuality($req);
+        $leads->appends($req->all());
 
         return view('roles.quality_agent.leads', compact('leads', 'callagents', 'umfrage_agents', 'teams'));
     }
@@ -28,7 +29,7 @@ class QualityAgentController extends Controller
         $lead = Lead::query();
         $lead->whereIn('feedback_status', ['Terminiert', 'online_offerte'])->where('completed', 1);
 
-        foreach ($req->except('_token') as $key => $value) {
+        foreach ($req->except('_token','page') as $key => $value) {
             if ($key == 'created_at' || $key == 'verteilen_datum' || $key == 'geburtsdatum' || $key == 'anrufdatum') {
                 if ($value[0] !== null && $value[1] !== null) {
                     $lead->whereBetween($key, $value);
@@ -69,7 +70,7 @@ class QualityAgentController extends Controller
             }
         }
 
-        return $lead->orderBy('created_at', 'desc')->get();
+        return $lead->orderBy('created_at', 'desc')->paginate(25);
     }
 
     public function getLeadById($id)
