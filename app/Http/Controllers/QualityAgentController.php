@@ -91,7 +91,7 @@ class QualityAgentController extends Controller
         $req['user_id'] = Auth::user()->id;
 
         FeedBack::create([
-            'feedback' => $req->feedback_status,
+            'feedback' => $req->feedback_status_quality_check,
             'user_id' => Auth::user()->id,
             'lead_id' => $lead_id,
             'termin_datum' => $req->termin_datum,
@@ -104,10 +104,14 @@ class QualityAgentController extends Controller
             "zeit_anrufe" => $req->zeit_anrufe
         ]);
 
-        if ($req->feedback_status == 'Terminiert' || $req->feedback_status == 'Online-offerte') {
-            Lead::where('id', $lead_id)->update(['completed' => 2, 'feedback_status' => $req->feedback_status]);
+        if ($req->feedback_status_quality_check == 'confirmed') {
+            Lead::where('id', $lead_id)->update(['completed' => 2,
+            'feedback_status_quality_check'=>$req->feedback_status_quality_check
+            ]);
         } else {
-            Lead::where('id', $lead_id)->update(['completed' => 0, 'feedback_status' => $req->feedback_status]);
+            Lead::where('id', $lead_id)->update(['completed' => 0, 
+            'feedback_status_quality_check'=>$req->feedback_status_quality_check
+        ]);
         }
 
 
