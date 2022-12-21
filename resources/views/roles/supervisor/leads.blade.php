@@ -1,6 +1,6 @@
 @extends('layouts.app')
 @section('content')
-    <div class="">
+    <div class="col ms-0 ms-md-2 px-0 px-md-2 pe-md-4">
         <div class="mt-4 py-3 px-2">
             <form action="{{ route('searchLeads') }}" method="GET">
                 @csrf
@@ -341,45 +341,9 @@
                                             style="color:#00727A"></i></button>
                                 </div>
                             </div>
-                            {{-- <div class="col-md-3 mb-3">
-                                <div class="mt-4">
-                                    <span class="subtitleform">Duplicate</span>
-                                </div>
-                                <div class="mt-2">
-                                    <select class="selectpicker" data-live-search="true" multiple
-                                        data-actions-box="true">
-                                        <option value="1">One</option>
-                                        <option value="2">Two</option>
-                                        <option value="3">Three</option>
-                                        <option value="4">Four</option>
-                                        <option value="5">Five</option>
-                                        <option value="6">Six</option>
-                                        <option value="7">Seven</option>
-                                        <option value="8">Eight</option>
-                                    </select>
-                                </div>
-                            </div> --}}
+                           
                         </div>
-                        {{-- <div class="row">
-                            <div class="col-3 col-md-3 mb-3">
-                                <div class="mt-4">
-                                    <span class="subtitleform">Später Anrufen</span>
-                                </div>
-                                <div class="mt-2 ">
-                                    <div class="input-group mt-2 ">
-                                        <input type="text" class="form-controol input-sm mb-4" name="anrufdatum[]"
-                                            placeholder="von" onfocus="(this.type='date')" onblur="(this.type='text')"
-                                            name="" onchange="change()">
-                                        <input type="text" class="form-controol input-sm mb-4" name="anrufdatum[]"
-                                            placeholder="bis" onfocus="(this.type='date')" onblur="(this.type='text')"
-                                            name="">
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-md-3 my-auto">
-                                <button class="btn btn-primary w-50" style="color:white;">Search</button>
-                            </div>
-                        </div> --}}
+                       
                     </div>
                 </div>
             </form>
@@ -395,6 +359,7 @@
                 </div>
                 <hr style="margin: 0px 23px 7px 23px;">
                 <div class="row">
+
 
 
                     {{-- <div class="col-sm-3">
@@ -511,7 +476,7 @@
                                         $feedback_datum = App\Models\FeedBack::where('lead_id', $item->id)
                                             ->orderBy('created_at', 'desc')
                                             ->first();
-                                        
+
                                     @endphp
                                     <tbody>
                                         <tr class="text-center tablesfont">
@@ -549,7 +514,6 @@
                                 <div class="text-center text-sm-start my-3 ps-0 ps-sm-4">
                                     <span>Shows {{ $leads->firstItem() }} - {{ $leads->lastItem() }} of Total
                                         {{ $leads->total() }} Leads </span>
-
 
                                 </div>
                                 <div class="d-flex justify-content-center navPagination">

@@ -4,10 +4,8 @@
         <div class="mt-4 py-3 px-4">
             <form method="GET">
                 @csrf
-
                 <div class="accordionbg mb-4 ">
                     <button type="button" class="acordion pull-right ">Erweiter</button>
-
                     <button type="button" class="accordion">
                         <svg width="28" height="28" viewBox="0 0 28 28" fill="none"
                             xmlns="http://www.w3.org/2000/svg">
@@ -376,7 +374,7 @@
                             {{ Illuminate\Support\Facades\Session::get('message') }}
                         </span>
                     @endif
-                    <div style="overflow-x:auto;">
+                    <div style="">
                         <table>
                             <thead style="background-color: #F7F7F7;">
                                 <tr class="text-center">
@@ -387,7 +385,7 @@
                                 {{ Illuminate\Support\Facades\Session::get('message') }}
                             </span>
                         @endif
-                        <div style="overflow-x:auto;">
+                        <div style="overflow-x:auto; overflow-y: hidden">
                             <table>
                                 <thead style="background-color: #F7F7F7;">
                                     <tr class="text-center">
