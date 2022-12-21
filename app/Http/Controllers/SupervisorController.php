@@ -84,9 +84,11 @@ class SupervisorController extends Controller
         foreach ($req->except('_token', 'page') as $key => $value) {
             if ($key == 'created_at' || $key == 'verteilen_datum' || $key == 'geburtsdatum' || $key == 'anrufdatum') {
                 if ($value[0] !== null && $value[1] !== null) {
+
                     $lead->whereBetween($key, $value);
                 }
             } else if ($key == 'teams') {
+
                 $team = Team::whereIn('id', $value)->get();
                 $call_agents = '';
                 $umfrage_agents = '';
@@ -116,13 +118,12 @@ class SupervisorController extends Controller
                 } else if ($key == 'vorname') {
                     $lead->where('vorname', 'LIKE', '%' . $value_on_array . '%');
                 } else {
-                    $lead->whereIn($key, $value_on_array);
+                    if ($value_on_array[0] != null)
+                        $lead->whereIn($key, $value_on_array);
                 }
             }
         }
-
-
-
+        // dd($lead->toSql());
         return $lead->orderBy('created_at', 'desc')->paginate(25);
     }
 

@@ -37,7 +37,7 @@ class ConfirmationAgentController extends Controller
         $req['user_id'] = Auth::user()->id;
 
         FeedBack::create([
-            'feedback' => $req->feedback_status,
+            'feedback' => $req->feedback_status_confirmation,
             'user_id' => Auth::user()->id,
             'lead_id' => $lead_id,
             'termin_datum' => $req->termin_datum,
@@ -49,14 +49,14 @@ class ConfirmationAgentController extends Controller
             "anrufdatum" => $req->anrufdatum,
             "zeit_anrufe" => $req->zeit_anrufe
         ]);
-        if ($req->feedback_status == 'termin' || $req->feedback_status == 'online_offerte') {
-            Lead::where('id', $lead_id)->update(['completed' => 3, 'feedback_status' => $req->feedback_status]);
+        if ($req->feedback_status_confirmation == 'confirmed') {
+            Lead::where('id', $lead_id)->update(['completed' => 3,'feedback_status_confirmation'=>$req->feedback_status_confirmation]);
         } else {
-            Lead::where('id', $lead_id)->update(['completed' => -2, 'feedback_status' => $req->feedback_status]);
+            Lead::where('id', $lead_id)->update(['completed' => -2,'feedback_status_confirmation'=>$req->feedback_status_confirmation]);
         }
 
-        Http::post('https://crm.kutiza.com/insuplus_leads',$req->all());
-     
+        Http::post('https://crm.kutiza.com/insuplus_leads', $req->all());
+
         return redirect('confirmation_agent/leads');
     }
 }

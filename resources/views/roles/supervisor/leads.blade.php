@@ -5,7 +5,7 @@
             <form action="{{ route('searchLeads') }}" method="GET">
                 @csrf
                 <div class="accordionbg mb-4">
-                    <button type="button" class="acordion pull-right">Erweiter</button>
+                    <button type="button" onclick="location.href='{{route('advancedFilter')}}'" class="acordion pull-right">Erweiter</button>
                     <button type="button" class="accordion">
                         <svg width="28" height="28" viewBox="0 0 28 28" fill="none"
                             xmlns="http://www.w3.org/2000/svg">

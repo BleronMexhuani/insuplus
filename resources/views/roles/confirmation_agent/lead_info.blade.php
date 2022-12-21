@@ -330,75 +330,20 @@
                     </div>
                     <div class="row g-1 tab mt-4 ms-0 ms-md-0 px-3 px-md-3 d-flex justify-content-center">
                         <!-- <div class=""> -->
-                        <div class="col-auto">
-                            <label class="tablinks" onclick="openCity(event, 'Falsche Nummer')">
-                                <input type="radio" name="feedback_status" value="Falsche Nummer"
-                                    style="display: none;"> Falsche Nummer
-                            </label>
-                            <!-- <button class="tablinks" type="button" onclick="openCity(event, 'Falsche Nummer')">Falsche Nummer</button> -->
-                        </div>
-                        <div class="col-auto">
-                            <label class="tablinks" onclick="openCity(event, 'Hat schon gewechselt')">
-                                <input type="radio" name="feedback_status" value="Hat schon gewechselt"
-                                    style="display: none;"> Hat schon gewechselt
-                            </label>
-                            <!-- <button class="tablinks" type="button" onclick="openCity(event, 'Hat schon gewechselt')">Hat schon gewechselt</button> -->
-                        </div>
-                        <div class="col-auto">
-                            <label class="tablinks" onclick="openCity(event, 'Kein Interesse')">
-                                <input type="radio" name="feedback_status" value="Kein Interesse"
-                                    style="display: none;"> Kein Interesse
-                            </label>
-                            <!-- <button class="tablinks" type="button" onclick="openCity(event, 'Kein Interesse')">Kein Interesse</button> -->
-                        </div>
-                        <div class="col-auto">
-                            <label class="tablinks" onclick="openCity(event, 'Krank')">
-                                <input type="radio" name="feedback_status" value="Krank" style="display: none;">Krank
-                            </label>
-                            <!-- <button class="tablinks" type="button" onclick="openCity(event, 'Krank')">Krank</button> -->
-                        </div>
-                        <div class="col-auto">
-                            <label class="tablinks" onclick="openCity(event, 'Kunde bereits terminiert')">
-                                <input type="radio" name="feedback_status" value="Kunde bereits terminiert"
-                                    style="display: none;">Kunde bereits terminiert
-                            </label>
-                            <!-- <button class="tablinks" type="button" onclick="openCity(event, 'Kunde bereits terminiert')">Kunde bereits terminiert</button> -->
-                        </div>
-                        <div class="col-auto">
-                            <label class="tablinks" onclick="openCity(event, 'Nicht Brauchbar')">
-                                <input type="radio" name="feedback_status" value="Nicht Brauchbar"
-                                    style="display: none;">Nicht Brauchbar
-                            </label>
-                            <!-- <button class="tablinks" type="button" onclick="openCity(event, 'Nicht Brauchbar')">Nicht Brauchbar</button> -->
-                        </div>
-                        <div class="col-auto">
-                            <label class="tablinks" onclick="openCity(event, 'Nicht Erreicht')">
-                                <input type="radio" name="feedback" value="Nicht Erreicht"
-                                    style="display: none;">Nicht Erreicht
-                            </label>
-                            <!-- <button class="tablinks" type="button" onclick="openCity(event, 'Nicht Erreicht')">Nicht Erreicht</button> -->
-                        </div>
-                        <div class="col-auto">
-                            <label class="tablinks" onclick="openCity(event, 'Online-Offerte')">
-                                <input type="radio" name="feedback_status" value="Online-Offerte"
-                                    style="display: none;">Online-Offerte
-                            </label>
-                            <!-- <button class="tablinks" type="button" onclick="openCity(event, 'Online-Offerte')">Online-Offerte</button> -->
-                        </div>
-                        <div class="col-auto">
-                            <label class="tablinks" onclick="openCity(event, 'Später Anrufrn')">
-                                <input type="radio" name="feedback_status" value="Später Anrufrn"
-                                    style="display: none;">Später Anrufrn
-                            </label>
-                            <!-- <button class="tablinks" type="button" onclick="openCity(event, 'Später Anrufrn')">Später Anrufrn</button> -->
-                        </div>
-                        <div class="col-auto">
-                            <label class="tablinks" onclick="openCity(event, 'Terminiert')">
-                                <input type="radio" name="feedback_status" value="Terminiert"
-                                    style="display: none;">Terminiert
-                            </label>
-                            <!-- <button class="tablinks" type="button" onclick="openCity(event, 'Terminiert')">Terminiert</button> -->
-                        </div>
+                            <div class="col-auto">
+                                <label class="tablinks" onclick="openCity(event, 'Falsche Nummer')">
+                                    <input type="radio" name="feedback_status_confirmation" value="declined"
+                                        style="display: none;">Decline
+                                </label>
+                                <!-- <button class="tablinks" type="button" onclick="openCity(event, 'Falsche Nummer')">Falsche Nummer</button> -->
+                            </div>
+                            <div class="col-auto">
+                                <label class="tablinks" onclick="openCity(event, 'Hat schon gewechselt')">
+                                    <input type="radio" name="feedback_status_confirmation" value="confirmed"
+                                        style="display: none;">Confirm
+                                </label>
+                                <!-- <button class="tablinks" type="button" onclick="openCity(event, 'Hat schon gewechselt')">Hat schon gewechselt</button> -->
+                            </div>
 
                         <div id="Falsche Nummer" class="tabcontent">
                             <div class="mt-5">
@@ -832,12 +777,8 @@
                     for (i = 0; i < tablinks.length; i++) {
                         tablinks[i].className = tablinks[i].className.replace(" active", "");
                     }
-                    document.getElementById(cityName).style.display = "block";
-                    evt.currentTarget.className += " active";
-                    document.getElementById('bemerkungDiv').style.display = "block"
-                    document.getElementById('bestatigungs_status').style.display = "block"
-                    document.getElementById('kontaktieren_erwunscht_2').style.display = "block"
 
+                    evt.currentTarget.className += " active";
                 }
             </script>
 
