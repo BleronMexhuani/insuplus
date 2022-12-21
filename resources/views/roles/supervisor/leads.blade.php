@@ -1,6 +1,6 @@
 @extends('layouts.app')
 @section('content')
-    <div class="">
+    <div class="col ms-0 ms-md-2 px-0 px-md-2 pe-md-4">
         <div class="mt-4 py-3 px-2">
             <form action="{{ route('searchLeads') }}" method="GET">
                 @csrf
@@ -337,220 +337,154 @@
                             </div>
                             <div class="col-md-3 my-auto">
                                 <div class="mt-2">
-                                    <button class="buttonsearch mb-4 mb-md-0"><i class="fa fa-search ps-1 " style="color:#00727A"></i></button>
+                                    <button class="buttonsearch mb-4 mb-md-0"><i class="fa fa-search ps-1 "
+                                            style="color:#00727A"></i></button>
                                 </div>
                             </div>
-                            {{-- <div class="col-md-3 mb-3">
-                                <div class="mt-4">
-                                    <span class="subtitleform">Duplicate</span>
-                                </div>
-                                <div class="mt-2">
-                                    <select class="selectpicker" data-live-search="true" multiple
-                                        data-actions-box="true">
-                                        <option value="1">One</option>
-                                        <option value="2">Two</option>
-                                        <option value="3">Three</option>
-                                        <option value="4">Four</option>
-                                        <option value="5">Five</option>
-                                        <option value="6">Six</option>
-                                        <option value="7">Seven</option>
-                                        <option value="8">Eight</option>
-                                    </select>
-                                </div>
-                            </div> --}}
+                           
                         </div>
-                        {{-- <div class="row">
-                            <div class="col-3 col-md-3 mb-3">
-                                <div class="mt-4">
-                                    <span class="subtitleform">Später Anrufen</span>
-                                </div>
-                                <div class="mt-2 ">
-                                    <div class="input-group mt-2 ">
-                                        <input type="text" class="form-controol input-sm mb-4" name="anrufdatum[]"
-                                            placeholder="von" onfocus="(this.type='date')" onblur="(this.type='text')"
-                                            name="" onchange="change()">
-                                        <input type="text" class="form-controol input-sm mb-4" name="anrufdatum[]"
-                                            placeholder="bis" onfocus="(this.type='date')" onblur="(this.type='text')"
-                                            name="">
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-md-3 my-auto">
-                                <button class="btn btn-primary w-50" style="color:white;">Search</button>
-                            </div>
-                        </div> --}}
+                       
                     </div>
                 </div>
             </form>
             <div class="tableform">
                 <div style="padding: 25px">
                     <span class="ms-1 mb-4 titleoftable ">All
-                         <hr style=" border: 2px solid #00727A;
+                        <hr
+                            style=" border: 2px solid #00727A;
                          width: 25px;
                          margin-top: 0px;
                          margin-left: 3px;">
-                        </span>
+                    </span>
                 </div>
-            <hr style="margin: 0px 23px 7px 23px;">
-            <div class="row">
-                
-
-                {{-- <div class="col-sm-3">
-                    <div style="margin-top: 4px; ">
-                        <div class="topPlaceholder px-4">
-                            <span>Filter</span>
-                        </div>
-                        <select class="form-select inputleads select-form " aria-label="Default select example">
-                            <option selected>All</option>
-                            <option value="1">One</option>
-                            <option value="2">Two</option>
-                            <option value="3">Three</option>
-                        </select>
-                    </div>
-                </div> --}}
-{{-- 
-                <div class="col-sm-3">
-                    <div style="margin-top: 4px; padding-right: 25px;">
-                        <div class="topPlaceholder px-4">
-                            <span>Sort</span>
-                        </div>
-                        <select class="form-select inputleads select-form" aria-label="Default select example">
-                            <option selected>All</option>
-                            <option value="1">One</option>
-                            <option value="2">Two</option>
-                            <option value="3">Three</option>
-                        </select>
-                    </div>
-                </div> --}}
-            </div>
-            <div class="table-responsive-md">
-                <form action="{{ route('assignLead') }}" method="POST">
-                    @csrf
-                    <div class="d-flex row">
-                        <div class="col-md-3">
-                            <div class="searchgrup mt-md-4 mt-3">
-                            <select name="assign_to_id_call" placeholder="Call agents" id=""
-                                class="form-select inputleads  select-form  mb-3">
-                                <option value="">Choose Call Agents</option>
-                                @foreach ($callagents as $item)
-                                    <option value="{{ $item->id }}">{{ $item->name }}</option>
-                                @endforeach
-                            </select>
-                        </div>
-                        </div>
-                        <div class="col-md-3">
-                            <div class="mt-md-4 mt-0 chooseteamgroup">
-                            <select name="assign_to_id_team_leader" id=""
-                                class="form-select inputleads select-form  mb-3">
-                                <option value="">Choose Team Leader</option>
-                                @foreach ($team_leaders as $item)
-                                    <option value="{{ $item->id }}">{{ $item->name }}</option>
-                                @endforeach
-                            </select>
-                        </div>
-                        </div>
-                        <div class="col-md-2 ">
-                            <div class="btnsubmit mb-md-4 mb-0 mt-md-4 mt-0 text-center">
-                            <button class=" btnprofile w-100 " style="color:white;">Submit</button>
-                            </div>
-                        </div>
-
-                        <div class="col-md-4 ">
-                            <div class="input-group  searchLeads mt-md-4 mt-3 mb-3 mb-md-0">
-                                <div class="form-outline">
-                                    <input class="inputleads ps-5" type="text" placeholder="Search Leads" />
-                                    <i class="fa fa-search filtersubmit ps-1 "></i>
+                <hr style="margin: 0px 23px 7px 23px;">
+                <div class="row">
+                </div>
+                <div class="table-responsive-md">
+                    <form action="{{ route('assignLead') }}" method="POST">
+                        @csrf
+                        <div class="d-flex row">
+                            <div class="col-md-3">
+                                <div class="searchgrup mt-md-4 mt-3">
+                                    <select name="assign_to_id_call" placeholder="Call agents" id=""
+                                        class="form-select inputleads  select-form  mb-3">
+                                        <option value="">Choose Call Agents</option>
+                                        @foreach ($callagents as $item)
+                                            <option value="{{ $item->id }}">{{ $item->name }}</option>
+                                        @endforeach
+                                    </select>
                                 </div>
                             </div>
+                            <div class="col-md-3">
+                                <div class="mt-md-4 mt-0 chooseteamgroup">
+                                    <select name="assign_to_id_team_leader" id=""
+                                        class="form-select inputleads select-form  mb-3">
+                                        <option value="">Choose Team Leader</option>
+                                        @foreach ($team_leaders as $item)
+                                            <option value="{{ $item->id }}">{{ $item->name }}</option>
+                                        @endforeach
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="col-md-2 ">
+                                <div class="btnsubmit mb-md-4 mb-0 mt-md-4 mt-0 text-center">
+                                    <button class=" btnprofile w-100 " style="color:white;">Submit</button>
+                                </div>
+                            </div>
+
+                            <div class="col-md-4 ">
+                                <div class="input-group  searchLeads mt-md-4 mt-3 mb-3 mb-md-0">
+                                    <div class="form-outline">
+                                        <input class="inputleads ps-5" type="text" placeholder="Search Leads" />
+                                        <i class="fa fa-search filtersubmit ps-1 "></i>
+                                    </div>
+                                </div>
+                            </div>
+
                         </div>
-
-                    </div>
-                    @if (Illuminate\Support\Facades\Session::has('message'))
-                        <span class="fs-5 mb-2 fw-500">
-                            {{ Illuminate\Support\Facades\Session::get('message') }}
-                        </span>
-                    @endif
-                    <div style="overflow-x:auto;">
-
-                        <table>
-                            <thead style="background-color: #F7F7F7;">
-
-                                <tr class="text-center ">
-                                    <td>
-                                        <div class="checkbox ms-3 squaredFour">
-                                            <label>
-                                                <input type="checkbox"  class="check" id="checkAll">
-                                            </label>
-                                        </div>
-                                    </td>
-                                    <th>Vorname</th>
-                                    <th>Nachname</th>
-                                    <th>Geburtsdatum</th>
-                                    <th>Email</th>
-                                    <th>Region</th>
-                                    <th>Sprache</th>
-                                    <th>Verteilen At</th>
-                                    <th>Created Time</th>
-
-                                    <th>Created From</th>
-                                    <th>Feedback</th>
-                                    <th>Feedback datum</th>
-                                    <th>Aktion </th>
-                                    <th> </th>
-                                </tr>
-                            </thead>
-                            @foreach ($leads as $item)
-                                @php
-                                    $feedback_datum = App\Models\FeedBack::where('lead_id', $item->id)
-                                        ->orderBy('created_at', 'desc')
-                                        ->first();
-                                    
-                                @endphp
-                                <tbody >
-                                    <tr class="text-center tablesfont">
+                        @if (Illuminate\Support\Facades\Session::has('message'))
+                            <span class="fs-5 mb-2 fw-500">
+                                {{ Illuminate\Support\Facades\Session::get('message') }}
+                            </span>
+                        @endif
+                        <div style="overflow-x:auto; overflow-y:hidden;">
+                            <table>
+                                <thead style="background-color: #F7F7F7;">
+                                    <tr class="text-center ">
                                         <td>
-                                            <label>
-                                                <input type="checkbox" name="lead_id[]" value="{{ $item->id }}"
-                                                    class="check ms-3">
-                                            </label>
+                                            <div class="checkbox ms-3 squaredFour">
+                                                <label>
+                                                    <input type="checkbox" class="check" id="checkAll">
+                                                </label>
+                                            </div>
                                         </td>
-                                        <td>{{ $item->vorname }}</td>
-                                        <td>{{ $item->nachname }}</td>
-                                        <td>{{ $item->geburtsdatum }}</td>
-                                        <td>{{ $item->email }}</td>
-                                        <td>{{ $item->region }}</td>
-                                        <td>{{ $item->sprachen }}</td>
-                                        <td>{{ $item->assign_to_id_call ? App\Models\User::find($item->assign_to_id_call)->name : ($item->assign_to_id_team_leader ? App\Models\User::find($item->assign_to_id_team_leader)->name : 'Not Assigned') }}
-                                        </td>
-                                        <td>{{ $item->created_at }}</td>
-                                        <td>{{ $item->assigned_from }}</td>
-                                        <td style="color:{{ $item->feedback_status == 'Terminiert' ? 'green' : 'red' }};">
-                                            {{ $item->feedback_status }}</td>
-                                        <td>{{ App\Models\FeedBack::where('lead_id', $item->id)->orderBy('created_at', 'desc')->pluck('created_at')->first() }}
-                                        </td>
-                                        <td><a class="btn btnedit"
-                                                href="{{ route('getLeadById', ['id' => $item->id]) }}"><i
-                                                    class="fa-regular fa-pen-to-square"></i></a></td>
-                                        <td><a class="btn btndelete"><i class="fa-solid fa-trash-can"></i></a></td>
+                                        <th>Vorname</th>
+                                        <th>Nachname</th>
+                                        <th>Geburtsdatum</th>
+                                        <th>Email</th>
+                                        <th>Region</th>
+                                        <th>Sprache</th>
+                                        <th>Verteilen At</th>
+                                        <th>Created Time</th>
+
+                                        <th>Created From</th>
+                                        <th>Feedback</th>
+                                        <th>Feedback datum</th>
+                                        <th>Aktion </th>
+                                        <th> </th>
                                     </tr>
-                                </tbody>
-                            @endforeach
-                           
-                        </table>
-                        <div class=" pt-4">
-                            <div class="text-center text-sm-start my-3 ps-0 ps-sm-4">
-                                <span>Shows {{ $leads->firstItem() }} - {{ $leads->lastItem() }}  of Total  {{$leads->total()}} Leads </span>
-                               
-                                
+                                </thead>
+                                @foreach ($leads as $item)
+                                    @php
+                                        $feedback_datum = App\Models\FeedBack::where('lead_id', $item->id)
+                                            ->orderBy('created_at', 'desc')
+                                            ->first();
+                                    @endphp
+                                    <tbody>
+                                        <tr class="text-center tablesfont">
+                                            <td>
+                                                <label>
+                                                    <input type="checkbox" name="lead_id[]" value="{{ $item->id }}"
+                                                        class="check ms-3">
+                                                </label>
+                                            </td>
+                                            <td>{{ $item->vorname }}</td>
+                                            <td>{{ $item->nachname }}</td>
+                                            <td>{{ $item->geburtsdatum }}</td>
+                                            <td>{{ $item->email }}</td>
+                                            <td>{{ $item->region }}</td>
+                                            <td>{{ $item->sprachen }}</td>
+                                            <td>{{ $item->assign_to_id_call ? App\Models\User::find($item->assign_to_id_call)->name : ($item->assign_to_id_team_leader ? App\Models\User::find($item->assign_to_id_team_leader)->name : 'Not Assigned') }}
+                                            </td>
+                                            <td>{{ $item->created_at }}</td>
+                                            <td>{{ $item->assigned_from }}</td>
+                                            <td
+                                                style="color:{{ $item->feedback_status == 'Terminiert' ? 'green' : 'red' }};">
+                                                {{ $item->feedback_status }}</td>
+                                            <td>{{ App\Models\FeedBack::where('lead_id', $item->id)->orderBy('created_at', 'desc')->pluck('created_at')->first() }}
+                                            </td>
+                                            <td><a class="btn btnedit"
+                                                    href="{{ route('getLeadById', ['id' => $item->id]) }}"><i
+                                                        class="fa-regular fa-pen-to-square"></i></a></td>
+                                            <td><a class="btn btndelete"><i class="fa-solid fa-trash-can"></i></a></td>
+                                        </tr>
+                                    </tbody>
+                                @endforeach
+
+                            </table>
+                            <div class=" pt-4">
+                                <div class="text-center text-sm-start my-3 ps-0 ps-sm-4">
+                                    <span>Shows {{ $leads->firstItem() }} - {{ $leads->lastItem() }} of Total
+                                        {{ $leads->total() }} Leads </span>
+                                </div>
+                                <div class="d-flex justify-content-center navPagination">
+                                    {{ $leads->onEachSide(1)->links() }}
+                                </div>
+
                             </div>
-                            <div class="d-flex justify-content-center navPagination">
-                                {{ $leads->onEachSide(1)->links() }}
-                            </div>
-        
                         </div>
-                    </div>
-                </form>
-            </div>
+                    </form>
+                </div>
             </div>
         </div>
     </div>
