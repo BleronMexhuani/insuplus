@@ -1,6 +1,6 @@
 @extends('layouts.app')
 @section('content')
-    <div class="col ms-0 ms-md-2 px-0 px-md-2 pe-md-4">
+    <div class="">
         <div class="mt-4 py-3 px-2">
             <form action="{{ route('searchLeads') }}" method="GET">
                 @csrf
@@ -358,39 +358,7 @@
                     </span>
                 </div>
                 <hr style="margin: 0px 23px 7px 23px;">
-                <div class="row">
-
-
-
-                    {{-- <div class="col-sm-3">
-                    <div style="margin-top: 4px; ">
-                        <div class="topPlaceholder px-4">
-                            <span>Filter</span>
-                        </div>
-                        <select class="form-select inputleads select-form " aria-label="Default select example">
-                            <option selected>All</option>
-                            <option value="1">One</option>
-                            <option value="2">Two</option>
-                            <option value="3">Three</option>
-                        </select>
-                    </div>
-                </div> --}}
-                    {{-- 
-                <div class="col-sm-3">
-                    <div style="margin-top: 4px; padding-right: 25px;">
-                        <div class="topPlaceholder px-4">
-                            <span>Sort</span>
-                        </div>
-                        <select class="form-select inputleads select-form" aria-label="Default select example">
-                            <option selected>All</option>
-                            <option value="1">One</option>
-                            <option value="2">Two</option>
-                            <option value="3">Three</option>
-                        </select>
-                    </div>
-                </div> --}}
-                </div>
-                <div class="table-responsive-md">
+                <div class="">
                     <form action="" method="GET">
                         <div class="col-md-4 searchgrup">
                             <div class="input-group  searchLeads mt-md-4 mt-3 mb-3 mb-md-0">
@@ -433,20 +401,18 @@
                                     <button class=" btnprofile w-100 " style="color:white;">Submit</button>
                                 </div>
                             </div>
-
-
-
                         </div>
                         @if (Illuminate\Support\Facades\Session::has('message'))
                             <span class="fs-5 mb-2 fw-500">
                                 {{ Illuminate\Support\Facades\Session::get('message') }}
                             </span>
                         @endif
-                        <div>
-
-                            <table>
+                        
+                        <div style="overflow-x:auto; overflow-y: hidden">
+                            <table class="tableStyle" style="margin: 0px 0px;overflow-x: auto;
+                            margin-bottom: 0px;
+                            padding: 0px;">
                                 <thead style="background-color: #F7F7F7;">
-
                                     <tr class="text-center ">
                                         <td>
                                             <div class="checkbox ms-3 squaredFour">
@@ -471,14 +437,15 @@
                                         <th> </th>
                                     </tr>
                                 </thead>
-                                @foreach ($leads as $item)
+                                
+                                    <tbody>
+                                        @foreach ($leads as $item)
                                     @php
                                         $feedback_datum = App\Models\FeedBack::where('lead_id', $item->id)
                                             ->orderBy('created_at', 'desc')
                                             ->first();
 
                                     @endphp
-                                    <tbody>
                                         <tr class="text-center tablesfont">
                                             <td>
                                                 <label>
@@ -506,8 +473,9 @@
                                                         class="fa-regular fa-pen-to-square"></i></a></td>
                                             <td><a class="btn btndelete"><i class="fa-solid fa-trash-can"></i></a></td>
                                         </tr>
-                                    </tbody>
                                 @endforeach
+
+                                    </tbody>
 
                             </table>
                             <div class=" pt-4">

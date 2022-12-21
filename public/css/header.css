@@ -154,6 +154,7 @@ body{
   .insubg{
     margin-top:70px !important;
     margin-left: 230px;
+    overflow-x: hidden !important;
   }
 
   @media (max-width: 790px) { 

@@ -26,7 +26,7 @@
                             <div class="mt-4">
                                 <span class="subtitleform">Anrede</span>
                             </div>
-                            <div class="mt-2">
+                            <div class="mt-2 mb-3">
                                 <input class="inputform" type="number" value="{{ $lead->anrede }}" id="tentacles"
                                     name="anrede" placeholder="Anrede" min="1" max="9" />
                             </div>
@@ -109,7 +109,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="col-12 col-md-4 mt-2 mb-2 mb-md-5">
+                        <div class="col-12 col-md-4 mt-2 mb-2 mb-md-3">
                             <div class="">
                                 <span class="subtitleform">Handy Nummer</span>
                             </div>
@@ -124,7 +124,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="col-12 col-md-4 mt-2 mb-5 ">
+                        <div class="ccol-12 col-md-4 mt-2 mb-5 ">
                             <div class="">
                                 <span class="subtitleform">Email </span>
                             </div>
@@ -204,37 +204,121 @@
                                 <span class="subtitleform">Rechtsschutz </span>
                             </div>
                             <div class="mt-2">
-                                <input class="inputform" type="text" id=""
-                                    value="{{ $lead->rechtsschutz }}" name="rechtsschutz" placeholder="Allianz">
+                                <select class="form-select selectinput" name="rechtsschutz" id="rechtsschutz" required>
+                                    <option value="" ></option>
+                                    <option value="Allianz"> Allianz</option>
+                                    <option value="Assista"> Assista</option>
+                                    <option value="Axa-Arag Rechtsschutz"> Axa-Arag Rechtsschutz</option>
+                                    <option value="Cap"> Cap</option>
+                                    <option value="Coop"> Coop</option>
+                                    <option value="Dextra Rechtsschutz"> Dextra Rechtsschutz</option>
+                                    <option value="Die Mobiliar"> Die Mobiliar</option>
+                                    <option value="Generali"> Generali</option>
+                                    <option value="Keine"> Keine</option>
+                                    <option value="Keine auskunft"> Keine auskunft</option>
+                                    <option value="Orion"> Orion</option>
+                                    <option value="Protekta Rechtsschutz"> Protekta Rechtsschutz</option>
+                                    <option value="TCS"> TCS</option>
+                                    <option value="Zürich"> Zürich</option>
+                                </select>
+                                <script>
+                                    $("#rechtsschutz").val('{{ $lead->rechtsschutz }}').change();
+                                </script>
+                              
                             </div>
                             <div class="mt-4">
                                 <span class="subtitleform">Ansprechspartner </span>
                             </div>
                             <div class="mt-2">
-                                <input class="inputform" type="text" value="{{ $lead->ansprechspartner }}"
-                                    name="ansprechspartner" placeholder="Berater">
+                                <select class="form-select selectinput" name="ansprechspartner" id="ansprechspartner"  required>
+                                    <option value="" ></option>
+                                    <option value="Berater"> Berater</option>
+                                    <option value="Familienkreis"> Familienkreis</option>
+                                    <option value="Keine"> Keine</option>
+                                </select>
+                                <script>
+                                    $("#ansprechspartner").val('{{ $lead->ansprechspartner }}').change();
+                                </script>
                             </div>
                             <div class="mt-4">
                                 <span class="subtitleform">Zufriedenheit</span>
                             </div>
                             <div class="mt-2">
-                                <input class="inputform" type="text" value="{{ $lead->zufriedenheit }}"
-                                    name="zufriedenheit" placeholder="Zufrieden">
+                                <select class="form-select selectinput" name="zufriedenheit" id="ZufriedenheitSelect" required>
+                                    <option value="" ></option>
+                                    <option value="Nicht zufrieden"> Nicht zufrieden</option>
+                                    <option value="Zufrieden"> Zufrieden</option>
+                                </select>
+                                <script>
+                                    $("#ZufriedenheitSelect").val('{{ $lead->zufriedenheit }}').change();
+                                </script>
                             </div>
                             <div class="mt-4">
                                 <span class="subtitleform">Erreichbarkeit </span>
                             </div>
                             <div class="mt-2">
-                                <input class="inputform" type="text" value="{{ $lead->erreichbarkeit }}"
-                                    name="erreichbarkeit" placeholder="10:00 - 11:00">
+                                <select class="form-select selectinput" name="erreichbarkeit" id="ErreichbarkeitSelect" required>
+                                    <option value="" ></option>
+                                    <option value="Abend"> Abend</option>
+                                    <option value="Immer"> Immer</option>
+                                    <option value="Mittag"> Mittag</option>
+                                    <option value="Nachmittag"> Nachmittag</option>
+                                    <option value="Unterschiedlich"> Unterschiedlich</option>
+                                    <option value="Vormittag"> Vormittag</option>
+                                </select>
+                                <script>
+                                    $("#ErreichbarkeitSelect").val('{{ $lead->erreichbarkeit }}').change();
+                                </script>
+                               
                             </div>
                             <div class="mt-4">
                                 <span class="subtitleform">Hausrat </span>
                             </div>
                             <div class="mt-2">
-                                <input class="inputform" type="text" value="{{ $lead->hausrat }}" name="hausrat"
-                                    placeholder="TCS">
-
+                                <select class="form-select selectinput" name="hausrat" id="HausratSelect" required>
+                                    <option value="" ></option>
+                                    <option value="Allianz"> Allianz</option>
+                                    <option value="Appenzeller Versicherung"> Appenzeller Versicherung</option>
+                                    <option value="Aquilana"> Aquilana</option>
+                                    <option value="AXA"> AXA</option>
+                                    <option value="Baloise"> Baloise</option>
+                                    <option value="Basler"> Basler</option>
+                                    <option value="Belmot">Belmot</option>
+                                    <option value="CAP"> CAP</option>
+                                    <option value="CSS Gruppe"> CSS Gruppe</option>
+                                    <option value="DAS"> DAS</option>
+                                    <option value="Die Mobiliar"> Die Mobiliar</option>
+                                    <option value="Elvia">Elvia</option>
+                                    <option value="Emmental Versicherung"> Emmentaler Versicherung</option>
+                                    <option value="Epona"> Epona</option>
+                                    <option value="Europe Assistance"> Europe Assistance</option>
+                                    <option value="Europäische">Europäische</option>
+                                    <option value="Fortuna">Fortuna</option>
+                                    <option value="Galenos">Galenos</option>
+                                    <option value="Generali"> Generali</option>
+                                    <option value="Groupe Mutuel Gruppe"> Groupe Mutuel Gruppe</option>
+                                    <option value="GVB"> GVB</option>
+                                    <option value="Helsana Gruppe"> Helsana Gruppe</option>
+                                    <option value="Helvetia">Helvetia</option>
+                                    <option value="Keine"> Keine</option>
+                                    <option value="Keine auskunft">Keine auskunft</option>
+                                    <option value="Lloyd's">Lloyd's</option>
+                                    <option value="Nationale Suisse"> Nationale Suisse</option>
+                                    <option value="OCC"> OCC</option>
+                                    <option value="Orion">Orion</option>
+                                    <option value="Protekta">Protekta</option>
+                                    <option value="Smile.direct"> Smile.direct</option>
+                                    <option value="Solida"> Solida</option>
+                                    <option value="Sympany">Sympany</option>
+                                    <option value="TCS">TCS</option>
+                                    <option value="Vaudoise"> Vaudoise</option>
+                                    <option value="Visana"> Visana</option>
+                                    <option value="Zürich"> Zürich</option>
+                                    <option value="Zürich Connect">Zürich Connect</option>
+                                </select>
+                                <script>
+                                    $("#HausratSelect").val('{{ $lead->hausrat }}').change();
+                                </script>
                             </div>
                         </div>
                         <div class="col-4">
@@ -242,37 +326,151 @@
                                 <span class="subtitleform">Krankenkasse </span>
                             </div>
                             <div class="mt-2">
-                                <input class="inputform" type="text" value="{{ $lead->krankenkasse }}"
-                                    name="krankenkasse" placeholder="Aquilana">
-
+                                <select class="form-select selectinput" name="krankenkasse" id="krankenkasse" required>
+                                    <option value=""></option>
+                                    <option value="Agrisano"> Agrisano</option>
+                                    <option value="AMB"> AMB</option>
+                                    <option value="Aquilana"> Aquilana</option>
+                                    <option value="Arcosana"> Arcosana</option>
+                                    <option value="Assura-Basis"> Assura-Basis</option>
+                                    <option value="Atupri"> Atupri</option>
+                                    <option value="Avenir"> Avenir</option>
+                                    <option value="Birchmeier"> Birchmeier</option>
+                                    <option value="Compact Grundversicherung"> Compact Grundversicherung</option>
+                                    <option value="CONCORDIA"> CONCORDIA</option>
+                                    <option value="CSS"> CSS</option>
+                                    <option value="EasySana"> EasySana</option>
+                                    <option value="EGK"> EGK</option>
+                                    <option value="Einsiedler Krankenkasse"> Einsiedler Krankenkasse</option>
+                                    <option value="GALENOS"> GALENOS</option>
+                                    <option value="Glarner"> Glarner</option>
+                                    <option value="Helsana"> Helsana</option>
+                                    <option value="INTRAS"> INTRAS</option>
+                                    <option value="Keine"> Keine</option>
+                                    <option value="KLuG"> KLuG</option>
+                                    <option value="Kolping"> Kolping</option>
+                                    <option value="KPT"> KPT</option>
+                                    <option value="KVF"> KVF</option>
+                                    <option value="LUMNEZIANA"> LUMNEZIANA</option>
+                                    <option value="Luzerner Hinterland"> Luzerner Hinterland</option>
+                                    <option value="Moove Sympany"> Moove Sympany</option>
+                                    <option value="Mutuel Assurance (Groupe Mutuel)"> Mutuel Assurance (Groupe Mutuel)
+                                    </option>
+                                    <option value="ÖKK"> ÖKK</option>
+                                    <option value="Philos"> Philos</option>
+                                    <option value="Progrès"> Progrès</option>
+                                    <option value="PROVITA"> PROVITA</option>
+                                    <option value="rhenusana"> rhenusana</option>
+                                    <option value="sana24"> sana24</option>
+                                    <option value="Sanagate"> Sanagate</option>
+                                    <option value="sanavals Gesundheitkasse"> sanavals Gesundheitkasse</option>
+                                    <option value="Sanitas"> Sanitas</option>
+                                    <option value="Simplon"> Simplon</option>
+                                    <option value="SLKK"> SLKK</option>
+                                    <option value="sodalis"> sodalis</option>
+                                    <option value="Steffisburg"> Steffisburg</option>
+                                    <option value="Stoffel"> Stoffel</option>
+                                    <option value="Sumiswalder Krankenkasse"> Sumiswalder Krankenkasse</option>
+                                    <option value="SUPRA"> SUPRA</option>
+                                    <option value="SWICA"> SWICA</option>
+                                    <option value="Vallèe d'Entremont"> Vallèe d'Entremont</option>
+                                    <option value="Visana AG"> Visana AG</option>
+                                    <option value="Visperterminen KKV"> Visperterminen KKV</option>
+                                    <option value="vita surselva"> vita surselva</option>
+                                    <option value="vivacare"> vivacare</option>
+                                    <option value="Vivao Sympany"> Vivao Sympany</option>
+                                    <option value="Wädenswil"> Wädenswil</option>
+                                </select>
+                                <script>
+                                    $("#krankenkasse").val('{{ $lead->krankenkasse }}').change();
+                                </script>
                             </div>
                             <div class="mt-4">
                                 <span class="subtitleform">Sparen </span>
                             </div>
                             <div class="mt-2">
-                                <input class="inputform" type="text" value="{{ $lead->sparen }}" name="sparen"
-                                    placeholder="Nein">
+                                <select class="form-select selectinput" name="sparen" id="sparen" required>
+                                    <option value="" ></option>
+                                    <option value="Ja"> Ja</option>
+                                    <option value="Manchmal"> Manchmal</option>
+                                    <option value="Nein"> Nein</option>
+                                </select>
+                                <script>
+                                    $("#sparen").val('{{ $lead->sparen }}').change();
+                                </script>
+                                
                             </div>
                             <div class="mt-4">
                                 <span class="subtitleform">Anzahl personen </span>
                             </div>
                             <div class="mt-2">
-                                <input class="inputform" type="number" value="{{ $lead->anzahl_personen }}"
-                                    name="anzahl_personen" placeholder="10">
+                                <select class="form-select selectinput" name="anzahl_personen" id="AnzahlPersonenSelect" required>
+                                    <option value="" ></option>
+                                    <option value="1"> 1</option>
+                                    <option value="2"> 2</option>
+                                    <option value="3"> 3</option>
+                                    <option value="4"> 4</option>
+                                    <option value="5"> 5</option>
+                                    <option value="6"> 6</option>
+                                    <option value="7"> 7</option>
+                                    <option value="8"> 8</option>
+                                    <option value="9"> 9</option>
+                                    <option value="10"> 10</option>
+                                </select>
+                                <script>
+                                    $("#AnzahlPersonenSelect").val('{{ $lead->anzahl_personen }}').change();
+                                </script>
+                                
                             </div>
                             <div class="mt-4 ">
                                 <span class="subtitleform">Gewünschte Beratung </span>
                             </div>
                             <div class="mt-2">
-                                <input class="inputform" type="text" value="{{ $lead->gewunschte_beratung }}"
-                                    name="gewunschte_beratung" placeholder="Berater (Persönlicher Termin) ">
+                                <select class="form-select selectinput" name="gewunschte_beratung" id="gewunschte_beratung">
+                                    <option value="" selected></option>
+                                    <option value="Berater (Persönlicher Termin)"> Berater (Persönlicher Termin)</option>
+                                    <option value="Online (Digital via Mail & online Abschluss)"> 
+                                        Online (Digital via Mail & online Abschluss)
+                                    </option>
+                                </select>
+                                <script>
+                                    $("#gewunschte_beratung").val('{{ $lead->gewunschte_beratung }}').change();
+                                </script>
+                               
                             </div>
                             <div class="mt-4">
                                 <span class="subtitleform">3.Säule </span>
                             </div>
-                            <div class="mt-2 mb-5">
-                                <input class="inputform" type="text" value="{{ $lead->saule }}" name="saule"
-                                    placeholder="Allianz">
+                            <div class="mt-2 mb-3">
+                                <select class="form-select selectinput" name="saule" id="3SauleSelect" required>
+                                    <option value="" ></option>
+                                    <option value="Allianz"> Allianz</option>
+                                    <option value="Axa"> Axa</option>
+                                    <option value="Baloise"> Baloise</option>
+                                    <option value="Bank">Bank</option>
+                                    <option value="Basler"> Basler</option>
+                                    <option value="CSS Gruppe"> CSS Gruppe</option>
+                                    <option value="Die Mobiliar"> Die Mobiliar</option>
+                                    <option value="Elipslife">Elipslife</option>
+                                    <option value="Generali"> Generali</option>
+                                    <option value="Group Mutuel"> Group Mutuel</option>
+                                    <option value="Helvetia">Helvetia</option>
+                                    <option value="Keine auskunft">Keine auskunft</option>
+                                    <option value="Keine"> Keine</option>
+                                    <option value="Lichtenstein Life">Lichtenstein Life</option>
+                                    <option value="Nationale Suisse"> Nationale Suisse</option>
+                                    <option value="PAX"> PAX</option>
+                                    <option value="Post">Post</option>
+                                    <option value="Skandia">Skandia</option>
+                                    <option value="Swiss Life"> Swiss Life</option>
+                                    <option value="Vaudoise"> Vaudoise</option>
+                                    <option value="Zürich"> Zürich</option>
+                                    <option value="Zürich Connect">Zürich Connect</option>
+                                </select>
+                                <script>
+                                    $("#3SauleSelect").val('{{ $lead->saule }}').change();
+                                </script>
+                                
                             </div>
                         </div>
                         <div class="col-4">
@@ -280,29 +478,92 @@
                                 <span class="subtitleform">Gesundheitzustand </span>
                             </div>
                             <div class="mt-2">
-                                <input class="inputform" type="text" value="{{ $lead->gesundheitzustand }}"
-                                    name="gesundheitzustand" placeholder="Nicht Gesund">
+                                <select class="form-select selectinput" name="gesundheitzustand" id="gesundheitzustand" required>
+                                    <option value="" ></option>
+                                    <option value="Gesund"> Gesund</option>
+                                    <option value="Nicht Gesund"> Nicht Gesund</option>
+                                </select>
+                                <script>
+                                    $("#gesundheitzustand").val('{{ $lead->gesundheitzustand }}').change();
+                                </script>
+                               
                             </div>
                             <div class="mt-4">
                                 <span class="subtitleform">Änderung bei KK </span>
                             </div>
                             <div class="mt-2">
-                                <input class="inputform" type="text" value="{{ $lead->anderung }}" name="anderung"
-                                    placeholder="1 jahr">
+                                <select class="form-select selectinput" name="anderung" id="anderung" required>
+                                    <option value="" ></option>
+                                    <option value="1 jahr"> 1 jahr</option>
+                                    <option value="2 jahre"> 2 jahre</option>
+                                    <option value="3 jahre oder mehr"> 3 jahre oder mehr</option>
+                                    <option value="6 monate"> 6 monate</option>
+                                    <option value="Nie"> Nie</option>
+                                </select>
+                                <script>
+                                    $("#anderung").val('{{ $lead->anderung }}').change();
+                                </script>
                             </div>
                             <div class="mt-4">
                                 <span class="subtitleform">Arberistätig </span>
                             </div>
                             <div class="mt-2">
-                                <input class="inputform" type="text" value="{{ $lead->arberistatig }}"
-                                    name="arberistatig" placeholder="Ja">
+                                <select class="form-select selectinput" name="arberistatig" id="ArbeitstatigSelect" required>
+                                    <option value="" ></option>
+                                    <option value="Ja"> Ja</option>
+                                    <option value="Nein"> Nein</option>
+                                    <option value="Temporär"> Temporär</option>
+                                </select>
+                                <script>
+                                    $("#ArbeitstatigSelect").val('{{ $lead->arberistatig }}').change();
+                                </script>
+
                             </div>
                             <div class="mt-4">
                                 <span class="subtitleform">Autoversicherung</span>
                             </div>
                             <div class="mt-2 ">
-                                <input type="text" value="{{ $lead->autoversicherung }}" name="autoversicherung"
-                                    class="inputform" placeholder="Zürich" aria-label="">
+                                <select class="form-select selectinput" name="autoversicherung" id="AutoversicherungSelect" required>
+                                    <option value=""></option>
+                                    <option value="Allianz"> Allianz</option>
+                                    <option value="Appenzeller Versicherung"> Appenzeller Versicherung</option>
+                                    <option value="Aquilana"> Aquilana</option>
+                                    <option value="Axa"> Axa</option>
+                                    <option value="Baloise"> Baloise</option>
+                                    <option value="Basler"> Basler</option>
+                                    <option value="Belmot">Belmot</option>
+                                    <option value="CAP"> CAP</option>
+                                    <option value="Die Mobiliar"> Die Mobiliar</option>
+                                    <option value="Elvia">Elvia</option>
+                                    <option value="Emmentaler Versicherung"> Emmentaler Versicherung</option>
+                                    <option value="Epona"> Epona</option>
+                                    <option value="Europäische">Europäische</option>
+                                    <option value="Europe Assistance"> Europe Assistance</option>
+                                    <option value="Evasan"> Evasan</option>
+                                    <option value="Fortuna">Fortuna</option>
+                                    <option value="Galenos">Galenos</option>
+                                    <option value="Generali"> Generali</option>
+                                    <option value="GVB"> GVB</option>
+                                    <option value="Helvetia">Helvetia</option>
+                                    <option value="Keine"> Keine</option>
+                                    <option value="Keine auskunft">Keine auskunft</option>
+                                    <option value="Lloyd's">Lloyd's</option>
+                                    <option value="Nationale Suisse"> Nationale Suisse</option>
+                                    <option value="OCC"> OCC</option>
+                                    <option value="Orion">Orion</option>
+                                    <option value="Protecta">Protecta</option>
+                                    <option value="Smile.direct"> Smile.direct</option>
+                                    <option value="Solida"> Solida</option>
+                                    <option value="Sympany">Sympany</option>
+                                    <option value="TCS">TCS</option>
+                                    <option value="Vaudoise"> Vaudoise</option>
+                                    <option value="Zürich"> Zürich</option>
+                                    <option value="Zürich Connect">Zürich Connect</option>
+                                </select>
+                                <script>
+                                    $("#AutoversicherungSelect").val('{{ $lead->autoversicherung }}').change();
+                                </script>
+                              
                             </div>
                         </div>
                     </div>
@@ -310,14 +571,19 @@
                     <div class="row">
                         <div class="col-12 col-md-4 mt-4">
                         </div>
-                        <div class="col-12 col-md-4 mt-3 mb-5">
+                        <div class="col-12 col-md-4 mt-3 mb-4">
                             <div class="">
                                 <span class="subtitleform">Kontaktieren erwúnscht </span>
                             </div>
                             <div class="mt-2">
-                                <input class="inputform" type="text" id="email"
-                                    value="{{ $lead->kontaktieren_erwunscht }}" name="kontaktieren_erwunscht"
-                                    placeholder="Ja">
+                                <select class="form-select selectinput" name="kontaktieren_erwunscht"  id="kontaktieren_erwunscht" required>
+                                    <option value="" ></option>
+                                    <option value="Ja"> Ja</option>
+                                    <option value="Nein"> Nein</option>
+                                </select>
+                                <script>
+                                    $("#kontaktieren_erwunscht").val('{{ $lead->kontaktieren_erwunscht }}').change();
+                                </script>
                             </div>
                         </div>
                         <div class="col-12 col-md-4 mt-0 mt-md-2 mb-0 mb-md-5">
@@ -749,7 +1015,6 @@
                                 <div class="mt-2">
 
                                     <input class="inputformm" type="text" name="koment_der_geburtsdatum"
-
                                         placeholder="" />
                                 </div>
                             </div>
