@@ -1,12 +1,12 @@
 @extends('layouts.app')
 
 @section('content')
-    <div class="col ms-0 ms-md-2 px-0 px-md-5" style="margin-top:16px !important;">
+    <div class="col ms-0 ms-md-2 px-0 px-md-2 pe-md-4" style="margin-top:16px !important;">
         <div class="mt-4 py-3 px-2">
             <span class="titledash">Willkommen {{ Auth::user()->name }}!</span>
             <div class="bgform mt-4 p-4 p-md-5">
                 <div class="row">
-                    <div class="col-4 ">
+                    <div class="col-xl-4 mt-3 mt-xl-0  col-12 ">
                         <div class="dashborder">
                             <div>
                                 <svg width="52" height="53" viewBox="0 0 52 53" fill="none"
@@ -31,7 +31,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col-4 ">
+                    <div class="col-xl-4 mt-3 mt-xl-0  col-12 ">
                         <div class="dashborder">
                             <div>
                                 <svg width="52" height="53" viewBox="0 0 52 53" fill="none"
@@ -57,7 +57,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col-4 ">
+                    <div class="col-xl-4 mt-3 mt-xl-0  col-12 ">
                         <div class="dashborder">
                             <div>
                                 <svg width="52" height="53" viewBox="0 0 52 53" fill="none"
@@ -85,7 +85,7 @@
                     </div>
                 </div>
                 <div class="row">
-                    <div class="col-8">
+                    <div class="col-xl-8 col-12">
                         <div class="mt-5 apexchart">
                             <div class="row">
                                 <div class="col-4">
@@ -122,11 +122,8 @@
                                     </div>
                                     <div class="col">
                                         <div class="textboard mt-5 pt-4 ">
-
                                             <div class="mb-4" id="elements">
-                                              
                                             </div>
-
                                         </div>
                                     </div>
                                     <div>

@@ -413,7 +413,7 @@
                             {{ Illuminate\Support\Facades\Session::get('message') }}
                         </span>
                     @endif
-                    <div style="overflow-x:auto;">
+                    <div style="overflow-x:auto; overflow-y: hidden">
                         <table class="table">
                             <thead style="background-color: #ebebeb;">
                                 <tr class="text-center">

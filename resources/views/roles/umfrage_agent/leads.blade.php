@@ -11,7 +11,7 @@ $i = 1;
             </form>
         </div>
         <div class="tableform">
-            <div style="overflow-x:auto;">
+            <div style="overflow-x:auto; overflow-y: hidden">
                 <table>
                     <thead style="background-color: #F7F7F7;">
                         <tr class="text-center">
