@@ -359,8 +359,50 @@
                 </div>
                 <hr style="margin: 0px 23px 7px 23px;">
                 <div class="row">
+
+
+
+                    {{-- <div class="col-sm-3">
+                    <div style="margin-top: 4px; ">
+                        <div class="topPlaceholder px-4">
+                            <span>Filter</span>
+                        </div>
+                        <select class="form-select inputleads select-form " aria-label="Default select example">
+                            <option selected>All</option>
+                            <option value="1">One</option>
+                            <option value="2">Two</option>
+                            <option value="3">Three</option>
+                        </select>
+                    </div>
+                </div> --}}
+                    {{-- 
+                <div class="col-sm-3">
+                    <div style="margin-top: 4px; padding-right: 25px;">
+                        <div class="topPlaceholder px-4">
+                            <span>Sort</span>
+                        </div>
+                        <select class="form-select inputleads select-form" aria-label="Default select example">
+                            <option selected>All</option>
+                            <option value="1">One</option>
+                            <option value="2">Two</option>
+                            <option value="3">Three</option>
+                        </select>
+                    </div>
+                </div> --}}
                 </div>
                 <div class="table-responsive-md">
+                    <form action="" method="GET">
+                        <div class="col-md-4 searchgrup">
+                            <div class="input-group  searchLeads mt-md-4 mt-3 mb-3 mb-md-0">
+                                <div class="form-outline">
+                                    <input class="inputleads ps-5" name="vorname" type="text"
+                                        placeholder="Search Leads" />
+                                    <i class="fa fa-search filtersubmit ps-1 "></i>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+
                     <form action="{{ route('assignLead') }}" method="POST">
                         @csrf
                         <div class="d-flex row">
@@ -392,14 +434,7 @@
                                 </div>
                             </div>
 
-                            <div class="col-md-4 ">
-                                <div class="input-group  searchLeads mt-md-4 mt-3 mb-3 mb-md-0">
-                                    <div class="form-outline">
-                                        <input class="inputleads ps-5" type="text" placeholder="Search Leads" />
-                                        <i class="fa fa-search filtersubmit ps-1 "></i>
-                                    </div>
-                                </div>
-                            </div>
+
 
                         </div>
                         @if (Illuminate\Support\Facades\Session::has('message'))
@@ -407,9 +442,11 @@
                                 {{ Illuminate\Support\Facades\Session::get('message') }}
                             </span>
                         @endif
-                        <div style="overflow-x:auto; overflow-y:hidden;">
+                        <div>
+
                             <table>
                                 <thead style="background-color: #F7F7F7;">
+
                                     <tr class="text-center ">
                                         <td>
                                             <div class="checkbox ms-3 squaredFour">
@@ -439,6 +476,7 @@
                                         $feedback_datum = App\Models\FeedBack::where('lead_id', $item->id)
                                             ->orderBy('created_at', 'desc')
                                             ->first();
+
                                     @endphp
                                     <tbody>
                                         <tr class="text-center tablesfont">
@@ -476,6 +514,7 @@
                                 <div class="text-center text-sm-start my-3 ps-0 ps-sm-4">
                                     <span>Shows {{ $leads->firstItem() }} - {{ $leads->lastItem() }} of Total
                                         {{ $leads->total() }} Leads </span>
+
                                 </div>
                                 <div class="d-flex justify-content-center navPagination">
                                     {{ $leads->onEachSide(1)->links() }}
@@ -484,6 +523,7 @@
                             </div>
                         </div>
                     </form>
+
                 </div>
             </div>
         </div>

@@ -413,7 +413,9 @@
                             {{ Illuminate\Support\Facades\Session::get('message') }}
                         </span>
                     @endif
+
                     <div style="overflow-x:auto; overflow-y: hidden">
+
                         <table class="table">
                             <thead style="background-color: #ebebeb;">
                                 <tr class="text-center">
@@ -466,6 +468,18 @@
                                 </tbody>
                             @endforeach
                         </table>
+                        <div class=" pt-4">
+                            <div class="text-center text-sm-start my-3 ps-0 ps-sm-4">
+                                <span>Shows {{ $leads->firstItem() }} - {{ $leads->lastItem() }} of Total
+                                    {{ $leads->total() }} Leads </span>
+
+
+                            </div>
+                            <div class="d-flex justify-content-center navPagination">
+                                {{ $leads->onEachSide(1)->links() }}
+                            </div>
+
+                        </div>
                     </div>
                 </form>
             </div>

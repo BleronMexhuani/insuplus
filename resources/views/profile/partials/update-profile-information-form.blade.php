@@ -34,8 +34,9 @@
                         <div class="">
                             <label for="name" :value="__('Name')"></label>
                             <input id="name" name="name" type="text" class="inputprofile w-100"
-                                :value="old('name', $user - > name)" required autofocus autocomplete="name">
+                                value="{{ Auth::user()->name }}" required autofocus autocomplete="name">
                             <x-input-error class="mt-2" :messages="$errors->get('name')" />
+                  
                         </div>
                     </div>
                 </div>
@@ -51,7 +52,9 @@
                         <div class="">
                             <label for="email" :value="__('Email')"></label>
                             <input id="email" name="email" type="email" class="inputprofile w-100"
-                                :value="old('email', $user - > email)" required autocomplete="email">
+                             value="{{ Auth::user()->email }}" required autocomplete="email">
+                             <x-input-error class="mt-2" :messages="$errors->get('email')" />
+                                
                         </div>
                     </div>
                 </div>
@@ -61,17 +64,17 @@
             <button class="btnprofile w-25">Save</button>
         </div>
         <hr style="margin-top: 25px;">
-        
+
         {{-- <div>
             <x-input-label for="name" :value="__('Name')" />
             <x-text-input id="name" name="name" type="text" class="mt-1 block w-full" :value="old('name', $user->name)" required autofocus autocomplete="name" />
-            <x-input-error class="mt-2" :messages="$errors->get('name')" />
+          
         </div> --}}
 
         {{-- <div>
             <x-input-label for="email" :value="__('Email')" />
             <x-text-input id="email" name="email" type="email" class="mt-1 block w-full" :value="old('email', $user->email)" required autocomplete="email" />
-            <x-input-error class="mt-2" :messages="$errors->get('email')" />
+
 
             @if ($user instanceof \Illuminate\Contracts\Auth\MustVerifyEmail && !$user->hasVerifiedEmail())
                 <div>
