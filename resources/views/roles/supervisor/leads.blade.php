@@ -5,7 +5,8 @@
             <form action="{{ route('searchLeads') }}" method="GET">
                 @csrf
                 <div class="accordionbg mb-4">
-                    <button type="button" onclick="location.href='{{route('advancedFilter')}}'" class="acordion pull-right">Erweiter</button>
+                    <button type="button" onclick="location.href='{{ route('advancedFilter') }}'"
+                        class="acordion pull-right">Erweiter</button>
                     <button type="button" class="accordion">
                         <svg width="28" height="28" viewBox="0 0 28 28" fill="none"
                             xmlns="http://www.w3.org/2000/svg">
@@ -47,15 +48,11 @@
                                 <div class="input-group mt-2 ">
                                     <select class="selectpicker" data-live-search="true" multiple data-actions-box="true"
                                         name="assigned_from[]">
-                                        @foreach ($umfrage_agents as $item)
-                                            <option value="{{ $item->id }}">{{ $item->name }}</option>
-                                        @endforeach
+
                                     </select>
                                     <select class="selectpicker" data-live-search="true" multiple data-actions-box="true"
                                         name="assign_to_id_call[]">
-                                        @foreach ($callagents as $item)
-                                            <option value="{{ $item->id }}">{{ $item->name }}</option>
-                                        @endforeach
+
                                     </select>
                                 </div>
                             </div>
@@ -66,9 +63,7 @@
                                 <div class="mt-2">
                                     <select class="selectpicker" data-live-search="true" multiple data-actions-box="true"
                                         name="teams[]">
-                                        @foreach ($teams as $item)
-                                            <option value="{{ $item->id }}">{{ $item->group_name }}</option>
-                                        @endforeach
+
                                     </select>
                                 </div>
                             </div>
@@ -341,9 +336,9 @@
                                             style="color:#00727A"></i></button>
                                 </div>
                             </div>
-                           
+
                         </div>
-                       
+
                     </div>
                 </div>
             </form>
@@ -360,7 +355,7 @@
                 <hr style="margin: 0px 23px 7px 23px;">
                 <div class="">
                     <form action="" method="GET">
-                        <div class="col-md-4 searchgrup">
+                        <div class="col searchgrup">
                             <div class="input-group  searchLeads mt-md-4 mt-3 mb-3 mb-md-0">
                                 <div class="form-outline">
                                     <input class="inputleads ps-5" name="vorname" type="text"
@@ -407,9 +402,10 @@
                                 {{ Illuminate\Support\Facades\Session::get('message') }}
                             </span>
                         @endif
-                        
+
                         <div style="overflow-x:auto; overflow-y: hidden">
-                            <table class="tableStyle" style="margin: 0px 0px;overflow-x: auto;
+                            <table class="tableStyle"
+                                style="margin: 0px 0px;overflow-x: auto;
                             margin-bottom: 0px;
                             padding: 0px;">
                                 <thead style="background-color: #F7F7F7;">
@@ -437,15 +433,15 @@
                                         <th> </th>
                                     </tr>
                                 </thead>
-                                
-                                    <tbody>
-                                        @foreach ($leads as $item)
-                                    @php
-                                        $feedback_datum = App\Models\FeedBack::where('lead_id', $item->id)
-                                            ->orderBy('created_at', 'desc')
-                                            ->first();
 
-                                    @endphp
+                                <tbody>
+                                    @foreach ($leads as $item)
+                                        @php
+                                            $feedback_datum = App\Models\FeedBack::where('lead_id', $item->id)
+                                                ->orderBy('created_at', 'desc')
+                                                ->first();
+                                            
+                                        @endphp
                                         <tr class="text-center tablesfont">
                                             <td>
                                                 <label>
@@ -473,9 +469,9 @@
                                                         class="fa-regular fa-pen-to-square"></i></a></td>
                                             <td><a class="btn btndelete"><i class="fa-solid fa-trash-can"></i></a></td>
                                         </tr>
-                                @endforeach
+                                    @endforeach
 
-                                    </tbody>
+                                </tbody>
 
                             </table>
                             <div class=" pt-4">
@@ -496,9 +492,9 @@
             </div>
         </div>
     </div>
-    </div>
-    </div>
-    </div>
+
+
+
     <script>
         $("#checkAll").click(function() {
             $(".check").prop('checked', $(this).prop('checked'));

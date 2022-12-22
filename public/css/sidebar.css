@@ -6,9 +6,11 @@
   position: fixed;
   height: 125vh;
   top: 66px;
-  /* display: none !important; */
 }
 
+a {
+  color: #fdfdfd;
+}
 
 .sidebar a {
   display: block;
@@ -46,26 +48,38 @@ div.content {
   height: 1000px;
 }
 
-/* @media screen and (max-width: 700px) {
+
+ @media  (max-width: 767.98px) {
   .sidebar {
     width: 100%;
     height: auto;
-    position: relative;
+    position: fixed;
   }
-  .sidebar a {float: left;}
-  div.content {margin-left: 0;}
+  
+  .insubg{
+    margin-top: 60px !important;
+    margin-left: 0px;
+  }
+  .sidebar {
+    justify-content: center;
+    display: flex;
+    top: 36px;
 }
 
-@media screen and (max-width: 400px) {
+  .sidebar a {float: left;}
+  div.content {margin-left: 0;}
+}  
+
+  @media   (max-width: 400.98px) {
   .sidebar a {
     text-align: center;
     float: none;
   }
-} */
+}   
 
-@media (max-width: 789px) { 
+ /* @media (max-width: 789px) { 
   .sidebar{
     display: none !important;
   }
- }
+ } */
 
