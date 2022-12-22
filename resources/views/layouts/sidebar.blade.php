@@ -1,7 +1,5 @@
-<div class="sidebar ">
+<div class="sidebar" >
     <div class="element1 mt-4">
-
-
 
         <a href="{{ route('dashboard') }}"
             @if (request()->is('dashboard')) ? style="background-color: #00727A; color:white" : "" @endif><svg

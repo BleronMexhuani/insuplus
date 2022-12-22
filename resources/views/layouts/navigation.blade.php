@@ -1,4 +1,4 @@
-<nav class="navbar navbar-expand-lg navbar-light ">
+ <nav class="navbar navbar-expand-lg navbar-light ">
     <div class="container-fluid" style="padding:7px">
 
         <a class="navbar-brand px-4 ms-4" href="#"><svg width="94" height="25" viewBox="0 0 94 25" fill="none"
@@ -39,12 +39,160 @@
                 </defs>
             </svg>
         </a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarScroll"
-            aria-controls="navbarScroll" aria-expanded="false" aria-label="Toggle navigation">
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
-        </button>
-
-        <div class=" navbar-collapse hamburgernav me-5 ms-3 ms-lg-0" id="navbarScroll">
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+              
+              <div class="element1 mt-4">
+                <a href="{{ route('dashboard') }}"
+                    @if (request()->is('dashboard')) ? style="background-color: #00727A; color:white" : "" @endif><svg
+                        class="dashboardimg ms-3" style="background: currentColor" , color; width="24" height="24"
+                        viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M10 3H3V12H10V3Z" fill="#00727A" stroke="#00727A" stroke-width="2" stroke-linecap="round"
+                            stroke-linejoin="round" />
+                        <path d="M21 3H14V8H21V3Z" fill="#00727A" stroke="#00727A" stroke-width="2" stroke-linecap="round"
+                            stroke-linejoin="round" />
+                        <path d="M21 12H14V21H21V12Z" fill="#00727A" stroke="#00727A" stroke-width="2" stroke-linecap="round"
+                            stroke-linejoin="round" />
+                        <path d="M10 16H3V21H10V16Z" fill="#00727A" stroke="#00727A" stroke-width="2" stroke-linecap="round"
+                            stroke-linejoin="round" />
+                    </svg>
+                    <span class="px-1">Dashboard</span>
+                </a>
+        
+        
+                @if (Auth::user()->hasRole(['supervisor']))
+                    <a href="{{ route('getusers') }}"
+                        @if (request()->is('users')) ? style="background-color: #00727A; color:white" : "" @endif>
+                        <svg class="ms-3" style="background: white;" width="24" height="24" viewBox="0 0 24 24"
+                            fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <rect x="2" y="4" width="20" height="7" rx="1" fill="#00727A " />
+                            <rect x="2" y="13" width="20" height="7" rx="1" fill="#00727A " />
+                            <rect x="4" y="6" width="3" height="3" rx="1" fill="white" />
+                            <rect x="4" y="15" width="3" height="3" rx="1" fill="white" />
+                        </svg>
+                        <span class="px-1">Users</span></a>
+                    <a href="{{ route('supervisorleads') }}"
+                        @if (request()->is('supervisor/leads')) ? style="background-color: #00727A; color:white" : "" @endif>
+                        <svg class="ms-3" style="background: white;" width="24" height="24" viewBox="0 0 24 24"
+                            fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <rect x="2" y="4" width="20" height="7" rx="1" fill="#00727A " />
+                            <rect x="2" y="13" width="20" height="7" rx="1" fill="#00727A " />
+                            <rect x="4" y="6" width="3" height="3" rx="1" fill="white" />
+                            <rect x="4" y="15" width="3" height="3" rx="1" fill="white" />
+                        </svg>
+                        <span class="px-1">Leads</span></a>
+                    <a href="{{ route('createGroup') }}"
+                        @if (request()->is('createGroup')) ? style="background-color: #00727A; color:white" : "" @endif>
+                        <svg class="ms-3" style="background: white;" width="24" height="24" viewBox="0 0 24 24"
+                            fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <rect x="2" y="4" width="20" height="7" rx="1"
+                                fill="#00727A " />
+                            <rect x="2" y="13" width="20" height="7" rx="1"
+                                fill="#00727A " />
+                            <rect x="4" y="6" width="3" height="3" rx="1"
+                                fill="white" />
+                            <rect x="4" y="15" width="3" height="3" rx="1"
+                                fill="white" />
+                        </svg>
+                        <span class="px-1">Create Teams</span></a>
+                    <a href="{{ route('getGroups') }}"
+                        @if (request()->is('supervisor/teams')) ? style="background-color: #00727A; color:white" : "" @endif>
+                        <svg class="ms-3" style="background: white;" width="24" height="24" viewBox="0 0 24 24"
+                            fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <rect x="2" y="4" width="20" height="7" rx="1"
+                                fill="#00727A " />
+                            <rect x="2" y="13" width="20" height="7" rx="1"
+                                fill="#00727A " />
+                            <rect x="4" y="6" width="3" height="3" rx="1"
+                                fill="white" />
+                            <rect x="4" y="15" width="3" height="3" rx="1"
+                                fill="white" />
+                        </svg>
+                        <span class="px-1">Teams</span></a>
+                @elseif(Auth::user()->hasRole(['team_leader']))
+                    <a href="{{ route('leads.team_leader') }}"
+                        @if (request()->is('team_leader/leads')) ? style="background-color: #00727A; color:white" : "" @endif>
+                        <svg class="ms-3" style="background: white;" width="24" height="24" viewBox="0 0 24 24"
+                            fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <rect x="2" y="4" width="20" height="7" rx="1"
+                                fill="#00727A " />
+                            <rect x="2" y="13" width="20" height="7" rx="1"
+                                fill="#00727A " />
+                            <rect x="4" y="6" width="3" height="3" rx="1"
+                                fill="white" />
+                            <rect x="4" y="15" width="3" height="3" rx="1"
+                                fill="white" />
+                        </svg>
+                        <span class="px-1">Leads</span></a>
+                @elseif (Auth::user()->hasRole(['quality_agent']))
+                    <a href="{{ route('quality_leads') }}"
+                        @if (request()->is('leads')) ? style="background-color: #00727A; color:white" : "" @endif>
+                        <svg class="ms-3" style="background: white;" width="24" height="24" viewBox="0 0 24 24"
+                            fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <rect x="2" y="4" width="20" height="7" rx="1"
+                                fill="#00727A " />
+                            <rect x="2" y="13" width="20" height="7" rx="1"
+                                fill="#00727A " />
+                            <rect x="4" y="6" width="3" height="3" rx="1"
+                                fill="white" />
+                            <rect x="4" y="15" width="3" height="3" rx="1"
+                                fill="white" />
+                        </svg>
+                        <span class="px-1">Leads</span></a>
+                @elseif(Auth::user()->hasRole(['umfrage_agent']))
+                    <a href="{{ route('leads_umfrage') }}"
+                        @if (request()->is('umfrage_agent/leads')) ? style="background-color: #00727A; color:white" : "" @endif>
+                        <svg class="ms-3" style="background: white;" width="24" height="24" viewBox="0 0 24 24"
+                            fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <rect x="2" y="4" width="20" height="7" rx="1"
+                                fill="#00727A " />
+                            <rect x="2" y="13" width="20" height="7" rx="1"
+                                fill="#00727A " />
+                            <rect x="4" y="6" width="3" height="3" rx="1"
+                                fill="white" />
+                            <rect x="4" y="15" width="3" height="3" rx="1"
+                                fill="white" />
+                        </svg>
+                        <span class="px-1">Leads</span></a>
+                @elseif(Auth::user()->hasRole(['call_agent']))
+                    <a class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex" href="{{ route('callagentleads') }}"
+                        @if (request()->is('leads')) ? style="background-color: #00727A; color:white" : "" @endif>
+                        <svg class="ms-3" style="background: white;" width="24" height="24" viewBox="0 0 24 24"
+                            fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <rect x="2" y="4" width="20" height="7" rx="1"
+                                fill="#00727A " />
+                            <rect x="2" y="13" width="20" height="7" rx="1"
+                                fill="#00727A " />
+                            <rect x="4" y="6" width="3" height="3" rx="1"
+                                fill="white" />
+                            <rect x="4" y="15" width="3" height="3" rx="1"
+                                fill="white" />
+                        </svg>
+                        <span class="px-1">Leads</span></a>
+                    </a>
+                @elseif(Auth::user()->hasRole(['confirmation_agent']))
+                    <a href="{{ route('confirmation_agent_leads') }}"
+                        @if (request()->is('confirmation_agent/leads')) ? style="background-color: #00727A; color:white" : "" @endif>
+                        <svg class="ms-3" style="background: white;" width="24" height="24" viewBox="0 0 24 24"
+                            fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <rect x="2" y="4" width="20" height="7" rx="1"
+                                fill="#00727A " />
+                            <rect x="2" y="13" width="20" height="7" rx="1"
+                                fill="#00727A " />
+                            <rect x="4" y="6" width="3" height="3" rx="1"
+                                fill="white" />
+                            <rect x="4" y="15" width="3" height="3" rx="1"
+                                fill="white" />
+                        </svg>
+                        <span class="px-1">Leads</span></a>
+                @endif
+            </div>
+            
+          </div>
+        
+        <div class=" navbar-collapse hamburgernav me-5 ms-3 ms-lg-0" >
             @if (Auth::user()->hasRole(['umfrage_agent']))
                 <div class="addleads">
                     <div class="">
@@ -132,13 +280,11 @@
             </a>
             </div> --}}
         </div>
-        {{-- <form action="{{ route('logout') }}" method="POST">
-            @csrf
-            <button class="btn btn-danger" style="background-color:#b21f2d ">Logout</button>
-        </form> --}}
+       
 
     </div>
-</nav>
+</nav> 
+
 
 
 <script>

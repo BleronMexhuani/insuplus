@@ -159,11 +159,11 @@ input:focus-visible {
     border: 1px solid #EAECEE;
     border-radius: 8px;
     padding: 15px;
-
+    box-shadow: none !important;
 }
 
-@media (max-width: 991.98px) { 
+/* @media (max-width: 991.98px) { 
     .hamburgernav{
         display: flex !important;
     }
- }
+ } */
