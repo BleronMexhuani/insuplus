@@ -5,7 +5,7 @@
             <form method="GET">
                 @csrf
                 <div class="accordionbg mb-4 ">
-                    <button type="button" class="acordion pull-right ">Erweiter</button>
+                    {{-- <button type="button" class="acordion pull-right ">Erweiter</button> --}}
                     <button type="button" class="accordion">
                         <svg width="28" height="28" viewBox="0 0 28 28" fill="none"
                             xmlns="http://www.w3.org/2000/svg">
@@ -326,47 +326,18 @@
                     </span>
                 </div>
                 <hr style="margin: 0px 33px 7px 22px;">
-                <div class="row">
-                    <div class="col-6 mb-4 mt-3">
-                        <div class="input-group searchgrup">
-                            <div class="form-outline">
-                                <input class="inputleads ps-5" type="text" placeholder="Search Leads" />
-                                <i class="fa fa-search filtersubmit ps-1 "></i>
-                            </div>
+                <div class="col searchgrup">
+                    <div class="input-group  searchLeads mt-md-4 mt-3 mb-3 mb-md-4">
+                        <div class="form-outline">
+                            <input class="inputleads ps-5" name="vorname" type="text"
+                                placeholder="Search Leads" />
+                            <i class="fa fa-search filtersubmit ps-1 "></i>
                         </div>
                     </div>
-
-                    {{-- <div class="col-3">
-                        <div style="margin-top: 4px; ">
-                            <div class="topPlaceholder px-4">
-                                <span>Filter</span>
-                            </div>
-                            <select class="form-select inputleads select-form " aria-label="Default select example">
-                                <option selected>All</option>
-                                <option value="1">One</option>
-                                <option value="2">Two</option>
-                                <option value="3">Three</option>
-                            </select>
-                        </div>
-
-                    </div> --}}
-                    {{-- <div class="col-3">
-                        <div style="margin-top: 4px; padding-right: 25px;">
-                            <div class="topPlaceholder px-4">
-                                <span>Sort</span>
-                            </div>
-                            <select class="form-select inputleads select-form" aria-label="Default select example">
-                                <option selected>All</option>
-                                <option value="1">One</option>
-                                <option value="2">Two</option>
-                                <option value="3">Three</option>
-                            </select>
-                        </div>
-                    </div> --}}
                 </div>
 
 
-                <div  style="margin: 0px 0px;  margin-bottom: 0px; padding: 0px;  overflow-x:auto; overflow-y: hidden">
+                <div  style=" overflow-x:auto; overflow-y: hidden">
                     <form method="POST" class="mb-0 mx-0">
                     @csrf
 
@@ -382,7 +353,9 @@
                             </span>
                         @endif
                     <div style="overflow-x:auto; overflow-y: hidden">
-                        <table>
+                        <table style="margin: 0px 0px;overflow-x: auto;
+                        margin-bottom: 0px;
+                        padding: 0px;">
                             <thead style="background-color: #F7F7F7;">
                                 <tr class="text-center">
                                     <th>Vorname</th>
