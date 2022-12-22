@@ -392,6 +392,7 @@
                                     <th>Region</th>
                                     <th>Sprache</th>
                                     <th>Verteilen At</th>
+                                    <th>Quality Agent</th>
                                     <th>Created Time</th>
                                     <th>Created From</th>
                                     <th>Feedback</th>
@@ -417,6 +418,7 @@
                                         <td>{{ $item->sprachen }}</td>
                                         <td>{{ $item->assign_to_id_call ? App\Models\User::find($item->assign_to_id_call)->name : ($item->assign_to_id_team_leader ? App\Models\User::find($item->assign_to_id_team_leader)->name : 'Not Assigned') }}
                                         </td>
+                                        <td>{{$item->feedback_status_quality_check}}</td>
                                         <td>{{ $item->created_at }}</td>
                                         <td>{{ $item->assigned_from }}</td>
                                         <td

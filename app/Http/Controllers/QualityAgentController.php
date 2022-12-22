@@ -19,7 +19,7 @@ class QualityAgentController extends Controller
         $umfrage_agents = User::role(['umfrage_agent'])->get();
         $teams = Team::all();
         $leads = $this->leadsOfQuality($req);
-        $leads->appends($req->all());
+        $leads->appends($_GET)->links();
 
         return view('roles.quality_agent.leads', compact('leads', 'callagents', 'umfrage_agents', 'teams'));
     }

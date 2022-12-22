@@ -50,7 +50,7 @@ class TeamLeaderController extends Controller
 
         $callagents = User::whereIn('id',$call_agents)->get();
 
-        $leads->appends($req->all());
+        $leads->appends($_GET)->links();
 
         return view('roles.team_leader.leads', compact('leads','callagents'));
     }
