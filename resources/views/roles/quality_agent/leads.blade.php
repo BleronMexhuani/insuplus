@@ -3,7 +3,7 @@
     <div class="col ms-0 ms-md-2 px-0 px-md-5">
 
         <div class="mt-4 py-3 px-2">
-            <form  method="GET">
+            <form method="GET">
                 @csrf
                 <div class="accordionbg mb-4">
                     <button type="button" class="acordion pull-right">Erweiter</button>
@@ -301,8 +301,8 @@
                                     <span class="subtitleform">Feedback</span>
                                 </div>
                                 <div class="mt-2">
-                                    <select class="selectpicker" data-live-search="true" name="feedback_status[]" multiple
-                                        data-actions-box="true">
+                                    <select class="selectpicker" data-live-search="true" name="feedback_status[]"
+                                        multiple data-actions-box="true">
                                         <option value="null">Leer</option>
                                         <option value="Falsche Nummer">Falsche Nummer</option>
                                         <option value="Hat schon gewechselt">Hat schon gewechselt</option>
@@ -345,11 +345,11 @@
                                 </div>
                                 <div class="mt-2 ">
                                     <div class="input-group mt-2 ">
-                                        <input type="text" class="form-controol input-sm mb-4" name="anrufdatum[]" placeholder="von"
-                                            onfocus="(this.type='date')" onblur="(this.type='text')" 
+                                        <input type="text" class="form-controol input-sm mb-4" name="anrufdatum[]"
+                                            placeholder="von" onfocus="(this.type='date')" onblur="(this.type='text')"
                                             name="" onchange="change()">
-                                        <input type="text" class="form-controol input-sm mb-4" name="anrufdatum[]" placeholder="bis"
-                                            onfocus="(this.type='date')" onblur="(this.type='text')" 
+                                        <input type="text" class="form-controol input-sm mb-4" name="anrufdatum[]"
+                                            placeholder="bis" onfocus="(this.type='date')" onblur="(this.type='text')"
                                             name="">
                                     </div>
                                 </div>
@@ -366,14 +366,14 @@
             <hr>
             <div class="row">
                 <div class="col-8 mb-4 mt-3">
-                    <div class="input-group">
-                        <div class="form-outline">
-                            <input class="inputleads ps-5" type="text" placeholder="Search" />
-                            <i class="fa fa-search filtersubmit ps-1 "></i>
+                    <form action="" method="GET">
+                        <div class="input-group">
+                            <div class="form-outline">
+                                <input class="inputleads ps-5" name="vorname" type="text" placeholder="Search" />
+                                <i class="fa fa-search filtersubmit ps-1 "></i>
+                            </div>
                         </div>
-
-                    </div>
-
+                    </form>
                 </div>
 
                 <div class="col">
@@ -407,7 +407,7 @@
             <div class="table-responsive-md">
                 <form action="{{ route('assignLead') }}" method="POST">
                     @csrf
-                
+
                     @if (Illuminate\Support\Facades\Session::has('message'))
                         <span class="fs-5 mb-2 fw-500">
                             {{ Illuminate\Support\Facades\Session::get('message') }}
@@ -419,7 +419,7 @@
                         <table class="table">
                             <thead style="background-color: #ebebeb;">
                                 <tr class="text-center">
-                                 
+
                                     <th>Vorname</th>
                                     <th>Nachname</th>
                                     <th>Geburtsdatum</th>
@@ -445,7 +445,7 @@
                                 @endphp
                                 <tbody>
                                     <tr class="text-center">
-                                    
+
                                         <td>{{ $item->vorname }}</td>
                                         <td>{{ $item->nachname }}</td>
                                         <td>{{ $item->geburtsdatum }}</td>

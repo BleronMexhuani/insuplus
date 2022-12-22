@@ -117,4 +117,24 @@ class QualityAgentController extends Controller
 
         return redirect('quality_agent/leads');
     }
+    public function chartquality_agent(Request $req){
+        if($req->from === null && $req->from === null){
+            $leads = Lead::Select('feedback_status_quality_check')
+            ->selectRaw('feedback_status_quality_check,COUNT(*) as number')
+            ->groupBy('feedback_status_quality_check')
+            ->get();
+        }else{
+            $leads = Lead::Select('feedback_status_quality_check')
+            ->selectRaw('feedback_status_quality_check,COUNT(*) as number')
+            ->whereBetween('created_at',[$req->from , $req->to])
+           
+            ->groupBy('feedback_status_quality_check')
+            ->get();
+        }
+        $array=[];
+        foreach($leads as $lead) {
+            array_push($array, [$lead->feedback_status_quality_check, $lead->number]);
+        }
+        return $array;
+    }
 }
