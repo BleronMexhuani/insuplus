@@ -15,7 +15,7 @@ class CallAgentController extends Controller
     public function getLeads(Request $req)
     {
         $leads = $this->leadsOfCallAgent($req);
-        $leads->appends($req->all());
+        $leads->appends($_GET)->links();
 
         return view('roles.call_agent.leads', compact('leads'));
     }

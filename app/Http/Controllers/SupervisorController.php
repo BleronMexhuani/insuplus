@@ -71,7 +71,7 @@ class SupervisorController extends Controller
 
         $teams = Team::all();
         $leads = $this->leadsOfSupervisor($req);
-        $leads->appends($req->all());
+        $leads->appends($_GET)->links();
 
         return view('roles.supervisor.leads', compact('callagents', 'leads', 'umfrage_agents', 'teams', 'team_leaders'));
     }
@@ -84,8 +84,9 @@ class SupervisorController extends Controller
         foreach ($req->except('_token', 'page') as $key => $value) {
             if ($key == 'created_at' || $key == 'verteilen_datum' || $key == 'geburtsdatum' || $key == 'anrufdatum') {
                 if ($value[0] !== null && $value[1] !== null) {
-
                     $lead->whereBetween($key, $value);
+                } else if ($key == 'geburtsdatum' && $value[0] !== null) {
+                    $lead->whereIn($key, $value);
                 }
             } else if ($key == 'teams') {
 
