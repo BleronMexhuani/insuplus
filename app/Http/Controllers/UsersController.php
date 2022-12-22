@@ -27,6 +27,11 @@ class UsersController extends Controller
             $month = Lead::where('assign_to_id_call', Auth::user()->id)->whereMonth('verteilen_datum', now()->month)->count();
             $week = Lead::where('assign_to_id_call', Auth::user()->id)->whereBetween('verteilen_datum', [Carbon::now()->startOfWeek(), Carbon::now()->endOfWeek()])->count();
         }
+        elseif(Auth::user()->hasRole(['quality_agent'])){
+            $today = Lead::whereDate('verteilen_datum', Carbon::today())->count();
+            $month = Lead::whereMonth('verteilen_datum', now()->month)->count();
+            $week = Lead::whereBetween('verteilen_datum', [Carbon::now()->startOfWeek(), Carbon::now()->endOfWeek()])->count();
+        }
         return view('dashboard', compact('umfrage_agents', 'callagents', 'week', 'today', 'month'));
     }
 

@@ -9,6 +9,7 @@
                             <th scope="col">#</th>
                             <th scope="col">Vorname</th>
                             <th scope="col">Feedback Status</th>
+                            <th scope="col"> Status</th>
                             <th scope="col">Agent</th>
                             <th scope="col">Action</th>
                         </tr>
@@ -21,7 +22,10 @@
                                 <td>{{ $item->vorname }}</td>
                                 <td>{{ $item->feedback_status }}</td>
                                 <td>{{ $item->getAssignedAgent->name }}</td>
-                                <td><a class="btn btn-primary" href="lead_info/{{ $item->id }}">Edit</a></td>
+                                <td><a class="btn btnedit"
+                                    href="{{ route('lead_info_ca', ['id' => $item->id]) }}"><i
+                                        class="fa-regular fa-pen-to-square"></i></a>
+</td>
                             </tr>
                         @endforeach
                     </tbody>

@@ -348,15 +348,20 @@
                     </div>
                 </div>
             </form>
-            <div class="tableform">
-                <div style="padding: 25px">
-                    <span class="ms-1 mb-4 titleoftable ">All
-                        <hr
-                            style=" border: 2px solid #00727A;
-                         width: 25px;
-                         margin-top: 0px;
-                         margin-left: 3px;">
-                    </span>
+
+            <span class="ms-1 mb-4 subtitlelead ">All</span>
+            <hr>
+            <div class="row">
+                <div class="col-8 mb-4 mt-3">
+                    <form action="" method="GET">
+                        <div class="input-group">
+                            <div class="form-outline">
+                                <input class="inputleads ps-5" name="vorname" type="text" placeholder="Search" />
+                                <i class="fa fa-search filtersubmit ps-1 "></i>
+                            </div>
+                        </div>
+                    </form>
+
                 </div>
                 <hr style="margin: 0px 23px 7px 23px;">
                 <div class="">
@@ -374,6 +379,7 @@
                 </div>
                 <form action="{{ route('assignLead') }}" method="POST">
                     @csrf
+
                     {{-- <div class="d-flex row">
                         <div class="col-md-3">
                             <div class="searchgrup mt-md-4 mt-3">
@@ -399,6 +405,7 @@
                         </div>
                     </div> --}}
 
+
                     @if (Illuminate\Support\Facades\Session::has('message'))
                         <span class="fs-5 mb-2 fw-500">
                             {{ Illuminate\Support\Facades\Session::get('message') }}
@@ -412,6 +419,7 @@
                     padding: 0px;">
                             <thead style="background-color: #F7F7F7;">
                                 <tr class="text-center">
+
                                     <th>Vorname</th>
                                     <th>Nachname</th>
                                     <th>Geburtsdatum</th>

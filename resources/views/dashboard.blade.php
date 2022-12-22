@@ -12,5 +12,7 @@
         @include('roles.hr_and_finance.dashboard')
     @elseif(Auth::user()->hasRole(['umfrage_agent']))
         @include('roles.umfrage_agent.dashboard')
+    @elseif(Auth::user()->hasRole(['quality_agent']))
+        @include('roles.quality_agent.dashboard')
     @endif
 @endsection
