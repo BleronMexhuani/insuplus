@@ -6,8 +6,8 @@
                 @csrf
 
                 <div class="accordionbg mb-4">
-                    <button type="button" onclick="location.href='{{ route('advancedFilter') }}'"
-                        class="acordion pull-right">Erweiter</button>
+                    {{-- <button type="button" onclick="location.href='{{ route('advancedFilter') }}'"
+                        class="acordion pull-right">Erweiter</button> --}}
                     <button type="button" class="accordion">
                         <svg width="28" height="28" viewBox="0 0 28 28" fill="none"
                             xmlns="http://www.w3.org/2000/svg">
@@ -333,14 +333,14 @@
                                         </select>
                                     </div>
                                 </div>
-                                <div class="col-md-3">
+                                {{-- <div class="col-md-3">
                                     <div class="mt-md-4 mt-0 chooseteamgroup">
                                         <select name="assign_to_id_team_leader" id=""
                                             class="form-select inputleads select-form  mb-3">
                                             <option value="">Choose Team Leader</option>
                                         </select>
                                     </div>
-                                </div>
+                                </div> --}}
                                 <div class="col-md-2 ">
                                     <div class="btnsubmit mb-md-4 mb-0 mt-md-4 mt-0 text-center">
                                         <button class=" btnprofile w-100 " style="color:white;">Submit</button>
