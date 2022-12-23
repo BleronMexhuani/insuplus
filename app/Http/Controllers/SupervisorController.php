@@ -121,16 +121,16 @@ class SupervisorController extends Controller
                 } else {
                     $lead->where(
                         function ($q) use ($key, $value_on_array) {
-                            if ($value_on_array[0] != null){
-                            $q->whereIn($key, $value_on_array);
+                            if ($value_on_array[0] != null) {
+                       
+                                $q->whereIn($key, $value_on_array);
+                                
                             }
                             if ($key == 'feedback_status' && in_array('NULL', $value_on_array)) {
                                 $q->orWhereNull('feedback_status');
                             }
                         }
                     );
-                    
-                       
                 }
             }
         }

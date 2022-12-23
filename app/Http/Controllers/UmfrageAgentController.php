@@ -12,14 +12,14 @@ class UmfrageAgentController extends Controller
     public function create_lead(Request $request)
     {
 
-        // Lead::create($request->except('_token'));
+
         $request['assigned_from'] = Auth::id();
 
         if ($request['sprachen']) {
             $request['sprachen'] = implode(",", $request['sprachen']);
         }
 
-        Lead::create($request->except('_token',));
+        Lead::create($request->except('_token'));
 
         return redirect()->back()->with('success', 'Successfuly inserted');
     }
@@ -34,14 +34,12 @@ class UmfrageAgentController extends Controller
         if ($req->from === null && $req->from === null) {
             $leads = Lead::Select('bestatigungs_status')
                 ->selectRaw('bestatigungs_status,COUNT(*) as number')
-
                 ->where('assigned_from', Auth::user()->id)
                 ->groupBy('bestatigungs_status')
                 ->get();
         } else {
             $leads = Lead::Select('bestatigungs_status')
                 ->selectRaw('bestatigungs_status,COUNT(*) as number')
-
                 ->whereBetween('created_at', [$req->from, $req->to])
                 ->where('assigned_from', Auth::user()->id)
                 ->groupBy('bestatigungs_status')

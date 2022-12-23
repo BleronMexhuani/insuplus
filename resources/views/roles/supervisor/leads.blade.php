@@ -48,11 +48,18 @@
                                 <div class="input-group mt-2 ">
                                     <select class="selectpicker" data-live-search="true" multiple data-actions-box="true"
                                         name="assigned_from[]">
-
+                                        
+                                        @foreach ($umfrage_agents as $item)
+                                        <option value="{{$item->id}}}">{{$item->name}}</option>
+                                       
+                                        @endforeach
                                     </select>
                                     <select class="selectpicker" data-live-search="true" multiple data-actions-box="true"
                                         name="assign_to_id_call[]">
-
+                                        @foreach ($callagents as $item)
+                                        <option value="{{$item->id}}}">{{$item->name}}</option>
+                                       
+                                        @endforeach
                                     </select>
                                 </div>
                             </div>
@@ -63,7 +70,9 @@
                                 <div class="mt-2">
                                     <select class="selectpicker" data-live-search="true" multiple data-actions-box="true"
                                         name="teams[]">
-
+                                        @foreach ($teams as $item)
+                                        <option value="{{ $item->id }}">{{ $item->group_name }}</option>
+                                    @endforeach
                                     </select>
                                 </div>
                             </div>

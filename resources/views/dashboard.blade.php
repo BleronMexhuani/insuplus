@@ -14,5 +14,7 @@
         @include('roles.umfrage_agent.dashboard')
     @elseif(Auth::user()->hasRole(['quality_agent']))
         @include('roles.quality_agent.dashboard')
+    @elseif(Auth::user()->hasRole(['confirmation_agent']))
+        @include('roles.confirmation_agent.dashboard')
     @endif
 @endsection

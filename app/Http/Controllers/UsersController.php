@@ -31,7 +31,13 @@ class UsersController extends Controller
             $today = Lead::whereDate('verteilen_datum', Carbon::today())->count();
             $month = Lead::whereMonth('verteilen_datum', now()->month)->count();
             $week = Lead::whereBetween('verteilen_datum', [Carbon::now()->startOfWeek(), Carbon::now()->endOfWeek()])->count();
-        }
+            
+        }elseif(Auth::user()->hasRole(['confirmation_agent']))
+        {
+                    $today = Lead::Select('completed')->whereDate('created_at', Carbon::today())->count();
+                    $month = Lead::Select('completed')->whereMonth('created_at', now()->month)->count();
+                    $week = Lead::Select('completed')->whereBetween('created_at', [Carbon::now()->startOfWeek(), Carbon::now()->endOfWeek()])->count();
+         }
         return view('dashboard', compact('umfrage_agents', 'callagents', 'week', 'today', 'month'));
     }
 

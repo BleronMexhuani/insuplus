@@ -59,4 +59,18 @@ class ConfirmationAgentController extends Controller
 
         return redirect('confirmation_agent/leads');
     }
+
+
+
+    public function chartcomfiramtion(Request $req)
+    {
+        $leads = Lead::query()
+        ->selectRaw('completed,DATE_FORMAT(created_at, "%d-%b-%Y") as date,COUNT(*) as count')
+        ->where('completed',3);
+        if($req->from && $req->to){
+            $leads ->whereBetween('created_at',[$req->from , $req->to]);
+        }
+        $leads->groupBy('created_at');
+        return json_encode($leads->get());
+    }
 }
