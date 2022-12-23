@@ -27,8 +27,10 @@
                             <span class="subtitleform">Anrede</span>
                         </div>
                         <div class="mt-2">
-                            <input class="inputform" type="number" name="anrede" placeholder="Herr" min="1"
-                                max="9" />
+                            <select name="anrede" id="anrede" class="form-select inputform ">
+                                <option value="male">Male</option>
+                                <option value="female">Female</option>
+                            </select>
                         </div>
 
                     </div>

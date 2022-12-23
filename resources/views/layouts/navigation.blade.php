@@ -45,7 +45,7 @@
              <span class="navbar-toggler-icon"></span>
          </button>
          <div class="collapse navbar-collapse" id="navbarSupportedContent">
-
+          
              <div class="element1 mt-4">
                  <a href="{{ route('dashboard') }}"
                      @if (request()->is('dashboard')) ? style="background-color: #00727A; color:white" : "" @endif><svg
@@ -121,6 +121,8 @@
                                  fill="white" />
                          </svg>
                          <span class="px-1">Teams</span></a>
+
+                         
                  @elseif(Auth::user()->hasRole(['team_leader']))
                      <a href="{{ route('leads.team_leader') }}"
                          @if (request()->is('team_leader/leads')) ? style="background-color: #00727A; color:white" : "" @endif>
@@ -198,6 +200,23 @@
                          </svg>
                          <span class="px-1">Leads</span></a>
                  @endif
+                 {{-- <div class="">
+                    <div class="">
+                        <a href="{{ route('createLeadView') }}">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path
+                                    d="M12 21C16.9706 21 21 16.9706 21 12C21 7.02944 16.9706 3 12 3C7.02944 3 3 7.02944 3 12C3 16.9706 7.02944 21 12 21Z"
+                                    fill="white" />
+                                <path d="M12 8V16" stroke="#00727A" stroke-width="1.5" stroke-linecap="round"
+                                    stroke-linejoin="round" />
+                                <path d="M8 12H16" stroke="#00727A" stroke-width="1.5" stroke-linecap="round"
+                                    stroke-linejoin="round" />
+                            </svg>
+                            <span class="titleplus">Add Leads</span>
+                        </a>
+                    </div>
+                </div> --}}
              </div>
 
          </div>

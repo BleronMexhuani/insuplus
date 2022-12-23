@@ -1,6 +1,6 @@
 @extends('layouts.app')
 @section('content')
-    <div class="">
+    <div class="px-md-3 pe-md-4">
         <div class="mt-4 py-3 px-2">
             <form method="GET">
                 @csrf
@@ -348,140 +348,106 @@
                     </div>
                 </div>
             </form>
-
-            <span class="ms-1 mb-4 subtitlelead ">All</span>
-            <hr>
-            <div class="row">
-                <div class="col-8 mb-4 mt-3">
-                    <form action="" method="GET">
-                        <div class="input-group">
+            <div class="tableform">
+                <div style="padding: 25px">
+                    <span class="ms-1 mb-4 titleoftable ">All
+                        <hr
+                            style=" border: 2px solid #00727A;
+                         width: 25px;
+                         margin-top: 0px;
+                         margin-left: 3px;">
+                    </span>
+                </div>
+                <hr style="margin: 0px 23px 7px 23px;">
+                <form action="" method="GET">
+                    <div class="col searchgrup">
+                        <div class="input-group  searchLeads mt-md-4 mt-3 mb-3 mb-md-4">
                             <div class="form-outline">
-                                <input class="inputleads ps-5" name="vorname" type="text" placeholder="Search" />
+                                <input class="inputleads ps-5" name="vorname" type="text"
+                                    placeholder="Search Leads" />
                                 <i class="fa fa-search filtersubmit ps-1 "></i>
                             </div>
                         </div>
-                    </form>
-
-                </div>
-                <hr style="margin: 0px 23px 7px 23px;">
-                <div class="">
-                    <form action="" method="GET">
-                        <div class="col searchgrup">
-                            <div class="input-group  searchLeads mt-md-4 mt-3 mb-3 mb-md-4">
-                                <div class="form-outline">
-                                    <input class="inputleads ps-5" name="vorname" type="text"
-                                        placeholder="Search Leads" />
-                                    <i class="fa fa-search filtersubmit ps-1 "></i>
-                                </div>
-                            </div>
-                        </div>
-                    </form>
-                </div>
-                <form action="{{ route('assignLead') }}" method="POST">
-                    @csrf
-
-                    {{-- <div class="d-flex row">
-                        <div class="col-md-3">
-                            <div class="searchgrup mt-md-4 mt-3">
-                                <select name="assign_to_id_call" placeholder="Call agents" id=""
-                                    class="form-select inputleads  select-form  mb-3">
-                                    <option value="">Choose Call Agents</option>
-                                  
-                                </select>
-                            </div>
-                        </div>
-                        <div class="col-md-3">
-                            <div class="mt-md-4 mt-0 chooseteamgroup">
-                                <select name="assign_to_id_team_leader" id=""
-                                    class="form-select inputleads select-form  mb-3">
-                                    <option value="">Choose Team Leader</option>
-                                </select>
-                            </div>
-                        </div>
-                        <div class="col-md-2 ">
-                            <div class="btnsubmit mb-md-4 mb-0 mt-md-4 mt-0 text-center">
-                                <button class=" btnprofile w-100 " style="color:white;">Submit</button>
-                            </div>
-                        </div>
-                    </div> --}}
-
-
-                    @if (Illuminate\Support\Facades\Session::has('message'))
-                        <span class="fs-5 mb-2 fw-500">
-                            {{ Illuminate\Support\Facades\Session::get('message') }}
-                        </span>
-                    @endif
-
-                    <div style="overflow-x:auto; overflow-y: hidden">
-                        <table class="tableStyle"
-                        style="margin: 0px 0px;overflow-x: auto;
-                    margin-bottom: 0px;
-                    padding: 0px;">
-                            <thead style="background-color: #F7F7F7;">
-                                <tr class="text-center">
-
-                                    <th>Vorname</th>
-                                    <th>Nachname</th>
-                                    <th>Geburtsdatum</th>
-                                    <th>Email</th>
-                                    <th>Region</th>
-                                    <th>Sprache</th>
-                                    <th>Verteilen At</th>
-                                    <th>Created Time</th>
-
-                                    <th>Created From</th>
-                                    <th>Feedback</th>
-                                    <th>Feedback datum</th>
-                                    <th>Aktion </th>
-                                    <th> </th>
-                                </tr>
-                            </thead>
-                            @foreach ($leads as $item)
-                                @php
-                                    $feedback_datum = App\Models\Feedback::where('lead_id', $item->id)
-                                        ->orderBy('created_at', 'desc')
-                                        ->first();
-                                    
-                                @endphp
-                                <tbody>
-                                    <tr class="text-center">
-
-                                        <td>{{ $item->vorname }}</td>
-                                        <td>{{ $item->nachname }}</td>
-                                        <td>{{ $item->geburtsdatum }}</td>
-                                        <td>{{ $item->email }}</td>
-                                        <td>{{ $item->region }}</td>
-                                        <td>{{ $item->sprachen }}</td>
-                                        <td>{{ $item->assign_to_id_call ? App\Models\User::find($item->assign_to_id_call)->name : ($item->assign_to_id_team_leader ? App\Models\User::find($item->assign_to_id_team_leader)->name : 'Not Assigned') }}
-                                        </td>
-                                        <td>{{ $item->created_at }}</td>
-                                        <td>{{ $item->assigned_from }}</td>
-                                        <td style="color:{{ $item->feedback_status == 'Terminiert' ? 'green' : 'red' }};">
-                                            {{ $item->feedback_status }}</td>
-                                        <td>{{ App\Models\Feedback::where('lead_id', $item->id)->orderBy('created_at', 'desc')->pluck('created_at')->first() }}
-                                        </td>
-                                        <td><a class="btn btnedit"
-                                                href="{{ route('lead_info', ['id' => $item->id]) }}"><i
-                                                    class="fa-regular fa-pen-to-square"></i></a></td>
-                                        <td><a class="btn btndelete"><i class="fa-solid fa-trash-can"></i></a></td>
-                                    </tr>
-                                </tbody>
-                            @endforeach
-                        </table>
-                        <div class=" pt-4">
-                            <div class="text-center text-sm-start my-3 ps-0 ps-sm-4">
-                                <span>Shows {{ $leads->firstItem() }} - {{ $leads->lastItem() }} of Total
-                                    {{ $leads->total() }} Leads </span>
-
-
-                            </div>
-                            <div class="d-flex justify-content-center navPagination">
-                                {{ $leads->onEachSide(1)->links() }}
-                            </div>
-
-                        </div>
                     </div>
                 </form>
+                    <form action="{{ route('assignLead') }}" method="POST">
+                        @csrf
+
+                        @if (Illuminate\Support\Facades\Session::has('message'))
+                            <span class="fs-5 mb-2 fw-500">
+                                {{ Illuminate\Support\Facades\Session::get('message') }}
+                            </span>
+                        @endif
+
+                        <div style="overflow-x:auto; overflow-y: hidden">
+                            <table>
+                                <thead style="background-color: #F7F7F7;">
+                                    <tr class="text-center">
+
+                                        <th>Vorname</th>
+                                        <th>Nachname</th>
+                                        <th>Geburtsdatum</th>
+                                        <th>Email</th>
+                                        <th>Region</th>
+                                        <th>Sprache</th>
+                                        <th>Verteilen At</th>
+                                        <th>Created Time</th>
+
+                                        <th>Created From</th>
+                                        <th>Feedback</th>
+                                        <th>Feedback datum</th>
+                                        <th>Aktion </th>
+                                        <th> </th>
+                                    </tr>
+                                </thead>
+                                @foreach ($leads as $item)
+                                    @php
+                                        $feedback_datum = App\Models\Feedback::where('lead_id', $item->id)
+                                            ->orderBy('created_at', 'desc')
+                                            ->first();
+                                        
+                                    @endphp
+                                    <tbody>
+                                        <tr class="text-center">
+
+                                            <td>{{ $item->vorname }}</td>
+                                            <td>{{ $item->nachname }}</td>
+                                            <td>{{ $item->geburtsdatum }}</td>
+                                            <td>{{ $item->email }}</td>
+                                            <td>{{ $item->region }}</td>
+                                            <td>{{ $item->sprachen }}</td>
+                                            <td>{{ $item->assign_to_id_call ? App\Models\User::find($item->assign_to_id_call)->name : ($item->assign_to_id_team_leader ? App\Models\User::find($item->assign_to_id_team_leader)->name : 'Not Assigned') }}
+                                            </td>
+                                            <td>{{ $item->created_at }}</td>
+                                            <td>{{ $item->assigned_from }}</td>
+                                            <td
+                                                style="color:{{ $item->feedback_status == 'Terminiert' ? 'green' : 'red' }};">
+                                                {{ $item->feedback_status }}</td>
+                                            <td>{{ App\Models\Feedback::where('lead_id', $item->id)->orderBy('created_at', 'desc')->pluck('created_at')->first() }}
+                                            </td>
+                                            <td><a class="btn btnedit"
+                                                    href="{{ route('lead_info', ['id' => $item->id]) }}"><i
+                                                        class="fa-regular fa-pen-to-square"></i></a></td>
+                                            <td><a class="btn btndelete"><i class="fa-solid fa-trash-can"></i></a></td>
+                                        </tr>
+                                    </tbody>
+                                @endforeach
+                            </table>
+                            <div class=" pt-4">
+                                <div class="text-center text-sm-start my-3 ps-0 ps-sm-4">
+                                    <span>Shows {{ $leads->firstItem() }} - {{ $leads->lastItem() }} of Total
+                                        {{ $leads->total() }} Leads </span>
+
+
+                                </div>
+                                <div class="d-flex justify-content-center navPagination">
+                                    {{ $leads->onEachSide(1)->links() }}
+                                </div>
+
+                            </div>
+                        </div>
+                    </form>
+             
             </div>
         </div>
     </div>

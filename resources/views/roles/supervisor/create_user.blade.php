@@ -1,5 +1,6 @@
 @extends('layouts.app')
 @section('content')
+
     <form action="{{route('createUser.add')}}" class="d-flex justify-content-center my-3" method="POST" >
   
             @csrf
