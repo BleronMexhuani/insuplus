@@ -61,7 +61,17 @@ class CallAgentController extends Controller
                 } else if ($key == 'vorname') {
                     $lead->where('vorname', 'LIKE', '%' . $value_on_array . '%');
                 } else {
-                    $lead->whereIn($key, $value_on_array);
+                    $lead->where(
+                        function ($q) use ($key, $value_on_array) {
+                            if ($value_on_array[0] != null){
+                            $q->whereIn($key, $value_on_array);
+                            }
+                            if ($key == 'feedback_status' && in_array('NULL', $value_on_array)) {
+                                $q->orWhereNull('feedback_status');
+                            }
+                        }
+                    );
+                 
                 }
             }
         }
@@ -119,7 +129,7 @@ class CallAgentController extends Controller
             "zeit_anrufe" => $req->zeit_anrufe,
             "bemerkung" => $req->bemerkung
         ]);
-        if ($req->feedback_status == 'Terminiert' || $req->feedback_status == 'online_offerte') {
+        if ($req->feedback_status == 'Terminiert' || $req->feedback_status == 'Online-Offerte') {
             Lead::where('id', $lead_id)->update(['completed' => 1, 'feedback_status' => $req->feedback_status]);
         } else {
             Lead::where('id', $lead_id)->update(['completed' => -1, 'feedback_status' => $req->feedback_status]);

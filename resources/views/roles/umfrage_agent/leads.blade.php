@@ -72,7 +72,7 @@ $i = 1;
                                     </td>
                                     <td>{{ $item->created_at }}</td>
                                     <td>{{ $item->assigned_from }}</td>
-                                    <td style="color:{{ $item->feedback_status == 'Terminiert' ? 'green' : 'red' }};">
+                                    <td style="color:{{ $item->feedback_status == 'Terminiert' || $item->feedback_status == 'Online-Offerte' ? 'green' : 'red' }};">
                                         {{ $item->feedback_status }}</td>
                                     <td>{{ App\Models\FeedBack::where('lead_id', $item->id)->orderBy('created_at', 'desc')->pluck('created_at')->first() }}
                                     </td>

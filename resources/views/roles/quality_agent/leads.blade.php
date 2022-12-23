@@ -438,7 +438,7 @@
                             </thead>
                             @foreach ($leads as $item)
                                 @php
-                                    $feedback_datum = App\Models\Feedback::where('lead_id', $item->id)
+                                    $feedback_datum = App\Models\FeedBack::where('lead_id', $item->id)
                                         ->orderBy('created_at', 'desc')
                                         ->first();
                                     
@@ -456,9 +456,9 @@
                                         </td>
                                         <td>{{ $item->created_at }}</td>
                                         <td>{{ $item->assigned_from }}</td>
-                                        <td style="color:{{ $item->feedback_status == 'Terminiert' ? 'green' : 'red' }};">
+                                        <td style="color:{{ $item->feedback_status == 'Terminiert' || $item->feedback_status == 'Online-Offerte'  ? 'green' : 'red' }};">
                                             {{ $item->feedback_status }}</td>
-                                        <td>{{ App\Models\Feedback::where('lead_id', $item->id)->orderBy('created_at', 'desc')->pluck('created_at')->first() }}
+                                        <td>{{ App\Models\FeedBack::where('lead_id', $item->id)->orderBy('created_at', 'desc')->pluck('created_at')->first() }}
                                         </td>
                                         <td><a class="btn btnedit"
                                                 href="{{ route('lead_info', ['id' => $item->id]) }}"><i

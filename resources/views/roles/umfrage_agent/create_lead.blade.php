@@ -73,7 +73,7 @@
                             <span class="subtitleform">Kanton</span>
                         </div>
                         <div class="mt-2">
-                            <input class="inputform" type="text" name="kanton" placeholder="Kanton" />
+                            <input class="inputform" type="text" name="kanton" id="kanton" placeholder="Kanton" />
                         </div>
                     </div>
                     <div class="col-4 mt-2">
@@ -84,15 +84,20 @@
                             <div class="d-flex mb-3 ">
                                 <input type="text" name="plz" class="inputgroupleft" id="plz" placeholder="PLZ"
                                     aria-label="Username">
-                                <input type="text" name="stadt" class="inputgroupright" placeholder="Stadt"
-                                    aria-label="stadt">
+                                <input type="text" name="stadt" class="inputgroupright" id="stadt"
+                                    placeholder="Stadt" aria-label="stadt">
                             </div>
                         </div>
                         <div class="mt-4">
                             <span class="subtitleform">Region</span>
                         </div>
                         <div class="mt-2 mb-4">
-                            <input class="inputform" type="text" name="region" placeholder="Lorem" />
+                            <select class="form-select selectinput" name="region" id="region" required>
+                                <option selected hidden disabled></option>
+                                <option value="Deutschschweiz (Germany)"> Deutschschweiz (Germany)</option>
+                                <option value="Tessin (Italy)"> Tessin (Italy)</option>
+                                <option value="Westschweiz (France)"> Westschweiz (France)</option>
+                            </select>
                         </div>
                     </div>
                 </div>
@@ -554,15 +559,31 @@
 
             $('#plz').on("keyup", async function() {
                 let value = $(this).val();
+
                 await $.ajax({
                     url: 'https://zip.getziptastic.com/v2/CH/' + value,
-                    method:"GET",
-                    success:function(response,textStatus,xhr){
-                        if(xhr.status==200){
-                            console.log(response);
+                    method: "GET",
+                    success: function(response, textStatus, xhr) {
+
+                        $("#stadt").val(response.city);
+                        $("#kanton").val(response.state_short);
+                        if (response.state_short == 'GE' || response.state_short == 'JU' || response
+                            .state_short == 'VD') {
+                            $("#region").val('Westschweiz (France)').change();
+                        } else if (response.state_short == 'TI') {
+                            $("#region").val('Tessin (Italy)').change();
+                        } else {
+                            $("#region").val('Deutschschweiz (Germany)').change();
                         }
+
+                    },
+                    error: function(xhr, status, error) {
+                        $("#stadt").val('');
+                        $("#kanton").val('');
+                        $("#region").val('').change();
                     }
                 })
+
             })
         </script>
     @endsection

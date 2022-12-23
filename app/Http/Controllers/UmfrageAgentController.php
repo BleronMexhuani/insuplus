@@ -25,7 +25,7 @@ class UmfrageAgentController extends Controller
     }
     public function getLeads(Request $req)
     {
-        $leads = Lead::where('assigned_from', Auth::user()->id)->where('vorname', 'LIKE', '%' . $req->vorname . '%')->paginate(25);
+        $leads = Lead::where('assigned_from', Auth::user()->id)->where('vorname', 'LIKE', '%' . $req->vorname . '%')->orderBy('created_at','desc')->paginate(25);
         $leads->appends($_GET)->links();
         return view('roles.umfrage_agent.leads', compact('leads'));
     }

@@ -642,9 +642,9 @@
                             </label>
                         </div>
                         <div class="col-auto">
-                            <label class="tablinks" onclick="openCity(event, 'Später Anrufrn')">
-                                <input type="radio" name="feedback_status" value="Später Anrufrn"
-                                    style="display: none;">Später Anrufrn
+                            <label class="tablinks" onclick="openCity(event, 'Später Anrufen')">
+                                <input type="radio" name="feedback_status" value="Später Anrufen"
+                                    style="display: none;">Später Anrufen
                             </label>
                         </div>
                         <div class="col-auto">
@@ -697,7 +697,7 @@
                             <hr>
                         </div>
                     </div>
-                    <div id="Später Anrufrn" class="tabcontent">
+                    <div id="Später Anrufen" class="tabcontent">
                         <div class="mt-5">
                             <hr>
                             <div class="row">
