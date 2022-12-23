@@ -1,11 +1,11 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="col ms-0 ms-md-2 px-0 px-md-2 pe-md-4">
+<div class="col ms-0 ms-md-2 px-0 px-md-3 pe-md-4">
     <div class="my-3 mt-5">
         <a href="{{ route('createUser') }}" class="titleoftable  fs-3">Add User</a>
     </div>
-    <div class="tableform mt-5">
+    <div class="tableform mt-4">
         <div style="overflow-x:auto; overflow-y: hidden">
             <table>
                 <thead>
@@ -37,3 +37,4 @@
             </span>
         @endif
     @endsection
+</div>

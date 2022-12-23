@@ -2,9 +2,9 @@
 @section('content')
     <form method="POST" action="{{ route('storeFeedBack', ['lead_id' => $lead->id]) }}" class="">
         @csrf
-        <div class="col ms-0 ms-md-2 px-0 px-md-5">
-            <div class="mt-4 py-3 px-2">
-                <span class="titlelead">Lead hinzufügen</span>
+        <div class="">
+            <div class="mt-4 py-4 ms-0 ms-md-2 px-3 me-0 me-md-4">
+                <span class="titlelead">Lead hinzufügen </span>
                 <div class="bgform mt-4 p-4 p-md-5">
                     <div class="row">
                         <div class="col-12 col-md-4">
@@ -27,8 +27,10 @@
                                 <span class="subtitleform">Anrede</span>
                             </div>
                             <div class="mt-2">
-                                <input class="inputform" type="number" value="{{ $lead->anrede }}" id="tentacles"
-                                    name="anrede" placeholder="Herr" min="1" max="9" />
+                                <select name="anrede" id="anrede" class="form-select inputform " id="">
+                                    <option value="male">Male</option>
+                                    <option value="female">Female</option>
+                                </select>
                             </div>
                         </div>
                         <div class="col-12 col-md-4">
@@ -386,8 +388,10 @@
                             <!-- <button class="tablinks" type="button" onclick="openCity(event, 'Online-Offerte')">Online-Offerte</button> -->
                         </div>
                         <div class="col-auto">
+
                             <label class="tablinks" onclick="openCity(event, 'Später Anrufen')">
                                 <input type="radio" name="feedback_status" value="Später Anrufen"
+
                                     style="display: none;">Später Anrufen
                             </label>
                             <!-- <button class="tablinks" type="button" onclick="openCity(event, 'Später Anrufen')">Später Anrufen</button> -->
@@ -403,32 +407,6 @@
                         <div id="Falsche Nummer" class="tabcontent">
                             <div class="mt-5">
                                 <hr>
-                                {{-- <div class="row">
-                                <div class="col mb-3">
-                                    <div class="mt-4">
-                                        <span class="subtitleform">Bestätigungsstatus</span>
-                                    </div>
-                                    <div class="mt-2">
-                                        <input class="inputform" type="text" name="bestatigungs_status" placeholder="Intern" />
-                                    </div>
-                                </div>
-                                <div class="col mb-3">
-                                    <div class="mt-4">
-                                        <span class="subtitleform">Kontaktieren erwúnscht </span>
-                                        <div class="mt-2">
-                                            <input class="inputform" type="text" id="text" name="kontaktieren_erwunscht_2" placeholder="Ja">
-                                        </div>
-                                    </div>
-                                </div>
-                            </div> --}}
-                                {{-- <div class="mt-4">
-                                <span class="subtitleform">
-                                    Bemerkung
-                                </span>
-                                <div class="mt-2">
-                                    <input class="inputform" type="text" id="text" name="bemerkung" placeholder="">
-                                </div>
-                            </div> --}}
                             </div>
                         </div>
 
@@ -436,233 +414,41 @@
                     <div id="Hat schon gewechselt" class="tabcontent">
                         <div class="mt-5">
                             <hr>
-                            {{-- <div class="row">
-                            <div class="col mb-3">
-                                <div class="mt-4">
-                                    <span class="subtitleform">Vertragdatum</span>
-                                </div>
-                                <div class="mt-2">
-                                    <input class="inputform" type="date" name="vertragdatum" placeholder="" />
-                                </div>
-                            </div>
-                            <div class="col mb-3">
-                                <div class="mt-4">
-                                    <span class="subtitleform">Bestätigungsstatus</span>
-                                </div>
-                                <div class="mt-2">
-                                    <input class="inputform" type="text" name="bestatigungs_status" placeholder="Intern" />
-                                </div>
-                            </div>
-                            <div class="col mb-3">
-                                <div class="mt-4">
-                                    <span class="subtitleform">Kontaktieren erwúnscht </span>
-                                    <div class="mt-2">
-                                        <input class="inputform" type="text" id="text" name="kontaktieren_erwunscht_2" placeholder="Ja">
-                                    </div>
-                                </div>
-                            </div>
-                        </div> --}}
-                            {{-- <div class="mt-4">
-                            <span class="subtitleform">
-                                Bemerkung
-                            </span>
-                            <div class="mt-2">
-                                <input class="inputform" type="text" id="text" name="bemerkung" placeholder="">
-                            </div> 
-                        </div> --}}
                         </div>
                     </div>
 
                     <div id="Kein Interesse" class="tabcontent">
                         <div class="mt-5">
                             <hr>
-                            {{-- <div class="row">
-                            <div class="col mb-3">
-                                <div class="mt-4">
-                                    <span class="subtitleform">Bestätigungsstatus</span>
-                                </div>
-                                <div class="mt-2">
-                                    <input class="inputform" type="text" name="bestatigungs_status" placeholder="Intern" />
-                                </div>
-                            </div>
-                            <div class="col mb-3">
-                                <div class="mt-4">
-                                    <span class="subtitleform">Kontaktieren erwúnscht </span>
-                                    <div class="mt-2">
-                                        <input class="inputform" type="text" id="text" name="kontaktieren_erwunscht_2" placeholder="Ja">
-                                    </div>
-                                </div>
-                            </div>
-                        </div> --}}
-                            {{-- <div class="mt-4">
-                            <span class="subtitleform">
-                                Bemerkung
-                            </span>
-                             <div class="mt-2">
-                                <input class="inputform" type="text" id="text" name="bemerkung" placeholder="">
-                            </div> 
-                        </div> --}}
                         </div>
                     </div>
-
                     <div id="Krank" class="tabcontent">
                         <div class="mt-5">
-
                             <hr>
-                            {{-- <div class="row">
-                            <div class="col mb-3">
-                                <div class="mt-4">
-                                    <span class="subtitleform">Bestätigungsstatus</span>
-                                </div>
-                                <div class="mt-2">
-                                    <input class="inputform" type="text" name="bestatigungs_status" placeholder="Intern" />
-                                </div>
-                            </div>
-                            <div class="col mb-3">
-                                <div class="mt-4">
-                                    <span class="subtitleform">Kontaktieren erwúnscht </span>
-                                    <div class="mt-2">
-                                        <input class="inputform" type="text" id="text" name="kontaktieren_erwunscht_2" placeholder="Ja">
-                                    </div>
-                                </div>
-                            </div>
-                        </div> --}}
-                            {{-- <div class="mt-4">
-                            <span class="subtitleform">
-                                Bemerkung
-                            </span>
-                             <div class="mt-2">
-                                <input class="inputform" type="text" id="text" name="bemerkung" placeholder="">
-                            </div> 
-                        </div> --}}
                         </div>
                     </div>
 
                     <div id="Kunde bereits terminiert" class="tabcontent">
                         <div class="mt-5">
                             <hr>
-                            {{-- <div class="row">
-                            <div class="col mb-3">
-                                <div class="mt-4">
-                                    <span class="subtitleform">Bestätigungsstatus</span>
-                                </div>
-                                <div class="mt-2">
-                                    <input class="inputform" type="text" name="bestatigungs_status" placeholder="Intern" />
-                                </div>
-                            </div>
-                            <div class="col mb-3">
-                                <div class="mt-4">
-                                    <span class="subtitleform">Kontaktieren erwúnscht </span>
-                                    <div class="mt-2">
-                                        <input class="inputform" type="text" id="text" name="kontaktieren_erwunscht_2" placeholder="Ja">
-                                    </div>
-                                </div>
-                            </div>
-                        </div> --}}
-                            {{-- <div class="mt-4">
-                            <span class="subtitleform">
-                                Bemerkung
-                            </span>
-                             <div class="mt-2">
-                                <input class="inputform" type="text" id="text" name="bemerkung" placeholder="">
-                            </div> 
-                        </div> --}}
                         </div>
                     </div>
 
                     <div id="Nicht Brauchbar" class="tabcontent">
                         <div class="mt-5">
                             <hr>
-                            {{-- <div class="row">
-                            <div class="col mb-3">
-                                <div class="mt-4">
-                                    <span class="subtitleform">Bestätigungsstatus</span>
-                                </div>
-                                <div class="mt-2">
-                                    <input class="inputform" type="text" name="bestatigungs_status" placeholder="Intern" />
-                                </div>
-                            </div>
-                            <div class="col mb-3">
-                                <div class="mt-4">
-                                    <span class="subtitleform">Kontaktieren erwúnscht </span>
-                                    <div class="mt-2">
-                                        <input class="inputform" type="text" id="text" name="kontaktieren_erwunscht_2" placeholder="Ja">
-                                    </div>
-                                </div>
-                            </div>
-                        </div> --}}
-                            {{-- <div class="mt-4">
-                            <span class="subtitleform">
-                                Bemerkung
-                            </span>
-                             <div class="mt-2">
-                                <input class="inputform" type="text" id="text" name="bemerkung" placeholder="">
-                            </div> 
-                        </div> --}}
                         </div>
                     </div>
 
                     <div id="Nicht Erreicht" class="tabcontent">
                         <div class="mt-5">
                             <hr>
-                            {{-- <div class="row">
-                            <div class="col mb-3">
-                                <div class="mt-4">
-                                    <span class="subtitleform">Bestätigungsstatus</span>
-                                </div>
-                                <div class="mt-2">
-                                    <input class="inputform" type="text" name="bestatigungs_status" placeholder="Intern" />
-                                </div>
-                            </div>
-                            <div class="col mb-3">
-                                <div class="mt-4">
-                                    <span class="subtitleform">Kontaktieren erwúnscht </span>
-                                    <div class="mt-2">
-                                        <input class="inputform" type="text" id="text" name="kontaktieren_erwunscht_2" placeholder="Ja">
-                                    </div>
-                                </div>
-                            </div>
-                        </div> --}}
-                            {{-- <div class="mt-4">
-                            <span class="subtitleform">
-                                Bemerkung
-                            </span>
-                             <div class="mt-2">
-                                <input class="inputform" type="text" id="text" name="bemerkung" placeholder="">
-                            </div> 
-                        </div> --}}
                         </div>
                     </div>
 
                     <div id="Online-Offerte" class="tabcontent">
                         <div class="mt-5">
                             <hr>
-                            {{-- <div class="row">
-                            <div class="col mb-3">
-                                <div class="mt-4">
-                                    <span class="subtitleform">Bestätigungsstatus</span>
-                                </div>
-                                <div class="mt-2">
-                                    <input class="inputform" type="text" name="bestatigungs_status" placeholder="Intern" />
-                                </div>
-                            </div>
-                            <div class="col mb-3">
-                                <div class="mt-4">
-                                    <span class="subtitleform">Kontaktieren erwúnscht </span>
-                                    <div class="mt-2">
-                                        <input class="inputform" type="text" id="text" name="kontaktieren_erwunscht_2" placeholder="Ja">
-                                    </div>
-                                </div>
-                            </div>
-                        </div> --}}
-                            {{-- <div class="mt-4">
-                            <span class="subtitleform">
-                                Bemerkung
-                            </span>
-                             <div class="mt-2">
-                                <input class="inputform" type="text" id="text" name="bemerkung" placeholder="">
-                            </div> 
-                        </div> --}}
                         </div>
                     </div>
 
@@ -683,40 +469,129 @@
                                         <span class="subtitleform">Zeit für Annrufe</span>
                                     </div>
                                     <div class="mt-2">
-                                        <input class="inputform" type="number" name="zeitfuranrufen"
-                                            placeholder="09:00" />
+                                        <select name="zeitfuranrufen" class="form-select inputform mt-2 ">
+                                            <option value=""></option>
+                                            <option value="08:00">
+                                                08 : 00 </option>
+                                            <option value="08:15">
+                                                08 : 15 </option>
+                                            <option value="08:30">
+                                                08 : 30 </option>
+                                            <option value="08:45">
+                                                08 : 45 </option>
+                                            <option value="09:00">
+                                                09 : 00 </option>
+                                            <option value="09:15">
+                                                09 : 15 </option>
+                                            <option value="09:30">
+                                                09 : 30 </option>
+                                            <option value="09:45">
+                                                09 : 45 </option>
+                                            <option value="10:00">
+                                                10 : 00 </option>
+                                            <option value="10:15">
+                                                10 : 15 </option>
+                                            <option value="10:30">
+                                                10 : 30 </option>
+                                            <option value="10:45">
+                                                10 : 45 </option>
+                                            <option value="11:00">
+                                                11 : 00 </option>
+                                            <option value="11:15">
+                                                11 : 15 </option>
+                                            <option value="11:30">
+                                                11 : 30 </option>
+                                            <option value="11:45">
+                                                11 : 45 </option>
+                                            <option value="12:00">
+                                                12 : 00 </option>
+                                            <option value="12:15">
+                                                12 : 15 </option>
+                                            <option value="12:30">
+                                                12 : 30 </option>
+                                            <option value="12:45">
+                                                12 : 45 </option>
+                                            <option value="13:00">
+                                                13 : 00 </option>
+                                            <option value="13:15">
+                                                13 : 15 </option>
+                                            <option value="13:30">
+                                                13 : 30 </option>
+                                            <option value="13:45">
+                                                13 : 45 </option>
+                                            <option value="14:00">
+                                                14 : 00 </option>
+                                            <option value="14:15">
+                                                14 : 15 </option>
+                                            <option value="14:30">
+                                                14 : 30 </option>
+                                            <option value="14:45">
+                                                14 : 45 </option>
+                                            <option value="15:00">
+                                                15 : 00 </option>
+                                            <option value="15:15">
+                                                15 : 15 </option>
+                                            <option value="15:30">
+                                                15 : 30 </option>
+                                            <option value="15:45">
+                                                15 : 45 </option>
+                                            <option value="16:00">
+                                                16 : 00 </option>
+                                            <option value="16:15">
+                                                16 : 15 </option>
+                                            <option value="16:30">
+                                                16 : 30 </option>
+                                            <option value="16:45">
+                                                16 : 45 </option>
+                                            <option value="17:00">
+                                                17 : 00 </option>
+                                            <option value="17:15">
+                                                17 : 15 </option>
+                                            <option value="17:30">
+                                                17 : 30 </option>
+                                            <option value="17:45">
+                                                17 : 45 </option>
+                                            <option value="18:00">
+                                                18 : 00 </option>
+                                            <option value="18:15">
+                                                18 : 15 </option>
+                                            <option value="18:30">
+                                                18 : 30 </option>
+                                            <option value="18:45">
+                                                18 : 45 </option>
+                                            <option value="19:00">
+                                                19 : 00 </option>
+                                            <option value="19:15">
+                                                19 : 15 </option>
+                                            <option value="19:30">
+                                                19 : 30 </option>
+                                            <option value="19:45">
+                                                19 : 45 </option>
+                                            <option value="20:00">
+                                                20 : 00 </option>
+                                            <option value="20:15">
+                                                20 : 15 </option>
+                                            <option value="20:30">
+                                                20 : 30 </option>
+                                            <option value="20:45">
+                                                20 : 45 </option>
+                                            <option value="21:00">
+                                                21 : 00 </option>
+                                            <option value="21:15">
+                                                21 : 15 </option>
+                                            <option value="21:30">
+                                                21 : 30 </option>
+                                            <option value="21:45">
+                                                21 : 45 </option>
+                                            <option value="22:00">
+                                                22 : 00 </option>
+                                        </select>
                                     </div>
                                 </div>
                             </div>
                         </div>
                         <div class="mt-5">
                             <hr>
-                            {{-- <div class="row">
-                            <div class="col mb-3">
-                                <div class="mt-4">
-                                    <span class="subtitleform">Bestätigungsstatus</span>
-                                </div>
-                                <div class="mt-2">
-                                    <input class="inputform" type="text" name="bestatigungs_status" placeholder="Intern" />
-                                </div>
-                            </div>
-                            <div class="col mb-3">
-                                <div class="mt-4">
-                                    <span class="subtitleform">Kontaktieren erwúnscht </span>
-                                    <div class="mt-2">
-                                        <input class="inputform" type="text" id="text" name="kontaktieren_erwunscht_2" placeholder="Ja">
-                                    </div>
-                                </div>
-                            </div>
-                        </div> --}}
-                            {{-- <div class="mt-4">
-                            <span class="subtitleform">
-                                Bemerkung
-                            </span>
-                             <div class="mt-2">
-                                <input class="inputform" type="text" id="text" name="bemerkung" placeholder="">
-                            </div> 
-                        </div> --}}
                         </div>
                     </div>
 
@@ -729,7 +604,7 @@
                                         <span class="subtitleform">Termindatum</span>
                                     </div>
                                     <div class="mt-2">
-                                        <input class="inputform" type="text" name="termindatum" placeholder="" />
+                                        <input class="inputform" type="date" name="termindatum" placeholder="" />
                                     </div>
                                 </div>
                                 <div class="col mb-3">
@@ -737,8 +612,123 @@
                                         <span class="subtitleform">Terminzeit</span>
                                     </div>
                                     <div class="mt-2">
-
-                                        <input class="inputform" type="text" name="terminzeit" placeholder="Ja" />
+                                        <select name="terminzeit" class="form-select inputform mt-2 ">
+                                            <option value=""></option>
+                                            <option value="08:00">
+                                                08 : 00 </option>
+                                            <option value="08:15">
+                                                08 : 15 </option>
+                                            <option value="08:30">
+                                                08 : 30 </option>
+                                            <option value="08:45">
+                                                08 : 45 </option>
+                                            <option value="09:00">
+                                                09 : 00 </option>
+                                            <option value="09:15">
+                                                09 : 15 </option>
+                                            <option value="09:30">
+                                                09 : 30 </option>
+                                            <option value="09:45">
+                                                09 : 45 </option>
+                                            <option value="10:00">
+                                                10 : 00 </option>
+                                            <option value="10:15">
+                                                10 : 15 </option>
+                                            <option value="10:30">
+                                                10 : 30 </option>
+                                            <option value="10:45">
+                                                10 : 45 </option>
+                                            <option value="11:00">
+                                                11 : 00 </option>
+                                            <option value="11:15">
+                                                11 : 15 </option>
+                                            <option value="11:30">
+                                                11 : 30 </option>
+                                            <option value="11:45">
+                                                11 : 45 </option>
+                                            <option value="12:00">
+                                                12 : 00 </option>
+                                            <option value="12:15">
+                                                12 : 15 </option>
+                                            <option value="12:30">
+                                                12 : 30 </option>
+                                            <option value="12:45">
+                                                12 : 45 </option>
+                                            <option value="13:00">
+                                                13 : 00 </option>
+                                            <option value="13:15">
+                                                13 : 15 </option>
+                                            <option value="13:30">
+                                                13 : 30 </option>
+                                            <option value="13:45">
+                                                13 : 45 </option>
+                                            <option value="14:00">
+                                                14 : 00 </option>
+                                            <option value="14:15">
+                                                14 : 15 </option>
+                                            <option value="14:30">
+                                                14 : 30 </option>
+                                            <option value="14:45">
+                                                14 : 45 </option>
+                                            <option value="15:00">
+                                                15 : 00 </option>
+                                            <option value="15:15">
+                                                15 : 15 </option>
+                                            <option value="15:30">
+                                                15 : 30 </option>
+                                            <option value="15:45">
+                                                15 : 45 </option>
+                                            <option value="16:00">
+                                                16 : 00 </option>
+                                            <option value="16:15">
+                                                16 : 15 </option>
+                                            <option value="16:30">
+                                                16 : 30 </option>
+                                            <option value="16:45">
+                                                16 : 45 </option>
+                                            <option value="17:00">
+                                                17 : 00 </option>
+                                            <option value="17:15">
+                                                17 : 15 </option>
+                                            <option value="17:30">
+                                                17 : 30 </option>
+                                            <option value="17:45">
+                                                17 : 45 </option>
+                                            <option value="18:00">
+                                                18 : 00 </option>
+                                            <option value="18:15">
+                                                18 : 15 </option>
+                                            <option value="18:30">
+                                                18 : 30 </option>
+                                            <option value="18:45">
+                                                18 : 45 </option>
+                                            <option value="19:00">
+                                                19 : 00 </option>
+                                            <option value="19:15">
+                                                19 : 15 </option>
+                                            <option value="19:30">
+                                                19 : 30 </option>
+                                            <option value="19:45">
+                                                19 : 45 </option>
+                                            <option value="20:00">
+                                                20 : 00 </option>
+                                            <option value="20:15">
+                                                20 : 15 </option>
+                                            <option value="20:30">
+                                                20 : 30 </option>
+                                            <option value="20:45">
+                                                20 : 45 </option>
+                                            <option value="21:00">
+                                                21 : 00 </option>
+                                            <option value="21:15">
+                                                21 : 15 </option>
+                                            <option value="21:30">
+                                                21 : 30 </option>
+                                            <option value="21:45">
+                                                21 : 45 </option>
+                                            <option value="22:00">
+                                                22 : 00 </option>
+                                        </select>
                                     </div>
                                 </div>
                             </div>
@@ -748,10 +738,11 @@
                                         Namen und Geburtsdaten Ihrer Familienangehörigen (Mitbewohner)?</span>
                                 </div>
                                 <div class="mt-2">
+                                    {{-- <input class="inputformm" type="text" name="koment_der_geburtsdatum"
+                                        placeholder="" 
+                                         /> --}}
+                                        <textarea name="koment_der_geburtsdatum" class="inputformm" id="" cols="30" rows="3"></textarea>
 
-                                    <input class="inputformm" type="text" name="koment_der_geburtsdatum"
-
-                                        placeholder="" />
                                 </div>
                             </div>
                             <div>
@@ -760,29 +751,14 @@
                                         Teil Ihrer Familie zu versichern?</span>
                                 </div>
                                 <div class="mt-2">
-                                    <input class="inputform" type="text" name="koment_der_Können" placeholder="Ja" />
+                                    <select name="koment_der_Können" class="form-select inputform mt-2 ">
+                                        <option value="Ja">Ja</option>
+                                        <option value="Nein">Nein</option>
+                                    </select>
                                 </div>
                             </div>
                             <div class="mt-5">
                                 <hr>
-                                {{-- <div class="row">
-                                <div class="col mb-3">
-                                    <div class="mt-4">
-                                        <span class="subtitleform">Bestätigungsstatus</span>
-                                    </div>
-                                    <div class="mt-2">
-                                        <input class="inputform" type="text" name="bestatigungs_status" placeholder="Intern" />
-                                    </div>
-                                </div>
-                                <div class="col mb-3">
-                                    <div class="mt-4">
-                                        <span class="subtitleform">Kontaktieren erwúnscht </span>
-                                        <div class="mt-2">
-                                            <input class="inputform" type="text" id="text" name="kontaktieren_erwunscht_2" placeholder="Ja">
-                                        </div>
-                                    </div>
-                                </div>
-                            </div> --}}
                             </div>
                         </div>
                     </div>
@@ -793,8 +769,12 @@
                                 <div class="mt-4">
                                     <span class="subtitleform">Bestätigungsstatus</span>
                                 </div>
-                                <input class="inputform mt-2" type="text" name="bestatigungs_status"
-                                    placeholder="Intern" />
+                                <select name="bestatigungs_status" class="form-select inputform mt-2 ">
+                                    <option value="Autoversicherung">Autoversicherung</option>
+                                    <option value="Bestätigt">Bestätigt</option>
+                                    <option value="Krankenkasse">Krankenkasse</option>
+                                    <option value="Nicht bestätigt">Nicht bestätigt</option>
+                                </select>
                             </div>
                         </div>
                         <div class="col mb-3">
@@ -802,8 +782,10 @@
                                 <div class="mt-4">
                                     <span class="subtitleform">Kontaktieren erwúnscht </span>
                                 </div>
-                                <input class="inputform mt-2" type="text" id="text"
-                                    name="kontaktieren_erwunscht_2" placeholder="Ja">
+                                <select name="kontaktieren_erwunscht_2" class="form-select inputform mt-2">
+                                    <option value="Ja">Ja</option>
+                                    <option value="Nein">Nein</option>
+                                </select>
                             </div>
                         </div>
                     </div>

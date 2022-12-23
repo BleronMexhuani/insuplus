@@ -1,6 +1,7 @@
 @extends('layouts.app')
 @section('content')
     <div class="" style="margin-top:16px !important;">
+        <div class="px-2">
         <div class="mt-4 py-3 px-md-3 pe-md-4">
             <span class="titledash">Willkommen Enis Demolli!</span>
             <div class="bgform mt-4 p-4 p-md-5">
@@ -240,6 +241,7 @@
                 </div>
             </div>
         </div>
+    </div>
     </div>
 
     <script>

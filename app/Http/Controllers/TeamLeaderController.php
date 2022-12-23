@@ -18,8 +18,11 @@ class TeamLeaderController extends Controller
     {
         $lead =  Lead::find($id);
 
-        $feedbacks = TeamLeaderController::getAllFeedBacks($id);
-        return view('roles.call_agent.lead_info', compact('lead', 'feedbacks'));
+
+            $feedbacks = TeamLeaderController::getAllFeedBacks($id);
+            return view('roles.team_leader.lead_info', compact('lead', 'feedbacks'));
+      
+
     }
     public function getAllFeedBacks($id)
     {

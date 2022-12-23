@@ -2,8 +2,8 @@
 @section('content')
     <form method="POST" action="{{ route('supervisor.storeFeedBack', ['lead_id' => $lead->id]) }}" class="">
         @csrf
-        <div class="col ms-0 ms-md-2 px-0 px-md-5">
-            <div class="mt-4 py-3 px-2">
+        <div class="">
+            <div class="mt-4 py-4 ms-0 ms-md-3 px-3 me-0 me-md-4">
                 <span class="titlelead">Lead hinzufügen</span>
                 <div class="bgform mt-4 p-4 p-md-5">
                     <div class="row">
@@ -27,8 +27,13 @@
                                 <span class="subtitleform">Anrede</span>
                             </div>
                             <div class="mt-2 mb-3">
-                                <input class="inputform" type="number" value="{{ $lead->anrede }}" id="tentacles"
-                                    name="anrede" placeholder="Anrede" min="1" max="9" />
+                                <select name="anrede" id="anrede" class="form-select inputform ">
+                                    <option value="male">Male</option>
+                                    <option value="female">Female</option>
+                                </select>
+                                <script>
+                                    $("#anrede").val('{{ $lead->anrede }}').change()
+                                </script>
                             </div>
                         </div>
                         <div class="col-12 col-md-4">
@@ -205,8 +210,9 @@
                             </div>
                             <div class="mt-2">
                                 <div class="mt-2">
-                                    <select class="form-select selectinput" name="rechtsschutz" id="rechtsschutz" required>
-                                        <option value="" ></option>
+                                    <select class="form-select selectinput" name="rechtsschutz" id="rechtsschutz"
+                                        required>
+                                        <option value=""></option>
                                         <option value="Allianz"> Allianz</option>
                                         <option value="Assista"> Assista</option>
                                         <option value="Axa-Arag Rechtsschutz"> Axa-Arag Rechtsschutz</option>
@@ -225,15 +231,16 @@
                                     <script>
                                         $("#rechtsschutz").val('{{ $lead->rechtsschutz }}').change();
                                     </script>
-                                  
+
                                 </div>
                             </div>
                             <div class="mt-4">
                                 <span class="subtitleform">Ansprechspartner </span>
                             </div>
                             <div class="mt-2">
-                                <select class="form-select selectinput" name="ansprechspartner" id="ansprechspartner"  required>
-                                    <option value="" ></option>
+                                <select class="form-select selectinput" name="ansprechspartner" id="ansprechspartner"
+                                    required>
+                                    <option value=""></option>
                                     <option value="Berater"> Berater</option>
                                     <option value="Familienkreis"> Familienkreis</option>
                                     <option value="Keine"> Keine</option>
@@ -246,8 +253,9 @@
                                 <span class="subtitleform ">Zufriedenheit</span>
                             </div>
                             <div class="mt-2">
-                                <select class="form-select selectinput" name="zufriedenheit" id="ZufriedenheitSelect" required>
-                                    <option value="" ></option>
+                                <select class="form-select selectinput" name="zufriedenheit" id="ZufriedenheitSelect"
+                                    required>
+                                    <option value=""></option>
                                     <option value="Nicht zufrieden"> Nicht zufrieden</option>
                                     <option value="Zufrieden"> Zufrieden</option>
                                 </select>
@@ -259,8 +267,9 @@
                                 <span class="subtitleform ">Erreichbarkeit </span>
                             </div>
                             <div class="mt-2">
-                                <select class="form-select selectinput" name="erreichbarkeit" id="ErreichbarkeitSelect" required>
-                                    <option value="" ></option>
+                                <select class="form-select selectinput" name="erreichbarkeit" id="ErreichbarkeitSelect"
+                                    required>
+                                    <option value=""></option>
                                     <option value="Abend"> Abend</option>
                                     <option value="Immer"> Immer</option>
                                     <option value="Mittag"> Mittag</option>
@@ -271,14 +280,14 @@
                                 <script>
                                     $("#ErreichbarkeitSelect").val('{{ $lead->erreichbarkeit }}').change();
                                 </script>
-                               
+
                             </div>
                             <div class="mt-4">
                                 <span class="subtitleform">Hausrat </span>
                             </div>
                             <div class="mt-2">
                                 <select class="form-select selectinput" name="hausrat" id="HausratSelect" required>
-                                    <option value="" ></option>
+                                    <option value=""></option>
                                     <option value="Allianz"> Allianz</option>
                                     <option value="Appenzeller Versicherung"> Appenzeller Versicherung</option>
                                     <option value="Aquilana"> Aquilana</option>
@@ -393,7 +402,7 @@
                             </div>
                             <div class="mt-2">
                                 <select class="form-select selectinput" name="sparen" id="sparen" required>
-                                    <option value="" ></option>
+                                    <option value=""></option>
                                     <option value="Ja"> Ja</option>
                                     <option value="Manchmal"> Manchmal</option>
                                     <option value="Nein"> Nein</option>
@@ -406,8 +415,9 @@
                                 <span class="subtitleform">Anzahl personen </span>
                             </div>
                             <div class="mt-2">
-                                <select class="form-select selectinput" name="anzahl_personen" id="AnzahlPersonenSelect" required>
-                                    <option value="" ></option>
+                                <select class="form-select selectinput" name="anzahl_personen" id="AnzahlPersonenSelect"
+                                    required>
+                                    <option value=""></option>
                                     <option value="1"> 1</option>
                                     <option value="2"> 2</option>
                                     <option value="3"> 3</option>
@@ -427,10 +437,11 @@
                                 <span class="subtitleform">Gewünschte Beratung </span>
                             </div>
                             <div class="mt-2">
-                                <select class="form-select selectinput" name="gewunschte_beratung" id="gewunschte_beratung">
+                                <select class="form-select selectinput" name="gewunschte_beratung"
+                                    id="gewunschte_beratung">
                                     <option value="" selected></option>
                                     <option value="Berater (Persönlicher Termin)"> Berater (Persönlicher Termin)</option>
-                                    <option value="Online (Digital via Mail & online Abschluss)"> 
+                                    <option value="Online (Digital via Mail & online Abschluss)">
                                         Online (Digital via Mail & online Abschluss)
                                     </option>
                                 </select>
@@ -443,7 +454,7 @@
                             </div>
                             <div class="mt-2 mb-4">
                                 <select class="form-select selectinput" name="saule" id="3SauleSelect" required>
-                                    <option value="" ></option>
+                                    <option value=""></option>
                                     <option value="Allianz"> Allianz</option>
                                     <option value="Axa"> Axa</option>
                                     <option value="Baloise"> Baloise</option>
@@ -477,8 +488,9 @@
                                 <span class="subtitleform">Gesundheitzustand </span>
                             </div>
                             <div class="mt-2">
-                                <select class="form-select selectinput" name="gesundheitzustand" id="gesundheitzustand" required>
-                                    <option value="" ></option>
+                                <select class="form-select selectinput" name="gesundheitzustand" id="gesundheitzustand"
+                                    required>
+                                    <option value=""></option>
                                     <option value="Gesund"> Gesund</option>
                                     <option value="Nicht Gesund"> Nicht Gesund</option>
                                 </select>
@@ -491,7 +503,7 @@
                             </div>
                             <div class="mt-2">
                                 <select class="form-select selectinput" name="anderung" id="anderung" required>
-                                    <option value="" ></option>
+                                    <option value=""></option>
                                     <option value="1 jahr"> 1 jahr</option>
                                     <option value="2 jahre"> 2 jahre</option>
                                     <option value="3 jahre oder mehr"> 3 jahre oder mehr</option>
@@ -506,8 +518,9 @@
                                 <span class="subtitleform">Arberistätig </span>
                             </div>
                             <div class="mt-2">
-                                <select class="form-select selectinput" name="arberistatig" id="ArbeitstatigSelect" required>
-                                    <option value="" ></option>
+                                <select class="form-select selectinput" name="arberistatig" id="ArbeitstatigSelect"
+                                    required>
+                                    <option value=""></option>
                                     <option value="Ja"> Ja</option>
                                     <option value="Nein"> Nein</option>
                                     <option value="Temporär"> Temporär</option>
@@ -521,7 +534,8 @@
                                 <span class="subtitleform">Autoversicherung</span>
                             </div>
                             <div class="mt-2 ">
-                                <select class="form-select selectinput" name="autoversicherung" id="AutoversicherungSelect" required>
+                                <select class="form-select selectinput" name="autoversicherung"
+                                    id="AutoversicherungSelect" required>
                                     <option value=""></option>
                                     <option value="Allianz"> Allianz</option>
                                     <option value="Appenzeller Versicherung"> Appenzeller Versicherung</option>
@@ -561,7 +575,7 @@
                                 <script>
                                     $("#AutoversicherungSelect").val('{{ $lead->autoversicherung }}').change();
                                 </script>
-                              
+
                             </div>
                         </div>
                     </div>
@@ -574,8 +588,9 @@
                                 <span class="subtitleform ">Kontaktieren erwúnscht </span>
                             </div>
                             <div class="mt-2">
-                                <select class="form-select selectinput" name="kontaktieren_erwunscht"  id="kontaktieren_erwunscht" required>
-                                    <option value="" ></option>
+                                <select class="form-select selectinput" name="kontaktieren_erwunscht"
+                                    id="kontaktieren_erwunscht" required>
+                                    <option value=""></option>
                                     <option value="Ja"> Ja</option>
                                     <option value="Nein"> Nein</option>
                                 </select>
@@ -642,8 +657,10 @@
                             </label>
                         </div>
                         <div class="col-auto">
+
                             <label class="tablinks" onclick="openCity(event, 'Später Anrufen')">
                                 <input type="radio" name="feedback_status" value="Später Anrufen"
+
                                     style="display: none;">Später Anrufen
                             </label>
                         </div>
@@ -657,14 +674,14 @@
                         <div id="Falsche Nummer" class="tabcontent">
                             <div class="mt-5">
                                 <hr>
-                            
+
                             </div>
                         </div>
                     </div>
                     <div id="Hat schon gewechselt" class="tabcontent">
                         <div class="mt-5">
                             <hr>
-                        
+
                         </div>
                     </div>
                     <div id="Kein Interesse" class="tabcontent">
@@ -714,8 +731,124 @@
                                         <span class="subtitleform">Zeit für Annrufe</span>
                                     </div>
                                     <div class="mt-2">
-                                        <input class="inputform" type="number" name="zeitfuranrufen"
-                                            placeholder="09:00" />
+                                        <select name="zeitfuranrufen" class="form-select inputform mt-2 ">
+                                            <option value=""></option>
+                                            <option value="08:00">
+                                                08 : 00 </option>
+                                            <option value="08:15">
+                                                08 : 15 </option>
+                                            <option value="08:30">
+                                                08 : 30 </option>
+                                            <option value="08:45">
+                                                08 : 45 </option>
+                                            <option value="09:00">
+                                                09 : 00 </option>
+                                            <option value="09:15">
+                                                09 : 15 </option>
+                                            <option value="09:30">
+                                                09 : 30 </option>
+                                            <option value="09:45">
+                                                09 : 45 </option>
+                                            <option value="10:00">
+                                                10 : 00 </option>
+                                            <option value="10:15">
+                                                10 : 15 </option>
+                                            <option value="10:30">
+                                                10 : 30 </option>
+                                            <option value="10:45">
+                                                10 : 45 </option>
+                                            <option value="11:00">
+                                                11 : 00 </option>
+                                            <option value="11:15">
+                                                11 : 15 </option>
+                                            <option value="11:30">
+                                                11 : 30 </option>
+                                            <option value="11:45">
+                                                11 : 45 </option>
+                                            <option value="12:00">
+                                                12 : 00 </option>
+                                            <option value="12:15">
+                                                12 : 15 </option>
+                                            <option value="12:30">
+                                                12 : 30 </option>
+                                            <option value="12:45">
+                                                12 : 45 </option>
+                                            <option value="13:00">
+                                                13 : 00 </option>
+                                            <option value="13:15">
+                                                13 : 15 </option>
+                                            <option value="13:30">
+                                                13 : 30 </option>
+                                            <option value="13:45">
+                                                13 : 45 </option>
+                                            <option value="14:00">
+                                                14 : 00 </option>
+                                            <option value="14:15">
+                                                14 : 15 </option>
+                                            <option value="14:30">
+                                                14 : 30 </option>
+                                            <option value="14:45">
+                                                14 : 45 </option>
+                                            <option value="15:00">
+                                                15 : 00 </option>
+                                            <option value="15:15">
+                                                15 : 15 </option>
+                                            <option value="15:30">
+                                                15 : 30 </option>
+                                            <option value="15:45">
+                                                15 : 45 </option>
+                                            <option value="16:00">
+                                                16 : 00 </option>
+                                            <option value="16:15">
+                                                16 : 15 </option>
+                                            <option value="16:30">
+                                                16 : 30 </option>
+                                            <option value="16:45">
+                                                16 : 45 </option>
+                                            <option value="17:00">
+                                                17 : 00 </option>
+                                            <option value="17:15">
+                                                17 : 15 </option>
+                                            <option value="17:30">
+                                                17 : 30 </option>
+                                            <option value="17:45">
+                                                17 : 45 </option>
+                                            <option value="18:00">
+                                                18 : 00 </option>
+                                            <option value="18:15">
+                                                18 : 15 </option>
+                                            <option value="18:30">
+                                                18 : 30 </option>
+                                            <option value="18:45">
+                                                18 : 45 </option>
+                                            <option value="19:00">
+                                                19 : 00 </option>
+                                            <option value="19:15">
+                                                19 : 15 </option>
+                                            <option value="19:30">
+                                                19 : 30 </option>
+                                            <option value="19:45">
+                                                19 : 45 </option>
+                                            <option value="20:00">
+                                                20 : 00 </option>
+                                            <option value="20:15">
+                                                20 : 15 </option>
+                                            <option value="20:30">
+                                                20 : 30 </option>
+                                            <option value="20:45">
+                                                20 : 45 </option>
+                                            <option value="21:00">
+                                                21 : 00 </option>
+                                            <option value="21:15">
+                                                21 : 15 </option>
+                                            <option value="21:30">
+                                                21 : 30 </option>
+                                            <option value="21:45">
+                                                21 : 45 </option>
+                                            <option value="22:00">
+                                                22 : 00 </option>
+                                        </select>
+
                                     </div>
                                 </div>
                             </div>
@@ -734,7 +867,7 @@
                                         <span class="subtitleform">Termindatum</span>
                                     </div>
                                     <div class="mt-2">
-                                        <input class="inputform" type="text" name="termindatum" placeholder="" />
+                                        <input class="inputform" type="date" name="termindatum" placeholder="" />
                                     </div>
                                 </div>
                                 <div class="col mb-3">
@@ -742,8 +875,123 @@
                                         <span class="subtitleform">Terminzeit</span>
                                     </div>
                                     <div class="mt-2">
-
-                                        <input class="inputform" type="text" name="terminzeit" placeholder="Ja" />
+                                        <select name="terminzeit" class="form-select inputform mt-2 ">
+                                            <option value=""></option>
+                                            <option value="08:00">
+                                                08 : 00 </option>
+                                            <option value="08:15">
+                                                08 : 15 </option>
+                                            <option value="08:30">
+                                                08 : 30 </option>
+                                            <option value="08:45">
+                                                08 : 45 </option>
+                                            <option value="09:00">
+                                                09 : 00 </option>
+                                            <option value="09:15">
+                                                09 : 15 </option>
+                                            <option value="09:30">
+                                                09 : 30 </option>
+                                            <option value="09:45">
+                                                09 : 45 </option>
+                                            <option value="10:00">
+                                                10 : 00 </option>
+                                            <option value="10:15">
+                                                10 : 15 </option>
+                                            <option value="10:30">
+                                                10 : 30 </option>
+                                            <option value="10:45">
+                                                10 : 45 </option>
+                                            <option value="11:00">
+                                                11 : 00 </option>
+                                            <option value="11:15">
+                                                11 : 15 </option>
+                                            <option value="11:30">
+                                                11 : 30 </option>
+                                            <option value="11:45">
+                                                11 : 45 </option>
+                                            <option value="12:00">
+                                                12 : 00 </option>
+                                            <option value="12:15">
+                                                12 : 15 </option>
+                                            <option value="12:30">
+                                                12 : 30 </option>
+                                            <option value="12:45">
+                                                12 : 45 </option>
+                                            <option value="13:00">
+                                                13 : 00 </option>
+                                            <option value="13:15">
+                                                13 : 15 </option>
+                                            <option value="13:30">
+                                                13 : 30 </option>
+                                            <option value="13:45">
+                                                13 : 45 </option>
+                                            <option value="14:00">
+                                                14 : 00 </option>
+                                            <option value="14:15">
+                                                14 : 15 </option>
+                                            <option value="14:30">
+                                                14 : 30 </option>
+                                            <option value="14:45">
+                                                14 : 45 </option>
+                                            <option value="15:00">
+                                                15 : 00 </option>
+                                            <option value="15:15">
+                                                15 : 15 </option>
+                                            <option value="15:30">
+                                                15 : 30 </option>
+                                            <option value="15:45">
+                                                15 : 45 </option>
+                                            <option value="16:00">
+                                                16 : 00 </option>
+                                            <option value="16:15">
+                                                16 : 15 </option>
+                                            <option value="16:30">
+                                                16 : 30 </option>
+                                            <option value="16:45">
+                                                16 : 45 </option>
+                                            <option value="17:00">
+                                                17 : 00 </option>
+                                            <option value="17:15">
+                                                17 : 15 </option>
+                                            <option value="17:30">
+                                                17 : 30 </option>
+                                            <option value="17:45">
+                                                17 : 45 </option>
+                                            <option value="18:00">
+                                                18 : 00 </option>
+                                            <option value="18:15">
+                                                18 : 15 </option>
+                                            <option value="18:30">
+                                                18 : 30 </option>
+                                            <option value="18:45">
+                                                18 : 45 </option>
+                                            <option value="19:00">
+                                                19 : 00 </option>
+                                            <option value="19:15">
+                                                19 : 15 </option>
+                                            <option value="19:30">
+                                                19 : 30 </option>
+                                            <option value="19:45">
+                                                19 : 45 </option>
+                                            <option value="20:00">
+                                                20 : 00 </option>
+                                            <option value="20:15">
+                                                20 : 15 </option>
+                                            <option value="20:30">
+                                                20 : 30 </option>
+                                            <option value="20:45">
+                                                20 : 45 </option>
+                                            <option value="21:00">
+                                                21 : 00 </option>
+                                            <option value="21:15">
+                                                21 : 15 </option>
+                                            <option value="21:30">
+                                                21 : 30 </option>
+                                            <option value="21:45">
+                                                21 : 45 </option>
+                                            <option value="22:00">
+                                                22 : 00 </option>
+                                        </select>
                                     </div>
                                 </div>
                             </div>
@@ -753,9 +1001,9 @@
                                         Namen und Geburtsdaten Ihrer Familienangehörigen (Mitbewohner)?</span>
                                 </div>
                                 <div class="mt-2">
-
-                                    <input class="inputformm" type="text" name="koment_der_geburtsdatum"
-                                        placeholder="" />
+                                    <textarea name="koment_der_geburtsdatum" class="inputformm" id="" cols="30" rows="3"></textarea>
+                                    {{-- <input class="inputformm" type="text" name="koment_der_geburtsdatum"
+                                        placeholder="" /> --}}
                                 </div>
                             </div>
                             <div>
@@ -764,7 +1012,10 @@
                                         Teil Ihrer Familie zu versichern?</span>
                                 </div>
                                 <div class="mt-2">
-                                    <input class="inputform" type="text" name="koment_der_Können" placeholder="Ja" />
+                                    <select name="koment_der_Können" class="form-select inputform mt-2 ">
+                                        <option value="Ja">Ja</option>
+                                        <option value="Nein">Nein</option>
+                                    </select>
                                 </div>
                             </div>
                             <div class="mt-5">
@@ -779,8 +1030,12 @@
                                 <div class="mt-4">
                                     <span class="subtitleform">Bestätigungsstatus</span>
                                 </div>
-                                <input class="inputform mt-2" type="text" name="bestatigungs_status"
-                                    placeholder="Intern" />
+                                <select name="bestatigungs_status" class="form-select inputform mt-2 ">
+                                    <option value="Autoversicherung">Autoversicherung</option>
+                                    <option value="Bestätigt">Bestätigt</option>
+                                    <option value="Krankenkasse">Krankenkasse</option>
+                                    <option value="Nicht bestätigt">Nicht bestätigt</option>
+                                </select>
                             </div>
                         </div>
                         <div class="col mb-3">
@@ -788,8 +1043,10 @@
                                 <div class="mt-4">
                                     <span class="subtitleform">Kontaktieren erwúnscht </span>
                                 </div>
-                                <input class="inputform mt-2" type="text" id="text"
-                                    name="kontaktieren_erwunscht_2" placeholder="Ja">
+                                <select name="kontaktieren_erwunscht_2" class="form-select inputform mt-2">
+                                    <option value="Ja">Ja</option>
+                                    <option value="Nein">Nein</option>
+                                </select>
                             </div>
                         </div>
                     </div>

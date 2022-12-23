@@ -118,7 +118,7 @@
                          style=" background: #FFFFFF; box-shadow: 0px 0px 12px 6px rgba(0, 0, 0, 0.06); border-radius: 46px;">
                          <div class="card-body p-4 p-md-5 text-center">
                              <div class=" mt-md-4 ">
-                                 <div class="mt-3 mt-md-1 mb-md-5 mb-3">
+                                 <div class="mt-3 mt-md-1 mb-md-4 mb-3">
                                      <svg width="145" height="39" viewBox="0 0 145 39" fill="none"
                                          xmlns="http://www.w3.org/2000/svg">
                                          <path
@@ -247,10 +247,13 @@
          width: 100%;
          font-size: 17px;
          line-height: 20px;
-         color: #9F9F9F;
+         color: #000000;
          height: 25px;
      }
+     .inputLoginemail::placeholder {
+        color: #9F9F9F;
 
+     }
      .inputLogin {
          display: flex;
          align-items: center;

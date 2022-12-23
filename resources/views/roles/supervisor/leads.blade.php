@@ -1,7 +1,7 @@
 @extends('layouts.app')
 @section('content')
-    <div class="">
-        <div class="mt-4 py-3 px-2">
+    <div class="px-md-3 pe-md-4">
+        <div class="mt-4 py-4 px-2">
             <form action="{{ route('searchLeads') }}" method="GET">
                 @csrf
                 <div class="accordionbg mb-4">

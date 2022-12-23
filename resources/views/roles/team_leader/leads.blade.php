@@ -1,10 +1,11 @@
 @extends('layouts.app')
 @section('content')
+
     <div class="">
         <div class="mt-4 py-3 px-2">
             <form method="GET">
-                @csrf
 
+                @csrf
                 <div class="accordionbg mb-4">
                     {{-- <button type="button" onclick="location.href='{{ route('advancedFilter') }}'"
                         class="acordion pull-right">Erweiter</button> --}}

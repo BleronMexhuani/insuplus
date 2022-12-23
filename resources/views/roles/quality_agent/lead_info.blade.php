@@ -2,8 +2,8 @@
 @section('content')
     <form method="POST" action="{{ route('storeFeedBackQA', ['lead_id' => $lead->id]) }}">
         @csrf
-        <div class="col ms-0 ms-md-2 px-0 px-md-5">
-            <div class="mt-4 py-3 px-2">
+        <div class="">
+            <div class="mt-4 py-4 ms-0 ms-md-2 px-3 me-0 me-md-3">
                 <span class="titlelead">Lead hinzufügen</span>
                 <div class="bgform mt-4 p-4 p-md-5">
                     <div class="row">
@@ -27,8 +27,10 @@
                                 <span class="subtitleform">Anrede</span>
                             </div>
                             <div class="mt-2">
-                                <input class="inputform" type="number" value="{{ $lead->anrede }}" id="tentacles"
-                                    name="anrede" placeholder="Herr" min="1" max="9" />
+                                <select name="anrede" id="anrede" class="form-select inputform " id="">
+                                    <option value="male">Male</option>
+                                    <option value="female">Female</option>
+                                </select>
                             </div>
                         </div>
                         <div class="col-12 col-md-4">
