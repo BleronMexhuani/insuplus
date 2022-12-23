@@ -27,7 +27,7 @@
                             <span class="subtitleform">Anrede</span>
                         </div>
                         <div class="mt-2">
-                            <select name="anrede" id="anrede" class="form-select inputform ">
+                            <select name="anrede[]" id="anrede" class="form-select inputform ">
                                 <option value="male">Male</option>
                                 <option value="female">Female</option>
                             </select>

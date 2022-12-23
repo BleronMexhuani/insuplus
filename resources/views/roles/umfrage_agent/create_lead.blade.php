@@ -1,6 +1,6 @@
 @extends('layouts.app')
 @section('content')
-    <form class="needs-validation" action="{{ route('create_lead') }}" method="POST" onkeydown="return event.key != 'Enter';"
+    <form class="needs-validation" action="{{ route('create_lead') }}" id="forma" method="POST" onkeydown="return event.key != 'Enter';"
         enctype="multipart/form-data" novalidate>
         @csrf
 
@@ -65,10 +65,16 @@
                         </div>
                         <div class="mt-2 ">
                             <div class="d-flex mb-3 ">
-                                <input type="text" name="adresse" class="inputgroupleft" placeholder="James Scar"
-                                    aria-label="Username">
-                                <input type="text" name="hause_nummer" class="inputgroupright" placeholder="Haus Nummer"
-                                    aria-label="Haus Nummer">
+                                <div>
+                                    <input type="text" name="adresse" class="inputgroupleft" placeholder="James Scar"
+                                        aria-label="Username">
+                                </div>
+                                <div>
+
+
+                                    <input type="text" name="hause_nummer" class="inputgroupright"
+                                        placeholder="Haus Nummer" aria-label="Haus Nummer">
+                                </div>
                             </div>
                         </div>
                         <div class="mt-4 ">
@@ -84,10 +90,15 @@
                         </div>
                         <div class="mt-2">
                             <div class="d-flex mb-3 ">
-                                <input type="text" name="plz" class="inputgroupleft" id="plz" placeholder="PLZ"
-                                    aria-label="Username">
-                                <input type="text" name="stadt" class="inputgroupright" id="stadt"
-                                    placeholder="Stadt" aria-label="stadt">
+                                <div>
+                                    <input type="text" name="plz" class="inputgroupleft" id="plz"
+                                        placeholder="PLZ" aria-label="Username">
+                                </div>
+                                <div>
+                                    <input type="text" name="stadt" class="inputgroupright" id="stadt"
+                                        placeholder="Stadt" aria-label="stadt">
+                                </div>
+
                             </div>
                         </div>
                         <div class="mt-4">
@@ -122,8 +133,10 @@
                                 <div class="input-group-prepend">
                                     <span class="input-group-text" id="basic-addon1">+41</span>
                                 </div>
-                                <input type="text" class="form-control inputnumber" placeholder=""
-                                    name="handy_nummer" aria-label="" aria-describedby="basic-addon1">
+                                <div>
+                                    <input type="text" class=" inputform" placeholder=""
+                                        name="handy_nummer" aria-label="" aria-describedby="basic-addon1">
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -540,11 +553,31 @@
                     </div>
                 </div>
                 <div class="d-flex justify-content-end ">
-                    <button class="buttoninput">Submit</button>
+                    <button class="buttoninput" onclick="validateInputs()">Submit</button>
                 </div>
             </div>
         </div>
         <script>
+            function validateInputs() {
+        
+                $("input,select").each(function() {
+                    if ($(this).val() == '') {
+                        if (!$(this).closest('div').find('span')[0]) {
+                            let span = document.createElement('span');
+                            span.innerHTML = 'This field is required!';
+                            span.style = 'color:red';
+                            $(this).closest('div').append(span);
+                        }
+                    }
+                    else {
+                        if($(this).closest('div').find('span')[0]){
+                            $(this).closest('div').find('span')[0].remove();
+                        }
+                    }
+                });
+            }
+
+
             function openCity(evt, cityName) {
                 var i, tabcontent, tablinks;
                 tabcontent = document.getElementsByClassName("tabcontent");
