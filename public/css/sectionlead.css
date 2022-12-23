@@ -161,6 +161,9 @@ input:focus-visible {
     padding: 15px;
     box-shadow: none !important;
 }
+textarea:focus-visible {
+    outline: none !important;
+}
 
 /* @media (max-width: 991.98px) { 
     .hamburgernav{

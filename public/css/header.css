@@ -40,17 +40,17 @@ body{
 .bells{
     position: fixed;
     top: 20px;
-    right: 140px;
+    right: 135px;
 }
 .action {
     position: fixed;
     top: 20px;
-    right: 55px;
+    right: 65px;
   }
   
   .action .profile {
     position: relative;
-    width: 60px;
+    width: 40px;
     overflow: hidden;
     cursor: pointer;
   }
@@ -67,7 +67,7 @@ body{
   .action .menu {
     position: absolute;
     top: 45px !important;
-    right: 10px;
+    right: -10px;
     padding: 0px 0px;
     background: #fff;
     width: 120px;
@@ -150,7 +150,7 @@ body{
   .addleads{
         position: fixed;
         top: 20px;
-        right: 250px;
+        right: 210px;
   }
 
   .insubg{
@@ -158,6 +158,7 @@ body{
     margin-left: 230px;
     overflow-x: hidden !important;
   }
+
   @media (min-width: 767.98px){
     .navbar-toggler{
       display: none;
@@ -169,5 +170,11 @@ body{
       margin-top:70px !important;
       margin-left: 0px;
     }
+
+    .addleads{
+      top: 20px;
+      right: 210px;
+    }
   
   }
+  
