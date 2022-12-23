@@ -4,7 +4,7 @@
         enctype="multipart/form-data" novalidate>
         @csrf
 
-        <div class="mt-4 py-3 px-2">
+        <div class="mt-4 py-4 ms-0 ms-md-1 me-0 me-md-2 ">
             <span class="titlelead">Lead hinzufügen</span>
             <div class="bgform mt-4 p-4 p-md-5">
                 <div class="row">

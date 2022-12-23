@@ -39,13 +39,13 @@ body{
 
 .bells{
     position: fixed;
-    top: 20px;
-    right: 135px;
+    top: 21px;
+    right: 87px;
 }
 .action {
     position: fixed;
     top: 20px;
-    right: 65px;
+    right: 17px;
   }
   
   .action .profile {
@@ -175,6 +175,16 @@ body{
       top: 20px;
       right: 210px;
     }
-  
+    
+    .action {
+      position: fixed;
+      top: 22px;
+      right: 60px;
+  }
+  .bells {
+    position: fixed;
+    top: 23px;
+    right: 125px;
+}
   }
   

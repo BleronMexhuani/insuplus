@@ -1,7 +1,7 @@
 @extends('layouts.app')
 @section('content')
-    <div class="px-md-3 pe-md-4">
-        <div class="mt-4 py-3 px-2">
+    <div class="">
+        <div class="mt-3 py-4 ">
             <div class="tableform ">
                 <div style="overflow-x:auto; overflow-y: hidden">
                     <table class="">

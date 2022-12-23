@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="col ms-0 ms-md-2 px-0 px-md-3 pe-md-4">
+<div class="col ms-0 ms-md-2 px-0 ">
     <div class="my-3 mt-5">
         <a href="{{ route('createUser') }}" class="titleoftable  fs-3">Add User</a>
     </div>
@@ -10,8 +10,8 @@
             <table>
                 <thead>
                     <tr style="background-color: #F7F7F7;">
-                        <th>Firstname</th>
-                        <th>Role</th>
+                        <th>Vorname</th>
+                        <th>Rolle</th>
                         <th>Email</th>
                         <th class="text-center">Aktion</th>
                     </tr>

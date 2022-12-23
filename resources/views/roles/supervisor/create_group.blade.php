@@ -1,6 +1,6 @@
 @extends('layouts.app')
 @section('content')
-<div class="px-md-3 pe-md-4 mt-5">
+<div class=" mt-5">
     <div class=" my-3 p-3" style="box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;">
         <h3>Team-Registrierung</h3>
         <form action="{{route('handleSubmitCreateGroup')}}" class="my-5" method="post">
