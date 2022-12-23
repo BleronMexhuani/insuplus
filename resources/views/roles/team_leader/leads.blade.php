@@ -2,7 +2,7 @@
 @section('content')
 
     <div class="">
-        <div class="mt-4 py-3 px-2">
+        <div class="mt-4 py-3 ">
             <form method="GET">
 
                 @csrf
@@ -53,7 +53,7 @@
                                         <input class="form-controol input-sm" type="number" value=""
                                             name="geburtsdatum[]" placeholder="Herr" min="1" max="3000">
                                         <input class="form-controol input-sm" type="number" name="geburtsdatum[]"
-                                            value="" name="" placeholder="Herr" min="1" max="10000">
+                                            value="" name="" placeholder="Frau" min="1" max="10000">
                                     </div>
                                 </div>
                             </div>
@@ -333,7 +333,7 @@
                             <div class="input-group  searchLeads mt-md-4 mt-3 mb-3 mb-md-0">
                                 <div class="form-outline">
                                     <input class="inputleads ps-5" name="vorname" type="text"
-                                        placeholder="Search Leads" />
+                                        placeholder="Suche Leads" />
                                     <i class="fa fa-search filtersubmit ps-1 "></i>
                                 </div>
                             </div>
