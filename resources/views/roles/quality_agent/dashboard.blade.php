@@ -3,8 +3,8 @@
 @section('content')
     <div class="" style="margin-top:16px !important;">
         <div class="px-2">
-            <div class="mt-4 py-3 px-md-3 pe-md-4">
-                <span class="titledash">Willkommen {{ Auth::user()->name }}!</span>
+            <div class="mt-4 py-3 ">
+                {{-- <span class="titledash">Willkommen {{ Auth::user()->name }}!</span> --}}
                 <div class="bgform mt-4 p-4 p-md-5">
                     <div class="row">
                         <div class="col-4 ">
@@ -26,7 +26,7 @@
                                     </svg>
                                 </div>
                                 <div class="d-flex flex-column">
-                                    <span class="subtitledash">Leads Today</span>
+                                    <span class="subtitledash">Leads pro Tag </span>
                                     <span
                                         style="font-weight: 700; color: #8B35F9; font-size: 32px;font-family: 'Poppins', sans-serif; ">{{ $today }}</span>
                                 </div>
@@ -52,7 +52,7 @@
 
                                 </div>
                                 <div class="d-flex flex-column">
-                                    <span class="subtitledash">Leads This Week</span>
+                                    <span class="subtitledash">Leads pro Woche</span>
                                     <span
                                         style="font-weight: 700; color: #F97035; font-size: 32px; font-family: 'Poppins', sans-serif;">{{ $week }}</span>
                                 </div>
@@ -78,67 +78,88 @@
 
                                 </div>
                                 <div class="d-flex flex-column">
-                                    <span class="subtitledash">Leads This Month</span>
+                                    <span class="subtitledash">Leads pro Monat</span>
                                     <span
                                         style="font-weight: 700; color: #F9CE35; font-size: 32px; font-family: 'Poppins', sans-serif;">{{ $month }}</span>
                                 </div>
                             </div>
                         </div>
                     </div>
-                    <div class="row">
-                        <div class="col-8">
-                            <div class="mt-5 apexchart">
+                    <div class="row g-0">
+                        <div class="col-12">
+                            <div class="mt-5 apexchart" style="padding: 20px">
                                 <div class="row">
-                                    <div class="col-4">
-                                        <div class="mt-4">
-                                            <span class="ms-4"
+                                    <div class="col-12 col-lg-12 col-xl-4 col-xxl-5 my-lg-auto">
+                                        <div class="">
+                                            <span class=""
                                                 style="font-family: 'Raleway'; font-weight: 700; font-size: 18px;color: #1F1F1F;">Leads</span>
                                         </div>
                                     </div>
-                                    <div class="col-8 d-flex justify-content-end">
-                                        <div class="mt-4  ">
-                                            <span class="titledate">from</span>
-                                            <input id="from" type="date" class="dateinput px-0 mx-0 "
-                                                placeholder="Start Date" required
-                                                max="{{ Carbon\Carbon::yesterday()->format('Y-m-d') }}">
-                                        </div>
-                                        <div class="mt-4 ms-5">
-                                            <span class="titledate">to</span>
-                                            <input id="to" type="date" class="dateinput px-0 mx-0 col"
-                                                placeholder="End Date" required
-                                                min="{{ Carbon\Carbon::today()->format('Y-m-d') }}">
-                                        </div>
-                                        <div class="mt-3 ms-4">
-                                            <button onclick="chartlista()" type="submit"
-                                                class="btn btnleads">Filter</button>
+                                    <div class="col">
+                                        <div class="row gx-3 gy-3 gy-md-0">
+                                            <div class="col-12 col-sm my-md-auto">
+                                                <div class="">
+                                                    <div class="row g-0">
+                                                        <div class="col-2">
+                                                            <span class="titledate">from</span>
+    
+                                                        </div>
+                                                        <div class="col">
+                                                            <input id="from" type="date"
+                                                                class="dateinput w-100 px-0 mx-0 " placeholder="Start Date"
+                                                                required>
+                                                        </div>
+                                                    </div>
+    
+                                                </div>
+                                            </div>
+                                            <div class="col-12 col-sm my-md-auto">
+                                                <div class="">
+                                                    <div class="row g-0">
+    
+                                                        <div class="col-2">
+                                                            <span class="titledate">to</span>
+    
+                                                        </div>
+                                                        <div class="col">
+                                                            <input id="to" type="date"
+                                                                class="dateinput w-100 px-0 mx-0 col" placeholder="End Date"
+                                                                required min="{{ Carbon\Carbon::today()->format('Y-m-d') }}">
+                                                        </div>
+    
+                                                    </div>
+    
+                                                </div>
+                                            </div>
+                                            <div class="col-12 col-lg-auto my-lg-auto">
+                                                <div class="">
+                                                    <button onclick="chartlista()" type="submit"
+                                                        class="btn btnleads">Filter</button>
+                                                </div>
+                                            </div>
                                         </div>
                                     </div>
-
                                 </div>
-                                <div class="ms-5 mt-5 py-5">
+                                <div class=" mt-5 py-5">
                                     <div class="row">
-                                        <div class="col-auto">
-                                            <figure class="highcharts-figure">
-                                                <div id="container"></div>
-                                            </figure>
+                                        <div class="col-12 col-lg-auto">
+                                            {{-- <figure class="highcharts-figure"> --}}
+                                            <div id="container" style="max-width: 500px"></div>
+                                            {{-- </figure> --}}
                                         </div>
-                                        <div class="col">
+                                        <div class="col-12 col-lg-auto">
                                             <div class="textboard mt-5 pt-4 ">
-
                                                 <div class="mb-4" id="elements">
-
                                                 </div>
-
                                             </div>
                                         </div>
                                         <div>
                                         </div>
                                     </div>
                                 </div>
-                                <div class="col-xxl-4 col-12">
-                                </div>
+    
                             </div>
-
+    
                         </div>
                     </div>
                 </div>
@@ -161,7 +182,6 @@
         });
         chart = new Highcharts.chart('container', {
             chart: {
-                width: '400',
                 type: 'variablepie'
             },
             xAxis: {

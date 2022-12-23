@@ -3,7 +3,7 @@
     <form method="POST" action="{{ route('storeFeedBack', ['lead_id' => $lead->id]) }}" class="">
         @csrf
         <div class="">
-            <div class="mt-4 py-4 ms-0 ms-md-2 px-3 me-0 me-md-4">
+            <div class="mt-4 py-4 ms-0 ms-md-1 me-0 me-md-2">
                 <span class="titlelead">Lead hinzufügen </span>
                 <div class="bgform mt-4 p-4 p-md-5">
                     <div class="row">

@@ -3,8 +3,10 @@
 $i = 1;
 ?>
 @section('content')
-    <div class="px-md-3 pe-md-4">
-        <div class="mt-4 py-4 px-2">
+
+    <div class="">
+        <div class="mt-4 py-4 ">
+
             <div class="tableform">
                 <div style="padding: 25px">
                     <span class="ms-1 mb-4 titleoftable ">All
@@ -22,7 +24,9 @@ $i = 1;
                             <div class="input-group  searchLeads mt-md-4 mt-3 mb-3 mb-md-4">
                                 <div class="form-outline">
                                     <input class="inputleads ps-5" name="vorname" type="text"
-                                        placeholder="Search Leads" />
+
+                                        placeholder="Suche Leads" />
+
                                     <i class="fa fa-search filtersubmit ps-1 "></i>
                                 </div>
                             </div>
@@ -33,9 +37,11 @@ $i = 1;
                     <table>
                         <thead style="background-color: #F7F7F7;">
                             <tr class="text-center">
+
                                 <td>
 
                                 </td>
+
                                 <th>Vorname</th>
                                 <th>Nachname</th>
                                 <th>Geburtsdatum</th>
@@ -72,16 +78,16 @@ $i = 1;
                                     <td>{{ $item->assign_to_id_call ? App\Models\User::find($item->assign_to_id_call)->name : ($item->assign_to_id_team_leader ? App\Models\User::find($item->assign_to_id_team_leader)->name : 'Not Assigned') }}
                                     </td>
                                     <td>{{ $item->created_at }}</td>
+
                                     <td>{{ App\Models\User::find($item->assigned_from)->name }}</td>
+
                                     <td style="color:{{ $item->feedback_status == 'Terminiert' ? 'green' : 'red' }};">
                                         {{ $item->feedback_status }}</td>
                                     <td>{{ App\Models\FeedBack::where('lead_id', $item->id)->orderBy('created_at', 'desc')->pluck('created_at')->first() }}
                                     </td>
                                 </tr>
 
-                                </thead>
                         @endforeach
-
 
                     </table>
 
@@ -100,5 +106,5 @@ $i = 1;
             </div>
         </div>
     </div>
-   
+
 @endsection

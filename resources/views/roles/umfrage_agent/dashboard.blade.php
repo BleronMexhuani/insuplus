@@ -1,9 +1,9 @@
 @extends('layouts.app')
 
 @section('content')
-    <div class="col ms-0 ms-md-2 px-0 px-md-2 pe-md-4" style="margin-top:16px !important;">
-        <div class="mt-4 py-3 px-2">
-            <span class="titledash">Willkommen {{ Auth::user()->name }}!</span>
+    <div class="" style="margin-top:16px !important;">
+        <div class="mt-4 py-3 ">
+            {{-- <span class="titledash">Willkommen {{ Auth::user()->name }}!</span> --}}
             <div class="bgform mt-4 p-4 p-md-5">
                 <div class="row">
                     <div class="col-xl-4 mt-3 mt-xl-0  col-12 ">
@@ -25,7 +25,7 @@
                                 </svg>
                             </div>
                             <div class="d-flex flex-column">
-                                <span class="subtitledash">Leads This Today</span>
+                                <span class="subtitledash">Leads pro Tag</span>
                                 <span
                                     style="font-weight: 700; color: #8B35F9; font-size: 32px;font-family: 'Poppins', sans-serif; ">55</span>
                             </div>
@@ -51,7 +51,7 @@
 
                             </div>
                             <div class="d-flex flex-column">
-                                <span class="subtitledash">Leads This Week</span>
+                                <span class="subtitledash">Leads pro Woche</span>
                                 <span
                                     style="font-weight: 700; color: #F97035; font-size: 32px; font-family: 'Poppins', sans-serif;">100</span>
                             </div>
@@ -77,50 +77,76 @@
 
                             </div>
                             <div class="d-flex flex-column">
-                                <span class="subtitledash">Leads this Month</span>
+                                <span class="subtitledash">Leads pro Monat</span>
                                 <span
                                     style="font-weight: 700; color: #F9CE35; font-size: 32px; font-family: 'Poppins', sans-serif;">500</span>
                             </div>
                         </div>
                     </div>
                 </div>
-                <div class="row">
-                    <div class="col-xl-8 col-12">
-                        <div class="mt-5 apexchart">
+                <div class="row g-0">
+                    <div class="col-12">
+                        <div class="mt-5 apexchart" style="padding: 20px">
                             <div class="row">
-                                <div class="col-4">
-                                    <div class="mt-4">
-                                        <span class="ms-4"
+                                <div class="col-12 col-lg-12 col-xl-4 col-xxl-5 my-lg-auto">
+                                    <div class="">
+                                        <span class=""
                                             style="font-family: 'Raleway'; font-weight: 700; font-size: 18px;color: #1F1F1F;">Leads</span>
                                     </div>
                                 </div>
-                                <div class="col-8 d-flex justify-content-end">
-                                    <div class="mt-4  ">
-                                        <span class="titledate">from</span>
-                                        <input id="from" type="date" class="dateinput px-0 mx-0 "
-                                             placeholder="Start Date"
-                                            required>
-                                    </div>
-                                    <div class="mt-4 ms-5">
-                                        <span class="titledate">to</span>
-                                        <input id="to" type="date" class="dateinput px-0 mx-0 col"
-                                            placeholder="End Date"
-                                            required min="{{ Carbon\Carbon::today()->format('Y-m-d') }}">
-                                    </div>
-                                    <div class="mt-3 ms-4">
-                                        <button onclick="chartlista()" type="submit" class="btn btnleads">Filter</button>
+                                <div class="col">
+                                    <div class="row gx-3 gy-3 gy-md-0">
+                                        <div class="col-12 col-sm my-md-auto">
+                                            <div class="">
+                                                <div class="row g-0">
+                                                    <div class="col-2">
+                                                        <span class="titledate">from</span>
+
+                                                    </div>
+                                                    <div class="col">
+                                                        <input id="from" type="date"
+                                                            class="dateinput w-100 px-0 mx-0 " placeholder="Start Date"
+                                                            required>
+                                                    </div>
+                                                </div>
+
+                                            </div>
+                                        </div>
+                                        <div class="col-12 col-sm my-md-auto">
+                                            <div class="">
+                                                <div class="row g-0">
+
+                                                    <div class="col-2">
+                                                        <span class="titledate">to</span>
+
+                                                    </div>
+                                                    <div class="col">
+                                                        <input id="to" type="date"
+                                                            class="dateinput w-100 px-0 mx-0 col" placeholder="End Date"
+                                                            required min="{{ Carbon\Carbon::today()->format('Y-m-d') }}">
+                                                    </div>
+
+                                                </div>
+
+                                            </div>
+                                        </div>
+                                        <div class="col-12 col-lg-auto my-lg-auto">
+                                            <div class="">
+                                                <button onclick="chartlista()" type="submit"
+                                                    class="btn btnleads">Filter</button>
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
-
                             </div>
-                            <div class="ms-5 mt-5 py-5">
+                            <div class=" mt-5 py-5">
                                 <div class="row">
-                                    <div class="col-auto">
-                                        <figure class="highcharts-figure">
-                                            <div id="container"></div>
-                                        </figure>
+                                    <div class="col-12 col-lg-auto">
+                                        {{-- <figure class="highcharts-figure"> --}}
+                                        <div id="container" style="max-width: 500px"></div>
+                                        {{-- </figure> --}}
                                     </div>
-                                    <div class="col">
+                                    <div class="col-12 col-lg-auto">
                                         <div class="textboard mt-5 pt-4 ">
                                             <div class="mb-4" id="elements">
                                             </div>
@@ -130,8 +156,7 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="col-xxl-4 col-12">
-                            </div>
+
                         </div>
 
                     </div>
@@ -146,13 +171,14 @@
         <script src="https://code.highcharts.com/modules/accessibility.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/axios@1.1.2/dist/axios.min.js"></script>
         <script async>
-           var chart;
+            var chart;
             Highcharts.setOptions({
-                colors:  ['#29E7CD', '#F97035', '#F9CE35', '#21618C', '#17202A','#7B7D7D','#C0392B','#196F3D','#8E44AD','#F1C40F ']
+                colors: ['#29E7CD', '#F97035', '#F9CE35', '#21618C', '#17202A', '#7B7D7D', '#C0392B', '#196F3D',
+                    '#8E44AD', '#F1C40F '
+                ]
             });
             chart = new Highcharts.chart('container', {
                 chart: {
-                    width: '400',
                     type: 'variablepie'
                 },
                 xAxis: {
@@ -186,7 +212,9 @@
                 let from = document.getElementById('from').value
                 let to = document.getElementById('to').value
                 let i = 0;
-                let colors = ['#29E7CD', '#F97035', '#F9CE35', '#21618C', '#17202A','#7B7D7D','#C0392B','#196F3D','#8E44AD','#F1C40F ']
+                let colors = ['#29E7CD', '#F97035', '#F9CE35', '#21618C', '#17202A', '#7B7D7D', '#C0392B', '#196F3D',
+                    '#8E44AD', '#F1C40F '
+                ]
                 const series_data = [];
                 const response = await axios.get('/chartumfrage?from=' + from + '&to=' + to);
                 const data = response.data;
