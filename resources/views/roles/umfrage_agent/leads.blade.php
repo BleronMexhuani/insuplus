@@ -77,8 +77,38 @@ $i = 1;
                                 <td>{{ App\Models\FeedBack::where('lead_id', $item->id)->orderBy('created_at', 'desc')->pluck('created_at')->first() }}
                                 </td>
                             </tr>
-                        </tbody>
-                    @endforeach
+
+                        </thead>
+                        @foreach ($leads as $item)
+                            @php
+                                $feedback_datum = App\Models\FeedBack::where('lead_id', $item->id)
+                                    ->orderBy('created_at', 'desc')
+                                    ->first();
+                                
+                            @endphp
+                            <tbody>
+                                <tr class="text-center">
+                                    <td>
+
+                                    </td>
+                                    <td>{{ $item->vorname }}</td>
+                                    <td>{{ $item->nachname }}</td>
+                                    <td>{{ $item->geburtsdatum }}</td>
+                                    <td>{{ $item->email }}</td>
+                                    <td>{{ $item->region }}</td>
+                                    <td>{{ $item->sprachen }}</td>
+                                    <td>{{ $item->assign_to_id_call ? App\Models\User::find($item->assign_to_id_call)->name : ($item->assign_to_id_team_leader ? App\Models\User::find($item->assign_to_id_team_leader)->name : 'Not Assigned') }}
+                                    </td>
+                                    <td>{{ $item->created_at }}</td>
+                                    <td>{{ $item->assigned_from }}</td>
+                                    <td style="color:{{ $item->feedback_status == 'Terminiert' || $item->feedback_status == 'Online-Offerte' ? 'green' : 'red' }};">
+                                        {{ $item->feedback_status }}</td>
+                                    <td>{{ App\Models\FeedBack::where('lead_id', $item->id)->orderBy('created_at', 'desc')->pluck('created_at')->first() }}
+                                    </td>
+                                </tr>
+                            </tbody>
+                        @endforeach
+
 
                 </table>
 

@@ -27,7 +27,7 @@ class QualityAgentController extends Controller
     {
 
         $lead = Lead::query();
-        $lead->whereIn('feedback_status', ['Terminiert', 'online_offerte'])->where('completed', 1);
+        $lead->whereIn('feedback_status', ['Terminiert', 'Online-Offerte'])->where('completed', 1);
 
         foreach ($req->except('_token','page') as $key => $value) {
             if ($key == 'created_at' || $key == 'verteilen_datum' || $key == 'geburtsdatum' || $key == 'anrufdatum') {

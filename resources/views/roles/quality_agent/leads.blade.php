@@ -410,6 +410,7 @@
                                     <tbody>
                                         <tr class="text-center">
 
+
                                             <td>{{ $item->vorname }}</td>
                                             <td>{{ $item->nachname }}</td>
                                             <td>{{ $item->geburtsdatum }}</td>
@@ -437,6 +438,7 @@
                                 <div class="text-center text-sm-start my-3 ps-0 ps-sm-4">
                                     <span>Shows {{ $leads->firstItem() }} - {{ $leads->lastItem() }} of Total
                                         {{ $leads->total() }} Leads </span>
+
 
 
                                 </div>

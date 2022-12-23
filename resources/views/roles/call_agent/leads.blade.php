@@ -395,9 +395,9 @@
                                         <td>{{ $item->created_at }}</td>
                                         <td>{{ $item->assigned_from }}</td>
                                         <td
-                                            style="color:{{ $item->feedback_status == 'Terminiert' ? '#14AE5C' : 'red' }};">
+                                            style="color:{{ $item->feedback_status == 'Terminiert' || $item->feedback_status == 'Online-Offerte' ? '#14AE5C' : 'red' }};">
                                             {{ $item->feedback_status }}</td>
-                                        <td>{{ App\Models\Feedback::where('lead_id', $item->id)->orderBy('created_at', 'desc')->pluck('created_at')->first() }}
+                                        <td>{{ App\Models\FeedBack::where('lead_id', $item->id)->orderBy('created_at', 'desc')->pluck('created_at')->first() }}
                                         </td>
                                         <td><a class="btn btnedit"
                                                 href="{{ route('lead_info.call', ['id' => $item->id]) }}"><i

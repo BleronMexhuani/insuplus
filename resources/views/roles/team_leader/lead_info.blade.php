@@ -388,11 +388,13 @@
                             <!-- <button class="tablinks" type="button" onclick="openCity(event, 'Online-Offerte')">Online-Offerte</button> -->
                         </div>
                         <div class="col-auto">
-                            <label class="tablinks" onclick="openCity(event, 'Später Anrufrn')">
-                                <input type="radio" name="feedback_status" value="Später Anrufrn"
+
+                            <label class="tablinks" onclick="openCity(event, 'Später Anrufen')">
+                                <input type="radio" name="feedback_status" value="Später Anrufen"
+
                                     style="display: none;">Später Anrufen
                             </label>
-                            <!-- <button class="tablinks" type="button" onclick="openCity(event, 'Später Anrufrn')">Später Anrufrn</button> -->
+                            <!-- <button class="tablinks" type="button" onclick="openCity(event, 'Später Anrufen')">Später Anrufen</button> -->
                         </div>
                         <div class="col-auto">
                             <label class="tablinks" onclick="openCity(event, 'Terminiert')">
@@ -450,7 +452,7 @@
                         </div>
                     </div>
 
-                    <div id="Später Anrufrn" class="tabcontent">
+                    <div id="Später Anrufen" class="tabcontent">
                         <div class="mt-5">
                             <hr>
                             <div class="row">

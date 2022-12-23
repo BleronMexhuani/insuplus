@@ -301,7 +301,7 @@
                                 <div class="mt-2">
                                     <select class="selectpicker" data-live-search="true" name="feedback_status[]"
                                         multiple data-actions-box="true">
-                                        <option value="null">Leer</option>
+                                        <option value="NULL">Leer</option>
                                         <option value="Falsche Nummer">Falsche Nummer</option>
                                         <option value="Hat schon gewechselt">Hat schon gewechselt</option>
                                         <option value="Kein Interesse">Kein Interesse</option>
@@ -458,7 +458,7 @@
                                             <td>{{ $item->assign_to_id_call ? App\Models\User::find($item->assign_to_id_call)->name : ($item->assign_to_id_team_leader ? App\Models\User::find($item->assign_to_id_team_leader)->name : 'Not Assigned') }}
                                             </td>
                                             <td>{{ $item->created_at }}</td>
-                                            <td>{{ $item->assigned_from }}</td>
+                                            <td>{{App\Models\User::find($item->assigned_from)->name  }}</td>
                                             <td
                                                 style="color:{{ $item->feedback_status == 'Terminiert' ? 'green' : 'red' }};">
                                                 {{ $item->feedback_status }}</td>
