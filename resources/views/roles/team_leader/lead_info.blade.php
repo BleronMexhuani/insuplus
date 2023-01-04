@@ -723,8 +723,8 @@
                                     </div>
                                     <div class="mt-2">
                                         <input class="inputform" type="date"
-                                            value="{{ $last_feedback->anrufdatum }}" name="anrufdatum"
-                                            placeholder="" />
+                                            value="@php echo isset($last_feedback->anrufdatum) ? $last_feedback->anrufdatum : '' @endphp"
+                                            name="anrufdatum" placeholder="" />
                                     </div>
                                 </div>
                                 <div class="col mb-3">
@@ -851,7 +851,7 @@
                                                 22 : 00 </option>
                                         </select>
                                         <script>
-                                            $("#zeitfuranrufeni").val('{{ $last_feedback->zeit_anrufe }}').change();
+                                            $("#zeitfuranrufeni").val('{{ isset($last_feedback->zeit_anrufe) ? $last_feedback->zeit_anrufe : '' }}').change();
                                         </script>
                                     </div>
                                 </div>
@@ -872,8 +872,8 @@
                                     </div>
                                     <div class="mt-2">
                                         <input class="inputform" type="date"
-                                            value="{{ $last_feedback->termin_datum }}" name="termindatum"
-                                            placeholder="" />
+                                            value="{{ isset($last_feedback->termin_datum) && $last_feedback->termin_datum }}"
+                                            name="termindatum" placeholder="" />
                                     </div>
                                 </div>
                                 <div class="col mb-3">
@@ -999,7 +999,7 @@
                                                 22 : 00 </option>
                                         </select>
                                         <script>
-                                            $("#terminzeit").val('{{ $last_feedback->terminzeit }}').change();
+                                            $("#terminzeit").val('{{ isset($last_feedback->terminzeit) ?  $last_feedback->terminzeit : '' }}').change();
                                         </script>
                                     </div>
                                 </div>
@@ -1010,8 +1010,9 @@
                                         Namen und Geburtsdaten Ihrer Familienangehörigen (Mitbewohner)?</span>
                                 </div>
                                 <div class="mt-2">
-                                    <textarea name="koment_der_geburtsdatum" value="{{ $last_feedback->mitbewhoner }}" class="inputformm"
-                                        id="" cols="30" rows="3">{{ $last_feedback->mitbewhoner }}</textarea>
+                                    <textarea name="koment_der_geburtsdatum"
+                                        value="{{ isset($last_feedback->mitbewhoner) && $last_feedback->mitbewhoner }}" class="inputformm"
+                                        id="" cols="30" rows="3">{{ isset($last_feedback->mitbewhoner) && $last_feedback->mitbewhoner }}</textarea>
                                     {{-- <input class="inputformm" type="text" name="koment_der_geburtsdatum"
                                         placeholder="" /> --}}
                                 </div>
@@ -1028,7 +1029,7 @@
                                         <option value="Nein">Nein</option>
                                     </select>
                                     <script>
-                                        $("#koment_der_Konnen").val('{{ $last_feedback->person_krank }}').change();
+                                        $("#koment_der_Konnen").val('{{ isset($last_feedback->person_krank) && $last_feedback->person_krank }}').change();
                                     </script>
                                 </div>
                             </div>
@@ -1051,7 +1052,7 @@
                                     <option value="Nicht bestätigt">Nicht bestätigt</option>
                                 </select>
                                 <script>
-                                    $("#besta").val('{{ $last_feedback->bestatigungsstatus }}').change();
+                                    $("#besta").val('{{ isset($last_feedback->bestatigungsstatus) && $last_feedback->bestatigungsstatus }}').change();
                                 </script>
                             </div>
                         </div>
@@ -1077,7 +1078,8 @@
                         <div class="mt-4">
                             <span class="subtitleform">Bemerkung </span>
                         </div>
-                        <input class="inputform mt-2" value="{{ $last_feedback->bemerkung }}" type="text"
+                        <input class="inputform mt-2"
+                            value="{{ isset($last_feedback->bemerkung) && $last_feedback->bemerkung }}" type="text"
                             id="text" name="bemerkung" placeholder="">
                     </div>
 
