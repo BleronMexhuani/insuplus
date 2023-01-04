@@ -37,11 +37,8 @@ $i = 1;
                     <table>
                         <thead style="background-color: #F7F7F7;">
                             <tr class="text-center">
-
                                 <td>
-
                                 </td>
-
                                 <th>Vorname</th>
                                 <th>Nachname</th>
                                 <th>Geburtsdatum</th>

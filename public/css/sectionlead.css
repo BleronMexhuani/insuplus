@@ -50,22 +50,30 @@
 
 .inputgroupleft{
     border-top-left-radius: 8px 6px;
+    border-top-right-radius: 0px;
     border: 1px solid #EAECEE;
     padding: 15px;
     width: 100%;
     border-bottom-left-radius: 8px 6px;
+    border-bottom-right-radius: 0px;
 }
 
 .inputgroupright{
     border-top-right-radius: 8px 6px;
+    border-top-left-radius: 0px;
     border: 1px solid #EAECEE;
     padding: 15px;
     width: 100%;
     border-bottom-right-radius: 8px 6px;
+    border-bottom-left-radius: 0px;
 }
 
 input:focus-visible {
     outline: none !important;
+}
+
+.form-select{
+    box-shadow: none !important;
 }
 
 .input-box {

@@ -131,7 +131,7 @@ tr:hover {
 }
 
 .select-form {
-    border-top: 0px solid !important;
+    /* border-top: 0px solid !important; */
 }
 
 .filtersubmit {
