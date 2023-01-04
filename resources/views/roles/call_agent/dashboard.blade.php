@@ -221,7 +221,7 @@
             for (let i = 0; i < data.length; i++) {
                 series_data.push({
                     name: data[i][0] ? data[i][0] : 'Null',
-                    y: data[i][1],
+                    y: parseInt(data[i][1]),
                     z: 119
                 });
 
