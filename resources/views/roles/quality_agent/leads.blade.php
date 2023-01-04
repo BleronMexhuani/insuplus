@@ -34,10 +34,10 @@
                                     <span class="subtitleform">Verteildatum</span>
                                 </div>
                                 <div class="input-group mt-2">
-                                    <input type="text" class="form-control input-sm" placeholder="von"
+                                    <input type="text" class="form-controol input-sm" placeholder="von"
                                         onfocus="(this.type='date')" onblur="(this.type='text')" name="verteilen_datum[]"
                                         onchange="change()">
-                                    <input type="text" class="form-control input-sm" placeholder="bis"
+                                    <input type="text" class="form-controol input-sm" placeholder="bis"
                                         onfocus="(this.type='date')" onblur="(this.type='text')" name="verteilen_datum[]">
                                 </div>
                             </div>

@@ -77,12 +77,14 @@
                         <div class="mt-2 ">
                             <div class="d-flex mb-3 ">
                                 <div>
-                                    <input type="text" name="adresse" class="inputform" placeholder="James Scar"
+                                    <input type="text" name="adresse" class="inputform" placeholder="James Scar" style="border-top-right-radius: 0px;  border-bottom-right-radius: 0px;"
                                         aria-label="Username" required>
                                 </div>
                                 <div>
-                                    <input type="text" name="hause_nummer" class="inputform" placeholder="Haus Nummer"
-                                        required aria-label="Haus Nummer">
+
+                                    <input type="text" name="hause_nummer" class="inputform" style="border-top-left-radius: 0px;  border-bottom-left-radius: 0px;"
+                                        placeholder="Haus Nummer" required aria-label="Haus Nummer">
+
                                 </div>
                             </div>
                         </div>
@@ -101,11 +103,11 @@
                         <div class="mt-2">
                             <div class="d-flex mb-3 ">
                                 <div>
-                                    <input type="text" name="plz" required class="inputform" id="plz"
+                                    <input type="text" name="plz" required class="inputform " id="plz" style="border-top-right-radius: 0px;  border-bottom-right-radius: 0px;"
                                         placeholder="PLZ" aria-label="Username">
                                 </div>
                                 <div>
-                                    <input type="text" name="stadt" required class="inputform" id="stadt"
+                                    <input type="text" name="stadt" required class="inputform " id="stadt" style="border-top-left-radius: 0px;  border-bottom-left-radius: 0px;"
                                         placeholder="Stadt" aria-label="stadt">
                                 </div>
 
@@ -140,14 +142,13 @@
                         </div>
                         <div class="mt-2 ">
                             <div class="input-group mb-3">
-                                <div class="input-group-prepend">
-                                    <span class="input-group-text" id="basic-addon1">+41</span>
+                                <div class="input-group-prepend" >
+                                    <span  class="input-group-text" id="basic-addon1" style="border-top-right-radius: 0px !important;  border-bottom-right-radius: 0px !important;">+41</span>
                                 </div>
                                 <div>
-                                    <input type="text" class="inputform"
-                                        pattern="^(?:0|\(?\)?\s?|41\s?)(21|22|24|26|27|31|32|33|34|41|43|44|51|52|55|56|58|61|62|71|74|75|76|77|78|79|81|91)(?:[\.\-\s]?\d\d\d)(?:[\.\-\s]?\d\d){2}$"
-                                        placeholder="" name="handy_nummer" aria-label=""
-                                        aria-describedby="basic-addon1">
+                                    <input type="text" class="inputform" style="border-top-left-radius: 0px !important;  border-bottom-left-radius: 0px !important;" required pattern="^(?:0|\(?\)?\s?|41\s?)(21|22|24|26|27|31|32|33|34|41|43|44|51|52|55|56|58|61|62|71|74|75|76|77|78|79|81|91)(?:[\.\-\s]?\d\d\d)(?:[\.\-\s]?\d\d){2}$" placeholder="" name="handy_nummer"
+                                        aria-label="" aria-describedby="basic-addon1">
+
                                 </div>
                             </div>
                         </div>
