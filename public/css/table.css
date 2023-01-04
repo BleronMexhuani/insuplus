@@ -134,6 +134,15 @@ tr:hover {
     /* border-top: 0px solid !important; */
 }
 
+.teamtable{
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+    
+}
+
+.bootstrap-select>select{
+    z-index: 100000 !important;
+}
+
 .filtersubmit {
     position: absolute;
     z-index: 1;

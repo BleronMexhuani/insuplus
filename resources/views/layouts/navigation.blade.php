@@ -45,7 +45,7 @@
              <span class="navbar-toggler-icon"></span>
          </button>
          <div class="collapse navbar-collapse" id="navbarSupportedContent">
-          
+
              <div class="element1 mt-4">
                  <a href="{{ route('dashboard') }}"
                      @if (request()->is('dashboard')) ? style="background-color: #00727A; color:white" : "" @endif><svg
@@ -121,8 +121,6 @@
                                  fill="white" />
                          </svg>
                          <span class="px-1">Teams</span></a>
-
-                         
                  @elseif(Auth::user()->hasRole(['team_leader']))
                      <a href="{{ route('leads.team_leader') }}"
                          @if (request()->is('team_leader/leads')) ? style="background-color: #00727A; color:white" : "" @endif>

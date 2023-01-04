@@ -1,11 +1,12 @@
 <!DOCTYPE html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
+
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <title>Insuplus</title>
-    <link rel="icon" type="image/x-icon" href="{{ URL::asset('assets/img/faviconainsuplus.png') }}">>
+    <link rel="icon" type="image/x-icon" href="{{ URL::asset('assets/img/faviconainsuplus.png') }}">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <link rel="stylesheet"
@@ -60,8 +61,40 @@
     <link rel="stylesheet" href="{{ URL::asset('css/dashboard.css') }}">
     <link rel="stylesheet" href="{{ URL::asset('css/profile.css') }}">
     <!-- Scripts -->
+    <style>
+    #Preloder{
+        position: fixed;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        background-color: #ffffff;
+        display: flex;
+        z-index: 999;
+        justify-content: center;
+        align-items: center;
+    }
+
+    #Preloder svg{
+        width: 10rem;
+    }
+    .loaded{
+        visibility: hidden;
+        opacity: 0;
+    }
+    </style>
+    
 </head>
+
 <body class="font-sans antialiased">
+   <div id="Preloder">
+    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" width="100" height="100" fill="none">
+        <style>@keyframes loader2{0%{-webkit-transform:rotate(0);transform:rotate(0)}to{-webkit-transform:rotate(360deg);transform:rotate(360deg)}}</style>
+        <path fill="#00727A" d="M17.179 13.605a.431.431 0 00.279.514l.775.245a.393.393 0 00.499-.268 7.318 7.318 0 00-4.5-8.658.39.39 0 00-.507.255l-.245.775a.43.43 0 00.261.523 5.69 5.69 0 013.438 6.614z" style="animation:loader2 1s cubic-bezier(.63,-.71,.32,1.28) infinite both;transform-origin:center center"/></svg>
+
+   </div>
+
+
     <div class="">
         @include('layouts.navigation')
         <div class="row g-0">
@@ -71,11 +104,23 @@
             <!-- Page Content -->
             <div class="col px-3 px-md-5 pe-md-4 pe-3 insubg">
                 <div class="">
-                @yield('content')
-            </div>
+                    @yield('content')
+                </div>
             </div>
         </div>
     </div>
+
+    <script>
+        $(document).ready(function(){
+            setTimeout(()=>{
+                $('#Preloder').addClass('loaded');
+            },500);
+            setTimeout(()=>{
+                $('#Preloder').remove('loaded');
+            },3000);
+        })
+    </script>
+
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.1/jquery.min.js"
         integrity="sha512-aVKKRRi/Q/YV+4mjoKBsE4x3H+BkegoM/em46NNlCqNTmUYADjBbeNefNxYV7giUp0VxICtqdrbqU7iVaeZNXA=="
         crossorigin="anonymous" referrerpolicy="no-referrer"></script>
@@ -90,7 +135,7 @@
         integrity="sha512-FHZVRMUW9FsXobt+ONiix6Z0tIkxvQfxtCSirkKc5Sb4TKHmqq1dZa8DphF0XqKb3ldLu/wgMa8mT6uXiLlRlw=="
         crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
+    
 </body>
 
 </html>
-

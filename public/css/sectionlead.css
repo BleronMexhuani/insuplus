@@ -76,6 +76,8 @@ input:focus-visible {
     box-shadow: none !important;
 }
 
+
+
 .input-box {
     display: flex;
     align-items: center;
