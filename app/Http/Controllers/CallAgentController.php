@@ -116,7 +116,7 @@ class CallAgentController extends Controller
             "anrufdatum",
             "zeit_anrufe",
             "koment_der_geburtsdatum",
-            "koment_der_Können"
+            "koment_der_Konnen"
         ));
 
         FeedBack::create([
