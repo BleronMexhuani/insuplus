@@ -27,10 +27,13 @@
                                 <span class="subtitleform">Anrede</span>
                             </div>
                             <div class="mt-2 mb-3">
-                                <select name="anrede" id="anrede" class="form-select inputform " id="">
+                                <select name="anrede" id="anrede" class="form-select inputform ">
                                     <option value="male">Male</option>
                                     <option value="female">Female</option>
                                 </select>
+                                <script>
+                                    $("#anrede").val('{{ $lead->anrede }}').change()
+                                </script>
                             </div>
                         </div>
                         <div class="col-12 col-md-4">
@@ -97,7 +100,7 @@
                             </div>
                             <div class="mt-2 mb-4">
                                 <input class="inputform" type="text" value="{{ $lead->region }}" name="region"
-                                    placeholder=" Tessin (Italy) " />
+                                    placeholder="Tessin (Italy) " />
                             </div>
                         </div>
                     </div>
@@ -126,7 +129,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="ccol-12 col-md-4 mt-2 mb-5 ">
+                        <div class="col-12 col-md-4 mt-2 mb-2 mb-md-3">
                             <div class="">
                                 <span class="subtitleform">Email </span>
                             </div>
@@ -206,34 +209,38 @@
                                 <span class="subtitleform">Rechtsschutz </span>
                             </div>
                             <div class="mt-2">
-                                <select class="form-select selectinput" name="rechtsschutz" id="rechtsschutz" required>
-                                    <option value="" ></option>
-                                    <option value="Allianz"> Allianz</option>
-                                    <option value="Assista"> Assista</option>
-                                    <option value="Axa-Arag Rechtsschutz"> Axa-Arag Rechtsschutz</option>
-                                    <option value="Cap"> Cap</option>
-                                    <option value="Coop"> Coop</option>
-                                    <option value="Dextra Rechtsschutz"> Dextra Rechtsschutz</option>
-                                    <option value="Die Mobiliar"> Die Mobiliar</option>
-                                    <option value="Generali"> Generali</option>
-                                    <option value="Keine"> Keine</option>
-                                    <option value="Keine auskunft"> Keine auskunft</option>
-                                    <option value="Orion"> Orion</option>
-                                    <option value="Protekta Rechtsschutz"> Protekta Rechtsschutz</option>
-                                    <option value="TCS"> TCS</option>
-                                    <option value="Zürich"> Zürich</option>
-                                </select>
-                                <script>
-                                    $("#rechtsschutz").val('{{ $lead->rechtsschutz }}').change();
-                                </script>
-                              
+                                <div class="mt-2">
+                                    <select class="form-select selectinput" name="rechtsschutz" id="rechtsschutz"
+                                        required>
+                                        <option value=""></option>
+                                        <option value="Allianz"> Allianz</option>
+                                        <option value="Assista"> Assista</option>
+                                        <option value="Axa-Arag Rechtsschutz"> Axa-Arag Rechtsschutz</option>
+                                        <option value="Cap"> Cap</option>
+                                        <option value="Coop"> Coop</option>
+                                        <option value="Dextra Rechtsschutz"> Dextra Rechtsschutz</option>
+                                        <option value="Die Mobiliar"> Die Mobiliar</option>
+                                        <option value="Generali"> Generali</option>
+                                        <option value="Keine"> Keine</option>
+                                        <option value="Keine auskunft"> Keine auskunft</option>
+                                        <option value="Orion"> Orion</option>
+                                        <option value="Protekta Rechtsschutz"> Protekta Rechtsschutz</option>
+                                        <option value="TCS"> TCS</option>
+                                        <option value="Zürich"> Zürich</option>
+                                    </select>
+                                    <script>
+                                        $("#rechtsschutz").val('{{ $lead->rechtsschutz }}').change();
+                                    </script>
+
+                                </div>
                             </div>
                             <div class="mt-4">
                                 <span class="subtitleform">Ansprechspartner </span>
                             </div>
                             <div class="mt-2">
-                                <select class="form-select selectinput" name="ansprechspartner" id="ansprechspartner"  required>
-                                    <option value="" ></option>
+                                <select class="form-select selectinput" name="ansprechspartner" id="ansprechspartner"
+                                    required>
+                                    <option value=""></option>
                                     <option value="Berater"> Berater</option>
                                     <option value="Familienkreis"> Familienkreis</option>
                                     <option value="Keine"> Keine</option>
@@ -243,11 +250,12 @@
                                 </script>
                             </div>
                             <div class="mt-4">
-                                <span class="subtitleform">Zufriedenheit</span>
+                                <span class="subtitleform ">Zufriedenheit</span>
                             </div>
                             <div class="mt-2">
-                                <select class="form-select selectinput" name="zufriedenheit" id="ZufriedenheitSelect" required>
-                                    <option value="" ></option>
+                                <select class="form-select selectinput" name="zufriedenheit" id="ZufriedenheitSelect"
+                                    required>
+                                    <option value=""></option>
                                     <option value="Nicht zufrieden"> Nicht zufrieden</option>
                                     <option value="Zufrieden"> Zufrieden</option>
                                 </select>
@@ -256,11 +264,12 @@
                                 </script>
                             </div>
                             <div class="mt-4">
-                                <span class="subtitleform">Erreichbarkeit </span>
+                                <span class="subtitleform ">Erreichbarkeit </span>
                             </div>
                             <div class="mt-2">
-                                <select class="form-select selectinput" name="erreichbarkeit" id="ErreichbarkeitSelect" required>
-                                    <option value="" ></option>
+                                <select class="form-select selectinput" name="erreichbarkeit" id="ErreichbarkeitSelect"
+                                    required>
+                                    <option value=""></option>
                                     <option value="Abend"> Abend</option>
                                     <option value="Immer"> Immer</option>
                                     <option value="Mittag"> Mittag</option>
@@ -271,14 +280,14 @@
                                 <script>
                                     $("#ErreichbarkeitSelect").val('{{ $lead->erreichbarkeit }}').change();
                                 </script>
-                               
+
                             </div>
                             <div class="mt-4">
                                 <span class="subtitleform">Hausrat </span>
                             </div>
                             <div class="mt-2">
                                 <select class="form-select selectinput" name="hausrat" id="HausratSelect" required>
-                                    <option value="" ></option>
+                                    <option value=""></option>
                                     <option value="Allianz"> Allianz</option>
                                     <option value="Appenzeller Versicherung"> Appenzeller Versicherung</option>
                                     <option value="Aquilana"> Aquilana</option>
@@ -327,6 +336,7 @@
                             <div class="mt-4">
                                 <span class="subtitleform">Krankenkasse </span>
                             </div>
+
                             <div class="mt-2">
                                 <select class="form-select selectinput" name="krankenkasse" id="krankenkasse" required>
                                     <option value=""></option>
@@ -392,7 +402,7 @@
                             </div>
                             <div class="mt-2">
                                 <select class="form-select selectinput" name="sparen" id="sparen" required>
-                                    <option value="" ></option>
+                                    <option value=""></option>
                                     <option value="Ja"> Ja</option>
                                     <option value="Manchmal"> Manchmal</option>
                                     <option value="Nein"> Nein</option>
@@ -400,14 +410,14 @@
                                 <script>
                                     $("#sparen").val('{{ $lead->sparen }}').change();
                                 </script>
-                                
                             </div>
                             <div class="mt-4">
                                 <span class="subtitleform">Anzahl personen </span>
                             </div>
                             <div class="mt-2">
-                                <select class="form-select selectinput" name="anzahl_personen" id="AnzahlPersonenSelect" required>
-                                    <option value="" ></option>
+                                <select class="form-select selectinput" name="anzahl_personen" id="AnzahlPersonenSelect"
+                                    required>
+                                    <option value=""></option>
                                     <option value="1"> 1</option>
                                     <option value="2"> 2</option>
                                     <option value="3"> 3</option>
@@ -422,30 +432,29 @@
                                 <script>
                                     $("#AnzahlPersonenSelect").val('{{ $lead->anzahl_personen }}').change();
                                 </script>
-                                
                             </div>
                             <div class="mt-4 ">
                                 <span class="subtitleform">Gewünschte Beratung </span>
                             </div>
                             <div class="mt-2">
-                                <select class="form-select selectinput" name="gewunschte_beratung" id="gewunschte_beratung">
+                                <select class="form-select selectinput" name="gewunschte_beratung"
+                                    id="gewunschte_beratung">
                                     <option value="" selected></option>
                                     <option value="Berater (Persönlicher Termin)"> Berater (Persönlicher Termin)</option>
-                                    <option value="Online (Digital via Mail & online Abschluss)"> 
+                                    <option value="Online (Digital via Mail & online Abschluss)">
                                         Online (Digital via Mail & online Abschluss)
                                     </option>
                                 </select>
                                 <script>
                                     $("#gewunschte_beratung").val('{{ $lead->gewunschte_beratung }}').change();
                                 </script>
-                               
                             </div>
                             <div class="mt-4">
                                 <span class="subtitleform">3.Säule </span>
                             </div>
-                            <div class="mt-2 mb-3">
+                            <div class="mt-2 mb-4">
                                 <select class="form-select selectinput" name="saule" id="3SauleSelect" required>
-                                    <option value="" ></option>
+                                    <option value=""></option>
                                     <option value="Allianz"> Allianz</option>
                                     <option value="Axa"> Axa</option>
                                     <option value="Baloise"> Baloise</option>
@@ -472,7 +481,6 @@
                                 <script>
                                     $("#3SauleSelect").val('{{ $lead->saule }}').change();
                                 </script>
-                                
                             </div>
                         </div>
                         <div class="col-4">
@@ -480,22 +488,22 @@
                                 <span class="subtitleform">Gesundheitzustand </span>
                             </div>
                             <div class="mt-2">
-                                <select class="form-select selectinput" name="gesundheitzustand" id="gesundheitzustand" required>
-                                    <option value="" ></option>
+                                <select class="form-select selectinput" name="gesundheitzustand" id="gesundheitzustand"
+                                    required>
+                                    <option value=""></option>
                                     <option value="Gesund"> Gesund</option>
                                     <option value="Nicht Gesund"> Nicht Gesund</option>
                                 </select>
                                 <script>
                                     $("#gesundheitzustand").val('{{ $lead->gesundheitzustand }}').change();
                                 </script>
-                               
                             </div>
                             <div class="mt-4">
                                 <span class="subtitleform">Änderung bei KK </span>
                             </div>
                             <div class="mt-2">
                                 <select class="form-select selectinput" name="anderung" id="anderung" required>
-                                    <option value="" ></option>
+                                    <option value=""></option>
                                     <option value="1 jahr"> 1 jahr</option>
                                     <option value="2 jahre"> 2 jahre</option>
                                     <option value="3 jahre oder mehr"> 3 jahre oder mehr</option>
@@ -510,8 +518,9 @@
                                 <span class="subtitleform">Arberistätig </span>
                             </div>
                             <div class="mt-2">
-                                <select class="form-select selectinput" name="arberistatig" id="ArbeitstatigSelect" required>
-                                    <option value="" ></option>
+                                <select class="form-select selectinput" name="arberistatig" id="ArbeitstatigSelect"
+                                    required>
+                                    <option value=""></option>
                                     <option value="Ja"> Ja</option>
                                     <option value="Nein"> Nein</option>
                                     <option value="Temporär"> Temporär</option>
@@ -525,7 +534,8 @@
                                 <span class="subtitleform">Autoversicherung</span>
                             </div>
                             <div class="mt-2 ">
-                                <select class="form-select selectinput" name="autoversicherung" id="AutoversicherungSelect" required>
+                                <select class="form-select selectinput" name="autoversicherung"
+                                    id="AutoversicherungSelect" required>
                                     <option value=""></option>
                                     <option value="Allianz"> Allianz</option>
                                     <option value="Appenzeller Versicherung"> Appenzeller Versicherung</option>
@@ -565,7 +575,7 @@
                                 <script>
                                     $("#AutoversicherungSelect").val('{{ $lead->autoversicherung }}').change();
                                 </script>
-                              
+
                             </div>
                         </div>
                     </div>
@@ -575,11 +585,12 @@
                         </div>
                         <div class="col-12 col-md-4 mt-3 mb-4">
                             <div class="">
-                                <span class="subtitleform">Kontaktieren erwúnscht </span>
+                                <span class="subtitleform ">Kontaktieren erwúnscht </span>
                             </div>
                             <div class="mt-2">
-                                <select class="form-select selectinput" name="kontaktieren_erwunscht"  id="kontaktieren_erwunscht" required>
-                                    <option value="" ></option>
+                                <select class="form-select selectinput" name="kontaktieren_erwunscht"
+                                    id="kontaktieren_erwunscht" required>
+                                    <option value=""></option>
                                     <option value="Ja"> Ja</option>
                                     <option value="Nein"> Nein</option>
                                 </select>
@@ -609,114 +620,99 @@
                                 <input type="radio" name="feedback_status" value="Hat schon gewechselt"
                                     style="display: none;"> Hat schon gewechselt
                             </label>
-                            <!-- <button class="tablinks" type="button" onclick="openCity(event, 'Hat schon gewechselt')">Hat schon gewechselt</button> -->
                         </div>
                         <div class="col-auto">
                             <label class="tablinks" onclick="openCity(event, 'Kein Interesse')">
                                 <input type="radio" name="feedback_status" value="Kein Interesse"
                                     style="display: none;"> Kein Interesse
                             </label>
-                            <!-- <button class="tablinks" type="button" onclick="openCity(event, 'Kein Interesse')">Kein Interesse</button> -->
                         </div>
                         <div class="col-auto">
                             <label class="tablinks" onclick="openCity(event, 'Krank')">
                                 <input type="radio" name="feedback_status" value="Krank" style="display: none;">Krank
                             </label>
-                            <!-- <button class="tablinks" type="button" onclick="openCity(event, 'Krank')">Krank</button> -->
                         </div>
                         <div class="col-auto">
                             <label class="tablinks" onclick="openCity(event, 'Kunde bereits terminiert')">
                                 <input type="radio" name="feedback_status" value="Kunde bereits terminiert"
                                     style="display: none;">Kunde bereits terminiert
                             </label>
-                            <!-- <button class="tablinks" type="button" onclick="openCity(event, 'Kunde bereits terminiert')">Kunde bereits terminiert</button> -->
                         </div>
                         <div class="col-auto">
                             <label class="tablinks" onclick="openCity(event, 'Nicht Brauchbar')">
                                 <input type="radio" name="feedback_status" value="Nicht Brauchbar"
                                     style="display: none;">Nicht Brauchbar
                             </label>
-                            <!-- <button class="tablinks" type="button" onclick="openCity(event, 'Nicht Brauchbar')">Nicht Brauchbar</button> -->
                         </div>
                         <div class="col-auto">
                             <label class="tablinks" onclick="openCity(event, 'Nicht Erreicht')">
                                 <input type="radio" name="feedback" value="Nicht Erreicht"
                                     style="display: none;">Nicht Erreicht
                             </label>
-                            <!-- <button class="tablinks" type="button" onclick="openCity(event, 'Nicht Erreicht')">Nicht Erreicht</button> -->
                         </div>
                         <div class="col-auto">
                             <label class="tablinks" onclick="openCity(event, 'Online-Offerte')">
                                 <input type="radio" name="feedback_status" value="Online-Offerte"
                                     style="display: none;">Online-Offerte
                             </label>
-                            <!-- <button class="tablinks" type="button" onclick="openCity(event, 'Online-Offerte')">Online-Offerte</button> -->
                         </div>
                         <div class="col-auto">
+
                             <label class="tablinks" onclick="openCity(event, 'Später Anrufen')">
                                 <input type="radio" name="feedback_status" value="Später Anrufen"
                                     style="display: none;">Später Anrufen
                             </label>
-                            <!-- <button class="tablinks" type="button" onclick="openCity(event, 'Später Anrufen')">Später Anrufen</button> -->
                         </div>
                         <div class="col-auto">
                             <label class="tablinks" onclick="openCity(event, 'Terminiert')">
                                 <input type="radio" name="feedback_status" value="Terminiert"
                                     style="display: none;">Terminiert
                             </label>
-                            <!-- <button class="tablinks" type="button" onclick="openCity(event, 'Terminiert')">Terminiert</button> -->
                         </div>
 
                         <div id="Falsche Nummer" class="tabcontent">
                             <div class="mt-5">
                                 <hr>
+
                             </div>
                         </div>
-
                     </div>
                     <div id="Hat schon gewechselt" class="tabcontent">
                         <div class="mt-5">
                             <hr>
+
                         </div>
                     </div>
-
                     <div id="Kein Interesse" class="tabcontent">
                         <div class="mt-5">
                             <hr>
                         </div>
                     </div>
-
                     <div id="Krank" class="tabcontent">
                         <div class="mt-5">
-
                             <hr>
                         </div>
                     </div>
-
                     <div id="Kunde bereits terminiert" class="tabcontent">
                         <div class="mt-5">
                             <hr>
                         </div>
                     </div>
-
                     <div id="Nicht Brauchbar" class="tabcontent">
                         <div class="mt-5">
                             <hr>
                         </div>
                     </div>
-
                     <div id="Nicht Erreicht" class="tabcontent">
                         <div class="mt-5">
                             <hr>
                         </div>
                     </div>
-
                     <div id="Online-Offerte" class="tabcontent">
                         <div class="mt-5">
                             <hr>
                         </div>
                     </div>
-
                     <div id="Später Anrufen" class="tabcontent">
                         <div class="mt-5">
                             <hr>
@@ -726,7 +722,9 @@
                                         <span class="subtitleform">Anrufdatum</span>
                                     </div>
                                     <div class="mt-2">
-                                        <input class="inputform" type="date" name="anrufdatum" placeholder="" />
+                                        <input class="inputform" type="date"
+                                            value="{{ $last_feedback->anrufdatum }}" name="anrufdatum"
+                                            placeholder="" />
                                     </div>
                                 </div>
                                 <div class="col mb-3">
@@ -734,7 +732,8 @@
                                         <span class="subtitleform">Zeit für Annrufe</span>
                                     </div>
                                     <div class="mt-2">
-                                        <select name="zeitfuranrufen" class="form-select inputform mt-2 ">
+                                        <select name="zeitfuranrufen" id="zeitfuranrufeni"
+                                            class="form-select inputform mt-2 ">
                                             <option value=""></option>
                                             <option value="08:00">
                                                 08 : 00 </option>
@@ -851,6 +850,9 @@
                                             <option value="22:00">
                                                 22 : 00 </option>
                                         </select>
+                                        <script>
+                                            $("#zeitfuranrufeni").val('{{ $last_feedback->zeit_anrufe }}').change();
+                                        </script>
                                     </div>
                                 </div>
                             </div>
@@ -869,7 +871,9 @@
                                         <span class="subtitleform">Termindatum</span>
                                     </div>
                                     <div class="mt-2">
-                                        <input class="inputform" type="date" name="termindatum" placeholder="" />
+                                        <input class="inputform" type="date"
+                                            value="{{ $last_feedback->termin_datum }}" name="termindatum"
+                                            placeholder="" />
                                     </div>
                                 </div>
                                 <div class="col mb-3">
@@ -877,8 +881,7 @@
                                         <span class="subtitleform">Terminzeit</span>
                                     </div>
                                     <div class="mt-2">
-
-                                        <select name="terminzeit" class="form-select inputform mt-2 ">
+                                        <select name="terminzeit" id="terminzeit" class="form-select inputform mt-2 ">
                                             <option value=""></option>
                                             <option value="08:00">
                                                 08 : 00 </option>
@@ -995,6 +998,9 @@
                                             <option value="22:00">
                                                 22 : 00 </option>
                                         </select>
+                                        <script>
+                                            $("#terminzeit").val('{{ $last_feedback->terminzeit }}').change();
+                                        </script>
                                     </div>
                                 </div>
                             </div>
@@ -1004,7 +1010,10 @@
                                         Namen und Geburtsdaten Ihrer Familienangehörigen (Mitbewohner)?</span>
                                 </div>
                                 <div class="mt-2">
-                                    <textarea name="koment_der_geburtsdatum" class="inputformm" id="" cols="30" rows="3"></textarea>
+                                    <textarea name="koment_der_geburtsdatum" value="{{ $last_feedback->mitbewhoner }}" class="inputformm"
+                                        id="" cols="30" rows="3">{{ $last_feedback->mitbewhoner }}</textarea>
+                                    {{-- <input class="inputformm" type="text" name="koment_der_geburtsdatum"
+                                        placeholder="" /> --}}
                                 </div>
                             </div>
                             <div>
@@ -1013,10 +1022,14 @@
                                         Teil Ihrer Familie zu versichern?</span>
                                 </div>
                                 <div class="mt-2">
-                                    <select name="koment_der_Können" class="form-select inputform mt-2 ">
+                                    <select name="koment_der_Konnen" id="koment_der_Konnen"
+                                        class="form-select inputform mt-2 ">
                                         <option value="Ja">Ja</option>
                                         <option value="Nein">Nein</option>
                                     </select>
+                                    <script>
+                                        $("#koment_der_Konnen").val('{{ $last_feedback->person_krank }}').change();
+                                    </script>
                                 </div>
                             </div>
                             <div class="mt-5">
@@ -1031,12 +1044,15 @@
                                 <div class="mt-4">
                                     <span class="subtitleform">Bestätigungsstatus</span>
                                 </div>
-                                <select name="bestatigungs_status" class="form-select inputform mt-2 ">
+                                <select name="bestatigungs_status" id="besta" class="form-select inputform mt-2 ">
                                     <option value="Autoversicherung">Autoversicherung</option>
                                     <option value="Bestätigt">Bestätigt</option>
                                     <option value="Krankenkasse">Krankenkasse</option>
                                     <option value="Nicht bestätigt">Nicht bestätigt</option>
                                 </select>
+                                <script>
+                                    $("#besta").val('{{ $last_feedback->bestatigungsstatus }}').change();
+                                </script>
                             </div>
                         </div>
                         <div class="col mb-3">
@@ -1044,10 +1060,14 @@
                                 <div class="mt-4">
                                     <span class="subtitleform">Kontaktieren erwúnscht </span>
                                 </div>
-                                <select name="kontaktieren_erwunscht_2" class="form-select inputform mt-2">
+                                <select name="kontaktieren_erwunscht_2" id="kontaktieren_erwunscht_2"
+                                    class="form-select inputform mt-2">
                                     <option value="Ja">Ja</option>
                                     <option value="Nein">Nein</option>
                                 </select>
+                                <script>
+                                    $("#kontaktieren_erwunscht_2").val('{{ $lead->kontaktieren_erwunscht }}').change();
+                                </script>
                             </div>
                         </div>
                     </div>
@@ -1057,10 +1077,11 @@
                         <div class="mt-4">
                             <span class="subtitleform">Bemerkung </span>
                         </div>
-                        <input class="inputform mt-2" type="text" id="text" name="bemerkung" placeholder="">
+                        <input class="inputform mt-2" value="{{ $last_feedback->bemerkung }}" type="text"
+                            id="text" name="bemerkung" placeholder="">
                     </div>
 
-                    <div class=" d-flex justify-content-end mt-5 mt-md-5">
+                    <div class="pull-right d-flex justify-content-end mt-5 mt-md-5">
                         <button class="btn btn-outline-danger  me-3">Abbrechen</button>
                         <button class="btn btn-outline-success" type="submit">Speichern</button>
                     </div>
@@ -1084,6 +1105,15 @@
                     document.getElementById('kontaktieren_erwunscht_2').style.display = "block"
 
                 }
+                $(document).ready(function() {
+                    const feedbackStatusInputs = document.querySelectorAll('input[name="feedback_status"]');
+
+                    feedbackStatusInputs.forEach(input => {
+                        if (input.value === '{{ $lead->feedback_status }}') {
+                            input.click();
+                        }
+                    });
+                })
             </script>
 
             <div>

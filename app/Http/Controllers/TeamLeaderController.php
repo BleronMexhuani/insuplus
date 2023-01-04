@@ -17,18 +17,19 @@ class TeamLeaderController extends Controller
     public function getLeadById($id)
     {
         $lead =  Lead::find($id);
+        $last_feedback = $this->getLastFeedBack($id);
 
-
-            $feedbacks = TeamLeaderController::getAllFeedBacks($id);
-            return view('roles.team_leader.lead_info', compact('lead', 'feedbacks'));
-      
-
+        $feedbacks = TeamLeaderController::getAllFeedBacks($id);
+        return view('roles.team_leader.lead_info', compact('lead', 'feedbacks', 'last_feedback'));
     }
     public function getAllFeedBacks($id)
     {
         return FeedBack::where('lead_id', $id)->get();
     }
-
+    public function getLastFeedBack($id)
+    {
+        return FeedBack::where('lead_id', $id)->latest()->first();
+    }
     public function leads(Request $req)
     {
         $team = Team::where('team_leaders', Auth::id())->get();
@@ -91,7 +92,7 @@ class TeamLeaderController extends Controller
 
         $leads->appends($_GET)->links();
         $callagents = User::whereIn('id', $call_agents)->get();
-        
+
         return view('roles.team_leader.leads', compact('leads', 'callagents'));
     }
     public function assignLead(Request $req)
