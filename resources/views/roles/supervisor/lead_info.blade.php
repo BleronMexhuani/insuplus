@@ -660,7 +660,6 @@
 
                             <label class="tablinks" onclick="openCity(event, 'Später Anrufen')">
                                 <input type="radio" name="feedback_status" value="Später Anrufen"
-
                                     style="display: none;">Später Anrufen
                             </label>
                         </div>
@@ -723,7 +722,9 @@
                                         <span class="subtitleform">Anrufdatum</span>
                                     </div>
                                     <div class="mt-2">
-                                        <input class="inputform" type="date" name="anrufdatum" placeholder="" />
+                                        <input class="inputform" type="date"
+                                            value="{{ $last_feedback->anrufdatum }}" name="anrufdatum"
+                                            placeholder="" />
                                     </div>
                                 </div>
                                 <div class="col mb-3">
@@ -731,7 +732,8 @@
                                         <span class="subtitleform">Zeit für Annrufe</span>
                                     </div>
                                     <div class="mt-2">
-                                        <select name="zeitfuranrufen" class="form-select inputform mt-2 ">
+                                        <select name="zeitfuranrufen" id="zeitfuranrufeni"
+                                            class="form-select inputform mt-2 ">
                                             <option value=""></option>
                                             <option value="08:00">
                                                 08 : 00 </option>
@@ -848,7 +850,9 @@
                                             <option value="22:00">
                                                 22 : 00 </option>
                                         </select>
-
+                                        <script>
+                                            $("#zeitfuranrufeni").val('{{ $last_feedback->zeit_anrufe }}').change();
+                                        </script>
                                     </div>
                                 </div>
                             </div>
@@ -867,7 +871,9 @@
                                         <span class="subtitleform">Termindatum</span>
                                     </div>
                                     <div class="mt-2">
-                                        <input class="inputform" type="date" name="termindatum" placeholder="" />
+                                        <input class="inputform" type="date"
+                                            value="{{ $last_feedback->termin_datum }}" name="termindatum"
+                                            placeholder="" />
                                     </div>
                                 </div>
                                 <div class="col mb-3">
@@ -875,7 +881,7 @@
                                         <span class="subtitleform">Terminzeit</span>
                                     </div>
                                     <div class="mt-2">
-                                        <select name="terminzeit" class="form-select inputform mt-2 ">
+                                        <select name="terminzeit" id="terminzeit" class="form-select inputform mt-2 ">
                                             <option value=""></option>
                                             <option value="08:00">
                                                 08 : 00 </option>
@@ -992,6 +998,9 @@
                                             <option value="22:00">
                                                 22 : 00 </option>
                                         </select>
+                                        <script>
+                                            $("#terminzeit").val('{{ $last_feedback->terminzeit }}').change();
+                                        </script>
                                     </div>
                                 </div>
                             </div>
@@ -1001,7 +1010,8 @@
                                         Namen und Geburtsdaten Ihrer Familienangehörigen (Mitbewohner)?</span>
                                 </div>
                                 <div class="mt-2">
-                                    <textarea name="koment_der_geburtsdatum" class="inputformm" id="" cols="30" rows="3"></textarea>
+                                    <textarea name="koment_der_geburtsdatum" value="{{ $last_feedback->mitbewhoner }}" class="inputformm"
+                                        id="" cols="30" rows="3">{{ $last_feedback->mitbewhoner }}</textarea>
                                     {{-- <input class="inputformm" type="text" name="koment_der_geburtsdatum"
                                         placeholder="" /> --}}
                                 </div>
@@ -1012,10 +1022,14 @@
                                         Teil Ihrer Familie zu versichern?</span>
                                 </div>
                                 <div class="mt-2">
-                                    <select name="koment_der_Können" class="form-select inputform mt-2 ">
+                                    <select name="koment_der_Konnen" id="koment_der_Konnen"
+                                        class="form-select inputform mt-2 ">
                                         <option value="Ja">Ja</option>
                                         <option value="Nein">Nein</option>
                                     </select>
+                                    <script>
+                                        $("#koment_der_Konnen").val('{{ $last_feedback->person_krank }}').change();
+                                    </script>
                                 </div>
                             </div>
                             <div class="mt-5">
@@ -1030,12 +1044,15 @@
                                 <div class="mt-4">
                                     <span class="subtitleform">Bestätigungsstatus</span>
                                 </div>
-                                <select name="bestatigungs_status" class="form-select inputform mt-2 ">
+                                <select name="bestatigungs_status" id="besta" class="form-select inputform mt-2 ">
                                     <option value="Autoversicherung">Autoversicherung</option>
                                     <option value="Bestätigt">Bestätigt</option>
                                     <option value="Krankenkasse">Krankenkasse</option>
                                     <option value="Nicht bestätigt">Nicht bestätigt</option>
                                 </select>
+                                <script>
+                                    $("#besta").val('{{ $last_feedback->bestatigungsstatus }}').change();
+                                </script>
                             </div>
                         </div>
                         <div class="col mb-3">
@@ -1043,10 +1060,14 @@
                                 <div class="mt-4">
                                     <span class="subtitleform">Kontaktieren erwúnscht </span>
                                 </div>
-                                <select name="kontaktieren_erwunscht_2" class="form-select inputform mt-2">
+                                <select name="kontaktieren_erwunscht_2" id="kontaktieren_erwunscht_2"
+                                    class="form-select inputform mt-2">
                                     <option value="Ja">Ja</option>
                                     <option value="Nein">Nein</option>
                                 </select>
+                                <script>
+                                    $("#kontaktieren_erwunscht_2").val('{{ $lead->kontaktieren_erwunscht }}').change();
+                                </script>
                             </div>
                         </div>
                     </div>
@@ -1056,7 +1077,8 @@
                         <div class="mt-4">
                             <span class="subtitleform">Bemerkung </span>
                         </div>
-                        <input class="inputform mt-2" type="text" id="text" name="bemerkung" placeholder="">
+                        <input class="inputform mt-2" value="{{ $last_feedback->bemerkung }}" type="text"
+                            id="text" name="bemerkung" placeholder="">
                     </div>
 
                     <div class="pull-right d-flex justify-content-end mt-5 mt-md-5">
@@ -1083,6 +1105,15 @@
                     document.getElementById('kontaktieren_erwunscht_2').style.display = "block"
 
                 }
+                $(document).ready(function() {
+                    const feedbackStatusInputs = document.querySelectorAll('input[name="feedback_status"]');
+
+                    feedbackStatusInputs.forEach(input => {
+                        if (input.value === '{{ $lead->feedback_status }}') {
+                            input.click();
+                        }
+                    });
+                })
             </script>
 
             <div>
