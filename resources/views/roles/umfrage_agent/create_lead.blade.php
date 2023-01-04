@@ -6,6 +6,10 @@
         .was-validated .inputgroupright {
             border-color: red;
         }
+
+        .was-validated .inputform:valid {
+            border-color: green;
+        }
     </style>
     <form class="needs-validation" action="{{ route('create_lead') }}" onsubmit="return validateForm(event )" id="forma"
         method="POST" onkeydown="return event.key != 'Enter';" enctype="multipart/form-data" novalidate>
@@ -77,8 +81,8 @@
                                         aria-label="Username" required>
                                 </div>
                                 <div>
-                                    <input type="text" name="hause_nummer" class="inputform"
-                                        placeholder="Haus Nummer" required aria-label="Haus Nummer">
+                                    <input type="text" name="hause_nummer" class="inputform" placeholder="Haus Nummer"
+                                        required aria-label="Haus Nummer">
                                 </div>
                             </div>
                         </div>
@@ -140,8 +144,10 @@
                                     <span class="input-group-text" id="basic-addon1">+41</span>
                                 </div>
                                 <div>
-                                    <input type="text" class="inputform" pattern="^(?:0|\(?\)?\s?|41\s?)(21|22|24|26|27|31|32|33|34|41|43|44|51|52|55|56|58|61|62|71|74|75|76|77|78|79|81|91)(?:[\.\-\s]?\d\d\d)(?:[\.\-\s]?\d\d){2}$" placeholder="" name="handy_nummer"
-                                        aria-label="" aria-describedby="basic-addon1">
+                                    <input type="text" class="inputform"
+                                        pattern="^(?:0|\(?\)?\s?|41\s?)(21|22|24|26|27|31|32|33|34|41|43|44|51|52|55|56|58|61|62|71|74|75|76|77|78|79|81|91)(?:[\.\-\s]?\d\d\d)(?:[\.\-\s]?\d\d){2}$"
+                                        placeholder="" name="handy_nummer" aria-label=""
+                                        aria-describedby="basic-addon1">
                                 </div>
                             </div>
                         </div>

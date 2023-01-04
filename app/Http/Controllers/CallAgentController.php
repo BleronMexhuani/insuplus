@@ -49,7 +49,7 @@ class CallAgentController extends Controller
 
                 //This is only for the moment , we can also add umfrage agents maybe later
                 $lead->whereIn('assign_to_id_call', $call_agents);
-            } else {    
+            } else {
                 $value_on_array  = $value;
 
                 if ($key == 'sprachen') {
@@ -63,31 +63,35 @@ class CallAgentController extends Controller
                 } else {
                     $lead->where(
                         function ($q) use ($key, $value_on_array) {
-                            if ($value_on_array[0] != null){
-                            $q->whereIn($key, $value_on_array);
+                            if ($value_on_array[0] != null) {
+                                $q->whereIn($key, $value_on_array);
                             }
                             if ($key == 'feedback_status' && in_array('NULL', $value_on_array)) {
                                 $q->orWhereNull('feedback_status');
                             }
                         }
                     );
-                 
                 }
             }
         }
 
         return $lead->orderBy('created_at', 'desc')->paginate(25);
     }
+
     public function getLeadById($id)
     {
         $lead =  Lead::find($id);
-
+        $last_feedback = $this->getLastFeedBack($id);
         if ($lead->assign_to_id_call == Auth::user()->id) {
             $feedbacks = CallAgentController::getAllFeedBacks($id);
-            return view('roles.call_agent.lead_info', compact('lead', 'feedbacks'));
+            return view('roles.call_agent.lead_info', compact('lead', 'feedbacks', 'last_feedback'));
         } else {
             return redirect()->back();
         }
+    }
+    public function getLastFeedBack($id)
+    {
+        return FeedBack::where('lead_id', $id)->latest()->first();
     }
     public function getAllFeedBacks($id)
     {
@@ -121,12 +125,12 @@ class CallAgentController extends Controller
             'lead_id' => $lead_id,
             'termin_datum' => $req->termindatum,
             'terminzeit' => $req->terminzeit,
-            "mitbewhoner" => $req->mitbewhoner,
-            "person_krank" => $req->person_krank,
+            "mitbewhoner" => $req->koment_der_geburtsdatum,
+            "person_krank" => $req->koment_der_Konnen,
             "vertragdatum" => $req->vertragdatum,
-            "bestatigungsstatus" => $req->bestatigungsstatus,
+            "bestatigungsstatus" => $req->bestatigungs_status,
             "anrufdatum" => $req->anrufdatum,
-            "zeit_anrufe" => $req->zeit_anrufe,
+            "zeit_anrufe" => $req->zeitfuranrufen,
             "bemerkung" => $req->bemerkung
         ]);
         if ($req->feedback_status == 'Terminiert' || $req->feedback_status == 'Online-Offerte') {
@@ -137,23 +141,24 @@ class CallAgentController extends Controller
         return redirect('/leads');
     }
 
-    public function chart(Request $req){
-        if($req->from === null && $req->from === null ){
+    public function chart(Request $req)
+    {
+        if ($req->from === null && $req->from === null) {
             $leads = Lead::Select('bestatigungs_status')
-            ->selectRaw('bestatigungs_status,COUNT(*) as number')
-            ->where('assign_to_id_call', Auth::user()->id)
-            ->groupBy('bestatigungs_status')
-            ->get();
-        }else{
+                ->selectRaw('bestatigungs_status,COUNT(*) as number')
+                ->where('assign_to_id_call', Auth::user()->id)
+                ->groupBy('bestatigungs_status')
+                ->get();
+        } else {
             $leads = Lead::Select('bestatigungs_status')
-            ->selectRaw('bestatigungs_status,COUNT(*) as number')
-            ->whereBetween('created_at',[$req->from , $req->to])
-            ->where('assign_to_id_call', Auth::user()->id)
-            ->groupBy('bestatigungs_status')
-            ->get();
+                ->selectRaw('bestatigungs_status,COUNT(*) as number')
+                ->whereBetween('created_at', [$req->from, $req->to])
+                ->where('assign_to_id_call', Auth::user()->id)
+                ->groupBy('bestatigungs_status')
+                ->get();
         }
-        $array=[];
-        foreach($leads as $lead) {
+        $array = [];
+        foreach ($leads as $lead) {
             array_push($array, [$lead->bestatigungs_status, $lead->number]);
         }
         return $array;

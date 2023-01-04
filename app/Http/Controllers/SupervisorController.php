@@ -122,9 +122,8 @@ class SupervisorController extends Controller
                     $lead->where(
                         function ($q) use ($key, $value_on_array) {
                             if ($value_on_array[0] != null) {
-                       
+
                                 $q->whereIn($key, $value_on_array);
-                                
                             }
                             if ($key == 'feedback_status' && in_array('NULL', $value_on_array)) {
                                 $q->orWhereNull('feedback_status');
@@ -191,12 +190,17 @@ class SupervisorController extends Controller
     {
         $lead = Lead::find($id);
         $feedbacks = $this->getAllFeedBacks($id);
+        $last_feedback = $this->getLastFeedBack($id);
 
-        return view('roles.supervisor.lead_info', compact('lead', 'feedbacks'));
+        return view('roles.supervisor.lead_info', compact('lead', 'feedbacks','last_feedback'));
     }
     public function getAllFeedBacks($id)
     {
         return FeedBack::where('lead_id', $id)->get();
+    }
+    public function getLastFeedBack($id)
+    {
+        return FeedBack::where('lead_id', $id)->latest()->first();
     }
     public function storeFeedBack(Request $req, $lead_id)
     {
@@ -218,7 +222,7 @@ class SupervisorController extends Controller
             "anrufdatum",
             "zeit_anrufe",
             "koment_der_geburtsdatum",
-            "koment_der_Können"
+            "koment_der_Konnen"
         ));
 
         FeedBack::create([
@@ -227,12 +231,12 @@ class SupervisorController extends Controller
             'lead_id' => $lead_id,
             'termin_datum' => $req->termindatum,
             'terminzeit' => $req->terminzeit,
-            "mitbewhoner" => $req->mitbewhoner,
-            "person_krank" => $req->person_krank,
+            "mitbewhoner" => $req->koment_der_geburtsdatum,
+            "person_krank" => $req->koment_der_Konnen,
             "vertragdatum" => $req->vertragdatum,
-            "bestatigungsstatus" => $req->bestatigungsstatus,
+            "bestatigungsstatus" => $req->bestatigungs_status,
             "anrufdatum" => $req->anrufdatum,
-            "zeit_anrufe" => $req->zeit_anrufe,
+            "zeit_anrufe" => $req->zeitfuranrufen,
             "bemerkung" => $req->bemerkung
         ]);
         if ($req->feedback_status == 'Terminiert' || $req->feedback_status == 'Online-Offerte') {
