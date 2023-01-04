@@ -1,7 +1,14 @@
 @extends('layouts.app')
 @section('content')
-    <form class="needs-validation" action="{{ route('create_lead') }}" id="forma" method="POST" onkeydown="return event.key != 'Enter';"
-        enctype="multipart/form-data" novalidate>
+    <style>
+        .was-validated .inputform:invalid,
+        .was-validated .inputgroupleft,
+        .was-validated .inputgroupright {
+            border-color: red;
+        }
+    </style>
+    <form class="needs-validation" action="{{ route('create_lead') }}" onsubmit="return validateForm(event )" id="forma"
+        method="POST" onkeydown="return event.key != 'Enter';" enctype="multipart/form-data" novalidate>
         @csrf
 
         <div class="mt-4 py-4 ms-0 ms-md-1 me-0 me-md-2">
@@ -21,13 +28,13 @@
                             <span class="subtitleform">Vorname</span>
                         </div>
                         <div class="mt-2">
-                            <input class="inputform" type="text" name="vorname" placeholder="Jane" />
+                            <input class="inputform" type="text" name="vorname" required placeholder="Jane" />
                         </div>
                         <div class="mt-4">
                             <span class="subtitleform">Anrede</span>
                         </div>
                         <div class="mt-2">
-                            <select name="anrede" id="anrede" class="form-select inputform ">
+                            <select name="anrede" id="anrede" required class="form-select inputform ">
                                 <option value="male">Male</option>
                                 <option value="female">Female</option>
                             </select>
@@ -39,13 +46,13 @@
                             <span class="subtitleform">Nachname </span>
                         </div>
                         <div class="mt-2">
-                            <input class="inputform" type="text" name="nachname" placeholder="Jane" />
+                            <input class="inputform" type="text" required name="nachname" placeholder="Jane" />
                         </div>
                         <div class="mt-4">
                             <span class="subtitleform">Geburtsdatum </span>
                         </div>
                         <div class="mt-2">
-                            <input class="inputform" type="date" name="geburtsdatum" />
+                            <input class="inputform" type="date" required name="geburtsdatum" />
                         </div>
                     </div>
                 </div>
@@ -66,14 +73,12 @@
                         <div class="mt-2 ">
                             <div class="d-flex mb-3 ">
                                 <div>
-                                    <input type="text" name="adresse" class="inputgroupleft" placeholder="James Scar"
-                                        aria-label="Username">
+                                    <input type="text" name="adresse" class="inputform" placeholder="James Scar"
+                                        aria-label="Username" required>
                                 </div>
                                 <div>
-
-
-                                    <input type="text" name="hause_nummer" class="inputgroupright"
-                                        placeholder="Haus Nummer" aria-label="Haus Nummer">
+                                    <input type="text" name="hause_nummer" class="inputform"
+                                        placeholder="Haus Nummer" required aria-label="Haus Nummer">
                                 </div>
                             </div>
                         </div>
@@ -81,7 +86,8 @@
                             <span class="subtitleform">Kanton</span>
                         </div>
                         <div class="mt-2">
-                            <input class="inputform" type="text" name="kanton" id="kanton" placeholder="Kanton" />
+                            <input class="inputform" type="text" required name="kanton" id="kanton"
+                                placeholder="Kanton" />
                         </div>
                     </div>
                     <div class="col-4 mt-2">
@@ -91,11 +97,11 @@
                         <div class="mt-2">
                             <div class="d-flex mb-3 ">
                                 <div>
-                                    <input type="text" name="plz" class="inputgroupleft" id="plz"
+                                    <input type="text" name="plz" required class="inputform" id="plz"
                                         placeholder="PLZ" aria-label="Username">
                                 </div>
                                 <div>
-                                    <input type="text" name="stadt" class="inputgroupright" id="stadt"
+                                    <input type="text" name="stadt" required class="inputform" id="stadt"
                                         placeholder="Stadt" aria-label="stadt">
                                 </div>
 
@@ -105,7 +111,7 @@
                             <span class="subtitleform">Region</span>
                         </div>
                         <div class="mt-2 mb-4">
-                            <select class="form-select selectinput" name="region" id="region" required>
+                            <select class="form-select selectinput" required name="region" id="region" required>
                                 <option selected hidden disabled></option>
                                 <option value="Deutschschweiz (Germany)"> Deutschschweiz (Germany)</option>
                                 <option value="Tessin (Italy)"> Tessin (Italy)</option>
@@ -134,8 +140,8 @@
                                     <span class="input-group-text" id="basic-addon1">+41</span>
                                 </div>
                                 <div>
-                                    <input type="text" class=" inputform" placeholder=""
-                                        name="handy_nummer" aria-label="" aria-describedby="basic-addon1">
+                                    <input type="text" class="inputform" pattern="^(?:0|\(?\)?\s?|41\s?)(21|22|24|26|27|31|32|33|34|41|43|44|51|52|55|56|58|61|62|71|74|75|76|77|78|79|81|91)(?:[\.\-\s]?\d\d\d)(?:[\.\-\s]?\d\d){2}$" placeholder="" name="handy_nummer"
+                                        aria-label="" aria-describedby="basic-addon1">
                                 </div>
                             </div>
                         </div>
@@ -157,9 +163,9 @@
                             autocomplete="off">
                         <label class="btn btn-outline-primary sprachengr" for="btncheck1"> AL</label>
 
-                        <input type="checkbox" class="btn-check" id="btncheck2" hidden name="sprachen[]" value="DE"
-                            autocomplete="off">
-                        <label class="btn btn-outline-primary sprachengr" for="btncheck2">DE</label>
+                        <input type="checkbox" class="btn-check" checked id="btncheck2" hidden name="sprachen[]"
+                            value="DE" autocomplete="off">
+                        <label class="btn btn-outline-primary sprachengr " for="btncheck2">DE</label>
 
                         <input type="checkbox" class="btn-check" id="btncheck3" hidden name="sprachen[]" value="EN"
                             autocomplete="off">
@@ -521,7 +527,7 @@
                             <span class="subtitleform">Gewünschte Beratung </span>
                         </div>
                         <div class="mt-2">
-                            <select class="form-select selectinput" name="gewunschte_beratung">
+                            <select class="form-select selectinput" required name="gewunschte_beratung">
                                 <option value="" selected></option>
                                 <option value="Berater (Persönlicher Termin)"> Berater (Persönlicher Termin)</option>
                                 <option value="Online (Digital via Mail & online Abschluss)">
@@ -553,29 +559,38 @@
                     </div>
                 </div>
                 <div class="d-flex justify-content-end ">
-                    <button class="buttoninput" onclick="validateInputs()">Submit</button>
+                    <button class="buttoninput" type="submit">Submit</button>
                 </div>
             </div>
         </div>
-        <script>
-            function validateInputs() {
-        
-                $("input,select").each(function() {
-                    if ($(this).val() == '') {
-                        if (!$(this).closest('div').find('span')[0]) {
-                            let span = document.createElement('span');
-                            span.innerHTML = 'This field is required!';
-                            span.style = 'color:red';
-                            $(this).closest('div').append(span);
-                        }
-                    }
-                    else {
-                        if($(this).closest('div').find('span')[0]){
-                            $(this).closest('div').find('span')[0].remove();
-                        }
-                    }
-                });
+        <style>
+            .invalid {
+                border: 1px solid red;
             }
+
+            .error-message {
+                color: red;
+            }
+        </style>
+        <script>
+            // Example starter JavaScript for disabling form submissions if there are invalid fields
+            (function() {
+                'use strict';
+                window.addEventListener('load', function() {
+                    // Fetch all the forms we want to apply custom Bootstrap validation styles to
+                    var forms = document.getElementsByClassName('needs-validation');
+                    // Loop over them and prevent submission
+                    var validation = Array.prototype.filter.call(forms, function(form) {
+                        form.addEventListener('submit', function(event) {
+                            if (form.checkValidity() === false) {
+                                event.preventDefault();
+                                event.stopPropagation();
+                            }
+                            form.classList.add('was-validated');
+                        }, false);
+                    });
+                }, false);
+            })();
 
 
             function openCity(evt, cityName) {
@@ -591,26 +606,22 @@
                 document.getElementById(cityName).style.display = "block";
                 evt.currentTarget.className += " active";
             }
-
             $('#plz').on("keyup", async function() {
                 let value = $(this).val();
-
                 await $.ajax({
                     url: 'https://zip.getziptastic.com/v2/CH/' + value,
                     method: "GET",
                     success: function(response, textStatus, xhr) {
-
                         $("#stadt").val(response.city);
                         $("#kanton").val(response.state_short);
-                        if (response.state_short == 'GE' || response.state_short == 'JU' || response
-                            .state_short == 'VD') {
+                        if (response.state_short == 'GE' ||
+                            response.state_short == 'JU' || response.state_short == 'VD') {
                             $("#region").val('Westschweiz (France)').change();
                         } else if (response.state_short == 'TI') {
                             $("#region").val('Tessin (Italy)').change();
                         } else {
                             $("#region").val('Deutschschweiz (Germany)').change();
                         }
-
                     },
                     error: function(xhr, status, error) {
                         $("#stadt").val('');
@@ -618,7 +629,6 @@
                         $("#region").val('').change();
                     }
                 })
-
             })
         </script>
     @endsection
