@@ -27,7 +27,7 @@
                             <div class="d-flex flex-column">
                                 <span class="subtitledash">Leads pro Tag</span>
                                 <span
-                                    style="font-weight: 700; color: #8B35F9; font-size: 32px;font-family: 'Poppins', sans-serif; ">55</span>
+                                    style="font-weight: 700; color: #8B35F9; font-size: 32px;font-family: 'Poppins', sans-serif; ">{{$today}}</span>
                             </div>
                         </div>
                     </div>
@@ -53,7 +53,7 @@
                             <div class="d-flex flex-column">
                                 <span class="subtitledash">Leads pro Woche</span>
                                 <span
-                                    style="font-weight: 700; color: #F97035; font-size: 32px; font-family: 'Poppins', sans-serif;">100</span>
+                                    style="font-weight: 700; color: #F97035; font-size: 32px; font-family: 'Poppins', sans-serif;">{{$week}}</span>
                             </div>
                         </div>
                     </div>
@@ -79,7 +79,7 @@
                             <div class="d-flex flex-column">
                                 <span class="subtitledash">Leads pro Monat</span>
                                 <span
-                                    style="font-weight: 700; color: #F9CE35; font-size: 32px; font-family: 'Poppins', sans-serif;">500</span>
+                                    style="font-weight: 700; color: #F9CE35; font-size: 32px; font-family: 'Poppins', sans-serif;">{{$month}}</span>
                             </div>
                         </div>
                     </div>
