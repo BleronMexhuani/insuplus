@@ -68,19 +68,19 @@ $i = 1;
                                     </td>
                                     <td>{{ $item->vorname }}</td>
                                     <td>{{ $item->nachname }}</td>
-                                    <td>{{ $item->geburtsdatum }}</td>
+                                    <td>{{ Carbon\Carbon::parse($item->geburtsdatum)->format('d-m-Y') }}</td>
                                     <td>{{ $item->email }}</td>
                                     <td>{{ $item->region }}</td>
                                     <td>{{ $item->sprachen }}</td>
                                     <td>{{ $item->assign_to_id_call ? App\Models\User::find($item->assign_to_id_call)->name : ($item->assign_to_id_team_leader ? App\Models\User::find($item->assign_to_id_team_leader)->name : 'Not Assigned') }}
                                     </td>
-                                    <td>{{ $item->created_at }}</td>
+                                    <td>{{ Carbon\Carbon::parse($item->created_at)->format('d-m-Y h:i:s') }}</td>
 
                                     <td>{{ App\Models\User::find($item->assigned_from)->name }}</td>
 
                                     <td style="color:{{ $item->feedback_status == 'Terminiert' ? 'green' : 'red' }};">
                                         {{ $item->feedback_status }}</td>
-                                    <td>{{ App\Models\FeedBack::where('lead_id', $item->id)->orderBy('created_at', 'desc')->pluck('created_at')->first() }}
+                                    <td>{{ Carbon\Carbon::parse(App\Models\FeedBack::where('lead_id', $item->id)->orderBy('created_at', 'desc')->pluck('created_at')->first())->format('d-m-Y h:i:s') }}
                                     </td>
                                 </tr>
 

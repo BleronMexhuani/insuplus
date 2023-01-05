@@ -4,7 +4,7 @@
     <div class=" my-3 p-3" style="box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;">
         <h3>Team-Registrierung</h3>
         <form action="{{route('handleSubmitCreateGroup')}}" class="my-5" method="post">
-            {{-- @csrf --}}
+            @csrf
             <div class="row">
                 <div class="col-12 col-md-6 col-lg-3">
                     <label for="Group">Gruppenname</label>
@@ -16,8 +16,7 @@
                         multiple='true'>
                         @foreach ($umfrage as $item)
                             <option value="{{ $item->id }}">{{ $item->name }}</option>
-                            <option value="{{ $item->id }}">{{ $item->name }}</option>
-                            <option value="{{ $item->id }}">{{ $item->name }}</option>
+              
                            
                         @endforeach
                     </select>

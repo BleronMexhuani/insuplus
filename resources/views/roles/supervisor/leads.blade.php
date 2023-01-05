@@ -48,17 +48,15 @@
                                 <div class="input-group mt-2 ">
                                     <select class="selectpicker" data-live-search="true" multiple data-actions-box="true"
                                         name="assigned_from[]">
-                                        
+
                                         @foreach ($umfrage_agents as $item)
-                                        <option value="{{$item->id}}}">{{$item->name}}</option>
-                                       
+                                            <option value="{{ $item->id }}}">{{ $item->name }}</option>
                                         @endforeach
                                     </select>
                                     <select class="selectpicker" data-live-search="true" multiple data-actions-box="true"
                                         name="assign_to_id_call[]">
                                         @foreach ($callagents as $item)
-                                        <option value="{{$item->id}}}">{{$item->name}}</option>
-                                       
+                                            <option value="{{ $item->id }}}">{{ $item->name }}</option>
                                         @endforeach
                                     </select>
                                 </div>
@@ -71,8 +69,8 @@
                                     <select class="selectpicker" data-live-search="true" multiple data-actions-box="true"
                                         name="teams[]">
                                         @foreach ($teams as $item)
-                                        <option value="{{ $item->id }}">{{ $item->group_name }}</option>
-                                    @endforeach
+                                            <option value="{{ $item->id }}">{{ $item->group_name }}</option>
+                                        @endforeach
                                     </select>
                                 </div>
                             </div>
@@ -460,23 +458,25 @@
                                             </td>
                                             <td>{{ $item->vorname }}</td>
                                             <td>{{ $item->nachname }}</td>
-                                            <td>{{ $item->geburtsdatum }}</td>
+                                            <td>{{ Carbon\Carbon::parse($item->geburtsdatum)->format('d-m-Y') }}</td>
                                             <td>{{ $item->email }}</td>
                                             <td>{{ $item->region }}</td>
                                             <td>{{ $item->sprachen }}</td>
                                             <td>{{ $item->assign_to_id_call ? App\Models\User::find($item->assign_to_id_call)->name : ($item->assign_to_id_team_leader ? App\Models\User::find($item->assign_to_id_team_leader)->name : 'Not Assigned') }}
                                             </td>
-                                            <td>{{ $item->created_at }}</td>
-                                            <td>{{App\Models\User::find($item->assigned_from)->name  }}</td>
+                                            <td>{{Carbon\Carbon::parse($item->created_at)->format('d-m-Y h:i:s')}}</td>
+                                            <td>{{  optional(App\Models\User::find($item->assigned_from))->name }}</td>
                                             <td
                                                 style="color:{{ $item->feedback_status == 'Terminiert' ? 'green' : 'red' }};">
                                                 {{ $item->feedback_status }}</td>
-                                            <td>{{ App\Models\FeedBack::where('lead_id', $item->id)->orderBy('created_at', 'desc')->pluck('created_at')->first() }}
+                                            <td>{{ Carbon\Carbon::parse(App\Models\FeedBack::where('lead_id', $item->id)->orderBy('created_at', 'desc')->pluck('created_at')->first())->format('d-m-Y h:i:s') }}
                                             </td>
                                             <td><a class="btn btnedit"
                                                     href="{{ route('getLeadById', ['id' => $item->id]) }}"><i
                                                         class="fa-regular fa-pen-to-square"></i></a></td>
-                                            <td><a class="btn btndelete"><i class="fa-solid fa-trash-can"></i></a></td>
+                                            <td><a class="btn btndelete"
+                                                    onclick="if(confirm('Are you sure?'))window.location.href='{{ route('deleteLead', ['id' => $item->id]) }}'"><i
+                                                        class="fa-solid fa-trash-can"></i></a></td>
                                         </tr>
                                     @endforeach
 
