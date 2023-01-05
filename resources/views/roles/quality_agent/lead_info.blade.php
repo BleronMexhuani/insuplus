@@ -16,19 +16,17 @@
                             </div>
                         </div>
                         <div class="col-12 col-md-4">
-                            <div class="d-flex align-items-center">
-                                <span class="subtitleform">Full Name </span>
-                                <span style="color: red; font-size:30px;">*</span>
-                            </div>
                             <div class="">
+                                <span class="subtitleform">Full Name</span>
+                            </div>
+                            <div class="mt-2">
                                 <input class="inputform" value="{{ $lead->vorname }}" type="text" name="Max "
                                     placeholder="Max Mustermann" />
                             </div>
-                            <div class="d-flex align-items-center mt-3">
+                            <div class="mt-4">
                                 <span class="subtitleform">Anrede</span>
-                                <span style="color: red; font-size:30px;">*</span>
                             </div>
-                            <div class="mb-3">
+                            <div class="mt-2">
                                 <select name="anrede" id="anrede" class="form-select inputform " id="">
                                     <option value="male">Male</option>
                                     <option value="female">Female</option>
@@ -36,21 +34,17 @@
                             </div>
                         </div>
                         <div class="col-12 col-md-4">
-                            <div class="d-flex align-items-center">
-                                <span class="subtitleform">Nachname </span>
-                                <span style="color: red; font-size:30px;">*</span>
-
-                            </div>
                             <div class="">
+                                <span class="subtitleform">Nachname </span>
+                            </div>
+                            <div class="mt-2">
                                 <input class="inputform" value="{{ $lead->nachname }}" type="text" name="nachname"
                                     placeholder="Mustermann" />
                             </div>
-                            <div class="d-flex align-items-center mt-3 ">
+                            <div class="mt-4">
                                 <span class="subtitleform">Geburtsdatum </span>
-                                <span style="color: red; font-size:30px;">*</span>
-
                             </div>
-                            <div class="">
+                            <div class="mt-2">
                                 <input class="inputform" value="{{ $lead->geburtsdatum }}" type="date" id="birthday"
                                     name="geburtsdatum" />
                             </div>
@@ -67,12 +61,10 @@
                             </div>
                         </div>
                         <div class="col-12 col-md-4 mt-2">
-                            <div class="d-flex align-items-center ">
+                            <div class="">
                                 <span class="subtitleform">Adresse</span>
-                                <span style="color: red; font-size:30px;">*</span>
-
                             </div>
-                            <div class=" ">
+                            <div class="mt-2 ">
                                 <div class="d-flex mb-3 ">
                                     <input type="text" value="{{ $lead->adresse }}" name="adresse" class="inputgroupleft"
                                         placeholder="Musterstraße" aria-label="Username">
@@ -80,23 +72,19 @@
                                         class="inputgroupright" placeholder="Haus Nummer" aria-label="Haus Nummer">
                                 </div>
                             </div>
-                            <div class="d-flex align-items-center mt-3 ">
+                            <div class="mt-4 ">
                                 <span class="subtitleform">Kanton</span>
-                                <span style="color: red; font-size:30px;">*</span>
-
                             </div>
-                            <div class="">
+                            <div class="mt-2">
                                 <input class="inputform" value="{{ $lead->kanton }}" type="text" name="kanton"
                                     placeholder="Kanton" />
                             </div>
                         </div>
                         <div class="col-12 col-md-4 mt-2">
-                            <div class="d-flex align-items-center">
-                                <span class="subtitleform">Stadt </span>
-                                <span style="color: red; font-size:30px;">*</span>
-
-                            </div>
                             <div class="">
+                                <span class="subtitleform">Stadt </span>
+                            </div>
+                            <div class="mt-2">
                                 <div class="d-flex mb-3 ">
                                     <input type="text" value="{{ $lead->plz }}" name="plz" class="inputgroupleft"
                                         placeholder="PLZ" aria-label="Username">
@@ -104,12 +92,10 @@
                                         placeholder="Stadt" aria-label="stadt">
                                 </div>
                             </div>
-                            <div class="d-flex align-items-center mt-3">
+                            <div class="mt-4">
                                 <span class="subtitleform">Region</span>
-                                <span style="color: red; font-size:30px;">*</span>
-
                             </div>
-                            <div class=" mb-3">
+                            <div class="mt-2 mb-4">
                                 <input class="inputform" type="text" value="{{ $lead->region }}" name="region"
                                     placeholder="Lorem" />
                             </div>
@@ -126,12 +112,10 @@
                             </div>
                         </div>
                         <div class="col-12 col-md-4 mt-2 mb-2 mb-md-3">
-                            <div class="d-flex align-items-center">
-                                <span class="subtitleform">Handy Nummer</span>
-                                <span style="color: red; font-size:30px;">*</span>
-
-                            </div>
                             <div class="">
+                                <span class="subtitleform">Handy Nummer</span>
+                            </div>
+                            <div class="mt-2 ">
                                 <div class="input-group mb-3">
                                     <div class="input-group-prepend">
                                         <span class="input-group-text" id="basic-addon1">+41</span>
@@ -142,13 +126,11 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="col-12 col-md-4 mt-2 mb-2 mb-md-3 ">
-                            <div class="d-flex align-items-center">
-                                <span class="subtitleform">Email </span>
-                                <span style="color: white; font-size:30px;">*</span>
-
-                            </div>
+                        <div class="col-12 col-md-4 mt-2 mb-5 ">
                             <div class="">
+                                <span class="subtitleform">Email </span>
+                            </div>
+                            <div class="mt-2">
                                 <input class="inputform" value="{{ $lead->email }}" type="email" id="email"
                                     name="email" placeholder="janedoe@gmail.com">
                             </div>
@@ -222,44 +204,36 @@
                         <div class="col-4">
                             <div class="mt-4">
                                 <span class="subtitleform">Rechtsschutz </span>
-                                <span style="color: red; font-size:30px;">*</span>
                             </div>
-                            <div class="">
+                            <div class="mt-2">
                                 <input class="inputform" type="text" id=""
                                     value="{{ $lead->rechtsschutz }}" name="rechtsschutz" placeholder="Doe">
                             </div>
-                            <div class="mt-3">
+                            <div class="mt-4">
                                 <span class="subtitleform">Ansprechspartner </span>
-                                <span style="color: red; font-size:30px;">*</span>
-
                             </div>
-                            <div class="">
+                            <div class="mt-2">
                                 <input class="inputform" type="text" value="{{ $lead->ansprechspartner }}"
                                     name="ansprechspartner" placeholder="03.02.1999">
                             </div>
-                            <div class="mt-3">
-                                <span class="subtitleform ">Zufriedenheit</span>
-                                <span style="color: red; font-size:30px;">*</span>
-
+                            <div class="mt-4">
+                                <span class="subtitleform">Zufriedenheit</span>
                             </div>
-                            <div class="">
+                            <div class="mt-2">
                                 <input class="inputform" type="text" value="{{ $lead->zufriedenheit }}"
                                     name="zufriedenheit" placeholder="03.02.1999">
                             </div>
-                            <div class="mt-3">
-                                <span class="subtitleform ">Erreichbarkeit </span>
-                                <span style="color: red; font-size:30px;">*</span>
-
+                            <div class="mt-4">
+                                <span class="subtitleform">Erreichbarkeit </span>
                             </div>
-                            <div class="">
+                            <div class="mt-2">
                                 <input class="inputform" type="text" value="{{ $lead->erreichbarkeit }}"
                                     name="erreichbarkeit" placeholder="Herr">
                             </div>
-                            <div class="mt-3">
+                            <div class="mt-4">
                                 <span class="subtitleform">Hausrat </span>
-                                <span style="color: red; font-size:30px;">*</span>
                             </div>
-                            <div class="">
+                            <div class="mt-2">
                                 <input class="inputform" type="text" value="{{ $lead->hausrat }}" name="hausrat"
                                     placeholder="Jane">
 
@@ -268,43 +242,38 @@
                         <div class="col-4">
                             <div class="mt-4">
                                 <span class="subtitleform">Krankenkasse </span>
-                                <span style="color: red; font-size:30px;">*</span>
                             </div>
-                            <div class="">
+
+                            <div class="mt-2">
                                 <input class="inputform" type="text" value="{{ $lead->krankenkasse }}"
                                     name="krankenkasse" placeholder="German">
 
                             </div>
-                            <div class="mt-3">
+                            <div class="mt-4">
                                 <span class="subtitleform">Sparen </span>
-                                <span style="color: red; font-size:30px;">*</span>
-
                             </div>
-                            <div class="">
+                            <div class="mt-2">
                                 <input class="inputform" type="text" value="{{ $lead->sparen }}" name="sparen"
                                     placeholder="03.02.1999">
                             </div>
-                            <div class="mt-3">
+                            <div class="mt-4">
                                 <span class="subtitleform">Anzahl personen </span>
-                                <span style="color: red; font-size:30px;">*</span>
                             </div>
-                            <div class="">
+                            <div class="mt-2">
                                 <input class="inputform" type="text" value="{{ $lead->anzahl_personen }}"
                                     name="anzahl_personen" placeholder="German">
                             </div>
-                            <div class="mt-3 ">
+                            <div class="mt-4 ">
                                 <span class="subtitleform">Gewünschte Beratung </span>
-                                <span style="color: red; font-size:30px;">*</span>
                             </div>
-                            <div class="">
+                            <div class="mt-2">
                                 <input class="inputform" type="text" value="{{ $lead->gewunschte_beratung }}"
                                     name="gewunschte_beratung" placeholder="03.02.1999">
                             </div>
-                            <div class="mt-3">
+                            <div class="mt-4">
                                 <span class="subtitleform">3.Säule </span>
-                                <span style="color: red; font-size:30px;">*</span>
                             </div>
-                            <div class="mb-4">
+                            <div class="mt-2 mb-5">
                                 <input class="inputform" type="text" value="{{ $lead->saule }}" name="saule"
                                     placeholder="janedoe@gmail.com">
                             </div>
@@ -312,35 +281,31 @@
                         <div class="col-4">
                             <div class="mt-4">
                                 <span class="subtitleform">Gesundheitzustand </span>
-                                <span style="color: red; font-size:30px;">*</span>
                             </div>
-                            <div class="">
+                            <div class="mt-2">
                                 <input class="inputform" type="text" value="{{ $lead->gesundheitzustand }}"
                                     name="gesundheitzustand" placeholder="Herr">
                             </div>
-                            <div class="mt-3">
+                            <div class="mt-4">
                                 <span class="subtitleform">Änderung bei KK </span>
-                                <span style="color: red; font-size:30px;">*</span>
                             </div>
-                            <div class="">
+                            <div class="mt-2">
                                 <input class="inputform" type="text" value="{{ $lead->anderung }}" name="anderung"
                                     placeholder="Herr">
                             </div>
-                            <div class="mt-3">
+                            <div class="mt-4">
                                 <span class="subtitleform">Arberistätig </span>
-                                <span style="color: red; font-size:30px;">*</span>
                             </div>
-                            <div class="">
+                            <div class="mt-2">
                                 <input class="inputform" type="text" value="{{ $lead->arberistatig }}"
                                     name="arberistatig" placeholder="03.02.1999">
                             </div>
-                            <div class="mt-3">
+                            <div class="mt-4">
                                 <span class="subtitleform">Autoversicherung</span>
-                                <span style="color: red; font-size:30px;">*</span>
                             </div>
-                            <div class="">
+                            <div class="mt-2 ">
                                 <input type="text" value="{{ $lead->autoversicherung }}" name="autoversicherung"
-                                    class="inputform " placeholder="+41" aria-label="">
+                                    class=" inputform " placeholder="+41" aria-label="">
                             </div>
                         </div>
                     </div>
@@ -350,9 +315,7 @@
                         </div>
                         <div class="col-12 col-md-4 mt-3 mb-5">
                             <div class="">
-                                <span class="subtitleform ">Kontaktieren erwúnscht </span>
-                                <span style="color: red; font-size:30px;">*</span>
-
+                                <span class="subtitleform">Kontaktieren erwúnscht </span>
                             </div>
                             <div class="mt-2">
                                 <input class="inputform" type="text" id="email"
