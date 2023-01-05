@@ -16,7 +16,6 @@ use Illuminate\Support\Facades\Hash;
 
 
 
-
 class SupervisorController extends Controller
 {
     public function dashboard(Request $req)
@@ -133,7 +132,6 @@ class SupervisorController extends Controller
                 }
             }
         }
-        // dd($lead->toSql());
         return $lead->orderBy('created_at', 'desc')->paginate(25);
     }
 
@@ -150,9 +148,25 @@ class SupervisorController extends Controller
         }
         return redirect()->back()->with('message', $message);
     }
-    public function getUsers()
+    public function getUsers(Request $request)
     {
-        $users = User::all();
+        $users = User::query();
+
+        $roles = $request->input('roles');
+        $firstName = $request->input('vorname');
+
+        if ($roles) {
+            $users->whereHas('roles', function ($q) use ($roles) {
+                $q->whereIn('name', $roles);
+            });
+        }
+
+        if ($firstName) {
+            $users->where('name', 'like', '%' . $firstName . '%');
+        }
+
+        $users = $users->paginate(10);
+        $users->appends($_GET)->links();
 
         return view('roles.supervisor.users', compact('users'));
     }
@@ -165,8 +179,14 @@ class SupervisorController extends Controller
 
     public function updateUser(Request $req, $id)
     {
+
+        $user = User::find($id);
+        
+        $req['password'] = $req->password ? Hash::make($req->password): $user->password;
+    
         User::find($id)->update($req->except('_token', 'role'));
         User::find($id)->syncRoles($req->role);
+
 
         return redirect()->back()->with('success', 'The user was updated succesfully');
     }
@@ -179,6 +199,16 @@ class SupervisorController extends Controller
 
         return redirect()->back()->with('success', 'The user was deleted succesfully');
     }
+
+    public function deleteLead($id)
+    {
+        $lead = Lead::find($id);
+
+        $lead->delete();
+
+        return redirect()->back()->with('success', 'The Lead was deleted succesfully');
+    }
+
     public function addUser(Request $request)
     {
         $request['password'] = Hash::make($request->password);
@@ -192,7 +222,7 @@ class SupervisorController extends Controller
         $feedbacks = $this->getAllFeedBacks($id);
         $last_feedback = $this->getLastFeedBack($id);
 
-        return view('roles.supervisor.lead_info', compact('lead', 'feedbacks','last_feedback'));
+        return view('roles.supervisor.lead_info', compact('lead', 'feedbacks', 'last_feedback'));
     }
     public function getAllFeedBacks($id)
     {
