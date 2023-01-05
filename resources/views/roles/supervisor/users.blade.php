@@ -1,6 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
+
     <div class="col ms-0 ms-md-2 px-0 " style="height: 90vh;">
         <div class="row ">
             <div class="my-3 mt-5 col-2">

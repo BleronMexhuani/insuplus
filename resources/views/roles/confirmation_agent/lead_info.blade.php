@@ -9,7 +9,7 @@
                     <div class="row">
                         <div class="col-12 col-md-4">
                             <div class="text-start">
-                                <span class="titleform ">Person Information </span>
+                                <span class="titleform ">Informationen zur Person </span>
                                 <div class="mt-2">
                                     <hr style="width: 55%; border: 2px solid #00727A;" />
                                 </div>
@@ -17,10 +17,10 @@
                         </div>
                         <div class="col-12 col-md-4">
                             <div class="">
-                                <span class="subtitleform">Vorname</span>
+                                <span class="subtitleform">Full Name</span>
                             </div>
                             <div class="mt-2">
-                                <input class="inputform" value="{{ $lead->vorname }}" type="text" name="vorname"
+                                <input class="inputform" value="{{ $lead->vorname }}" type="text" name="Max "
                                     placeholder="Vorname" />
                             </div>
                             <div class="mt-4">
@@ -39,7 +39,7 @@
                             </div>
                             <div class="mt-2">
                                 <input class="inputform" value="{{ $lead->nachname }}" type="text" name="nachname"
-                                    placeholder="Nachname" />
+                                    placeholder="Mustermann" />
                             </div>
                             <div class="mt-4">
                                 <span class="subtitleform">Geburtsdatum </span>
@@ -54,7 +54,7 @@
                     <div class="row">
                         <div class="col-12 col-md-4 mt-2">
                             <div class="text-start">
-                                <span class="titleform ">Address Information </span>
+                                <span class="titleform ">Informationen zur Adresse </span>
                                 <div class="mt-2">
                                     <hr style="width: 55%; border: 2px solid #00727A;" />
                                 </div>
@@ -67,7 +67,7 @@
                             <div class="mt-2 ">
                                 <div class="d-flex mb-3 ">
                                     <input type="text" value="{{ $lead->adresse }}" name="adresse" class="inputgroupleft"
-                                        placeholder="Adresse" aria-label="Username">
+                                        placeholder="Musterstraße" aria-label="Username">
                                     <input type="text" value="{{ $lead->hause_nummer }}" name="hause_nummer"
                                         class="inputgroupright" placeholder="Haus Nummer" aria-label="Haus Nummer">
                                 </div>
@@ -105,7 +105,7 @@
                     <div class="row">
                         <div class="col-12 col-md-4 mt-2">
                             <div class="text-start">
-                                <span class="titleform ">Kontakt Information</span>
+                                <span class="titleform ">Kontakt-Informationen</span>
                                 <div class="mt-2">
                                     <hr style="width: 55%; border: 2px solid #00727A;" />
                                 </div>
@@ -328,7 +328,8 @@
                     </div>
                     <hr>
                     <div class="text-center mt-4">
-                        <span class="feedbacktitle">Feedback</span><br>
+                        <span class="feedbacktitle">Rückmeldung
+                        </span><br>
                     </div>
                     <div class="row g-1 tab mt-4 ms-0 ms-md-0 px-3 px-md-3 d-flex justify-content-center">
                         <!-- <div class=""> -->
@@ -791,9 +792,9 @@
                             <tr>
                                 <th scope="col">#</th>
 
-                                <th scope="col">Feedback Status</th>
-                                <th scope="col">Feedback From</th>
-                                <th scope="col">Updated at</th>
+                                <th scope="col">Rückmeldung  Status</th>
+                                <th scope="col">Rückmeldung   Von</th>
+                                <th scope="col">Aktualisieren Bei</th>
                             </tr>
                         </thead>
                         <tbody>

@@ -8,11 +8,11 @@
                         <thead style="background-color: #F7F7F7;">
                             <tr class="text-center">
                                 <th scope="col">#</th>
-                                <th scope="col">Vorname</th>
-                                <th scope="col">Feedback Status</th>
+                                <th scope="col">Full Name</th>
+                                <th scope="col">Rückmeldung Status</th>
                                 <th scope="col"> Status</th>
                                 <th scope="col">Agent</th>
-                                <th scope="col">Action</th>
+                                <th scope="col">Aktionen</th>
                             </tr>
                         </thead>
                         <tbody>

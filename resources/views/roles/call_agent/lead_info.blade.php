@@ -9,24 +9,26 @@
                     <div class="row">
                         <div class="col-12 col-md-4">
                             <div class="text-start">
-                                <span class="titleform ">Person Information </span>
+                                <span class="titleform ">Informationen zur Person</span>
                                 <div class="mt-2">
                                     <hr style="width: 55%; border: 2px solid #00727A;" />
                                 </div>
                             </div>
                         </div>
                         <div class="col-12 col-md-4">
-                            <div class="">
-                                <span class="subtitleform">Vorname</span>
-                            </div>
-                            <div class="mt-2">
-                                <input class="inputform" value="{{ $lead->vorname }}" type="text" name="vorname"
+                            <div class="d-flex align-items-center">
+                                    <span class="subtitleform">Full Name </span>
+                                    <span style="color: red; font-size:30px;">*</span>
+                                </div>
+                                <div class="">
+                                <input class="inputform" value="{{ $lead->vorname }}" type="text" name="Max "
                                     placeholder="Vorname" />
                             </div>
-                            <div class="mt-4">
+                            <div class="d-flex align-items-center mt-3">
                                 <span class="subtitleform">Anrede</span>
+                                <span style="color: red; font-size:30px;">*</span>
                             </div>
-                            <div class="mt-2 mb-3">
+                            <div class=" mb-3">
                                 <select name="anrede" id="anrede" class="form-select inputform ">
                                     <option value="male">Male</option>
                                     <option value="female">Female</option>
@@ -37,17 +39,21 @@
                             </div>
                         </div>
                         <div class="col-12 col-md-4">
-                            <div class="">
+                            <div class="d-flex align-items-center">
                                 <span class="subtitleform">Nachname </span>
+                                <span style="color: red; font-size:30px;">*</span>
+
                             </div>
-                            <div class="mt-2">
+                            <div class="">
                                 <input class="inputform" value="{{ $lead->nachname }}" type="text" name="nachname"
-                                    placeholder="Nachname" />
+                                    placeholder="Mustermann" />
                             </div>
-                            <div class="mt-4">
+                            <div class="d-flex align-items-center mt-3">
                                 <span class="subtitleform">Geburtsdatum </span>
+                                <span style="color: red; font-size:30px;">*</span>
+
                             </div>
-                            <div class="mt-2">
+                            <div class="">
                                 <input class="inputform" value="{{ $lead->geburtsdatum }}" type="date" id="birthday"
                                     name="geburtsdatum" />
                             </div>
@@ -57,37 +63,43 @@
                     <div class="row">
                         <div class="col-12 col-md-4 mt-2">
                             <div class="text-start">
-                                <span class="titleform ">Address Information </span>
+                                <span class="titleform ">Informationen zur Adresse </span>
                                 <div class="mt-2">
                                     <hr style="width: 55%; border: 2px solid #00727A;" />
                                 </div>
                             </div>
                         </div>
                         <div class="col-12 col-md-4 mt-2">
-                            <div class="">
+                            <div class="d-flex align-items-center ">
                                 <span class="subtitleform">Adresse</span>
+                                <span style="color: red; font-size:30px;">*</span>
+
                             </div>
-                            <div class="mt-2 ">
+                            <div class="">
                                 <div class="d-flex mb-3 ">
                                     <input type="text" value="{{ $lead->adresse }}" name="adresse" class="inputgroupleft"
-                                        placeholder="Adresse" aria-label="Username">
+                                        placeholder="Musterstraße" aria-label="Username">
                                     <input type="text" value="{{ $lead->hause_nummer }}" name="hause_nummer"
                                         class="inputgroupright" placeholder="Haus Nummer" aria-label="Haus Nummer">
                                 </div>
                             </div>
-                            <div class="mt-4 ">
+                            <div class="d-flex align-items-center mt-3 ">
                                 <span class="subtitleform">Kanton</span>
+                                <span style="color: red; font-size:30px;">*</span>
+
                             </div>
-                            <div class="mt-2">
+                            <div class="">
                                 <input class="inputform" value="{{ $lead->kanton }}" type="text" name="kanton"
                                     placeholder="VD" />
                             </div>
                         </div>
                         <div class="col-12 col-md-4 mt-2">
-                            <div class="">
+                            <div class="d-flex align-items-center">
                                 <span class="subtitleform">Stadt </span>
+                                <span style="color: red; font-size:30px;">*</span>
+
                             </div>
-                            <div class="mt-2">
+                            <div class="">
                                 <div class="d-flex mb-3 ">
                                     <input type="text" value="{{ $lead->plz }}" name="plz" class="inputgroupleft"
                                         placeholder="PLZ" aria-label="Username">
@@ -95,10 +107,12 @@
                                         placeholder="Stadt" aria-label="stadt">
                                 </div>
                             </div>
-                            <div class="mt-4">
+                            <div class="d-flex align-items-center mt-3">
                                 <span class="subtitleform">Region</span>
+                                <span style="color: red; font-size:30px;">*</span>
+
                             </div>
-                            <div class="mt-2 mb-4">
+                            <div class=" mb-4">
                                 <input class="inputform" type="text" value="{{ $lead->region }}" name="region"
                                     placeholder="Tessin (Italy) " />
                             </div>
@@ -108,17 +122,19 @@
                     <div class="row">
                         <div class="col-12 col-md-4 mt-2">
                             <div class="text-start">
-                                <span class="titleform ">Kontakt Information</span>
+                                <span class="titleform ">Kontakt-Informationen</span>
                                 <div class="mt-2">
                                     <hr style="width: 55%; border: 2px solid #00727A;" />
                                 </div>
                             </div>
                         </div>
                         <div class="col-12 col-md-4 mt-2 mb-2 mb-md-3">
-                            <div class="">
+                            <div class="d-flex align-items-center">
                                 <span class="subtitleform">Handy Nummer</span>
+                                <span style="color: red; font-size:30px;">*</span>
+
                             </div>
-                            <div class="mt-2 ">
+                            <div class=" ">
                                 <div class="input-group mb-3">
                                     <div class="input-group-prepend">
                                         <span class="input-group-text" id="basic-addon1">+41</span>
@@ -130,10 +146,12 @@
                             </div>
                         </div>
                         <div class="col-12 col-md-4 mt-2 mb-2 mb-md-3">
-                            <div class="">
+                            <div class="d-flex align-items-center">
                                 <span class="subtitleform">Email </span>
+                                <span style="color: white; font-size:30px;">*</span>
+
                             </div>
-                            <div class="mt-2">
+                            <div class="">
                                 <input class="inputform" value="{{ $lead->email }}" type="email" id="email"
                                     name="email" placeholder="Email">
                             </div>
@@ -207,9 +225,11 @@
                         <div class="col-4">
                             <div class="mt-4">
                                 <span class="subtitleform">Rechtsschutz </span>
+                                <span style="color: red; font-size:30px;">*</span>
+
                             </div>
-                            <div class="mt-2">
-                                <div class="mt-2">
+                            <div class="">
+                                <div class="">
                                     <select class="form-select selectinput" name="rechtsschutz" id="rechtsschutz"
                                         required>
                                         <option value=""></option>
@@ -234,10 +254,12 @@
 
                                 </div>
                             </div>
-                            <div class="mt-4">
+                            <div class="mt-3">
                                 <span class="subtitleform">Ansprechspartner </span>
+                                <span style="color: red; font-size:30px;">*</span>
+
                             </div>
-                            <div class="mt-2">
+                            <div class="">
                                 <select class="form-select selectinput" name="ansprechspartner" id="ansprechspartner"
                                     required>
                                     <option value=""></option>
@@ -249,10 +271,12 @@
                                     $("#ansprechspartner").val('{{ $lead->ansprechspartner }}').change();
                                 </script>
                             </div>
-                            <div class="mt-4">
+                            <div class="mt-3">
                                 <span class="subtitleform ">Zufriedenheit</span>
+                                <span style="color: red; font-size:30px;">*</span>
+
                             </div>
-                            <div class="mt-2">
+                            <div class="">
                                 <select class="form-select selectinput" name="zufriedenheit" id="ZufriedenheitSelect"
                                     required>
                                     <option value=""></option>
@@ -263,10 +287,12 @@
                                     $("#ZufriedenheitSelect").val('{{ $lead->zufriedenheit }}').change();
                                 </script>
                             </div>
-                            <div class="mt-4">
+                            <div class="mt-3">
                                 <span class="subtitleform ">Erreichbarkeit </span>
+                                <span style="color: red; font-size:30px;">*</span>
+
                             </div>
-                            <div class="mt-2">
+                            <div class="">
                                 <select class="form-select selectinput" name="erreichbarkeit" id="ErreichbarkeitSelect"
                                     required>
                                     <option value=""></option>
@@ -282,10 +308,13 @@
                                 </script>
 
                             </div>
-                            <div class="mt-4">
+                            <div class="mt-3">
                                 <span class="subtitleform">Hausrat </span>
+                                <span style="color: red; font-size:30px;">*</span>
+
+                                
                             </div>
-                            <div class="mt-2">
+                            <div class="">
                                 <select class="form-select selectinput" name="hausrat" id="HausratSelect" required>
                                     <option value=""></option>
                                     <option value="Allianz"> Allianz</option>
@@ -335,9 +364,9 @@
                         <div class="col-4">
                             <div class="mt-4">
                                 <span class="subtitleform">Krankenkasse </span>
+                                <span style="color: red; font-size:30px;">*</span>
                             </div>
-
-                            <div class="mt-2">
+                            <div class="">
                                 <select class="form-select selectinput" name="krankenkasse" id="krankenkasse" required>
                                     <option value=""></option>
                                     <option value="Agrisano"> Agrisano</option>
@@ -397,10 +426,12 @@
                                     $("#krankenkasse").val('{{ $lead->krankenkasse }}').change();
                                 </script>
                             </div>
-                            <div class="mt-4">
+                            <div class="mt-3">
                                 <span class="subtitleform">Sparen </span>
+                                <span style="color: red; font-size:30px;">*</span>
+
                             </div>
-                            <div class="mt-2">
+                            <div class="">
                                 <select class="form-select selectinput" name="sparen" id="sparen" required>
                                     <option value=""></option>
                                     <option value="Ja"> Ja</option>
@@ -411,10 +442,11 @@
                                     $("#sparen").val('{{ $lead->sparen }}').change();
                                 </script>
                             </div>
-                            <div class="mt-4">
+                            <div class="mt-3">
                                 <span class="subtitleform">Anzahl personen </span>
+                                <span style="color: red; font-size:30px;">*</span>
                             </div>
-                            <div class="mt-2">
+                            <div class="">
                                 <select class="form-select selectinput" name="anzahl_personen" id="AnzahlPersonenSelect"
                                     required>
                                     <option value=""></option>
@@ -433,10 +465,11 @@
                                     $("#AnzahlPersonenSelect").val('{{ $lead->anzahl_personen }}').change();
                                 </script>
                             </div>
-                            <div class="mt-4 ">
+                            <div class="mt-3 ">
                                 <span class="subtitleform">Gewünschte Beratung </span>
+                                <span style="color: red; font-size:30px;">*</span>
                             </div>
-                            <div class="mt-2">
+                            <div class="">
                                 <select class="form-select selectinput" name="gewunschte_beratung"
                                     id="gewunschte_beratung">
                                     <option value="" selected></option>
@@ -449,10 +482,11 @@
                                     $("#gewunschte_beratung").val('{{ $lead->gewunschte_beratung }}').change();
                                 </script>
                             </div>
-                            <div class="mt-4">
+                            <div class="mt-3">
                                 <span class="subtitleform">3.Säule </span>
+                                <span style="color: red; font-size:30px;">*</span>
                             </div>
-                            <div class="mt-2 mb-4">
+                            <div class=" mb-4">
                                 <select class="form-select selectinput" name="saule" id="3SauleSelect" required>
                                     <option value=""></option>
                                     <option value="Allianz"> Allianz</option>
@@ -486,8 +520,9 @@
                         <div class="col-4">
                             <div class="mt-4">
                                 <span class="subtitleform">Gesundheitzustand </span>
+                                <span style="color: red; font-size:30px;">*</span>
                             </div>
-                            <div class="mt-2">
+                            <div class="">
                                 <select class="form-select selectinput" name="gesundheitzustand" id="gesundheitzustand"
                                     required>
                                     <option value=""></option>
@@ -498,10 +533,11 @@
                                     $("#gesundheitzustand").val('{{ $lead->gesundheitzustand }}').change();
                                 </script>
                             </div>
-                            <div class="mt-4">
+                            <div class="mt-3">
                                 <span class="subtitleform">Änderung bei KK </span>
+                                <span style="color: red; font-size:30px;">*</span>
                             </div>
-                            <div class="mt-2">
+                            <div class="">
                                 <select class="form-select selectinput" name="anderung" id="anderung" required>
                                     <option value=""></option>
                                     <option value="1 jahr"> 1 jahr</option>
@@ -514,10 +550,11 @@
                                     $("#anderung").val('{{ $lead->anderung }}').change();
                                 </script>
                             </div>
-                            <div class="mt-4">
+                            <div class="mt-3">
                                 <span class="subtitleform">Arberistätig </span>
+                                <span style="color: red; font-size:30px;">*</span>
                             </div>
-                            <div class="mt-2">
+                            <div class="">
                                 <select class="form-select selectinput" name="arberistatig" id="ArbeitstatigSelect"
                                     required>
                                     <option value=""></option>
@@ -530,10 +567,11 @@
                                 </script>
 
                             </div>
-                            <div class="mt-4">
+                            <div class="mt-3">
                                 <span class="subtitleform">Autoversicherung</span>
+                                <span style="color: red; font-size:30px;">*</span>
                             </div>
-                            <div class="mt-2 ">
+                            <div class="">
                                 <select class="form-select selectinput" name="autoversicherung"
                                     id="AutoversicherungSelect" required>
                                     <option value=""></option>
@@ -586,6 +624,8 @@
                         <div class="col-12 col-md-4 mt-3 mb-4">
                             <div class="">
                                 <span class="subtitleform ">Kontaktieren erwúnscht </span>
+                                <span style="color: red; font-size:30px;">*</span>
+
                             </div>
                             <div class="mt-2">
                                 <select class="form-select selectinput" name="kontaktieren_erwunscht"
@@ -604,7 +644,7 @@
                     </div>
                     <hr>
                     <div class="text-center mt-4">
-                        <span class="feedbacktitle">Feedback</span><br>
+                        <span class="feedbacktitle">Rückmeldung                        </span><br>
                     </div>
                     <div class="row g-1 tab mt-4 ms-0 ms-md-0 px-3 px-md-3 d-flex justify-content-center">
                         <!-- <div class=""> -->
@@ -1125,9 +1165,9 @@
                             <tr>
                                 <th scope="col">#</th>
 
-                                <th scope="col">Feedback Status</th>
-                                <th scope="col">Feedback From</th>
-                                <th scope="col">Updated at</th>
+                                <th scope="col">Rückmeldung Status</th>
+                                <th scope="col">Rückmeldung Von</th>
+                                <th scope="col">Aktualisieren Bei</th>
                             </tr>
                         </thead>
                         <tbody>

@@ -28,7 +28,7 @@
                     <rect x="4" y="6" width="3" height="3" rx="1" fill="white" />
                     <rect x="4" y="15" width="3" height="3" rx="1" fill="white" />
                 </svg>
-                <span class="px-1">Users</span></a>
+                <span class="px-1">Benutzer</span></a>
             <a href="{{ route('supervisorleads') }}"
                 @if (request()->is('supervisor/leads')) ? style="background-color: #00727A; color:white" : "" @endif>
                 <svg class="ms-3" style="background: white;" width="24" height="24" viewBox="0 0 24 24"
@@ -52,7 +52,7 @@
                     <rect x="4" y="15" width="3" height="3" rx="1"
                         fill="white" />
                 </svg>
-                <span class="px-1">Create Teams</span></a>
+                <span class="px-1">Teams Erstellen</span></a>
             <a href="{{ route('getGroups') }}"
                 @if (request()->is('supervisor/teams')) ? style="background-color: #00727A; color:white" : "" @endif>
                 <svg class="ms-3" style="background: white;" width="24" height="24" viewBox="0 0 24 24"

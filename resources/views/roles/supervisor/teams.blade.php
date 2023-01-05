@@ -9,11 +9,11 @@
                     <thead style="background-color: #F7F7F7;">
                         <tr class="text-center">
                             <th scope="col">#</th>
-                            <th scope="col">Group Name</th>
-                            <th scope="col">Team Leader</th>
+                            <th scope="col">Gruppenname</th>
+                            <th scope="col">Teamleiter</th>
                             <th scope="col">Umfrage Agents</th>
                             <th scope="col">Call Agents</th>
-                            <th>Aktion</th>
+                            <th>Aktionen</th>
                         </tr>
                     </thead>
                     <tbody>

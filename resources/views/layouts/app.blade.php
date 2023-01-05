@@ -62,37 +62,52 @@
     <link rel="stylesheet" href="{{ URL::asset('css/profile.css') }}">
     <!-- Scripts -->
     <style>
-    #Preloder{
-        position: fixed;
-        left: 0;
-        top: 0;
-        width: 100%;
-        height: 100%;
-        background-color: #ffffff;
-        display: flex;
-        z-index: 999;
-        justify-content: center;
-        align-items: center;
-    }
+        #Preloder {
+            position: fixed;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: #ffffff;
+            display: flex;
+            z-index: 1000;
+            justify-content: center;
+            align-items: center;
+        }
 
-    #Preloder svg{
-        width: 10rem;
-    }
-    .loaded{
-        visibility: hidden;
-        opacity: 0;
-    }
+        #Preloder svg {
+            width: 10rem;
+        }
+
+        .loaded {
+            visibility: hidden;
+            opacity: 0;
+        }
     </style>
-    
+
 </head>
 
 <body class="font-sans antialiased">
-   <div id="Preloder">
-    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" width="100" height="100" fill="none">
-        <style>@keyframes loader2{0%{-webkit-transform:rotate(0);transform:rotate(0)}to{-webkit-transform:rotate(360deg);transform:rotate(360deg)}}</style>
-        <path fill="#00727A" d="M17.179 13.605a.431.431 0 00.279.514l.775.245a.393.393 0 00.499-.268 7.318 7.318 0 00-4.5-8.658.39.39 0 00-.507.255l-.245.775a.43.43 0 00.261.523 5.69 5.69 0 013.438 6.614z" style="animation:loader2 1s cubic-bezier(.63,-.71,.32,1.28) infinite both;transform-origin:center center"/></svg>
+    <div id="Preloder">
+        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" width="100" height="100" fill="none">
+            <style>
+                @keyframes loader4 {
+                    0% {
+                        -webkit-transform: rotate(0);
+                        transform: rotate(0)
+                    }
 
-   </div>
+                    to {
+                        -webkit-transform: rotate(360deg);
+                        transform: rotate(360deg)
+                    }
+                }
+            </style>
+            <path fill="#00727A"
+                d="M17.179 13.605a.431.431 0 00.279.514l.775.245a.393.393 0 00.499-.268 7.318 7.318 0 00-4.5-8.658.39.39 0 00-.507.255l-.245.775a.43.43 0 00.261.523 5.69 5.69 0 013.438 6.614z"
+                style="animation:loader4 0.4s linear infinite both;transform-origin:center center" />
+        </svg>
+    </div>
 
 
     <div class="">
@@ -111,13 +126,10 @@
     </div>
 
     <script>
-        $(document).ready(function(){
-            setTimeout(()=>{
-                $('#Preloder').addClass('loaded');
-            },500);
-            setTimeout(()=>{
-                $('#Preloder').remove('loaded');
-            },3000);
+        $(document).ready(function() {
+            $('#Preloder').addClass('loaded');
+            $('#Preloder').remove('loaded');
+
         })
     </script>
 
@@ -135,7 +147,7 @@
         integrity="sha512-FHZVRMUW9FsXobt+ONiix6Z0tIkxvQfxtCSirkKc5Sb4TKHmqq1dZa8DphF0XqKb3ldLu/wgMa8mT6uXiLlRlw=="
         crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
-    
+
 </body>
 
 </html>

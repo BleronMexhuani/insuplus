@@ -1,10 +1,10 @@
 <section class="ms-5 py-4">
     <header>
         <div>
-            <span class="titleprofile">Update Password            </span>
+            <span class="titleprofile">Passwort Aktualisieren </span>
            </div>
            <div class="mt-2">
-            <span class="subtitleprofile">Ensure your account is using a long, random password to stay secure.
+            <span class="subtitleprofile">Stellen Sie sicher, dass Ihr Konto ein langes, zufälliges Passwort verwendet, um sicher zu bleiben.
             </span>
            </div>
     </header>
@@ -16,11 +16,11 @@
         <div class="row">
             <div class="col-auto">
                 <div class="mt-4 py-3">
-                    <span class="titleinput">Current Password</span>
+                    <span class="titleinput">Aktuelles Passwort</span>
                 </div>
             </div>
             <div class="col">
-                <div class="mt-4 ms-1">
+                <div class="mt-4 " style="margin-left: 71px !important">
                     <label for="current_password" :value="__('Current Password')"></label>
                     <input id="current_password" name="current_password" type="password" class="inputprofile w-50" autocomplete="current-password" >
                     <x-input-error :messages="$errors->updatePassword->get('current_password')" class="mt-2" />
@@ -31,11 +31,12 @@
         <div class="row">
             <div class="col-auto">
                 <div class="mt-4 py-3">
-                    <span class="titleinput">New Password</span>
+                    <span class="titleinput">Neues Passwort
+                    </span>
                 </div>
             </div>
             <div class="col">
-                <div class="mt-4 ms-4">
+                <div class="mt-4 " style="margin-left: 71px !important">
                     <label for="password" :value="__('New Password')"></label>
                     <input id="password" name="password" type="password" class="inputprofile w-50" autocomplete="new-password" >
                     <x-input-error :messages="$errors->updatePassword->get('password')" class="mt-2"  />
@@ -46,11 +47,11 @@
         <div class="row">
             <div class="col-auto">
                 <div class="mt-4 py-3">
-                    <span class="titleinput">Confirm Password</span>
+                    <span class="titleinput">Bestätigen Sie Ihr Passwort</span>
                 </div>
             </div>
             <div class="col">
-                <div class="mt-4 ms-1">
+                <div class="mt-4 ">
                     <label for="password_confirmation" :value="__('Confirm Password')"></label>
                     <input id="password_confirmation" name="password_confirmation" type="password" class="inputprofile w-50" autocomplete="new-password" >
                     <x-input-error :messages="$errors->updatePassword->get('password_confirmation')" class="mt-2"  />
@@ -58,7 +59,7 @@
             </div>
         </div>
         <div class="d-flex flex-row-reverse mt-4 me-5 mb-4">
-            <button class="btnprofile w-25">Save</button>
+            <button class="btnprofile w-25">Speichern</button>
         </div>
         <hr style="margin-bottom: 25px;margin-right: 48px;">
         

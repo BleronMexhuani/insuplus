@@ -198,14 +198,14 @@
                                          <input id="remember_me" type="checkbox"
                                              class="rounded border-gray-300 text-indigo-600  focus:ring-indigo-500"
                                              name="remember">
-                                         <span style="margin-left: 5px;" class="textform">{{ __('Remember me') }}</span>
+                                         <span style="margin-left: 5px;" class="textform">{{ __('Logindaten merken') }}</span>
                                      </label>
 
                                      <div class=" ">
                                          @if (Route::has('password.request'))
                                              <a class=" text-sm text-gray-600 hover:text-gray-900 rounded-md focus:outline-none text-decoration-line:none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 textform"
                                                  href="{{ route('password.request') }}">
-                                                 {{ __('Forget Password?') }}
+                                                 {{ __('Passwort vergessen?') }}
                                              </a>
                                          @endif
                                      </div>

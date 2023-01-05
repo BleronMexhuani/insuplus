@@ -4,7 +4,60 @@
         <div class="px-2">
         <div class="mt-4 py-3">
             {{-- <span class="titledash">Willkommen Enis Demolli!</span> --}}
+            <div class="row">
+                <div class="col-sm-6">
+                    <div class="dashborder">
+                        <div>
+                            <svg width="52" height="53" viewBox="0 0 52 53" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <rect y="0.5" width="52" height="52" rx="16" fill="#00727A"
+                                    fill-opacity="0.1" />
+                                <path
+                                    d="M21.668 15.1667V13.1667C21.668 12.6201 21.2146 12.1667 20.668 12.1667C20.1213 12.1667 19.668 12.6201 19.668 13.1667V15.2467C20.0013 15.2067 20.308 15.1667 20.668 15.1667H21.668Z"
+                                    fill="#00727A" />
+                                <path
+                                    d="M32.332 15.2467V13.1667C32.332 12.6201 31.8787 12.1667 31.332 12.1667C30.7854 12.1667 30.332 12.6201 30.332 13.1667V15.1667H31.332C31.692 15.1667 31.9987 15.2067 32.332 15.2467Z"
+                                    fill="#00727A" />
+                                <path
+                                    d="M32.3333 15.2467V17.1667C32.3333 17.7134 31.88 18.1667 31.3333 18.1667C30.7867 18.1667 30.3333 17.7134 30.3333 17.1667V15.1667H21.6667V17.1667C21.6667 17.7134 21.2133 18.1667 20.6667 18.1667C20.12 18.1667 19.6667 17.7134 19.6667 17.1667V15.2467C15.7333 15.6067 14 18.1401 14 21.8334V33.1667C14 37.1667 16 39.8334 20.6667 39.8334H31.3333C36 39.8334 38 37.1667 38 33.1667V21.8334C38 18.1401 36.2667 15.6067 32.3333 15.2467ZM26 32.8334H20.6667C20.12 32.8334 19.6667 32.3801 19.6667 31.8334C19.6667 31.2867 20.12 30.8334 20.6667 30.8334H26C26.5467 30.8334 27 31.2867 27 31.8334C27 32.3801 26.5467 32.8334 26 32.8334ZM31.3333 26.1667H20.6667C20.12 26.1667 19.6667 25.7134 19.6667 25.1667C19.6667 24.6201 20.12 24.1667 20.6667 24.1667H31.3333C31.88 24.1667 32.3333 24.6201 32.3333 25.1667C32.3333 25.7134 31.88 26.1667 31.3333 26.1667Z"
+                                    fill="#00727A" />
+                            </svg>
+                        </div>
+                        <div class="d-flex flex-column">
+                            <span class="subtitledash">Total Terminiert</span>
+                            <span
+                                style="font-weight: 700; color: #8B35F9; font-size: 32px;font-family: 'Poppins', sans-serif; ">{{ $today }}</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-6">
+                    <div class="dashborder mt-3 mt-sm-0">
+                        <div>
+                            <svg width="52" height="53" viewBox="0 0 52 53" fill="none"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <rect y="0.5" width="52" height="52" rx="16" fill="#F97035"
+                                fill-opacity="0.1" />
+                            <path
+                                d="M21.668 15.1667V13.1667C21.668 12.6201 21.2146 12.1667 20.668 12.1667C20.1213 12.1667 19.668 12.6201 19.668 13.1667V15.2467C20.0013 15.2067 20.308 15.1667 20.668 15.1667H21.668Z"
+                                fill="#F97035" />
+                            <path
+                                d="M32.332 15.2467V13.1667C32.332 12.6201 31.8787 12.1667 31.332 12.1667C30.7854 12.1667 30.332 12.6201 30.332 13.1667V15.1667H31.332C31.692 15.1667 31.9987 15.2067 32.332 15.2467Z"
+                                fill="#F97035" />
+                            <path
+                                d="M32.3333 15.2467V17.1667C32.3333 17.7134 31.88 18.1667 31.3333 18.1667C30.7867 18.1667 30.3333 17.7134 30.3333 17.1667V15.1667H21.6667V17.1667C21.6667 17.7134 21.2133 18.1667 20.6667 18.1667C20.12 18.1667 19.6667 17.7134 19.6667 17.1667V15.2467C15.7333 15.6067 14 18.1401 14 21.8334V33.1667C14 37.1667 16 39.8334 20.6667 39.8334H31.3333C36 39.8334 38 37.1667 38 33.1667V21.8334C38 18.1401 36.2667 15.6067 32.3333 15.2467ZM26 32.8334H20.6667C20.12 32.8334 19.6667 32.3801 19.6667 31.8334C19.6667 31.2867 20.12 30.8334 20.6667 30.8334H26C26.5467 30.8334 27 31.2867 27 31.8334C27 32.3801 26.5467 32.8334 26 32.8334ZM31.3333 26.1667H20.6667C20.12 26.1667 19.6667 25.7134 19.6667 25.1667C19.6667 24.6201 20.12 24.1667 20.6667 24.1667H31.3333C31.88 24.1667 32.3333 24.6201 32.3333 25.1667C32.3333 25.7134 31.88 26.1667 31.3333 26.1667Z"
+                                fill="#F97035" />
+                        </svg>
+                        </div>
+                        <div class="d-flex flex-column">
+                            <span class="subtitledash">Total Leads</span>
+                            <span
+                                style="font-weight: 700; color: #8B35F9; font-size: 32px;font-family: 'Poppins', sans-serif; ">{{ $today }}</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
             <div class="bgform mt-4 p-4 p-md-5">
+                
                 <div class="row">
                     <div class="col-sm-6">
                         <div class="mt-4">
@@ -72,7 +125,7 @@
                                 <div class="col-lg-2 ">
                                     <div class="grafikbutton mt-2 mt-lg-0">
                                         <div class="mb-1">
-                                            <span class="subtitleform">Action</span>
+                                            <span class="subtitleform">Aktionen</span>
                                         </div>
                                         <button class="anzeigenbtn mb-3 mb-lg-2" type="button"
                                             onclick="umfrageAgentBenutzer()">Anzeigen</button>
@@ -87,7 +140,8 @@
                         </form>
                         <form action="/action_page.php" class="form-container">
                             <div class="text-center mb-3 mt-3">
-                                <span class="titledash">Grafik für Benutzerstatistiken mit Status/Feedback</span>
+                                <span class="titledash">Grafik für Benutzerstatistiken mit Status/Rückmeldung
+                                </span>
                             </div>
                             <div class="row">
                                 <div class="col-6 col-lg-3">
@@ -135,7 +189,7 @@
                             <div class="col-6 col-lg-2">
                                 <div class="grafikbuttontwo mt-2 mt-lg-0">
                                 <div class="mb-1">
-                                    <span class="subtitleform">Action</span>
+                                    <span class="subtitleform">Aktionen</span>
                                 </div>
                                 <button class="anzeigenbtn" type="button" onclick="grafikFurStatus()">Anzeigen</button>
                             </div>
@@ -168,7 +222,7 @@
                             <div class="col-md-6 ">
                                 <div class="">
                                     <div class="mb-2 ">
-                                        <span class="subtitleform">Action</span>
+                                        <span class="subtitleform">Aktionen</span>
                                     </div>
                                     <button class="anzeigenbtn" type="button"
                                         onclick="firstCallAgentChart()">Anzeigen</button>
@@ -183,7 +237,8 @@
                     </form>
                     <form action="/action_page.php" class="form-container">
                         <div class="text-center mb-3 mt-3">
-                            <span class="titledash">Grafik für Benutzerstatistiken mit Status/Feedback</span>
+                            <span class="titledash">Grafik für Benutzerstatistiken mit Status/Rückmeldung
+                            </span>
                         </div>
                         <div class="row">
                             <div class="col-3">
@@ -198,7 +253,7 @@
                             </div>
                             <div class="col-3">
                                 <div class="mb-3">
-                                    <span class="subtitleform">Feedback: </span>
+                                    <span class="subtitleform">Rückmeldung : </span>
                                 </div>
                                 <select class="selectpicker" data-live-search="true" id="feedback_status_call_agent"
                                     multiple data-actions-box="true">
@@ -230,7 +285,7 @@
                             </div>
                             <div class="col-2 ">
                                 <div class="mb-2">
-                                    <span class="subtitleform">Action</span>
+                                    <span class="subtitleform">Aktionen</span>
                                 </div>
                                 <button class="anzeigenbtn" type="button" onclick="callAgentChart2()">Anzeigen</button>
                             </div>
@@ -461,7 +516,7 @@
 
                         }],
                         title: {
-                            text: 'Average High & Low Temperature',
+                            // text: 'Average High & Low Temperature',
                             align: 'left',
                             style: {
                                 fontWeight: '500',
@@ -481,14 +536,14 @@
                             size: 0
                         },
                         xaxis: {
-                            categories: date,
-                            title: {
-                                text: 'Month'
-                            }
+                            // categories: date,
+                            // title: {
+                            //     text: 'Month'
+                            // }
                         },
                         yaxis: {
                             title: {
-                                text: 'Temperature'
+                                text: 'Terminiert'
                             },
 
                         },
@@ -585,7 +640,7 @@
                         },
                         series: [],
                         title: {
-                            text: 'Average High & Low Temperature',
+                            // text: 'Average High & Low Temperature',
                             align: 'left',
                             style: {
                                 fontWeight: '500',

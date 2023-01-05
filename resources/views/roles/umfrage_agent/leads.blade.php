@@ -8,11 +8,11 @@ $i = 1;
         <div class="mt-4 py-4 ">
 
             <div class="tableform">
-                <div style="padding: 25px">
-                    <span class="ms-1 mb-4 titleoftable ">All
+                <div style="padding: 25px 30px 8px">
+                    <span class="ms-1 mb-4 titleoftable ">Alle
                         <hr
                             style=" border: 2px solid #00727A;
-                     width: 25px;
+                     width: 36px;
                      margin-top: 0px;
                      margin-left: 3px;">
                     </span>
@@ -39,17 +39,17 @@ $i = 1;
                             <tr class="text-center">
                                 <td>
                                 </td>
-                                <th>Vorname</th>
+                                <th>Full Name</th>
                                 <th>Nachname</th>
                                 <th>Geburtsdatum</th>
                                 <th>Email</th>
                                 <th>Region</th>
                                 <th>Sprache</th>
                                 <th>Verteilen At</th>
-                                <th>Created Time</th>
-                                <th>Created From</th>
-                                <th>Feedback</th>
-                                <th>Feedback datum</th>
+                                <th>Erstellte Zeit</th>
+                                <th>Erstellt von</th>
+                                <th>Rückmeldung </th>
+                                <th>Daten der Rückmeldung</th>
 
                                 <th> </th>
                             </tr>
