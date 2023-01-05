@@ -1,18 +1,13 @@
 <section>
     <header>
+        <div class="mt-4">
         <div>
-            <span class="titleprofile">Profile Information</span>
+            <span class="titleprofile">Profil-Informationen</span>
         </div>
         <div class="mt-2">
-            <span class="subtitleprofile">Update your account’s profile information and email adress.</span>
+            <span class="subtitleprofile">Aktualisieren Sie die Profilinformationen Ihres Kontos und Ihre E-Mail Adresse.</span>
         </div>
-        {{-- <h2 class="text-lg font-medium text-gray-900">
-            {{ __('Profile Information') }}
-        </h2> --}}
-
-        {{-- <p class="mt-1 text-sm text-gray-600">
-            {{ __("Update your account's profile information and email address.") }}
-        </p> --}}
+    </div>
     </header>
 
     <form id="send-verification" method="post" action="{{ route('verification.send') }}">
@@ -63,7 +58,7 @@
         {{-- <div class="d-flex flex-row-reverse mt-4">
             <button  class="btnprofile w-25">Save</button>
         </div> --}}
-        <hr style="margin-top: 25px;">
+        <hr style="margin-top: 45px;">
 
         {{-- <div>
             <x-input-label for="name" :value="__('Name')" />

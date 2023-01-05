@@ -1,9 +1,8 @@
 .bgtable {
-    background: #FFFFFF;
+    background: #ffffff;
     border-radius: 12px;
     margin-left: 20px;
 }
-
 
 .custom-control-label::after {
     background-color: white;
@@ -25,7 +24,6 @@ label {
 
 .table td,
 .table th {
-
     padding: 0.75rem;
     vertical-align: top;
     border-top: none !important;
@@ -36,7 +34,7 @@ tr {
 }
 
 tr:hover {
-    background-color: #F7F7F7;
+    background-color: #f7f7f7;
 }
 
 .formsearch {
@@ -101,10 +99,10 @@ tr:hover {
 }
 
 .topPlaceholder span {
-        font-size: 14px;
-        color: #94A2AB;
-        margin-left: 5px;
-        background: white;
+    font-size: 14px;
+    color: #94a2ab;
+    margin-left: 5px;
+    background: white;
 }
 
 .filtersubmit {
@@ -112,21 +110,21 @@ tr:hover {
     z-index: 1;
     left: 12px;
     top: 15px;
-    color: #94A2AB;
+    color: #94a2ab;
     cursor: pointer;
     width: 0;
 }
 
-.titleoftable{
-    font-family: 'Raleway';
+.titleoftable {
+    font-family: "Raleway";
     font-style: normal;
     font-weight: 600;
     font-size: 18px;
     line-height: 21px;
-    color: #1F1F1F;
+    color: #1f1f1f;
 }
 
-.searchgrup{
+.searchgrup {
     padding-left: 25px;
 }
 
@@ -134,12 +132,11 @@ tr:hover {
     /* border-top: 0px solid !important; */
 }
 
-.teamtable{
+.teamtable {
     box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
-    
 }
 
-.bootstrap-select>select{
+.bootstrap-select > select {
     z-index: 100000 !important;
 }
 
@@ -170,35 +167,32 @@ tr:hover {
 /* Filter/supervisor */
 
 .accordionbg {
-   
 }
 
-.acordion{
+.acordion {
     background: rgba(0, 114, 122, 0.12);
     padding: 14px;
-    border: 1px solid #00727A;
+    border: 1px solid #00727a;
     border-radius: 8px;
     font-size: 15px;
     transition: 0.4s;
     cursor: pointer;
-    font-family: 'Raleway';
+    font-family: "Raleway";
     font-style: normal;
     font-weight: 600;
     font-size: 14px;
     line-height: 16px;
     display: flex;
     align-items: center;
-    color: #00727A;
-
+    color: #00727a;
 }
 .accordion {
-    border: 1px solid #00727A;
+    border: 1px solid #00727a;
     border-radius: 8px;
     cursor: pointer;
     padding: 8px;
-    background: rgba(0, 114, 122, 0.12)
+    background: rgba(0, 114, 122, 0.12);
 }
-
 
 .panel {
     padding: 0 18px;
@@ -207,7 +201,6 @@ tr:hover {
     border-radius: 12px;
     margin-top: 12px;
     /* overflow: hidden; */
-  
 }
 
 .form-controol {
@@ -226,30 +219,30 @@ tr:hover {
     border-radius: 8px;
 }
 
-.bs-select-all{
+.bs-select-all {
     border: none !important;
     font-size: 12px !important;
-    color: #3F4852 !important;
+    color: #3f4852 !important;
 }
 
-.bs-deselect-all{
+.bs-deselect-all {
     border: none !important;
     font-size: 12px !important;
-    color: #3F4852 !important;
+    color: #3f4852 !important;
 }
 
-.filter-option-inner-inner{
-   color: #3F4852 !important
+.filter-option-inner-inner {
+    color: #3f4852 !important
    ;
 }
-.btn:active{
-        color: #fffcfc !important; 
-    background-color: #fffcfc !important; 
-   border-color: #fffcfc !important; 
- box-shadow: var(--mdb-btn-active-shadow); 
+.btn:active {
+    color: #fffcfc !important;
+    background-color: #fffcfc !important;
+    border-color: #fffcfc !important;
+    box-shadow: var(--mdb-btn-active-shadow);
 }
 
-.btn-light:hover{
+.btn-light:hover {
     box-shadow: none !important;
     background-color: none !important;
 }
@@ -260,14 +253,15 @@ tr:hover {
     border-color: var(--mdb-btn-hover-border-color);
 } */
 
-.bootstrap-select
-.dropdown-toggle:focus{
-    outline: thin dotted rgb(255, 252, 252)!important;
-    outline: none!important;
+.bootstrap-select .dropdown-toggle:focus {
+    outline: thin dotted rgb(255, 252, 252) !important;
+    outline: none !important;
     outline-offset: -2px;
 }
 
-.bootstrap-select:not([class*=col-]):not([class*=form-control]):not(.input-group-btn){
+.bootstrap-select:not([class*="col-"]):not([class*="form-control"]):not(
+        .input-group-btn
+    ) {
     width: 100% !important;
 }
 
@@ -276,73 +270,71 @@ tr:hover {
     border: none !important; */
 }
 
-.dropdown-toggle{
+.dropdown-toggle {
     border: none !important ;
 }
 
-.pull-right{
+.pull-right {
     float: right;
 }
 
-
-
-.tableform{
+.tableform {
     width: 100%;
     /* height: 285vh; */
-   
-    background: #FFFFFF;
+
+    background: #ffffff;
     border-radius: 12px;
 }
 
- table {
+table {
     border-collapse: collapse;
     border-spacing: 0;
     width: 100%;
-  }
-  
-   th, td {
+}
+
+th,
+td {
     text-align: center;
     padding: 15px 5px;
-  }  
+}
 
-
-  .buttonsearch{
+.buttonsearch {
     width: 52px;
     height: 44px;
     left: 1156px;
     top: 262px;
-    border: 1px solid #00727A;
+    border: 1px solid #00727a;
     padding: 3px 3px 0px 0px;
     border-radius: 8px;
     margin: 0px 0px;
     background-color: white;
     float: right;
-  }
+}
 
-  .tablesfont{
-    font-family: 'Raleway';
+.tablesfont {
+    font-family: "Raleway";
     font-style: normal;
     font-weight: 500;
     font-size: 12px;
     line-height: 14px;
-    color: #3F4852;
-    }
-
- tbody{
-        border-bottom:1px solid #EAECEE;
-    }
-
-.squaredFour {
-        width: 20px;
-        position: relative;
-        margin: 20px auto;
-    }
-
-tr {
-    border-bottom: 1px solid #EAECEE;
+    color: #3f4852;
 }
 
-.searchLeads{
+tbody {
+    border-bottom: 1px solid #eaecee;
+}
+
+.squaredFour {
+    width: 20px;
+    position: relative;
+    margin: 20px auto;
+}
+
+tr {
+    border-bottom: 1px solid #eaecee;
+}
+
+.searchLeads {
     padding-right: 28px;
 }
 
@@ -350,30 +342,28 @@ tr {
     margin-top: -50px;
 }
 
-@media (max-width: 769px) { 
-    .searchgrup{
-
+@media (max-width: 769px) {
+    .searchgrup {
         padding: 0px 20px;
         padding-right: 27px;
     }
 
-    .chooseteamgroup{
+    .chooseteamgroup {
         padding-left: 21px;
         padding-right: 27px;
     }
 
-    .btnsubmit{
+    .btnsubmit {
         padding-left: 21px;
         padding-right: 27px;
     }
-    
-    .searchLeads{
+
+    .searchLeads {
         padding-left: 21px;
     }
-    
- }
- @media (max-width: 576.99px) {
+}
+@media (max-width: 576.99px) {
     .navPagination {
         margin-top: 25px;
     }
- }
+}

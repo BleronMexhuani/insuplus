@@ -268,7 +268,8 @@
                             </div>
                             <div class="col-md-3 mb-3">
                                 <div class="mt-2">
-                                    <span class="subtitleform">Feedback</span>
+                                    <span class="subtitleform">Rückmeldung
+                                    </span>
                                 </div>
                                 <div class="mt-2">
                                     <select class="selectpicker" data-live-search="true" name="feedback_status[]"
@@ -316,11 +317,11 @@
             </form>
 
             <div class="tableform">
-                <div style="padding: 25px">
-                    <span class="ms-1 mb-4 titleoftable ">All
+                <div style="padding: 25px 30px 8px">
+                    <span class="ms-1 mb-4 titleoftable ">Alle
                         <hr
                             style=" border: 2px solid #00727A;
-                         width: 25px;
+                         width: 36px;
                          margin-top: 0px;
                          margin-left: 3px;">
                     </span>
@@ -358,7 +359,7 @@
                         padding: 0px;">
                             <thead style="background-color: #F7F7F7;">
                                 <tr class="text-center">
-                                    <th>Vorname</th>
+                                    <th>Full Name</th>
                                     <th>Nachname</th>
                                     <th>Geburtsdatum</th>
                                     <th>Email</th>
@@ -366,11 +367,11 @@
                                     <th>Sprache</th>
                                     <th>Verteilen At</th>
                                     <th>Quality Agent</th>
-                                    <th>Created Time</th>
-                                    <th>Created From</th>
-                                    <th>Feedback</th>
-                                    <th>Feedback datum</th>
-                                    <th>Aktion </th>
+                                    <th>Erstellte Zeit </th>
+                                    <th>Erstellt von</th>
+                                    <th>Rückmeldung   </th>
+                                    <th>Daten der Rückmeldung</th>
+                                    <th>Aktionen </th>
                                     <th> </th>
                                 </tr>
                             </thead>

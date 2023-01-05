@@ -28,7 +28,7 @@
             </div>
             <div class="col-6 my-auto">
                 <span>Submit</span>
-                <button class="btn btn-primary w-100" style="background-color:blue">Submit</button>
+                <button class="btn btn-primary w-100" style="background-color:blue">Übermitteln</button>
             </div>
             @if(Illuminate\Support\Facades\Session::has('success'))
                 <span style="color:green">

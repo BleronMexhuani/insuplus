@@ -4,7 +4,7 @@
         @csrf
         <div class="row">
             <div class="col-3">
-                <label for="Group Name">Group Name</label>
+                <label for="Group Name">Gruppenname</label>
                 <input type="text" required name="group_name" class="form-control" value="{{ $team->group_name }}">
             </div>
             <div class="col-3">

@@ -134,7 +134,7 @@
                                             <div class="col-12 col-lg-auto my-lg-auto">
                                                 <div class="">
                                                     <button onclick="chartlista()" type="submit"
-                                                        class="btn btnleads">Filter</button>
+                                                        class="btn btnleads">Filtern</button>
                                                 </div>
                                             </div>
                                         </div>

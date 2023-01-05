@@ -7,7 +7,7 @@
             {{-- @csrf --}}
             <div class="row">
                 <div class="col-12 col-md-6 col-lg-3">
-                    <label for="Group">Group Name</label>
+                    <label for="Group">Gruppenname</label>
                     <input type="text" class="form-control" placeholder="Group Name.." name="group_name">
                 </div>
                 <div class="col-12 col-md-6 col-lg-3">
@@ -31,7 +31,7 @@
                     </select>
                 </div>
                 <div class="col-12 col-md-6 col-lg-3 mt-2 mt-lg-0">
-                    <label for="Call Agent">Team Leaders</label>
+                    <label for="Call Agent">Teamleiter</label>
                     <select class="selectpicker form-control" required data-live-search="true" name="team_leaders[]" multiple='true'>
                         @foreach ($team_leaders as $item)
                             <option value="{{ $item->id }}">{{ $item->name }}</option>
@@ -39,7 +39,7 @@
                     </select>
                 </div>
                 <div class="col-lg-3 my-3">
-                    <button class=" btnprofile w-100 " style="color:white">Submit</button>
+                    <button class=" btnprofile w-100 " style="color:white">Übermitteln</button>
                 </div>
             </div>
         </form>

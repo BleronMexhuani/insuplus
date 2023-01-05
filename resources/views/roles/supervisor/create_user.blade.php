@@ -24,14 +24,14 @@
                     <select name="role" class="form-control" id="roles">
                         <option value="quality_agent">Quality Agent</option>
                         <option value="umfrage_agent">Umfrage Agent</option>
-                        <option value="team_leader">Team Leader</option>
+                        <option value="team_leader">Teamleiter </option>
                         <option value="call_agent">Call Agent</option>
                         <option value="supervisor">Supervisor</option>
                     </select>
                 </div>
                 <div class="col-6 my-3">
              
-                    <button class="btn btn-primary w-100" style="background-color:blue">Submit</button>
+                    <button class="btn btn-primary w-100" style="background-color:blue">Übermitteln</button>
                 </div>
                 @if(Illuminate\Support\Facades\Session::has('success'))
                     <span style="color:green">

@@ -271,7 +271,8 @@
                             </div>
                             <div class="col-md-3 mb-3">
                                 <div class="mt-2">
-                                    <span class="subtitleform">Feedback</span>
+                                    <span class="subtitleform">Rückmeldung
+                                    </span>
                                 </div>
                                 <div class="mt-2">
                                     <select class="selectpicker" data-live-search="true" name="feedback_status[]"
@@ -317,11 +318,11 @@
             </form>
             <div class="tableform">
                 <div class="tableform">
-                    <div style="padding: 25px">
-                        <span class="ms-1 mb-4 titleoftable ">All
+                    <div style="padding: 25px 30px 8px">
+                        <span class="ms-1 mb-4 titleoftable ">Alle
                             <hr
                                 style=" border: 2px solid #00727A;
-                             width: 25px;
+                             width: 36px;
                              margin-top: 0px;
                              margin-left: 3px;">
                         </span>
@@ -348,7 +349,7 @@
                                     <div class="searchgrup mt-md-4 mt-3">
                                         <select name="assign_to_id_call" placeholder="Call agents" id=""
                                             class="form-select inputleads  select-form  mb-3">
-                                            <option value="">Choose Call Agents</option>
+                                            <option value="">Call Agents auswählen</option>
                                             @foreach ($callagents as $item)
                                                 <option value="{{ $item->id }}">{{ $item->name }}</option>
                                             @endforeach
@@ -358,7 +359,7 @@
                               
                                 <div class="col-md-2 ">
                                     <div class="btnsubmit mb-md-4 mb-0 mt-md-4 mt-0 text-center">
-                                        <button class=" btnprofile w-100 " style="color:white;">Submit</button>
+                                        <button class=" btnprofile w-100 " style="color:white;">Übermitteln</button>
                                     </div>
                                 </div>
                             </div>
@@ -382,18 +383,18 @@
                                                     </label>
                                                 </div>
                                             </td>
-                                            <th>Vorname</th>
+                                            <th>Full Name</th>
                                             <th>Nachname</th>
                                             <th>Geburtsdatum</th>
                                             <th>Email</th>
                                             <th>Region</th>
                                             <th>Sprache</th>
                                             <th>Verteilen At</th>
-                                            <th>Created Time</th>
-                                            <th>Created From</th>
-                                            <th>Feedback</th>
-                                            <th>Feedback datum</th>
-                                            <th>Aktion </th>
+                                            <th>Erstellte Zeit</th>
+                                            <th>Erstellt von</th>
+                                            <th>Rückmeldung </th>
+                                            <th>Daten der Rückmeldung</th>
+                                            <th>Aktionen </th>
                                             <th> </th>
                                         </tr>
                                     </thead>

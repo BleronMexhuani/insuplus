@@ -10,7 +10,7 @@
                 <div class="row">
                     <div class="col-4">
                         <div class="text-start">
-                            <span class="titleform ">Person Information </span>
+                            <span class="titleform ">Informationen zur Person </span>
                             <div class="mt-2">
                                 <hr style="width: 55%; border: 2px solid #00727A;" />
                             </div>
@@ -18,10 +18,10 @@
                     </div>
                     <div class="col-4">
                         <div class="">
-                            <span class="subtitleform">Vorname</span>
+                            <span class="subtitleform">Full Name</span>
                         </div>
                         <div class="mt-2">
-                            <input class="inputform" type="text" name="vorname" placeholder="Jane" />
+                            <input class="inputform" type="text" name="vorname" placeholder="Max " />
                         </div>
                         <div class="mt-4">
                             <span class="subtitleform">Anrede</span>
@@ -39,7 +39,7 @@
                             <span class="subtitleform">Nachname </span>
                         </div>
                         <div class="mt-2">
-                            <input class="inputform" type="text" name="nachname[]" placeholder="Jane" />
+                            <input class="inputform" type="text" name="nachname[]" placeholder="Mustermann" />
                         </div>
                         <div class="mt-4">
                             <span class="subtitleform">Geburtsdatum </span>
@@ -54,7 +54,7 @@
                 <div class="row">
                     <div class="col-4 mt-2">
                         <div class="text-start">
-                            <span class="titleform ">Address Information </span>
+                            <span class="titleform ">Informationen zur Adresse </span>
                             <div class="mt-2">
                                 <hr style="width: 55%; border: 2px solid #00727A;" />
                             </div>
@@ -66,7 +66,7 @@
                         </div>
                         <div class="mt-2 ">
                             <div class="d-flex mb-3 ">
-                                <input type="text" name="adresse[]" class="inputgroupleft" placeholder="James Scar"
+                                <input type="text" name="adresse[]" class="inputgroupleft" placeholder="Musterstraße"
                                     aria-label="Username">
                                 <input type="text" name="hause_nummer[]" class="inputgroupright"
                                     placeholder="Haus Nummer" aria-label="Haus Nummer">
@@ -103,7 +103,7 @@
                 <div class="row">
                     <div class="col-4 mt-2">
                         <div class="text-start">
-                            <span class="titleform ">Kontakt Information</span>
+                            <span class="titleform ">Kontakt-Informationen</span>
                             <div class="mt-2">
                                 <hr style="width: 55%; border: 2px solid #00727A;" />
                             </div>
@@ -537,7 +537,8 @@
                 </div>
                 <hr>
                 <div class="text-center mt-4">
-                    <span class="feedbacktitle">Feedback</span><br>
+                    <span class="feedbacktitle">Rückmeldung
+                    </span><br>
                 </div>
                 <div class="row g-1 tab mt-4 ms-0 ms-md-0 px-3 px-md-3 d-flex justify-content-center">
                     <!-- <div class=""> -->

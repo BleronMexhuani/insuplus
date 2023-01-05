@@ -100,7 +100,7 @@
                                             <div class="">
                                                 <div class="row g-0">
                                                     <div class="col-2">
-                                                        <span class="titledate">from</span>
+                                                        <span class="titledate">von</span>
 
                                                     </div>
                                                     <div class="col">
@@ -133,7 +133,7 @@
                                         <div class="col-12 col-lg-auto my-lg-auto">
                                             <div class="">
                                                 <button onclick="chartlista()" type="submit"
-                                                    class="btn btnleads">Filter</button>
+                                                    class="btn btnleads">Filtern</button>
                                             </div>
                                         </div>
                                     </div>

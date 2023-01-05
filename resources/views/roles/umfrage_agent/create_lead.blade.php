@@ -21,7 +21,7 @@
                 <div class="row">
                     <div class="col-4">
                         <div class="text-start">
-                            <span class="titleform ">Person Information </span>
+                            <span class="titleform ">Informationen zur Person </span>
                             <div class="mt-2">
                                 <hr style="width: 55%; border: 2px solid #00727A;" />
                             </div>
@@ -29,10 +29,10 @@
                     </div>
                     <div class="col-4">
                         <div class="">
-                            <span class="subtitleform">Vorname</span>
+                            <span class="subtitleform">Full Name</span>
                         </div>
                         <div class="mt-2">
-                            <input class="inputform" type="text" name="vorname" required placeholder="Jane" />
+                            <input class="inputform" type="text" name="vorname" required placeholder="Max " />
                         </div>
                         <div class="mt-4">
                             <span class="subtitleform">Anrede</span>
@@ -46,11 +46,13 @@
 
                     </div>
                     <div class="col-4">
+                        <div class="row">
                         <div class="">
                             <span class="subtitleform">Nachname </span>
                         </div>
+                    </div>
                         <div class="mt-2">
-                            <input class="inputform" type="text" required name="nachname" placeholder="Jane" />
+                            <input class="inputform" type="text" required name="nachname" placeholder="Mustermann" />
                         </div>
                         <div class="mt-4">
                             <span class="subtitleform">Geburtsdatum </span>
@@ -64,7 +66,7 @@
                 <div class="row">
                     <div class="col-4 mt-2">
                         <div class="text-start">
-                            <span class="titleform ">Address Information </span>
+                            <span class="titleform ">Informationen zur Adresse </span>
                             <div class="mt-2">
                                 <hr style="width: 55%; border: 2px solid #00727A;" />
                             </div>
@@ -77,12 +79,14 @@
                         <div class="mt-2 ">
                             <div class="d-flex mb-3 ">
                                 <div>
-                                    <input type="text" name="adresse" class="inputform" placeholder="James Scar" style="border-top-right-radius: 0px;  border-bottom-right-radius: 0px;"
+                                    <input type="text" name="adresse" class="inputform" placeholder="Musterstraße"
+                                        style="border-top-right-radius: 0px;  border-bottom-right-radius: 0px;"
                                         aria-label="Username" required>
                                 </div>
                                 <div>
 
-                                    <input type="text" name="hause_nummer" class="inputform" style="border-top-left-radius: 0px;  border-bottom-left-radius: 0px;"
+                                    <input type="text" name="hause_nummer" class="inputform"
+                                        style="border-top-left-radius: 0px;  border-bottom-left-radius: 0px;"
                                         placeholder="Haus Nummer" required aria-label="Haus Nummer">
 
                                 </div>
@@ -103,11 +107,13 @@
                         <div class="mt-2">
                             <div class="d-flex mb-3 ">
                                 <div>
-                                    <input type="text" name="plz" required class="inputform " id="plz" style="border-top-right-radius: 0px;  border-bottom-right-radius: 0px;"
+                                    <input type="text" name="plz" required class="inputform " id="plz"
+                                        style="border-top-right-radius: 0px;  border-bottom-right-radius: 0px;"
                                         placeholder="PLZ" aria-label="Username">
                                 </div>
                                 <div>
-                                    <input type="text" name="stadt" required class="inputform " id="stadt" style="border-top-left-radius: 0px;  border-bottom-left-radius: 0px;"
+                                    <input type="text" name="stadt" required class="inputform " id="stadt"
+                                        style="border-top-left-radius: 0px;  border-bottom-left-radius: 0px;"
                                         placeholder="Stadt" aria-label="stadt">
                                 </div>
 
@@ -130,7 +136,7 @@
                 <div class="row">
                     <div class="col-4 mt-2">
                         <div class="text-start">
-                            <span class="titleform ">Kontakt Information</span>
+                            <span class="titleform ">Kontakt-Informationen</span>
                             <div class="mt-2">
                                 <hr style="width: 55%; border: 2px solid #00727A;" />
                             </div>
@@ -142,12 +148,17 @@
                         </div>
                         <div class="mt-2 ">
                             <div class="input-group mb-3">
-                                <div class="input-group-prepend" >
-                                    <span  class="input-group-text" id="basic-addon1" style="border-top-right-radius: 0px !important;  border-bottom-right-radius: 0px !important;">+41</span>
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text" id="basic-addon1"
+                                        style="border-top-right-radius: 0px !important;  border-bottom-right-radius: 0px !important;">+41</span>
                                 </div>
                                 <div>
-                                    <input type="text" class="inputform" style="border-top-left-radius: 0px !important;  border-bottom-left-radius: 0px !important;" required pattern="^(?:0|\(?\)?\s?|41\s?)(21|22|24|26|27|31|32|33|34|41|43|44|51|52|55|56|58|61|62|71|74|75|76|77|78|79|81|91)(?:[\.\-\s]?\d\d\d)(?:[\.\-\s]?\d\d){2}$" placeholder="" name="handy_nummer"
-                                        aria-label="" aria-describedby="basic-addon1">
+                                    <input type="text" class="inputform"
+                                        style="border-top-left-radius: 0px !important;  border-bottom-left-radius: 0px !important;"
+                                        required
+                                        pattern="^(?:0|\(?\)?\s?|41\s?)(21|22|24|26|27|31|32|33|34|41|43|44|51|52|55|56|58|61|62|71|74|75|76|77|78|79|81|91)(?:[\.\-\s]?\d\d\d)(?:[\.\-\s]?\d\d){2}$"
+                                        placeholder="" name="handy_nummer" aria-label=""
+                                        aria-describedby="basic-addon1">
 
                                 </div>
                             </div>
@@ -566,7 +577,7 @@
                     </div>
                 </div>
                 <div class="d-flex justify-content-end ">
-                    <button class="buttoninput" type="submit">Submit</button>
+                    <button class="buttoninput" type="submit">Übermitteln</button>
                 </div>
             </div>
         </div>

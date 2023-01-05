@@ -3,17 +3,17 @@
 @section('content')
 <div class="col ms-0 ms-md-2 px-0 ">
     <div class="my-3 mt-5">
-        <a href="{{ route('createUser') }}" class="titleoftable  fs-3">Add User</a>
+        <a href="{{ route('createUser') }}" class="titleoftable  fs-3">Benutzer Hinzufügen</a>
     </div>
     <div class="tableform mt-4">
         <div style="overflow-x:auto; overflow-y: hidden">
             <table>
                 <thead>
                     <tr style="background-color: #F7F7F7;">
-                        <th>Vorname</th>
+                        <th>Full Name</th>
                         <th>Rolle</th>
                         <th>Email</th>
-                        <th class="text-center">Aktion</th>
+                        <th class="text-center">Aktionen</th>
                     </tr>
                 </thead>
                 <tbody>
