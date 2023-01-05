@@ -26,7 +26,7 @@
                         <div class="d-flex flex-column">
                             <span class="subtitledash">Total Terminiert</span>
                             <span
-                                style="font-weight: 700; color: #8B35F9; font-size: 32px;font-family: 'Poppins', sans-serif; ">{{ $today }}</span>
+                                style="font-weight: 700; color: #00727A; font-size: 32px;font-family: 'Poppins', sans-serif; ">{{$total_terminert}}</span>
                         </div>
                     </div>
                 </div>
@@ -51,7 +51,7 @@
                         <div class="d-flex flex-column">
                             <span class="subtitledash">Total Leads</span>
                             <span
-                                style="font-weight: 700; color: #8B35F9; font-size: 32px;font-family: 'Poppins', sans-serif; ">{{ $today }}</span>
+                                style="font-weight: 700; color: #F97035; font-size: 32px;font-family: 'Poppins', sans-serif; ">{{$total_leads}}</span>
                         </div>
                     </div>
                 </div>
