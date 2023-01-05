@@ -5,10 +5,10 @@
     <div class="col ms-0 ms-md-2 px-0 " style="height: 90vh;">
         <div class="row ">
             <div class="my-3 mt-5 col-2">
-                <a href="{{ route('createUser') }}" class="titleoftable  fs-3">Add User</a>
+             <button class="benutzerbutton w-100 ">  <a href="{{ route('createUser') }}" class="  ">Benutzer Hinzufügen</a> </button>
 
             </div>
-            <div class="col-9 my-3 mt-5 ">
+            <div class="col-10 my-3 mt-5 ">
                 <form action="" class="d-flex justify-content-end">
                     <div class="pe-2">
                         <select class="selectpicker " data-live-search="true" name="roles[]" multiple='true'>
@@ -21,10 +21,10 @@
                         </select>
                     </div>
                     <div class="pe-2">
-                        <input type="text" placeholder="Vorname.." class="form-control" name="vorname">
+                        <input type="text" placeholder="Vorname.." class="form-control" name="vorname" style="border-radius: 8px">
                     </div>
                     <div class="">
-                        <button class="btn btn-primary w-100" style="color:white">Search</button>
+                        <button class="suchebutton " style="color:white">Suche</button>
                     </div>
                 </form>
             </div>
