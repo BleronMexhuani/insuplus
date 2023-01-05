@@ -434,7 +434,7 @@
                                         <th>Verteilen At</th>
                                         <th>Erstellte Zeit</th>
                                         <th>Erstellt von</th>
-                                        <th>Rückmeldung  </th>
+                                        <th>Rückmeldung </th>
                                         <th>Daten der Rückmeldung</th>
                                         <th>Aktionen </th>
                                         <th> </th>
@@ -456,7 +456,23 @@
                                                         class="check ms-3">
                                                 </label>
                                             </td>
-                                            <td>{{ $item->vorname }}</td>
+                                            <td>
+                                                @if ($item->is_duplicate == 'true')
+                                                    <svg fill="red" height="17px" width="17 px" version="1.1"
+                                                        id="Capa_1" xmlns="http://www.w3.org/2000/svg"
+                                                        xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 52 52"
+                                                        xml:space="preserve">
+                                                        <g>
+                                                            <path
+                                                                d="M45,0H11c-0.552,0-1,0.448-1,1v3H7C6.448,4,6,4.448,6,5v46c0,0.552,0.448,1,1,1h34c0.552,0,1-0.448,1-1v-3h3
+		c0.552,0,1-0.448,1-1V1C46,0.448,45.552,0,45,0z M40,50H8V6h23v8c0,0.552,0.448,1,1,1h8V50z M33,7.414L38.586,13H33V7.414z M44,46
+		h-2V14c0-0.022-0.011-0.041-0.013-0.063c-0.006-0.088-0.023-0.173-0.051-0.257c-0.011-0.032-0.019-0.063-0.034-0.094
+		c-0.049-0.106-0.11-0.207-0.196-0.293l-9-9c-0.086-0.086-0.187-0.147-0.293-0.196c-0.031-0.014-0.062-0.022-0.094-0.033
+		c-0.084-0.029-0.169-0.046-0.258-0.051C32.041,4.011,32.021,4,32,4H12V2h32V46z" />
+                                                        </g>
+                                                    </svg>
+                                                @endif {{ $item->vorname }}
+                                            </td>
                                             <td>{{ $item->nachname }}</td>
                                             <td>{{ Carbon\Carbon::parse($item->geburtsdatum)->format('d-m-Y') }}</td>
                                             <td>{{ $item->email }}</td>
@@ -464,8 +480,8 @@
                                             <td>{{ $item->sprachen }}</td>
                                             <td>{{ $item->assign_to_id_call ? App\Models\User::find($item->assign_to_id_call)->name : ($item->assign_to_id_team_leader ? App\Models\User::find($item->assign_to_id_team_leader)->name : 'Not Assigned') }}
                                             </td>
-                                            <td>{{Carbon\Carbon::parse($item->created_at)->format('d-m-Y h:i:s')}}</td>
-                                            <td>{{  optional(App\Models\User::find($item->assigned_from))->name }}</td>
+                                            <td>{{ Carbon\Carbon::parse($item->created_at)->format('d-m-Y h:i:s') }}</td>
+                                            <td>{{ optional(App\Models\User::find($item->assigned_from))->name }}</td>
                                             <td
                                                 style="color:{{ $item->feedback_status == 'Terminiert' ? 'green' : 'red' }};">
                                                 {{ $item->feedback_status }}</td>

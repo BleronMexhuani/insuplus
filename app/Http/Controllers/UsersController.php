@@ -20,6 +20,8 @@ class UsersController extends Controller
         $today = '';
         $month = '';
         $week = '';
+        $total_leads = 0;
+        $total_terminert = 0;
 
         if (Auth::user()->hasRole(['call_agent'])) {
 
@@ -39,7 +41,10 @@ class UsersController extends Controller
             $month = Lead::Select('completed')->whereMonth('created_at', now()->month)->count();
             $week = Lead::Select('completed')->whereBetween('created_at', [Carbon::now()->startOfWeek(), Carbon::now()->endOfWeek()])->count();
         }
-        return view('dashboard', compact('umfrage_agents', 'callagents', 'week', 'today', 'month'));
+
+        $total_leads = Lead::all()->count();
+        $total_terminert = Lead::where('feedback_status','Terminiert')->count();
+        return view('dashboard', compact('umfrage_agents', 'callagents', 'week', 'today', 'month','total_leads','total_terminert'));
     }
 
     public function leadsOfSupervisor()

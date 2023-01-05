@@ -18,7 +18,10 @@ class UmfrageAgentController extends Controller
         if ($request['sprachen']) {
             $request['sprachen'] = implode(",", $request['sprachen']);
         }
+        $check_if_duplicate = Lead::where('handy_nummer',$request->handy_nummer)->count();
 
+        $request['is_duplicate'] = $check_if_duplicate ? 'true' : 'false';
+        
         Lead::create($request->except('_token'));
 
         return redirect()->back()->with('success', 'Successfuly inserted');
