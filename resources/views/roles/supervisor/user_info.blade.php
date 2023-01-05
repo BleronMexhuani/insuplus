@@ -7,14 +7,15 @@
         <div class="row w-75">
             <div class="col-6">
                 <label for="Emai">Name</label>
-                <input type="text" name="name" class="form-control " value="{{ $user->name }}">
+                <input type="text" name="name" class="form-control" value="{{ $user->name }}">
             </div>
             <div class="col-6">
                 <label for="Emai">Email</label>
-                <input type="text" name="email" class="form-control " value="{{ $user->email }}">
+                <input type="text" name="email" class="form-control" value="{{ $user->email }}">
             </div>
+         
         
-            <div class="col-6 my-3">
+            <div class="col-6">
                 <label for="">Select Role</label>
                 <select name="role" class="form-control" id="roles">
                     <option value="quality_agent">Quality Agent</option>
@@ -26,9 +27,13 @@
                     $("#roles").val('{{$user->getRoleNames()[0]}}')
                 </script>
             </div>
+            <div class="col-6">
+                <label for="Password">Password</label>
+                <input type="text" name="password" class="form-control" >
+            </div>
             <div class="col-6 my-auto">
                 <span>Submit</span>
-                <button class="btn btn-primary w-100" style="background-color:blue">Submit</button>
+                <button class="btn btn-primary w-100" style="background-color:blue;color:white">Submit</button>
             </div>
             @if(Illuminate\Support\Facades\Session::has('success'))
                 <span style="color:green">

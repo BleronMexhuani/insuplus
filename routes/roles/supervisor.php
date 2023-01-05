@@ -22,6 +22,8 @@ Route::middleware(['role:supervisor'])->group(function () {
     //Delete User by ID
     Route::get('delete_user/{id}', [SupervisorController::class, 'deleteUser'])->name('deleteUser');
 
+    Route::get('delete_lead/{id}',[SupervisorController::class,'deleteLead'])->name('deleteLead');
+
     Route::view('/createUser', 'roles.supervisor.create_user')->name('createUser');
 
     Route::post('/createUser/add', [SupervisorController::class, 'addUser'])->name('createUser.add');
