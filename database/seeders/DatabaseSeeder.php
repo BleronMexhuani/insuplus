@@ -16,13 +16,13 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-        // $this->call(RoleSeeder::class);
+         $this->call(RoleSeeder::class);
 
-        $user =  User::create([
-            'name'=>'Confirmation Agent',
-            'email'=>'confirmation_agent@gmail.com',
-            'password'=>Hash::make('123123'),
-        ]);
-        $user->assignRole('confirmation_agent');
+        // $user =  User::create([
+        //     'name'=>'Confirmation Agent',
+        //     'email'=>'confirmation_agent@gmail.com',
+        //     'password'=>Hash::make('123123'),
+        // ]);
+        // $user->assignRole('confirmation_agent');
     }
 }

@@ -17,13 +17,14 @@ class RoleSeeder extends Seeder
     {
         //
         
-        Role::create(['name'=>'manager']);
-        Role::create(['name'=>'hr']);
-        Role::create(['name'=>'supervisor']);
-        Role::create(['name'=>'team_leader']);
-        Role::create(['name'=>'confirmation_agent']);
-        Role::create(['name'=>'quality_agent']);
-        Role::create(['name'=>'call_agent']);
-        Role::create(['name'=>'umfrage_agent']);
+        Role::create(['name'=>'umfrage_leader']);
+        // Role::create(['name'=>'manager']);
+        // Role::create(['name'=>'hr']);
+        // Role::create(['name'=>'supervisor']);
+        // Role::create(['name'=>'team_leader']);
+        // Role::create(['name'=>'confirmation_agent']);
+        // Role::create(['name'=>'quality_agent']);
+        // Role::create(['name'=>'call_agent']);
+        // Role::create(['name'=>'umfrage_agent']);
     }
 }

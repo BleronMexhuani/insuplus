@@ -1,11 +1,11 @@
 @extends('layouts.app')
 
 @section('content')
-
     <div class="col ms-0 ms-md-2 px-0 " style="height: 90vh;">
         <div class="row ">
             <div class="my-3 mt-5 col-2">
-             <button class="benutzerbutton w-100 ">  <a href="{{ route('createUser') }}" class="  ">Benutzer Hinzufügen</a> </button>
+                <button class="benutzerbutton w-100 "> <a href="{{ route('createUser') }}" class="  ">Benutzer
+                        Hinzufügen</a> </button>
 
             </div>
             <div class="col-10 my-3 mt-5 ">
@@ -17,11 +17,13 @@
                             <option value="team_leader">Team Leader</option>
                             <option value="call_agent">Call Agent</option>
                             <option value="supervisor">Supervisor</option>
-
+                            <option value="confirmation_agent">Confirmation Agent</option>
+                            <option value="umfrage_leader">Umfrage Leader</option>
                         </select>
                     </div>
                     <div class="pe-2">
-                        <input type="text" placeholder="Vorname.." class="form-control" name="vorname" style="border-radius: 8px">
+                        <input type="text" placeholder="Vorname.." class="form-control" name="vorname"
+                            style="border-radius: 8px">
                     </div>
                     <div class="">
                         <button class="suchebutton " style="color:white">Suche</button>
@@ -40,14 +42,16 @@
                             <th>Rolle</th>
                             <th>Email</th>
                             <th class="text-center">Aktion</th>
-                        
+
                         </tr>
                     </thead>
                     <tbody>
                         @foreach ($users as $item)
                             <tr>
                                 <td>{{ $item->name }}</td>
-                                <td>{{ ucfirst(explode('_', $item->getRoleNames()[0])[0]) }} Agent </td>
+                                <td>{{ ucfirst(explode('_', $item->getRoleNames()[0])[0]) }}
+                                    {{ isset(explode('_', $item->getRoleNames()[0])[1]) ? ucfirst(explode('_', $item->getRoleNames()[0])[1]) : '' }}
+                                </td>
                                 <td>{{ $item->email }}</td>
                                 <td><a class="btn btnedit" href="{{ route('getuserbyid', ['id' => $item->id]) }}"><i
                                             class="fa-regular fa-pen-to-square"></i></a>

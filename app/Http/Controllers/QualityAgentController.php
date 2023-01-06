@@ -76,11 +76,16 @@ class QualityAgentController extends Controller
     public function getLeadById($id)
     {
         $lead =  Lead::find($id);
+        $last_feedback = $this->getLastFeedBack($id);
+      
         $feedbacks = QualityAgentController::getAllFeedBacks($id);
 
-        return view('roles.quality_agent.lead_info', compact('lead', 'feedbacks'));
+        return view('roles.quality_agent.lead_info', compact('lead', 'feedbacks','last_feedback'));
     }
-
+    public function getLastFeedBack($id)
+    {
+        return FeedBack::where('lead_id', $id)->latest()->first();
+    }
     public function getAllFeedBacks($id)
     {
         return FeedBack::where('lead_id', $id)->get();
@@ -89,6 +94,25 @@ class QualityAgentController extends Controller
     public function storeFeedBack(Request $req, $lead_id)
     {
         $req['user_id'] = Auth::user()->id;
+    
+        if ($req['sprachen']) {
+            $req['sprachen'] = implode(",", $req['sprachen']);
+        }
+        Lead::find($lead_id)->update($req->except(
+            "feedback",
+            "user_id",
+            "lead_id",
+            "termindatum",
+            "terminzeit",
+            "mitbewhoner",
+            "person_krank",
+            "vertragdatum",
+            "bestatigungsstatus",
+            "anrufdatum",
+            "zeit_anrufe",
+            "koment_der_geburtsdatum",
+            "koment_der_Konnen"
+        ));
 
         FeedBack::create([
             'feedback' => $req->feedback_status_quality_check,

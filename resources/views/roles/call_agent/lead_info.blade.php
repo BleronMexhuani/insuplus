@@ -21,7 +21,7 @@
                                     <span style="color: red; font-size:30px;">*</span>
                                 </div>
                                 <div class="">
-                                <input class="inputform" value="{{ $lead->vorname }}" type="text" name="Max "
+                                <input class="inputform" value="{{ $lead->vorname }}" type="text" name="vorname"
                                     placeholder="Vorname" />
                             </div>
                             <div class="d-flex align-items-center mt-3">
