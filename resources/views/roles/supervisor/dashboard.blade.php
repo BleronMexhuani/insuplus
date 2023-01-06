@@ -536,10 +536,10 @@
                             size: 0
                         },
                         xaxis: {
-                            // categories: date,
-                            // title: {
-                            //     text: 'Month'
-                            // }
+                            categories: date,
+                            title: {
+                                text: 'Month'
+                            }
                         },
                         yaxis: {
                             title: {

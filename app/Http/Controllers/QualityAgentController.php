@@ -102,7 +102,7 @@ class QualityAgentController extends Controller
             "feedback",
             "user_id",
             "lead_id",
-            "termindatum",
+
             "terminzeit",
             "mitbewhoner",
             "person_krank",
@@ -115,17 +115,18 @@ class QualityAgentController extends Controller
         ));
 
         FeedBack::create([
-            'feedback' => $req->feedback_status_quality_check,
+            'feedback' => $req->feedback_status,
             'user_id' => Auth::user()->id,
             'lead_id' => $lead_id,
-            'termin_datum' => $req->termin_datum,
+            'termin_datum' => $req->termindatum,
             'terminzeit' => $req->terminzeit,
-            "mitbewhoner" => $req->mitbewhoner,
-            "person_krank" => $req->person_krank,
+            "mitbewhoner" => $req->koment_der_geburtsdatum,
+            "person_krank" => $req->koment_der_Konnen,
             "vertragdatum" => $req->vertragdatum,
-            "bestatigungsstatus" => $req->bestatigungsstatus,
+            "bestatigungsstatus" => $req->bestatigungs_status,
             "anrufdatum" => $req->anrufdatum,
-            "zeit_anrufe" => $req->zeit_anrufe
+            "zeit_anrufe" => $req->zeitfuranrufen,
+            "bemerkung" => $req->bemerkung
         ]);
 
         if ($req->feedback_status_quality_check == 'confirmed') {
