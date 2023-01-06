@@ -213,24 +213,28 @@ a:hover {
 }
 
 .swiper-slide {
-    width: 308.667px !important;
+    width: 280.667px !important;
     border: 1px solid #eaecee;
     border-radius: 12px;
     flex: none;
     order: 0;
     flex-grow: 0.5;
-    display: flex;
+    /* display: flex;
+    justify-content: space-between; */
+    /* display: flex;
+    justify-content: flex-end; */
+    /* display: flex;
     flex-direction: row;
-    align-items: center;
-    padding: 30px 30px 30px;
+    align-items: center; */
+    /* padding: 30px 30px 30px; */
     gap: 16px;
     box-shadow: 0px 4px 25px rgb(187 187 187 / 25%);
     font-size: 18px;
     background: #fff;
-    display: -webkit-box;
+    /* display: -webkit-box;
     display: -ms-flexbox;
-    display: -webkit-flex;
-    display: flex;
+    display: -webkit-flex; */
+    /* display: flex; */
     /* -webkit-box-pack: center;
     -ms-flex-pack: center;
     -webkit-justify-content: center;
@@ -283,7 +287,7 @@ a:hover {
  } */
 
 
- .numberofboxessss {
+ /* .numberofboxessss {
     font-family: 'Poppins';
     font-style: normal;
     font-weight: 600;
@@ -294,7 +298,7 @@ a:hover {
 }
 
 .numberofdatafs1 {
-    background-image: url('/public/assets/img/corner2.svg');
+    background-image: url('/public/assets/img/ad.svg');
     background-repeat: no-repeat;
     background-position: right top;
     border-radius: 5px;
@@ -330,4 +334,4 @@ a:hover {
     display: flex;
     align-items: center;
 
-}
+} */
