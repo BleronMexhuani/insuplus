@@ -1,7 +1,7 @@
  <nav class="navbar navbar-expand-lg navbar-light ">
      <div class="container-fluid" style="padding:7px">
 
-         <a class="navbar-brand px-4 ms-4" href="#"><svg width="94" height="25" viewBox="0 0 94 25"
+         <a class="navbar-brand px-4 ms-4" href="{{ route('dashboard')}}"><svg width="94" height="25" viewBox="0 0 94 25"
                  fill="none" xmlns="http://www.w3.org/2000/svg">
                  <g clip-path="url(#clip0_191_844)">
                      <path
