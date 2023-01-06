@@ -187,10 +187,13 @@ textarea:focus-visible {
     border: none;
 }
 
-/* a:hover {
-    color: white !important;
+a:hover {
+    color: none !important;
     text-decoration: none;
-} */
+}
+a:hover {
+    color: #fdfdfd;
+}
 
 .suchebutton {
     background: #00727a;
