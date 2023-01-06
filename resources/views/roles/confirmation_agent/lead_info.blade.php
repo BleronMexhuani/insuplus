@@ -20,16 +20,16 @@
                                 <span class="subtitleform">Full Name</span>
                             </div>
                             <div class="mt-2">
-                                <input class="inputform" value="{{ $lead->vorname }}" type="text" name="Max "
-                                    placeholder="Vorname" />
+                                <input class="inputform" value="{{ $lead->vorname }}" type="text" name="vorname "
+                                    placeholder="Max" />
                             </div>
                             <div class="mt-4">
                                 <span class="subtitleform">Anrede</span>
                             </div>
                             <div class="mt-2">
                                 <select name="anrede" id="anrede" class="form-select inputform " id="">
-                                    <option value="male">Male</option>
-                                    <option value="female">Female</option>
+                                    <option value="Herr">Herr</option>
+                                    <option value="Frau">Frau</option>
                                 </select>
                             </div>
                         </div>

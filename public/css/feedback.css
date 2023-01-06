@@ -217,3 +217,54 @@ border-radius: 8px;
   border-color: #3b71ca;
 }
 
+.btn-primaryy {
+ background: transparent;
+  border: none;
+  outline: none;
+  padding: 14px 16px;
+  font-size: 14px;
+  font-weight: 700 !important;
+  font-size: 12px !important;
+  line-height: 14px !important;
+  color: #00727A !important;
+  border: 1px solid #00727A;
+  border-radius: 8px;
+}
+
+.btn-primaryyy {
+  background: transparent;
+   border: none;
+   outline: none;
+   padding: 14px 16px;
+   font-size: 14px;
+   font-weight: 700 !important;
+   font-size: 12px !important;
+   line-height: 14px !important;
+   color: #00727A !important;
+   border: 1px solid #00727A;
+   border-radius: 8px;
+ }
+
+ /* .btn-primaryyy:focus {
+  background-color:  #00727A !important;
+  color: white !important ;
+}
+.btn-primaryy:hover {
+  background-color: #ddd;
+}
+
+.btn-primaryy:focus {
+  background-color:  #00727A !important;
+  color: white !important ;
+}
+
+.btn-primaryy:hover {
+  background-color:  #00727A !important;
+  color: white !important ;
+} */
+.activee{
+  background-color:  #00727A !important;
+  color: white !important ;
+  box-shadow: none;
+  outline: none;
+}
