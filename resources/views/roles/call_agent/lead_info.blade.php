@@ -22,7 +22,7 @@
                                 </div>
                                 <div class="">
                                 <input class="inputform" value="{{ $lead->vorname }}" type="text" name="vorname"
-                                    placeholder="Vorname" />
+                                    placeholder="Max" />
                             </div>
                             <div class="d-flex align-items-center mt-3">
                                 <span class="subtitleform">Anrede</span>
@@ -30,8 +30,8 @@
                             </div>
                             <div class=" mb-3">
                                 <select name="anrede" id="anrede" class="form-select inputform ">
-                                    <option value="male">Male</option>
-                                    <option value="female">Female</option>
+                                    <option value="herr">Herr</option>
+                                    <option value="frau">Frau</option>
                                 </select>
                                 <script>
                                     $("#anrede").val('{{ $lead->anrede }}').change()
