@@ -20,16 +20,16 @@
                                 <span class="subtitleform">Full Name</span>
                             </div>
                             <div class="mt-2">
-                                <input class="inputform" value="{{ $lead->vorname }}" type="text" name="Max "
-                                    placeholder="Vorname" />
+                                <input class="inputform" value="{{ $lead->vorname }}" type="text" name="vorname "
+                                    placeholder="Max " />
                             </div>
                             <div class="mt-4">
                                 <span class="subtitleform">Anrede</span>
                             </div>
                             <div class="mt-2 mb-3">
                                 <select name="anrede" id="anrede" class="form-select inputform ">
-                                    <option value="male">Male</option>
-                                    <option value="female">Female</option>
+                                    <option value="Herr">Herr</option>
+                                    <option value="Frau">Frau</option>
                                 </select>
                                 <script>
                                     $("#anrede").val('{{ $lead->anrede }}').change()
@@ -1079,11 +1079,91 @@
 
                     <div class=" ms-2 me-3 py-2" id="bemerkungDiv" style="display: none">
                         <div class="mt-4">
-                            <span class="subtitleform">Bemerkung </span>
+                            <span class="subtitleform">Bemerkung</span>
                         </div>
                         <input class="inputform mt-2"
                             value="{{ isset($last_feedback->bemerkung) ? $last_feedback->bemerkung : '' }}"
                             type="text" id="text" name="bemerkung" placeholder="">
+                    </div>
+                    <div>
+                        <div class="mt-4">
+                            <span class="subtitleform">Kunde Weiss </span>
+                        </div>
+                        <div class="mt-2">
+                            <button class=" btn-primaryy aa" type="button">
+                                Ja
+                            </button>
+                            <button class=" btn-primaryy aa" type="button">
+                                Nein
+                            </button>
+                        </div>
+                        <div class="mt-4">
+                            <span class="subtitleform">Bestehender Mehrjahresvertrag </span>
+                        </div>
+                        <div class="mt-2">
+                            <button class=" btn-primaryy bb " type="button" data-bs-toggle="collapse"
+                                href="#collapseExample" role="button" aria-expanded="false"
+                                aria-controls="collapseExample">
+                                Ja
+                            </button>
+                            <button class=" btn-primaryy bb "type="button">
+                                Nein
+                            </button>
+                        </div>
+                        <div>
+                            <div class="collapse" id="collapseExample">
+                                <div class="mt-2">
+                                    <select name="" id="" class="form-select inputform ">
+                                        <option value="2018">2018</option>
+                                        <option value="2019">2019</option>
+                                        <option value="2020">2020</option>
+                                        <option value="2021">2021</option>
+                                        <option value="2022">2022</option>
+                                        <option value="2023">2023</option>
+                                        <option value="2024">2024</option>
+                                        <option value="2025">2025</option>
+                                        <option value="2026">2026</option>
+                                        <option value="2027">2027</option>
+                                        <option value="2028">2028</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="menu-item">
+                        <div class="mt-4">
+                            <span class="subtitleform">Alle Gesund </span>
+                        </div>
+
+                        <div class="mt-2  ">
+                            <div class="">
+                                <button class=" btn-primaryy cc  " data-number="1" class=""
+                                    type="button">
+                                    Ja
+                                </button>
+                                <button class="btn-primaryy cc" data-number="2" type="button"
+                                    data-bs-toggle="collapse" data-bs-target="#collapseExample1" aria-expanded="false"
+                                    aria-controls="collapseExample">
+                                    Nein
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div class="collapse" id="collapseExample1">
+                        <div class="mt-2">
+                            <input type="text" class="inputform">
+                        </div>
+                    </div>
+                    <div>
+                        <div class="mt-4">
+                            <span class="mt-4">Add Audio</span>
+                        </div>
+                        <div class="mt-2">
+                            <input type="file">
+                        </div>
                     </div>
                     <div class="row  p-2 d-flex justify-content-center">
                         <div class="col-auto">
@@ -1095,86 +1175,120 @@
                         </div>
 
                         <div class="col-auto">
-                            <label class="tablinks tablinkscondec" onclick="openCityConDec(event, 'Hat schon gewechselt')">
+                            <label class="tablinks tablinkscondec"
+                                onclick="openCityConDec(event, 'Hat schon gewechselt')">
                                 <input type="radio" name="feedback_status_quality_check" value="confirmed"
                                     style="display: none;">Confirm
                             </label>
                             <!-- <button class="tablinks" type="button" onclick="openCity(event, 'Hat schon gewechselt')">Hat schon gewechselt</button> -->
                         </div>
-                    </div>
-                    <div class="pull-right d-flex justify-content-end mt-5 mt-md-5">
-                        <button class="btn btn-outline-danger  me-3">Abbrechen</button>
-                        <button class="btn btn-outline-success" type="submit">Speichern</button>
+                        <div class="pull-right d-flex justify-content-end mt-5 mt-md-5">
+                            <button class="btn btn-outline-danger  me-3">Abbrechen</button>
+                            <button class="btn btn-outline-success" type="submit">Speichern</button>
+                        </div>
                     </div>
                 </div>
             </div>
-            <script>
-                function openCity(evt, cityName) {
-                    var i, tabcontent, tablinks;
-                    tabcontent = document.getElementsByClassName("tabcontent");
-                    for (i = 0; i < tabcontent.length; i++) {
-                        tabcontent[i].style.display = "none";
-                    }
-                    tablinks = document.getElementsByClassName("tablinks");
-                    for (i = 0; i < tablinks.length; i++) {
-                        tablinks[i].className = tablinks[i].className.replace(" active", "");
-                    }
-                    document.getElementById(cityName).style.display = "block";
-                    evt.currentTarget.className += " active";
-                    document.getElementById('bemerkungDiv').style.display = "block"
-                    document.getElementById('bestatigungs_status').style.display = "block"
-                    document.getElementById('kontaktieren_erwunscht_2').style.display = "block"
+        </div>
+        <script>
+            //            $("button.js-sorttoggle").not(".active").on("click", function() {
+            //   $("button.js-sorttoggle").toggleClass("active");
+            //   $("button.js-sorttoggle").toggleClass("remove");
+            // });
+        </script>
 
+
+        <script>
+            $(".aa").on("click", function() {
+                let tablinks = document.getElementsByClassName("aa");
+                for (i = 0; i < tablinks.length; i++) {
+                    tablinks[i].className = tablinks[i].className.replace("activee", "");
                 }
-               
-                function openCityConDec(evt, cityName) {
-                    var i, tabcontent, tablinks;
-                    tabcontent = document.getElementsByClassName("tabcontent");
+                $(this).addClass("activee")
 
-                    tablinks = document.getElementsByClassName("tablinkscondec");
-                    for (i = 0; i < tablinks.length; i++) {
-                        tablinks[i].className = tablinks[i].className.replace(" active", "");
-                    }
-
-                    evt.currentTarget.className += " active";
-
-
+            })
+            $(".bb").on("click", function() {
+                let tablinks = document.getElementsByClassName("bb");
+                for (i = 0; i < tablinks.length; i++) {
+                    tablinks[i].className = tablinks[i].className.replace("activee", "");
                 }
-       
-                $(document).ready(function() {
-                    const feedbackStatusInputs = document.querySelectorAll('input[name="feedback_status"]');
+                $(this).addClass("activee")
 
-                    feedbackStatusInputs.forEach(input => {
-                        if (input.value === '{{ $lead->feedback_status }}') {
-                            input.click();
-                        }
-                    });
-                })
-            </script>
+            })
+            $(".cc").on("click", function() {
+                let tablinks = document.getElementsByClassName("cc");
+                for (i = 0; i < tablinks.length; i++) {
+                    tablinks[i].className = tablinks[i].className.replace("activee", "");
+                }
+                $(this).addClass("activee")
+            })
 
-            <div>
-                <h3> Lead History</p>
-                    <table class="table table-bordered mt-5">
-                        <thead>
+            function openCity(evt, cityName) {
+                var i, tabcontent, tablinks;
+                tabcontent = document.getElementsByClassName("tabcontent");
+                for (i = 0; i < tabcontent.length; i++) {
+                    tabcontent[i].style.display = "none";
+                }
+                tablinks = document.getElementsByClassName("tablinks");
+                for (i = 0; i < tablinks.length; i++) {
+                    tablinks[i].className = tablinks[i].className.replace(" active", "");
+                }
+                document.getElementById(cityName).style.display = "block";
+                evt.currentTarget.className += " active";
+                document.getElementById('bemerkungDiv').style.display = "block"
+                document.getElementById('bestatigungs_status').style.display = "block"
+                document.getElementById('kontaktieren_erwunscht_2').style.display = "block"
+
+            }
+
+            function openCityConDec(evt, cityName) {
+                var i, tabcontent, tablinks;
+                tabcontent = document.getElementsByClassName("tabcontent");
+
+                tablinks = document.getElementsByClassName("tablinkscondec");
+                for (i = 0; i < tablinks.length; i++) {
+                    tablinks[i].className = tablinks[i].className.replace(" active", "");
+                }
+
+                evt.currentTarget.className += " active";
+
+
+            }
+
+            $(document).ready(function() {
+                const feedbackStatusInputs = document.querySelectorAll('input[name="feedback_status"]');
+
+                feedbackStatusInputs.forEach(input => {
+                    if (input.value === '{{ $lead->feedback_status }}') {
+                        input.click();
+                    }
+                });
+            })
+        </script>
+
+        <div>
+            <h3> Lead History</p>
+                <table class="table table-bordered mt-5">
+                    <thead>
+                        <tr>
+                            <th scope="col">#</th>
+
+                            <th scope="col">Rückmeldung Status</th>
+                            <th scope="col">Rückmeldung Von</th>
+                            <th scope="col">Aktualisieren Bei</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+
+                        @foreach ($feedbacks as $item)
                             <tr>
-                                <th scope="col">#</th>
-
-                                <th scope="col">Rückmeldung Status</th>
-                                <th scope="col">Rückmeldung Von</th>
-                                <th scope="col">Aktualisieren Bei</th>
+                                <th scope="row">1</th>
+                                <td>{{ $item->feedback }}</td>
+                                <td>{{ $item->getUserFeedback->name }}</td>
+                                <td>{{ $item->updated_at }}</td>
                             </tr>
-                        </thead>
-                        <tbody>
-
-                            @foreach ($feedbacks as $item)
-                                <tr>
-                                    <th scope="row">1</th>
-                                    <td>{{ $item->feedback }}</td>
-                                    <td>{{ $item->getUserFeedback->name }}</td>
-                                    <td>{{ $item->updated_at }}</td>
-                                </tr>
-                            @endforeach
-                        </tbody>
-                    </table>
-            </div>
-        @endsection
+                        @endforeach
+                    </tbody>
+                </table>
+        </div>
+    @endsection
