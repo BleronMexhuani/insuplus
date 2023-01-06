@@ -5,11 +5,11 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="csrf-token" content="{{ csrf_token() }}">
 
-        <title>{{ config('app.name', 'Insuplus') }}</title>
+        <title>Insuplus</title>
 
         <!-- Fonts -->
         <link rel="stylesheet" href="https://fonts.bunny.net/css2?family=Nunito:wght@400;600;700&display=swap">
-
+        <link rel="icon" type="image/x-icon" href="{{ URL::asset('assets/img/faviconainsuplus.png') }}">
         <!-- Scripts -->
         {{-- @vite(['resources/css/app.css', 'resources/js/app.js']) --}}
         <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">

@@ -428,7 +428,6 @@
                                         <th>Full Name</th>
                                         <th>Nachname</th>
                                         <th>Geburtsdatum</th>
-                                        <th>Email</th>
                                         <th>Region</th>
                                         <th>Sprache</th>
                                         <th>Verteilen At</th>
@@ -471,14 +470,14 @@
 		c-0.084-0.029-0.169-0.046-0.258-0.051C32.041,4.011,32.021,4,32,4H12V2h32V46z" />
                                                         </g>
                                                     </svg>
-                                                @endif {{ $item->vorname }}
+                                                @endif {{$item->vorname}}
                                             </td>
                                             <td>{{ $item->nachname }}</td>
                                             <td>{{ Carbon\Carbon::parse($item->geburtsdatum)->format('d-m-Y') }}</td>
-                                            <td>{{ $item->email }}</td>
+                                        
                                             <td>{{ $item->region }}</td>
                                             <td>{{ $item->sprachen }}</td>
-                                            <td>{{ $item->assign_to_id_call ? App\Models\User::find($item->assign_to_id_call)->name : ($item->assign_to_id_team_leader ? App\Models\User::find($item->assign_to_id_team_leader)->name : 'Not Assigned') }}
+                                            <td style="color:{{($item->assign_to_id_call ? App\Models\User::find($item->assign_to_id_call)->name : ($item->assign_to_id_team_leader ? App\Models\User::find($item->assign_to_id_team_leader)->name : 'Not Assigned')) == 'Not Assigned' ?  'red' : ''}}">{{ $item->assign_to_id_call ? App\Models\User::find($item->assign_to_id_call)->name : ($item->assign_to_id_team_leader ? App\Models\User::find($item->assign_to_id_team_leader)->name : 'Not Assigned') }}
                                             </td>
                                             <td>{{ Carbon\Carbon::parse($item->created_at)->format('d-m-Y h:i:s') }}</td>
                                             <td>{{ optional(App\Models\User::find($item->assigned_from))->name }}</td>

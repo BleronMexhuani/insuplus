@@ -16,7 +16,12 @@ class ConfirmationAgentController extends Controller
     public function getLeads()
     {
         $leads =  Lead::whereIn('feedback_status', ['Terminiert', 'Online-Offerte'])->where('completed', 2)->get();
-        return view('roles.confirmation_agent.leads', compact('leads'));
+        $termins = $this->getTerminsForDates();
+        return view('roles.confirmation_agent.leads', compact('leads','termins'));
+    }
+    public function getTerminsForDates(){
+        $termins = Lead::selectRaw('*,COUNT(*) as count')->WhereIn('feedback_status',['Terminiert'])->where('completed',2)->groupBy('termindatum')->get();
+        return $termins;
     }
 
     public function getLeadById($id)

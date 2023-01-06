@@ -20,8 +20,10 @@
                                 <span class="subtitleform">Full Name</span>
                             </div>
                             <div class="mt-2">
-                                <input class="inputform" value="{{ $lead->vorname }}" type="text" name="vorname "
-                                    placeholder="Max " />
+
+                                <input class="inputform" value="{{ $lead->vorname }}" type="text" name="vorname"
+                                    placeholder="Vorname" />
+
                             </div>
                             <div class="mt-4">
                                 <span class="subtitleform">Anrede</span>
@@ -873,7 +875,7 @@
                                     </div>
                                     <div class="mt-2">
                                         <input class="inputform" type="date"
-                                            value="{{ isset($last_feedback->termin_datum) && $last_feedback->termin_datum }}"
+                                            value="{{ isset($last_feedback->termin_datum) ? $last_feedback->termin_datum  : ''}}"
                                             name="termindatum" placeholder="" />
                                     </div>
                                 </div>
