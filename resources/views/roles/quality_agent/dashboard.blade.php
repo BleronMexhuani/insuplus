@@ -2,12 +2,12 @@
 
 @section('content')
     <div class="" style="margin-top:16px !important;">
-        <div class="px-2">
+        <div class="">
             <div class="mt-4 py-3 ">
                 {{-- <span class="titledash">Willkommen {{ Auth::user()->name }}!</span> --}}
-                <div class="bgform mt-4 p-4 p-md-5">
+                <div class="bgform mt-2 p-4 p-md-5">
                     <div class="row">
-                        <div class="col-4 ">
+                        <div class="col-xl-4 mt-3 mt-xl-0  col-12 ">
                             <div class="dashborder">
                                 <div>
                                     <svg width="52" height="53" viewBox="0 0 52 53" fill="none"
@@ -32,7 +32,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="col-4 ">
+                        <div class="col-xl-4 mt-3 mt-xl-0  col-12 ">
                             <div class="dashborder">
                                 <div>
                                     <svg width="52" height="53" viewBox="0 0 52 53" fill="none"
@@ -58,7 +58,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="col-4 ">
+                        <div class="col-xl-4 mt-3 mt-xl-0  col-12  ">
                             <div class="dashborder">
                                 <div>
                                     <svg width="52" height="53" viewBox="0 0 52 53" fill="none"

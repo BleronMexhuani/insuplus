@@ -89,7 +89,7 @@
                         </div>
                     </div>
 
-                    <div class="form-popup" id="myForm">
+                    {{-- <div class="form-popup" id="myForm">
                         <form class="form-container">
                             <div class="text-center mb-3 mt-3">
                                 <span class="titledash">Grafik für Benutzerstatistiken</span>
@@ -198,10 +198,10 @@
                                 <canvas id="myChart" style="width:100%;max-width:800px"></canvas>
                             </div>
                         </form>
-                    </div>
+                    </div> --}}
                 </div>
 
-                <div class="form-popup" id="myFormm">
+                {{-- <div class="form-popup" id="myFormm">
                     <form action="/action_page.php" class="form-container">
                         <div class="text-center mb-3 mt-3">
                             <span class="titledash">Grafik für Benutzerstatistiken</span>
@@ -293,7 +293,7 @@
                                 <canvas id="myChart1" style="width:100%;max-width:800px"></canvas>
                             </div>
                     </form>
-                </div>
+                </div> --}}
             </div>
         </div>
     </div>

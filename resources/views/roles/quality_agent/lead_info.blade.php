@@ -875,7 +875,7 @@
                                     </div>
                                     <div class="mt-2">
                                         <input class="inputform" type="date"
-                                            value="{{ isset($last_feedback->termin_datum) ? $last_feedback->termin_datum  : ''}}"
+                                            value="{{ isset($last_feedback->termin_datum) ? $last_feedback->termin_datum : '' }}"
                                             name="termindatum" placeholder="" />
                                     </div>
                                 </div>
@@ -1092,30 +1092,32 @@
                             <span class="subtitleform">Kunde Weiss </span>
                         </div>
                         <div class="mt-2">
-                            <button class=" btn-primaryy aa" type="button">
-                                Ja
-                            </button>
-                            <button class=" btn-primaryy aa" type="button">
-                                Nein
-                            </button>
+                            <input class="" type="radio" id="kundeJa" name="KundeWeiss" hidden />
+
+                            <label class=" btn-primaryy aa" for="kundeJa"> Ja</label>
+
+                            <input class="" type="radio" id="kundeNein" name="KundeWeiss" hidden />
+                            <label class=" btn-primaryy aa" for="kundeNein"> Nein</label>
                         </div>
+                        <script></script>
                         <div class="mt-4">
                             <span class="subtitleform">Bestehender Mehrjahresvertrag </span>
                         </div>
                         <div class="mt-2">
-                            <button class=" btn-primaryy bb " type="button" data-bs-toggle="collapse"
-                                href="#collapseExample" role="button" aria-expanded="false"
-                                aria-controls="collapseExample">
-                                Ja
-                            </button>
-                            <button class=" btn-primaryy bb "type="button">
-                                Nein
-                            </button>
+                            <input class="  " name="bestehender" type="radio" id="besteJa" onchange="besteChecked()" hidden />
+
+                            <label class=" btn-primaryy bb" for="besteJa"> Ja</label>
+
+                            <input class="" type="radio" id="besteNein" name="bestehender" onchange="besteChecked()" hidden />
+                            <label class=" btn-primaryy bb" for="besteNein"> Nein</label>
+
                         </div>
+                        <script></script>
                         <div>
-                            <div class="collapse" id="collapseExample">
+                            <div style="display: none" id="besteYear">
                                 <div class="mt-2">
-                                    <select name="" id="" class="form-select inputform ">
+                                    <select name="" id="besteYearSelect" class="form-select inputform "
+                                        >
                                         <option value="2018">2018</option>
                                         <option value="2019">2019</option>
                                         <option value="2020">2020</option>
@@ -1129,6 +1131,9 @@
                                         <option value="2028">2028</option>
                                     </select>
                                 </div>
+                                <div class="pt-2" style="display: none" id="mehrJahr">
+                                    <button type="button">Mehrjahresvertrag </button>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -1140,23 +1145,21 @@
 
                         <div class="mt-2  ">
                             <div class="">
-                                <button class=" btn-primaryy cc  " data-number="1" class=""
-                                    type="button">
-                                    Ja
-                                </button>
-                                <button class="btn-primaryy cc" data-number="2" type="button"
-                                    data-bs-toggle="collapse" data-bs-target="#collapseExample1" aria-expanded="false"
-                                    aria-controls="collapseExample">
-                                    Nein
-                                </button>
+                                <input class="" type="radio" value="Ja" name="alleGesund" hidden
+                                    onchange="alleGesundCheck()" id="alleGesundJa" />
+
+                                <label class=" btn-primaryy cc" for="alleGesundJa"> Ja</label>
+
+                                <input class="" type="radio" value="Nein" name="alleGesund"
+                                    onchange="alleGesundCheck()" id="alleGesundNeinn" hidden />
+                                <label class=" btn-primaryy cc" for="alleGesundNeinn"> Nein</label>
                             </div>
                         </div>
                     </div>
 
-
-                    <div class="collapse" id="collapseExample1">
+                    <div>
                         <div class="mt-2">
-                            <input type="text" class="inputform">
+                            <input style="display: none" type="number" class="inputform" id="alleGesundNein">
                         </div>
                     </div>
                     <div>
@@ -1164,10 +1167,128 @@
                             <span class="mt-4">Add Audio</span>
                         </div>
                         <div class="mt-2">
-                            <input type="file">
+                            <input type="file" id="audioFile">
+                        </div>
+
+                        {{-- <div class="mt-2" id="kundeNeinChecked">
+                            <input class="inputform " type="text">
+                        </div> --}}
+                    </div>
+                    <script>
+                        function besteChecked() {
+                            if (document.getElementById('besteJa').checked) {
+                                document.getElementById('besteYear').style.display = "block"
+                            }
+                            else {
+                                document.getElementById('besteYear').style.display = "none"
+
+                            }
+                        }
+                        function alleGesundCheck() {
+                            if (document.getElementById('alleGesundJa').checked) {
+                                document.getElementById('alleGesundNein').style.display = "none"
+                            } else if (document.getElementById('alleGesundNeinn').checked) {
+                                document.getElementById('alleGesundNein').style.display = "block"
+
+                            }
+                        }
+
+                        function enableButtons() {
+                            var gallur = document.getElementById('gallur')
+                            var zuruck = document.getElementById('zuruck')
+                            var mehrJahrRes = document.getElementById('mehrJahrRes')
+                            var bestatigt = document.getElementById('bestatigt')
+
+                            var kundeJa = document.getElementById('kundeJa')
+                            var kundeNein = document.getElementById('kundeNein')
+
+                            var besteNein = document.getElementById('besteNein')
+                            var besteJa = document.getElementById('besteJa')
+                            var besteYear = document.getElementById('besteYearSelect')
+                            var fullyear = new Date().getFullYear()
+
+                            var alleGesundJa = document.getElementById('alleGesundJa')
+                            var alleGesundNeinn = document.getElementById('alleGesundNeinn')
+                            var alleGesundNein = document.getElementById('alleGesundNein')
+                            var alleResult = false
+
+                            var audio = document.getElementById('audioFile')
+                            if (alleGesundJa.checked) {
+                                alleResult = true
+                            } else if (alleGesundNeinn.checked) {
+
+                                if (alleGesundNein.value != '') {
+                                    alleResult = true
+                                } 
+                                else {
+                                    alleResult = false
+                                }
+
+                            }
+
+                            if (alleGesundNein.value >= 4) {
+                                gallur.removeAttribute('disabled')
+                                zuruck.setAttribute('disabled', 'true')
+                                mehrJahrRes.setAttribute('disabled', 'true')
+                                bestatigt.setAttribute('disabled', 'true')
+
+                            }
+
+                            else if ( kundeNein.checked && alleResult && audio.value != '' ) {
+                                zuruck.removeAttribute('disabled')
+                                gallur.setAttribute('disabled', 'true')
+                                mehrJahrRes.setAttribute('disabled', 'true')
+                                bestatigt.setAttribute('disabled', 'true')
+
+                            }
+                            else if (alleGesundJa.checked && (besteYear.value - fullyear >= 2)) {
+                                gallur.setAttribute('disabled', 'true')
+                                zuruck.setAttribute('disabled', 'true')
+                                bestatigt.setAttribute('disabled', 'true')
+
+                                mehrJahrRes.removeAttribute('disabled')
+
+
+                            }
+                            else if (kundeJa.checked && besteNein.checked && alleResult && audio.value != '') {
+                                gallur.setAttribute('disabled', 'true')
+                                zuruck.setAttribute('disabled', 'true')
+                                mehrJahrRes.setAttribute('disabled', 'true')
+                
+                                bestatigt.removeAttribute('disabled')
+                            }
+                        }
+                    </script>
+                    <div>
+                        <button onclick="enableButtons()" type="button"
+                            class="btn-outline-weiter pull-right ">Weiter</button>
+                    </div>
+
+                    <div class="mt-5 p-5  ">
+                        <div class="row g-2 justify-content-center">
+                            <div class="col-auto">
+                                <button disabled class="btnform btndisabledstyle" id="gallur" type="button">Gallur
+                                </button>
+                            </div>
+                            <div class="col-auto">
+                                <button disabled class="btnform btndisabledstyle" id="zuruck" type="button">Zurück
+                                    zum Call Agenten</button>
+                            </div>
+                            <div class="col-auto">
+                                <button disabled class="btnform btndisabledstyle" id="mehrJahrRes"
+                                    type="button">Mehrjahresvertrag </button>
+                            </div>
+                            <div class="col-auto">
+                                <button disabled class="btnform btndisabledstyle" id="bestatigt" type="button">Bestätigt
+                                </button>
+                            </div>
                         </div>
                     </div>
-                    <div class="row  p-2 d-flex justify-content-center">
+                    <hr>
+                    <div class="text-center">
+                        <span class="feedbacktext">Rückmeldung</span>
+                    </div>
+                    <div class="row mt-1  p-2 mb-3 d-flex justify-content-center">
                         <div class="col-auto">
                             <label class="tablinks tablinkscondec" onclick="openCityConDec(event, 'Falsche Nummer')">
                                 <input type="radio" name="feedback_status_quality_check" value="declined"
@@ -1184,11 +1305,14 @@
                             </label>
                             <!-- <button class="tablinks" type="button" onclick="openCity(event, 'Hat schon gewechselt')">Hat schon gewechselt</button> -->
                         </div>
-                        <div class="pull-right d-flex justify-content-end mt-5 mt-md-5">
-                            <button class="btn btn-outline-danger  me-3">Abbrechen</button>
-                            <button class="btn btn-outline-success" type="submit">Speichern</button>
+
+                        <hr style="margin-top:25px">
+                        <div class="pull-right d-flex justify-content-end mt-3 mt-md-3">
+                            <button class=" btn-outline-danger  me-3"type="button">Abbrechen</button>
+                            <button class=" btn-outline-success" type="button">Speichern</button>
                         </div>
                     </div>
+
                 </div>
             </div>
         </div>
