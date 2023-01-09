@@ -43,6 +43,8 @@ Route::middleware(['role:supervisor'])->group(function () {
     Route::post('supervisor/editTeam',[SupervisorController::class,'editTeam'])->name('editTeam');
 
     Route::view('advancedFilter','roles.supervisor.advanced_filter')->name('advancedFilter');
+    //EXPORT CSV 
+    Route::get('supervisor/exportcsv',[SupervisorController::class,'exportCSV'])->name('exportcsv');
     //Supervisor Charts 
     Route::get('umfrage_first_chart', [SupervisorController::class, 'umfrage_first_chart'])->name('umfrage_first_chart');
     Route::get('umfrage_second_chart', [SupervisorController::class, 'umfrage_second_chart'])->name('umfrage_second_chart');

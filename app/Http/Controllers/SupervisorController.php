@@ -12,6 +12,8 @@ use Illuminate\Http\Request;
 use Illuminate\Pagination\PaginationServiceProvider;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
+use Excel;
+use App\Exports\LeadsExport;
 
 
 
@@ -181,9 +183,9 @@ class SupervisorController extends Controller
     {
 
         $user = User::find($id);
-        
-        $req['password'] = $req->password ? Hash::make($req->password): $user->password;
-    
+
+        $req['password'] = $req->password ? Hash::make($req->password) : $user->password;
+
         User::find($id)->update($req->except('_token', 'role'));
         User::find($id)->syncRoles($req->role);
 
@@ -323,5 +325,10 @@ class SupervisorController extends Controller
         ]);
 
         return redirect()->back();
+    }
+    
+    public function exportCSV(Request $request)
+    {        
+        return Excel::download(new LeadsExport($request->leads), 'leads.xlsx');
     }
 }

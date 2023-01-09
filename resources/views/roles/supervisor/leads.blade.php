@@ -374,8 +374,9 @@
                         </div>
                     </form>
 
-                    <form action="{{ route('assignLead') }}" method="POST">
+                    <form action="{{ route('assignLead') }}" id="export-link" method="POST">
                         @csrf
+
                         <div class="d-flex row">
                             <div class="col-md-3">
                                 <div class="searchgrup mt-md-4 mt-3">
@@ -403,7 +404,15 @@
                                 <div class="btnsubmit mb-md-4 mb-0 mt-md-4 mt-0 text-center">
                                     <button class=" btnprofile w-100 " style="color:white;">Übermitteln</button>
                                 </div>
+                               
                             </div>
+                            <div class="col-auto my-auto">
+                                 <div class="btnsubmit mb-md-4 mb-0 mt-md-4 mt-0 text-center">
+                                    <a onclick="exportToCsv()" class="btnprofile w-100"  style="color:white;cursor:pointer;">Export
+                                        Leads</a>
+                                </div>
+                            </div>
+
                         </div>
                         @if (Illuminate\Support\Facades\Session::has('message'))
                             <span class="fs-5 mb-2 fw-500">
@@ -470,14 +479,16 @@
 		c-0.084-0.029-0.169-0.046-0.258-0.051C32.041,4.011,32.021,4,32,4H12V2h32V46z" />
                                                         </g>
                                                     </svg>
-                                                @endif {{$item->vorname}}
+                                                @endif {{ $item->vorname }}
                                             </td>
                                             <td>{{ $item->nachname }}</td>
                                             <td>{{ Carbon\Carbon::parse($item->geburtsdatum)->format('d-m-Y') }}</td>
-                                        
+
                                             <td>{{ $item->region }}</td>
                                             <td>{{ $item->sprachen }}</td>
-                                            <td style="color:{{($item->assign_to_id_call ? App\Models\User::find($item->assign_to_id_call)->name : ($item->assign_to_id_team_leader ? App\Models\User::find($item->assign_to_id_team_leader)->name : 'Not Assigned')) == 'Not Assigned' ?  'red' : ''}}">{{ $item->assign_to_id_call ? App\Models\User::find($item->assign_to_id_call)->name : ($item->assign_to_id_team_leader ? App\Models\User::find($item->assign_to_id_team_leader)->name : 'Not Assigned') }}
+                                            <td
+                                                style="color:{{ ($item->assign_to_id_call ? App\Models\User::find($item->assign_to_id_call)->name : ($item->assign_to_id_team_leader ? App\Models\User::find($item->assign_to_id_team_leader)->name : 'Not Assigned')) == 'Not Assigned' ? 'red' : '' }}">
+                                                {{ $item->assign_to_id_call ? App\Models\User::find($item->assign_to_id_call)->name : ($item->assign_to_id_team_leader ? App\Models\User::find($item->assign_to_id_team_leader)->name : 'Not Assigned') }}
                                             </td>
                                             <td>{{ Carbon\Carbon::parse($item->created_at)->format('d-m-Y h:i:s') }}</td>
                                             <td>{{ optional(App\Models\User::find($item->assigned_from))->name }}</td>
@@ -510,6 +521,7 @@
 
                             </div>
                         </div>
+
                     </form>
 
                 </div>
@@ -519,7 +531,49 @@
 
 
 
+
     <script>
+        function exportToCsv() {
+            // get all the checkboxes with the name "lead_id[]"
+            const checkboxes = document.querySelectorAll('input[name="lead_id[]"]');
+
+            // create an empty array to store the values of the selected checkboxes
+            let selectedValues = [];
+
+            // loop through the checkboxes
+            for (let i = 0; i < checkboxes.length; i++) {
+                // if the checkbox is checked, add its value to the array
+                if (checkboxes[i].checked) {
+                    selectedValues.push(checkboxes[i].value);
+                }
+            }
+
+            // create a form element
+            const form = document.createElement('form');
+
+            // set the action attribute of the form to the URL of the CSV file
+            form.action = '{{ 'exportcsv' }}';
+
+            // set the target attribute of the form to _blank
+            form.target = '_blank';
+
+            form.method = 'GET';
+            // set the method attribute of the form to POST
+            selectedValues.forEach(value => {
+                const input = document.createElement('input');
+                input.type = 'hidden';
+                input.name = 'leads[]';
+                input.value = value;
+                form.appendChild(input);
+            });
+
+            // append the form to the body element
+            document.body.appendChild(form);
+
+            // submit the form
+            form.submit();
+
+        }
         $("#checkAll").click(function() {
             $(".check").prop('checked', $(this).prop('checked'));
         });
