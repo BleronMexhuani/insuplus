@@ -133,8 +133,8 @@
                                 <div class="mt-2">
                                     <select class="selectpicker" data-live-search="true" multiple data-actions-box="true"
                                         name="region[]">
-                                        <option id="Deutschschweiz (Germany)" value="Deutschschweiz (Germany)">
-                                            Deutschschweiz (Germany)</option>
+                                        <option id="Deutschschweiz (Germany)" value="Deutschschweiz (Germany )">
+                                            Deutschschweiz (Germany )</option>
                                         <option id="Tessin (Italy)" value="Tessin (Italy)"> Tessin (Italy)</option>
                                         <option id="Westschweiz (France)" value="Westschweiz (France)"> Westschweiz
                                             (France)</option>
@@ -470,21 +470,23 @@
 		c-0.084-0.029-0.169-0.046-0.258-0.051C32.041,4.011,32.021,4,32,4H12V2h32V46z" />
                                                         </g>
                                                     </svg>
-                                                @endif {{$item->vorname}}
+                                                @endif {{ $item->vorname }}
                                             </td>
                                             <td>{{ $item->nachname }}</td>
                                             <td>{{ Carbon\Carbon::parse($item->geburtsdatum)->format('d-m-Y') }}</td>
-                                        
+
                                             <td>{{ $item->region }}</td>
                                             <td>{{ $item->sprachen }}</td>
-                                            <td style="color:{{($item->assign_to_id_call ? App\Models\User::find($item->assign_to_id_call)->name : ($item->assign_to_id_team_leader ? App\Models\User::find($item->assign_to_id_team_leader)->name : 'Not Assigned')) == 'Not Assigned' ?  'red' : ''}}">{{ $item->assign_to_id_call ? App\Models\User::find($item->assign_to_id_call)->name : ($item->assign_to_id_team_leader ? App\Models\User::find($item->assign_to_id_team_leader)->name : 'Not Assigned') }}
+                                            <td
+                                                style="color:{{ ($item->assign_to_id_call ? App\Models\User::find($item->assign_to_id_call)->name : ($item->assign_to_id_team_leader ? App\Models\User::find($item->assign_to_id_team_leader)->name : 'Not Assigned')) == 'Not Assigned' ? 'red' : '' }}">
+                                                {{ $item->assign_to_id_call ? App\Models\User::find($item->assign_to_id_call)->name : ($item->assign_to_id_team_leader ? App\Models\User::find($item->assign_to_id_team_leader)->name : 'Not Assigned') }}
                                             </td>
-                                            <td>{{ Carbon\Carbon::parse($item->created_at)->format('d-m-Y h:i:s') }}</td>
+                                            <td>{{ Carbon\Carbon::parse($item->created_at)->format('d-m-Y') }}</td>
                                             <td>{{ optional(App\Models\User::find($item->assigned_from))->name }}</td>
                                             <td
                                                 style="color:{{ $item->feedback_status == 'Terminiert' ? 'green' : 'red' }};">
                                                 {{ $item->feedback_status }}</td>
-                                            <td>{{ Carbon\Carbon::parse(App\Models\FeedBack::where('lead_id', $item->id)->orderBy('created_at', 'desc')->pluck('created_at')->first())->format('d-m-Y h:i:s') }}
+                                            <td>{{ Carbon\Carbon::parse(App\Models\FeedBack::where('lead_id', $item->id)->orderBy('created_at', 'desc')->pluck('created_at')->first())->format('d-m-Y') }}
                                             </td>
                                             <td><a class="btn btnedit"
                                                     href="{{ route('getLeadById', ['id' => $item->id]) }}"><i

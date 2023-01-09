@@ -186,7 +186,9 @@ textarea:focus-visible {
     color: #ffffff;
     border: none;
 }
+.benutzerform{
 
+}
 a:hover {
     color: none !important;
     text-decoration: none;
@@ -288,53 +290,10 @@ a:hover {
         display: flex !important;
     }
  } */
-
-
- /* .numberofboxessss {
-    font-family: 'Poppins';
-    font-style: normal;
-    font-weight: 600;
-    font-size: 28px;
-    line-height: 45px;
-    color: #FFFFFF;
-
-}
-
-.numberofdatafs1 {
-    background-image: url('/public/assets/img/ad.svg');
-    background-repeat: no-repeat;
-    background-position: right top;
-    border-radius: 5px;
-    font-weight: 600;
-    font-size: 20px;
-    line-height: 30px;
-    color: #FFFFFF;
-    width: 60px;
-    height: 200px;
-}
-
-.globalboxshadoww {
-    background: #FFFFFF !important;
-    box-shadow: 0px 1px 4px #E5E9F2 !important;
-    border-radius: 5px !important;
-}
-
-.boxofdata {
-    background: #FFFFFF;
-    box-shadow: 0px 1px 4px #e5e9f2;
-    border-radius: 5px;
-    height: min-content;
-}
-
-.rreshtiidata {
-    height: 70%;
-    align-content: center
-}
-
-.rrshtiidyteidata {
-    height: 30%;
-    justify-content: flex-start;
-    display: flex;
-    align-items: center;
-
-} */
+ @media (max-width: 991.98px) { 
+    .benutzerform{
+        display: flex;
+        justify-content: center !important;
+        align-items: center !important;
+    }
+  }

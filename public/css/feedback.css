@@ -88,7 +88,8 @@ border-radius: 8px;
   display: flex !important;
   align-items: center !important;
   color: #FFFFFF !important;
-  padding: 11px !important;
+  padding: 10px 20px 10px!important;
+  border: none;
 }
 
 .btn-outline-danger:focus{
@@ -108,9 +109,23 @@ border-radius: 8px;
   display: flex !important;
   align-items: center !important;
   color: #FFFFFF !important;
-  padding: 11px !important;
+  padding: 10px 20px 10px!important;
+  border:none
 }
 
+.btn-outline-weiter{
+  background: #00727A !important;
+  border-radius: 8px !important;
+  color: white !important;
+  font-weight: 600 !important;
+  font-size: 14px !important;
+  line-height: 16px !important;
+  display: flex !important;
+  align-items: center !important;
+  color: #FFFFFF !important;
+  padding: 12px 40px 12px!important;
+  border:none
+}
 .buttonclass{
   margin-top: 220px !important;
 }
@@ -229,6 +244,7 @@ border-radius: 8px;
   color: #00727A !important;
   border: 1px solid #00727A;
   border-radius: 8px;
+  cursor: pointer !important;
 }
 
 .btn-primaryyy {
@@ -243,6 +259,7 @@ border-radius: 8px;
    color: #00727A !important;
    border: 1px solid #00727A;
    border-radius: 8px;
+   cursor: pointer !important;
  }
 
  /* .btn-primaryyy:focus {
@@ -267,4 +284,32 @@ border-radius: 8px;
   color: white !important ;
   box-shadow: none;
   outline: none;
+}
+
+.btnform{
+  background: #00727A !important;
+  border-radius: 8px !important;
+  color: white !important;
+  font-weight: 600 !important;
+  font-size: 14px !important;
+  line-height: 16px !important;
+  color: #FFFFFF !important;
+  padding: 10px 20px 10px!important;
+  border: none;
+}
+
+.feedbacktext{
+    font-family: 'Raleway';
+  font-style: normal;
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 21px;
+
+  color: #1F1F1F;
+}
+.btndisabledstyle:disabled {
+  border: 1px solid #EAECEE !important;
+border-radius: 8px !important;
+color: #EAECEE !important;
+background-color: transparent !important;
 }

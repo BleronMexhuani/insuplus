@@ -290,7 +290,7 @@
                             </div>
                         </div>
                         <div class="row">
-                            <div class="col-3 col-md-3 mb-3">
+                            <div class="col-md-3 mb-3">
                                 <div class="mt-2">
                                     <span class="subtitleform">Später Anrufen</span>
                                 </div>
