@@ -2,7 +2,7 @@
 @section('content')
     <div class="">
         <div class="mt-4 py-4">
-            <form action="{{ route('searchLeads') }}" method="GET">
+            <form action="{{ route('searchLeads') }}" id="formaSearchit" method="GET">
                 @csrf
                 <div class="accordionbg mb-4">
                     <button type="button" onclick="location.href='{{ route('advancedFilter') }}'"
@@ -21,6 +21,7 @@
                                 <div class="mt-4">
                                     <span class="subtitleform">Erstellungsdatum</span>
                                 </div>
+
                                 <div class="input-group mt-2">
                                     <input type="text" class="form-controol input-sm" placeholder="von"
                                         onfocus="(this.type='date')" onblur="(this.type='text')" name="created_at[]"
@@ -404,11 +405,12 @@
                                 <div class="btnsubmit mb-md-4 mb-0 mt-md-4 mt-0 text-center">
                                     <button class=" btnprofile w-100 " style="color:white;">Übermitteln</button>
                                 </div>
-                               
+
                             </div>
                             <div class="col-auto my-auto">
-                                 <div class="btnsubmit mb-md-4 mb-0 mt-md-4 mt-0 text-center">
-                                    <a onclick="exportToCsv()" class="btnprofile w-100"  style="color:white;cursor:pointer;">Export
+                                <div class="btnsubmit mb-md-4 mb-0 mt-md-4 mt-0 text-center">
+                                    <a onclick="exportToCsv()" class="btnprofile w-100"
+                                        style="color:white;cursor:pointer;">Export
                                         Leads</a>
                                 </div>
                             </div>
@@ -509,19 +511,39 @@
                                 </tbody>
 
                             </table>
+
+
+
+
                             <div class=" pt-4">
                                 <div class="text-center text-sm-start my-3 ps-0 ps-sm-4">
                                     <span>Shows {{ $leads->firstItem() }} - {{ $leads->lastItem() }} of Total
                                         {{ $leads->total() }} Leads </span>
-
                                 </div>
                                 <div class="d-flex justify-content-center navPagination">
                                     {{ $leads->onEachSide(1)->links() }}
+
                                 </div>
 
                             </div>
                         </div>
+                    </form>
+                    @php
+                        $parameters = request()->input();
+                    @endphp
 
+
+                    <form action="{{ route('searchLeads', array_merge(request()->query(), request()->input())) }}"
+                        method="GET">
+                        <select name="paginate" onchange="this.form.submit()" class=" form-select w-25"
+                            id="paginationi">
+                            <option value=""></option>
+                            <option value="25">25</option>
+                            <option value="50">50</option>
+                            <option value="100">100</option>
+                            <option value="500">500</option>
+                            <option value="1000">1000</option>
+                        </select>
                     </form>
 
                 </div>
@@ -533,6 +555,14 @@
 
 
     <script>
+        // $("#paginationi").on("change",function(){
+        //     let value = $(this).val();
+        //     $("#perPage").val(value).change();
+
+        //     $("#formaSearchit").submit();
+
+        // })
+
         function exportToCsv() {
             // get all the checkboxes with the name "lead_id[]"
             const checkboxes = document.querySelectorAll('input[name="lead_id[]"]');
