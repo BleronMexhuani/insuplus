@@ -36,7 +36,7 @@
             </div>
             <div class="col-6 my-auto">
                 <span>Submit</span>
-                <button class="btn btn-primary w-100" style="background-color:blue">Übermitteln</button>
+                <button class="btn btn-primary w-100" style="background-color:blue;color: #fff !important">Übermitteln</button>
 
             </div>
             @if(Illuminate\Support\Facades\Session::has('success'))
