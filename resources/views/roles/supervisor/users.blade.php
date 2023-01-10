@@ -4,8 +4,8 @@
     <div class="col ms-0 ms-md-2 px-0 " style="height: 90vh;">
         <div class="row ">
             <div class="my-3 mt-5 col-lg-2 col-12">
-                <button class="benutzerbutton w-100 "> <a href="{{ route('createUser') }}" class="  ">Benutzer
-                        Hinzufügen</a> </button>
+            <a href="{{ route('createUser') }}" class="  "><button class="benutzerbutton w-100 "> Benutzer
+                        Hinzufügen</button></a> 
 
             </div>
             <div class="col-lg-10 col-12 my-3 mt-3 mt-lg-5 ">
