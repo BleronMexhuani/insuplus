@@ -4,7 +4,7 @@
     <div class="" style="margin-top:16px !important;">
         <div class="mt-4 py-3 ">
             {{-- <span class="titledash">Willkommen {{ Auth::user()->name }}!</span> --}}
-            <div class="bgform mt-4 p-4 p-md-5">
+            <div class="bgform mt-2 p-4 p-md-5">
                 <div class="row">
                     <div class="col-xl-4 mt-3 mt-xl-0  col-12 ">
                         <div class="dashborder">
@@ -27,7 +27,7 @@
                             <div class="d-flex flex-column">
                                 <span class="subtitledash">Leads pro Tag</span>
                                 <span
-                                    style="font-weight: 700; color: #8B35F9; font-size: 32px;font-family: 'Poppins', sans-serif; ">{{$today}}</span>
+                                    style="font-weight: 700; color: #8B35F9; font-size: 32px;font-family: 'Poppins', sans-serif; "></span>
                             </div>
                         </div>
                     </div>
@@ -53,7 +53,7 @@
                             <div class="d-flex flex-column">
                                 <span class="subtitledash">Leads pro Woche</span>
                                 <span
-                                    style="font-weight: 700; color: #F97035; font-size: 32px; font-family: 'Poppins', sans-serif;">{{$week}}</span>
+                                    style="font-weight: 700; color: #F97035; font-size: 32px; font-family: 'Poppins', sans-serif;"></span>
                             </div>
                         </div>
                     </div>
@@ -79,7 +79,7 @@
                             <div class="d-flex flex-column">
                                 <span class="subtitledash">Leads pro Monat</span>
                                 <span
-                                    style="font-weight: 700; color: #F9CE35; font-size: 32px; font-family: 'Poppins', sans-serif;">{{$month}}</span>
+                                    style="font-weight: 700; color: #F9CE35; font-size: 32px; font-family: 'Poppins', sans-serif;"></span>
                             </div>
                         </div>
                     </div>
@@ -132,7 +132,7 @@
                                         </div>
                                         <div class="col-12 col-lg-auto my-lg-auto">
                                             <div class="">
-                                                <button onclick="chartlista()" type="submit"
+                                                <button  type="button"
                                                     class="btn btnleads">Filtern</button>
                                             </div>
                                         </div>
@@ -142,9 +142,7 @@
                             <div class=" mt-5 py-5">
                                 <div class="row">
                                     <div class="col-12 col-lg-auto">
-                                        {{-- <figure class="highcharts-figure"> --}}
                                         <div id="container" style="max-width: 500px"></div>
-                                        {{-- </figure> --}}
                                     </div>
                                     <div class="col-12 col-lg-auto">
                                         <div class="textboard mt-5 pt-4 ">
@@ -206,49 +204,6 @@
                 }],
 
             });
-
-            async function chartlista() {
-                document.getElementById('elements').innerHTML = '';
-                let from = document.getElementById('from').value
-                let to = document.getElementById('to').value
-                let i = 0;
-                let colors = ['#29E7CD', '#F97035', '#F9CE35', '#21618C', '#17202A', '#7B7D7D', '#C0392B', '#196F3D',
-                    '#8E44AD', '#F1C40F '
-                ]
-                const series_data = [];
-                const response = await axios.get('/chartumfrage?from=' + from + '&to=' + to);
-                const data = response.data;
-
-
-
-                for (let i = 0; i < data.length; i++) {
-                    series_data.push({
-                        name: data[i][0] ? data[i][0] : 'Null',
-                        y: parseInt(data[i][1]),
-                        z: 119
-                    });
-                    $('#elements').append(`<div class="mb-4">
-                        <svg width="12" height="13" viewBox="0 0 12 13" fill=""
-                        xmlns="http://www.w3.org/2000/svg">
-                        <path fill-rule="evenodd" clip-rule="evenodd"
-                        d="M6 12.5C9.31371 12.5 12 9.81371 12 6.5C12 3.18629 9.31371 0.5 6 0.5C2.68629 0.5 0 3.18629 0 6.5C0 9.81371 2.68629 12.5 6 12.5Z"
-                        fill="${colors[i]}" />
-                        <path fill-rule="evenodd" clip-rule="evenodd"
-                        d="M6 9.5C7.65685 9.5 9 8.15685 9 6.5C9 4.84315 7.65685 3.5 6 3.5C4.34315 3.5 3 4.84315 3 6.5C3 8.15685 4.34315 9.5 6 9.5Z"
-                        fill="white" />
-                        </svg>
-                        <span class="ms-2">${data[i][0]} : ${data[i][1]} </span>
-                        </div>`);
-                }
-
-                chart.series[0].update({
-                    data: series_data
-                })
-                chart.redraw();
-
-            }
-            $(window).on('load', function() {
-                chartlista();
-            })
         </script>
+
     @endsection
