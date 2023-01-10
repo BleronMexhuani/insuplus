@@ -377,7 +377,7 @@
                     <form action="{{ route('assignLead') }}" id="export-link" method="POST">
                         @csrf
 
-                        <div class= "row">
+                        <div class="row">
                             <div class="col-lg-3">
                                 <div class="searchgrup mt-md-4 mt-3 callinput">
                                     <select name="assign_to_id_call" placeholder="Call agents" id=""
@@ -408,8 +408,9 @@
                             </div>
 
                             <div class="col-lg-auto col-12 my-auto">
-                                 <div class="btnsubmit mb-md-4 mb-4 mt-lg-4 mt-3 text-center">
-                                    <a onclick="exportToCsv()" class="btnprofile w-100"  style="color:white;cursor:pointer;">Export
+                                <div class="btnsubmit mb-md-4 mb-4 mt-lg-4 mt-3 text-center">
+                                    <a onclick="exportToCsv()" class="btnprofile w-100"
+                                        style="color:white;cursor:pointer;">Export
 
                                         Leads</a>
                                 </div>
@@ -533,8 +534,8 @@
                     @endphp
 
 
-                    <form action="{{ route('searchLeads', array_merge(request()->query(), request()->input())) }}"
-                        method="GET">
+                    <form method="GET" action="{{route('searchLeads') }}">
+
                         <select name="paginate" onchange="this.form.submit()" class=" form-select w-25"
                             id="paginationi">
                             <option value=""></option>
