@@ -133,11 +133,11 @@
                                 <div class="mt-2">
                                     <select class="selectpicker" data-live-search="true" multiple data-actions-box="true"
                                         name="region[]">
-                                        <option id="Deutschschweiz (Germany)" value="Deutschschweiz (Germany )">
-                                            Deutschschweiz (Germany )</option>
-                                        <option id="Tessin (Italy)" value="Tessin (Italy)"> Tessin (Italy)</option>
-                                        <option id="Westschweiz (France)" value="Westschweiz (France)"> Westschweiz
-                                            (France)</option>
+                                        <option id="Deutschschweiz (Germany)" value="Deutschschweiz (German)">
+                                            Deutschschweiz (German)</option>
+                                        <option id="Tessin (Italy)" value="Tessin (Italian)"> Tessin (Italian)</option>
+                                        <option id="Westschweiz (France)" value="Westschweiz (French)"> Westschweiz
+                                            (French)</option>
                                     </select>
                                 </div>
                             </div>
@@ -344,7 +344,6 @@
                                             style="color:#00727A"></i></button>
                                 </div>
                             </div>
-
                         </div>
 
                     </div>
@@ -377,11 +376,11 @@
                     <form action="{{ route('assignLead') }}" id="export-link" method="POST">
                         @csrf
 
-                        <div class="d-flex row">
-                            <div class="col-md-3">
-                                <div class="searchgrup mt-md-4 mt-3">
+                        <div class= "row">
+                            <div class="col-lg-3">
+                                <div class="searchgrup mt-md-4 mt-3 callinput">
                                     <select name="assign_to_id_call" placeholder="Call agents" id=""
-                                        class="form-select inputleads  select-form  mb-3">
+                                        class="form-select inputleads callinput select-form  mb-3">
                                         <option value="">Call Agents auswählen</option>
                                         @foreach ($callagents as $item)
                                             <option value="{{ $item->id }}">{{ $item->name }}</option>
@@ -389,8 +388,8 @@
                                     </select>
                                 </div>
                             </div>
-                            <div class="col-md-3">
-                                <div class="mt-md-4 mt-0 chooseteamgroup">
+                            <div class="col-lg-3">
+                                <div class="mt-lg-4 mt-2 chooseteamgroup teaminput">
                                     <select name="assign_to_id_team_leader" id=""
                                         class="form-select inputleads select-form  mb-3">
                                         <option value="">Teamleiter auswählen</option>
@@ -400,14 +399,14 @@
                                     </select>
                                 </div>
                             </div>
-                            <div class="col-md-2 ">
-                                <div class="btnsubmit mb-md-4 mb-0 mt-md-4 mt-0 text-center">
+                            <div class="col-lg-3 ">
+                                <div class="btnsubmit btnuber mb-md-4 mb-3 mt-lg-4 mt-2 text-center">
                                     <button class=" btnprofile w-100 " style="color:white;">Übermitteln</button>
                                 </div>
                                
                             </div>
-                            <div class="col-auto my-auto">
-                                 <div class="btnsubmit mb-md-4 mb-0 mt-md-4 mt-0 text-center">
+                            <div class="col-lg-auto col-12 my-auto">
+                                 <div class="btnsubmit mb-md-4 mb-4 mt-lg-4 mt-3 text-center">
                                     <a onclick="exportToCsv()" class="btnprofile w-100"  style="color:white;cursor:pointer;">Export
                                         Leads</a>
                                 </div>

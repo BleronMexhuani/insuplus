@@ -18,7 +18,7 @@
         @csrf
         @method('patch')
         <div class="row">
-            <div class="col-6">
+            <div class="col-12 col-lg-6 ">
                 <div class="row">
                     <div class="col-auto">
                         <div class="mt-4 py-3">
@@ -36,7 +36,7 @@
                     </div>
                 </div>
             </div>
-            <div class="col-6">
+            <div class="col-12 col-lg-6">
                 <div class="row">
                     <div class="col-auto">
                         <div class="mt-4 py-3">

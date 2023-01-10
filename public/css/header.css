@@ -28,7 +28,9 @@ body{
     background-color:#00727A !important
 }
 
-
+/* .navmobile{
+  padding-bottom: 3rem;
+} */
 
 .titleplus{
     font-weight: 600;
@@ -151,8 +153,8 @@ body{
 
   .addleads{
         position: fixed;
-        top: 20px;
-        right: 210px;
+        top: 22px;
+        right: 99px;
   }
 
   .insubg{
@@ -174,8 +176,7 @@ body{
     }
 
     .addleads{
-      top: 20px;
-      right: 210px;
+      display: none;
     }
     
     .action {

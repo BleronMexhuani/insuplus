@@ -125,9 +125,9 @@
                         <div class="mt-2 mb-4">
                             <select class="form-select selectinput" required name="region" id="region" required>
                                 <option selected hidden disabled></option>
-                                <option value="Deutschschweiz (Germany)"> Deutschschweiz (Germany)</option>
-                                <option value="Tessin (Italy)"> Tessin (Italy)</option>
-                                <option value="Westschweiz (France)"> Westschweiz (France)</option>
+                                <option value="Deutschschweiz (German)"> Deutschschweiz (German)</option>
+                                <option value="Tessin (Italian)"> Tessin (Italian)</option>
+                                <option value="Westschweiz (French)"> Westschweiz (French)</option>
                             </select>
                         </div>
                     </div>
@@ -653,11 +653,11 @@
                         $("#kanton").val(response.state_short);
                         if (response.state_short == 'GE' ||
                             response.state_short == 'JU' || response.state_short == 'VD') {
-                            $("#region").val('Westschweiz (France)').change();
+                            $("#region").val('Westschweiz (French)').change();
                         } else if (response.state_short == 'TI') {
-                            $("#region").val('Tessin (Italy)').change();
+                            $("#region").val('Tessin (Italian)').change();
                         } else {
-                            $("#region").val('Deutschschweiz (Germany)').change();
+                            $("#region").val('Deutschschweiz (German)').change();
                         }
                     },
                     error: function(xhr, status, error) {

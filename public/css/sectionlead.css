@@ -12,11 +12,11 @@
 
 .bgform {
     width: 100%;
-    /* height: 285vh; */
     left: 0px;
     top: 53px;
     background: #ffffff;
     border-radius: 12px;
+    box-shadow: none !important;
 }
 
 .titleform {

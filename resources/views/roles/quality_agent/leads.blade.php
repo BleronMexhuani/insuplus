@@ -132,11 +132,11 @@
                                 <div class="mt-2">
                                     <select class="selectpicker" data-live-search="true" multiple data-actions-box="true"
                                         name="region[]">
-                                        <option id="Deutschschweiz (Germany)" value="Deutschschweiz (Germany)">
-                                            Deutschschweiz (Germany)</option>
-                                        <option id="Tessin (Italy)" value="Tessin (Italy)"> Tessin (Italy)</option>
-                                        <option id="Westschweiz (France)" value="Westschweiz (France)"> Westschweiz
-                                            (France)</option>
+                                        <option id="Deutschschweiz (Germany)" value="Deutschschweiz (German)">
+                                            Deutschschweiz (German)</option>
+                                        <option id="Tessin (Italy)" value="Tessin (Italian)"> Tessin (Italian)</option>
+                                        <option id="Westschweiz (France)" value="Westschweiz (French)"> Westschweiz
+                                            (French)</option>
                                     </select>
                                 </div>
                             </div>

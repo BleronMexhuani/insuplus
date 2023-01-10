@@ -103,11 +103,11 @@
                                 <div class="mt-2">
                                     <select class="selectpicker" data-live-search="true" multiple data-actions-box="true"
                                         name="region[]">
-                                        <option id="Deutschschweiz (Germany)" value="Deutschschweiz (Germany)">
-                                            Deutschschweiz (Germany)</option>
-                                        <option id="Tessin (Italy)" value="Tessin (Italy)"> Tessin (Italy)</option>
-                                        <option id="Westschweiz (France)" value="Westschweiz (France)"> Westschweiz
-                                            (France)</option>
+                                        <option id="Deutschschweiz (Germany)" value="Deutschschweiz (German)">
+                                            Deutschschweiz (German)</option>
+                                        <option id="Tessin (Italy)" value="Tessin (Italian)"> Tessin (Italian)</option>
+                                        <option id="Westschweiz (France)" value="Westschweiz (French)"> Westschweiz
+                                            (French)</option>
                                     </select>
                                 </div>
                             </div>
@@ -308,9 +308,11 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="col-9 col-md-9 my-auto">
-                                <button class="buttonsearch"><i class="fa fa-search ps-1 "
-                                        style="color:#00727A"></i></button>
+                            <div class="col-md-3 my-auto">
+                                <div class="mt-2">
+                                    <button class="buttonsearch mb-4 mb-md-0"><i class="fa fa-search ps-1 "
+                                            style="color:#00727A"></i></button>
+                                </div>
                             </div>
                         </div>
                     </div>

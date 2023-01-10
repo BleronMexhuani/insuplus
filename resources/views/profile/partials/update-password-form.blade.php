@@ -1,4 +1,4 @@
-<section class="ms-5 py-4">
+<section class="ms-md-5 ms-4 py-4">
     <header>
         <div>
             <span class="titleprofile">Passwort Aktualisieren </span>
@@ -20,9 +20,9 @@
                 </div>
             </div>
             <div class="col">
-                <div class="mt-4 " style="margin-left: 71px !important">
+                <div class="mt-4 " style="margin-left: 53px !important">
                     <label for="current_password" :value="__('Current Password')"></label>
-                    <input id="current_password" name="current_password" type="password" class="inputprofile w-50" autocomplete="current-password" >
+                    <input id="current_password" name="current_password" type="password" class="inputprofile inputpassword " autocomplete="current-password" >
                     <x-input-error :messages="$errors->updatePassword->get('current_password')" class="mt-2" />
                 </div>
             </div>
@@ -38,7 +38,7 @@
             <div class="col">
                 <div class="mt-4 " style="margin-left: 71px !important">
                     <label for="password" :value="__('New Password')"></label>
-                    <input id="password" name="password" type="password" class="inputprofile w-50" autocomplete="new-password" >
+                    <input id="password" name="password" type="password" class="inputprofile inputpassword " autocomplete="new-password" >
                     <x-input-error :messages="$errors->updatePassword->get('password')" class="mt-2"  />
                 </div>
             </div>
@@ -53,7 +53,7 @@
             <div class="col">
                 <div class="mt-4 ">
                     <label for="password_confirmation" :value="__('Confirm Password')"></label>
-                    <input id="password_confirmation" name="password_confirmation" type="password" class="inputprofile w-50" autocomplete="new-password" >
+                    <input id="password_confirmation" name="password_confirmation" type="password" class="inputprofile inputpassword" autocomplete="new-password" >
                     <x-input-error :messages="$errors->updatePassword->get('password_confirmation')" class="mt-2"  />
                 </div>
             </div>

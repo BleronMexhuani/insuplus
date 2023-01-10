@@ -198,7 +198,7 @@
                                          <input id="remember_me" type="checkbox"
                                              class="rounded border-gray-300 text-indigo-600  focus:ring-indigo-500"
                                              name="remember">
-                                         <span style="margin-left: 5px;" class="textform">{{ __('Logindaten merken') }}</span>
+                                         <span class="textform">{{ __('Logindaten merken') }}</span>
                                      </label>
 
                                      <div class=" ">
@@ -302,7 +302,19 @@
          font-weight: 700;
          font-size: 14px;
          line-height: 16px;
+         margin-left: 5px;
          color: #9F9F9F;
+     }
+
+     @media (max-width: 398.98px) { 
+        .textform{
+            margin-left: 2px;
+            font-style: normal;
+         font-weight: 700;
+         font-size: 13px;
+         line-height: 16px;
+         color: #9F9F9F;
+        }
      }
 
      .btnform {

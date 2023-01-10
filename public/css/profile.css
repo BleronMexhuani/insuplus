@@ -32,6 +32,10 @@
     padding: 15px;
 }
 
+.inputpassword{
+    width: 75%;
+}
+
 .btnprofile{
     background: #00727A;
     border-radius: 8px;
