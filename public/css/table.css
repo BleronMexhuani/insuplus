@@ -338,10 +338,24 @@ tr {
     padding-right: 28px;
 }
 
+
+
 .navPagination {
     margin-top: -50px;
 }
-
+@media (max-width: 991.98px) { 
+    .callinput{
+        padding-right: 28px;
+    }
+    .teaminput{
+        padding-left: 25px;
+        padding-right: 28px;
+    }
+    .btnuber{
+        padding-left: 25px;
+        padding-right: 28px;
+    }
+ }
 @media (max-width: 769px) {
     .searchgrup {
         padding: 0px 20px;
@@ -359,7 +373,8 @@ tr {
     }
 
     .searchLeads {
-        padding-left: 21px;
+        padding-left: 0px;
+        padding-right: 0px
     }
 }
 @media (max-width: 576.99px) {

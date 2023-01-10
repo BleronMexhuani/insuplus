@@ -1,7 +1,7 @@
 @extends('layouts.app')
 @section('content')
     <div class="mt-5 ">
-        <div class="col ms-0 ms-md-1 px-0 px-md-2 me-4">
+        <div class="">
             <div class="mt-4  px-2">
                 <div class="bgform profileform mt-4 p-4 px-md-5">
                     @include('profile.partials.update-profile-information-form')
