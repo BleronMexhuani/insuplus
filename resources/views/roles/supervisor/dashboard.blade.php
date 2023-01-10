@@ -1,15 +1,22 @@
 @extends('layouts.app')
 @section('content')
     <div class="" style="margin-top:16px !important;">
-        <div>
-            <label for="">Filter</label>
-            <select name="" id="filter_leads" class="form-select w-25">
-                <option value=""></option>
-                <option value="today">Today</option>
-                <option value="this_week">This Week</option>
-                <option value="this_month">This Month</option>
-                <option value="total">Total</option>
-            </select>
+        <div class="row">
+            <div class="col-4">
+                <label class="ms-2"
+                    style="    font-family: 'Raleway';
+            font-weight: 600;
+            font-size: 18px;
+            color: #1F1F1F;"
+                    for="">Filter</label>
+                <select name="" id="filter_leads" class="selectpicker w-25 mt-2 ms-2">
+
+                    <option value="today">Heute</option>
+                    <option value="this_week">Woche</option>
+                    <option value="this_month">Monat</option>
+                    <option value="total">Gesamt</option>
+                </select>
+            </div>
         </div>
         <div class="px-2">
             <div class="mt-4 py-3">
@@ -36,7 +43,8 @@
                             <div class="d-flex flex-column">
                                 <span class="subtitledash">Total Terminiert</span>
                                 <span
-                                    style="font-weight: 700; color: #00727A; font-size: 32px;font-family: 'Poppins', sans-serif; " id="total_terminert">{{ $total_terminert }}</span>
+                                    style="font-weight: 700; color: #00727A; font-size: 32px;font-family: 'Poppins', sans-serif; "
+                                    id="total_terminert">{{ $total_terminert }}</span>
                             </div>
                         </div>
                     </div>
@@ -61,7 +69,8 @@
                             <div class="d-flex flex-column">
                                 <span class="subtitledash">Total Leads</span>
                                 <span
-                                    style="font-weight: 700; color: #F97035; font-size: 32px;font-family: 'Poppins', sans-serif; " id="total_leads">{{ $total_leads }}</span>
+                                    style="font-weight: 700; color: #F97035; font-size: 32px;font-family: 'Poppins', sans-serif; "
+                                    id="total_leads">{{ $total_leads }}</span>
                             </div>
                         </div>
                     </div>
@@ -233,10 +242,12 @@
     <script src="https://code.highcharts.com/modules/accessibility.js"></script>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script>
+
    
 
 
     <script>
+
         //  line chart datalabel
         async function umfrageAgentBenutzer() {
 
@@ -366,9 +377,9 @@
 
 
         }
-    </script>
+    </script> --}}
 
-    <script>
+    {{-- <script>
         //  line chart datalabel2
         async function firstCallAgentChart() {
             let callagent_benutzer = $("#callagent_benutzer").val();
@@ -488,8 +499,8 @@
                 }
             })
         }
-    </script>
-    <script>
+    </script> --}}
+    {{-- <script>
         $("#filter_leads").on("change", async function() {
             let filter = $(this).val();
             await $.ajax({
@@ -506,5 +517,5 @@
                 }
             })
         })
-    </script>
+    </script> --}}
 @endsection

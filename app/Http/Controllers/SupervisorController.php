@@ -73,6 +73,7 @@ class SupervisorController extends Controller
         $teams = Team::all();
         $leads = $this->leadsOfSupervisor($req);
         $leads->appends($_GET)->links();
+  
 
         return view('roles.supervisor.leads', compact('callagents', 'leads', 'umfrage_agents', 'teams', 'team_leaders'));
     }
@@ -80,7 +81,8 @@ class SupervisorController extends Controller
     public function leadsOfSupervisor(Request $req)
     {
         // dd($req->all());
- 
+        // dd($_GET);
+
         $lead = Lead::query();
         $paginate = $req->paginate ? $req->paginate : 25;
 
@@ -336,7 +338,7 @@ class SupervisorController extends Controller
     public function dashboardFilterLeads(Request $request)
     {
         if ($request->filter == 'today') {
-            $termins = Lead::where('feedback_status', 'Terminiert')->whereDate('verteilen_datum', Carbon::today())->count();
+            $termins = Lead::where('feedback_status', 'Terminiert')->whereDate('created_at', Carbon::today())->count();
             $leads =  Lead::whereDate('verteilen_datum', Carbon::today())->count();
             return response()->json(array(
                 'response' => 'success',
@@ -344,7 +346,7 @@ class SupervisorController extends Controller
                 'termins' => $termins
             ));
         } else if ($request->filter == 'this_week') {
-            $termins = Lead::where('feedback_status', 'Terminiert')->whereBetween('verteilen_datum', [Carbon::now()->startOfWeek(), Carbon::now()->endOfWeek()])->count();
+            $termins = Lead::where('feedback_status', 'Terminiert')->whereBetween('created_at', [Carbon::now()->startOfWeek(), Carbon::now()->endOfWeek()])->count();
             $leads =  Lead::whereBetween('verteilen_datum', [Carbon::now()->startOfWeek(), Carbon::now()->endOfWeek()])->count();
             return response()->json(array(
                 'response' => 'success',
@@ -352,7 +354,7 @@ class SupervisorController extends Controller
                 'termins' => $termins
             ));
         } else if ($request->filter == 'this_month') {
-            $termins = Lead::where('feedback_status', 'Terminiert')->whereMonth('verteilen_datum', now()->month)->count();
+            $termins = Lead::where('feedback_status', 'Terminiert')->whereMonth('created_at', now()->month)->count();
             $leads =  Lead::whereMonth('verteilen_datum', now()->month)->count();
             return response()->json(array(
                 'response' => 'success',
