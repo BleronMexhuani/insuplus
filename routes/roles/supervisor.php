@@ -45,6 +45,9 @@ Route::middleware(['role:supervisor'])->group(function () {
     Route::view('advancedFilter','roles.supervisor.advanced_filter')->name('advancedFilter');
     //EXPORT CSV 
     Route::get('supervisor/exportcsv',[SupervisorController::class,'exportCSV'])->name('exportcsv');
+    //Dashboard Filter by today this week this month total,
+    Route::get('supervisor/filterLeads',[SupervisorController::class,'dashboardFilterLeads'])->name('dashboardFilterLeads');
+
     //Supervisor Charts 
     Route::get('umfrage_first_chart', [SupervisorController::class, 'umfrage_first_chart'])->name('umfrage_first_chart');
     Route::get('umfrage_second_chart', [SupervisorController::class, 'umfrage_second_chart'])->name('umfrage_second_chart');
