@@ -53,4 +53,6 @@ Route::middleware(['role:supervisor'])->group(function () {
     Route::get('umfrage_second_chart', [SupervisorController::class, 'umfrage_second_chart'])->name('umfrage_second_chart');
     Route::get('call_agent_first_chart', [SupervisorController::class, 'call_agent_first_chart'])->name('call_agent_first_chart');
     Route::get('call_agent_second_chart', [SupervisorController::class, 'call_agent_second_chart'])->name('call_agent_second_chart');
+
+    
 });
