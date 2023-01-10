@@ -42,8 +42,8 @@ class UsersController extends Controller
             $week = Lead::Select('completed')->whereBetween('created_at', [Carbon::now()->startOfWeek(), Carbon::now()->endOfWeek()])->count();
         }
 
-        $total_leads = Lead::all()->count();
-        $total_terminert = Lead::where('feedback_status','Terminiert')->count();
+        $total_leads = Lead::whereDate('created_at', Carbon::today())->count();
+        $total_terminert = Lead::whereDate('created_at', Carbon::today())->where('feedback_status','Terminiert')->count();
         return view('dashboard', compact('umfrage_agents', 'callagents', 'week', 'today', 'month','total_leads','total_terminert'));
     }
 
