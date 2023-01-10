@@ -108,7 +108,7 @@
                             </div>
                         </div>
 
-                        {{-- <div class="form-popup" id="myForm">
+                         <div class="form-popup" id="myForm">
                         <form class="form-container">
                             <div class="text-center mb-3 mt-3">
                                 <span class="titledash">Grafik für Benutzerstatistiken</span>
@@ -157,76 +157,17 @@
                                 </div>
                             </div>
                         </form>
-                        <form action="/action_page.php" class="form-container">
-                            <div class="text-center mb-3 mt-3">
-                                <span class="titledash">Grafik für Benutzerstatistiken mit Status/Rückmeldung
-                                </span>
-                            </div>
-                            <div class="row">
-                                <div class="col-6 col-lg-3">
-                                    <div class="mb-2">
-                                        <span class="subtitleform">Benutzer </span>
-                                    </div>
-                                    <select class="selectpicker" id="benutzer_second_chart" data-live-search="true" multiple
-                                        data-actions-box="true">
-                                        @foreach ($umfrage_agents as $item)
-                                            <option value="{{ $item->id }}">{{ $item->name }}</option>
-                                        @endforeach
-                                    </select>
-                                </div>
-                                <div class="col-6 col-lg-3">
-                                    <div class="mb-2">
-                                        <span class="subtitleform">Bestatigungsstatus: </span>
-                                    </div>
-                                    <select class="selectpicker" id="bestatigungstatus" data-live-search="true" multiple
-                                        data-actions-box="true">
-                                        <option value="null">Null</option>
-                                        <option value="Bestätigt">Bestätigt</option>
-                                        <option value="intern">Intern</option>
-                                        <option value="Krankenkasse">Krankenkasse</option>
-                                        <option value="Autoversicherung">Autoversicherung</option>
-                                        <option value="Bestätigung pendent">Bestätigung pendent</option>
-                                        <option value="Nicht bestätigt">Nicht bestätigt</option>
-                                </div>
-                                </select>
-                            </div>
-                            <div class="col-6 col-lg-4 ">
-                                <div class="mt-2 mt-lg-0">
-                                <div class="mb-2">
-                                    <span class="subtitleform">Erstellungsdatum: </span>
-                                </div>
-                                <div class="input-group mt-2 ">
-                                    <input type="text" class="form-controol input-sm mb-4" id="von_second_chart"
-                                        placeholder="von" onfocus="(this.type='date')" onblur="(this.type='text')"
-                                        name="">
-                                    <input type="text" class="form-controol input-sm mb-4" id="bis_second_chart"
-                                        placeholder="bis" onfocus="(this.type='date')" onblur="(this.type='text')"
-                                        name="">
-                                </div>
-                            </div>
-                            </div>
-                            <div class="col-6 col-lg-2">
-                                <div class="grafikbuttontwo mt-2 mt-lg-0">
-                                <div class="mb-1">
-                                    <span class="subtitleform">Aktionen</span>
-                                </div>
-                                <button class="anzeigenbtn" type="button" onclick="grafikFurStatus()">Anzeigen</button>
-                            </div>
-                            </div>
-                            <div class="mt-1 apexchart d-flex justify-content-center" id="myForm">
-                                <canvas id="myChart" style="width:100%;max-width:800px"></canvas>
-                            </div>
-                        </form>
-                    </div> --}}
+                       
+                    </div>
                     </div>
 
-                    {{-- <div class="form-popup" id="myFormm">
+                     <div class="form-popup" id="myFormm">
                     <form action="/action_page.php" class="form-container">
                         <div class="text-center mb-3 mt-3">
                             <span class="titledash">Grafik für Benutzerstatistiken</span>
                         </div>
                         <div class="row">
-                            <div class="col-md-6">
+                            <div class="col-lg-5">
                                 <div class="mb-2">
                                     <span class="subtitleform">Benutzer </span>
                                 </div>
@@ -237,10 +178,24 @@
 
                                 </select>
                             </div>
-
-                            <div class="col-md-6 ">
-                                <div class="">
-                                    <div class="mb-2 ">
+                            <div class="col-lg-5">
+                                <div class="mt-4 mt-lg-0">
+                                <div class="mb-2">
+                                    <span class="subtitleform">Call Datum: </span>
+                                </div>
+                                <div class="input-group mt-2 ">
+                                    <input type="text" class="form-controol input-sm mb-4" id="umfrage_grafik_von"
+                                        name="" placeholder="von" onfocus="(this.type='date')"
+                                        onblur="(this.type='text')">
+                                    <input type="text" class="form-controol input-sm mb-4" placeholder="bis"
+                                        onfocus="(this.type='date')" onblur="(this.type='text')" id="umfrage_grafik_bis"
+                                        name="">
+                                </div>
+                            </div>
+                            </div>
+                            <div class="col-lg-2 ">
+                                <div class="grafikbutton mt-2 mt-lg-0">
+                                    <div class="mb-1">
                                         <span class="subtitleform">Aktionen</span>
                                     </div>
                                     <button class="anzeigenbtn" type="button"
@@ -254,65 +209,7 @@
                             </div>
                         </div>
                     </form>
-                    <form action="/action_page.php" class="form-container">
-                        <div class="text-center mb-3 mt-3">
-                            <span class="titledash">Grafik für Benutzerstatistiken mit Status/Rückmeldung
-                            </span>
-                        </div>
-                        <div class="row">
-                            <div class="col-3">
-                                <div class="mb-3">
-                                    <span class="subtitleform">Benutzer </span>
-                                </div>
-                                <select class="selectpicker" id="benutzer_call_agent_2" data-live-search="true">
-                                    @foreach ($callagents as $item)
-                                        <option value="{{ $item->id }}">{{ $item->name }}</option>
-                                    @endforeach
-                                </select>
-                            </div>
-                            <div class="col-3">
-                                <div class="mb-3">
-                                    <span class="subtitleform">Rückmeldung : </span>
-                                </div>
-                                <select class="selectpicker" data-live-search="true" id="feedback_status_call_agent"
-                                    multiple data-actions-box="true">
-                                    <option value="null">Leer</option>
-                                    <option value="Falsche Nummer">Falsche Nummer</option>
-                                    <option value="Hat schon gewechselt">Hat schon gewechselt</option>
-                                    <option value="Kein Interesse">Kein Interesse</option>
-                                    <option value="Krank">Krank</option>
-                                    <option value="Kunde bereits terminiert">Kunde bereits terminiert</option>
-                                    <option value="Nicht Brauchbar">Nicht Brauchbar</option>
-                                    <option value="Nicht erreicht">Nicht erreicht</option>
-                                    <option value="Online-Offerte">Online-Offerte</option>
-                                    <option value="Später Anrufen">Später Anrufen</option>
-                                    <option value="Terminiert">Terminiert</option>
-                                </select>
-                            </div>
-                            <div class="col-4">
-                                <div class="mb-3">
-                                    <span class="subtitleform">Verteildatum: </span>
-                                </div>
-                                <div class="input-group mt-2 ">
-                                    <input type="text" class="form-controol input-sm mb-4" id="von_call_agent2"
-                                        placeholder="von" onfocus="(this.type='date')" onblur="(this.type='text')"
-                                        name="">
-                                    <input type="text" class="form-controol input-sm mb-4" id="bis_call_agent2"
-                                        placeholder="bis" onfocus="(this.type='date')" onblur="(this.type='text')"
-                                        name="">
-                                </div>
-                            </div>
-                            <div class="col-2 ">
-                                <div class="mb-2">
-                                    <span class="subtitleform">Aktionen</span>
-                                </div>
-                                <button class="anzeigenbtn" type="button" onclick="callAgentChart2()">Anzeigen</button>
-                            </div>
-                            <div class="mt-1 apexchart d-flex justify-content-center" id="myForm">
-                                <canvas id="myChart1" style="width:100%;max-width:800px"></canvas>
-                            </div>
-                    </form>
-                </div> --}}
+                </div> 
                 </div>
             </div>
         </div>
@@ -345,132 +242,12 @@
     <script src="https://code.highcharts.com/modules/accessibility.js"></script>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script>
-    {{-- <script>
-        async function callAgentChart2() {
-            let bis = document.getElementById('bis_call_agent2').value;
-            let von = document.getElementById("von_call_agent2").value;
-            let benutzer = document.getElementById("benutzer_call_agent_2").value;
-            let feedback_status = $("#feedback_status_call_agent").val();
 
-            await $.ajax({
-                url: '{{ route('call_agent_second_chart') }}',
-                method: "GET",
-                data: {
-                    bis: bis,
-                    von: von,
-                    benutzer: benutzer,
-                    feedback_status
-
-                },
-                success: function(response) {
-
-                    let status = [];
-                    let values = [];
-                    let result = JSON.parse(response);
-                    console.log(result);
-                    for (let i = 0; i < result.length; i++) {
-                        status.push(result[i].feedback_status);
-                        values.push(result[i].count)
-
-                    }
-
-                    var barColors = [
-                        "#a95g47",
-                        "#05aba9",
-                        "#0e7v45",
-
-                    ];
-
-                    var xValues = status;
-                    var yValues = values;
-
-                    new Chart("myChart1", {
-                        type: "pie",
-                        data: {
-                            labels: xValues,
-                            datasets: [{
-                                backgroundColor: barColors,
-                                data: yValues
-                            }]
-                        },
-                        options: {
-                            title: {
-                                display: true,
-                            }
-                        }
-                    });
-                }
-            })
-
-        }
-    </script> --}}
-
-    {{-- <script>
-        var barColors = [
-            "#a95g47",
-            "#05aba9",
-            "#1e7145"
-        ];
-        let chart = new Chart("myChart", {
-            type: "pie",
-            data: {
-                labels: [],
-                datasets: [{
-                    backgroundColor: barColors,
-                    data: []
-                }]
-            },
-            options: {
-                title: {
-                    display: true,
-                }
-            }
-        });
-        async function grafikFurStatus() {
+   
 
 
-            let umfrage_agents = $("#benutzer_second_chart").val()
-            let umfrage_grafik_von = $("#von_second_chart").val();
-            let umfrage_grafik_bis = $("#bis_second_chart").val();
-            let bestatigungstatus = $("#bestatigungstatus").val();
+    <script>
 
-            await $.ajax({
-                url: "{{ route('umfrage_second_chart') }}",
-                method: "GET",
-                data: {
-                    umfrage_agents: umfrage_agents,
-                    umfrage_grafik_von: umfrage_grafik_von,
-                    umfrage_grafik_bis: umfrage_grafik_bis,
-                    bestatigungstatus: bestatigungstatus
-                },
-                success: function(response) {
-
-                    let status = [];
-                    let values = [];
-                    let result = JSON.parse(response);
-
-
-
-
-                    for (let i = 0; i < result[0].length; i++) {
-                        status.push(result[0][i].bestatigungs_status);
-                        values.push(result[0][i].asd)
-
-                    }
-
-                    var xValues = status;
-                    var yValues = values;
-                    chart.data.labels = xValues;
-                    chart.data.datasets[0].data = yValues;
-                    chart.update();
-                }
-            })
-
-
-        }
-    </script> --}}
-
-    {{-- <script>
         //  line chart datalabel
         async function umfrageAgentBenutzer() {
 
